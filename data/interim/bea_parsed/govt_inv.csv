@@ -1,0 +1,286 @@
+year,line_number,line_desc,value,table_label,table_name,source
+1929,1,Government fixed assets,3.08,govt_inv,FAAt604,SEED
+1929,2,National defense,0.77,govt_inv,FAAt604,SEED
+1929,6,Nondefense,2.31,govt_inv,FAAt604,SEED
+1930,1,Government fixed assets,3.53,govt_inv,FAAt604,SEED
+1930,2,National defense,1.15,govt_inv,FAAt604,SEED
+1930,6,Nondefense,2.38,govt_inv,FAAt604,SEED
+1931,1,Government fixed assets,3.61,govt_inv,FAAt604,SEED
+1931,2,National defense,1.22,govt_inv,FAAt604,SEED
+1931,6,Nondefense,2.4,govt_inv,FAAt604,SEED
+1932,1,Government fixed assets,3.7,govt_inv,FAAt604,SEED
+1932,2,National defense,1.29,govt_inv,FAAt604,SEED
+1932,6,Nondefense,2.41,govt_inv,FAAt604,SEED
+1933,1,Government fixed assets,3.8,govt_inv,FAAt604,SEED
+1933,2,National defense,1.36,govt_inv,FAAt604,SEED
+1933,6,Nondefense,2.43,govt_inv,FAAt604,SEED
+1934,1,Government fixed assets,3.9,govt_inv,FAAt604,SEED
+1934,2,National defense,1.44,govt_inv,FAAt604,SEED
+1934,6,Nondefense,2.45,govt_inv,FAAt604,SEED
+1935,1,Government fixed assets,4.0,govt_inv,FAAt604,SEED
+1935,2,National defense,1.53,govt_inv,FAAt604,SEED
+1935,6,Nondefense,2.47,govt_inv,FAAt604,SEED
+1936,1,Government fixed assets,4.11,govt_inv,FAAt604,SEED
+1936,2,National defense,1.62,govt_inv,FAAt604,SEED
+1936,6,Nondefense,2.49,govt_inv,FAAt604,SEED
+1937,1,Government fixed assets,4.23,govt_inv,FAAt604,SEED
+1937,2,National defense,1.71,govt_inv,FAAt604,SEED
+1937,6,Nondefense,2.51,govt_inv,FAAt604,SEED
+1938,1,Government fixed assets,4.35,govt_inv,FAAt604,SEED
+1938,2,National defense,1.81,govt_inv,FAAt604,SEED
+1938,6,Nondefense,2.53,govt_inv,FAAt604,SEED
+1939,1,Government fixed assets,4.47,govt_inv,FAAt604,SEED
+1939,2,National defense,1.92,govt_inv,FAAt604,SEED
+1939,6,Nondefense,2.55,govt_inv,FAAt604,SEED
+1940,1,Government fixed assets,4.61,govt_inv,FAAt604,SEED
+1940,2,National defense,2.03,govt_inv,FAAt604,SEED
+1940,6,Nondefense,2.57,govt_inv,FAAt604,SEED
+1941,1,Government fixed assets,12.66,govt_inv,FAAt604,SEED
+1941,2,National defense,9.55,govt_inv,FAAt604,SEED
+1941,6,Nondefense,3.1,govt_inv,FAAt604,SEED
+1942,1,Government fixed assets,17.63,govt_inv,FAAt604,SEED
+1942,2,National defense,14.48,govt_inv,FAAt604,SEED
+1942,6,Nondefense,3.15,govt_inv,FAAt604,SEED
+1943,1,Government fixed assets,25.15,govt_inv,FAAt604,SEED
+1943,2,National defense,21.95,govt_inv,FAAt604,SEED
+1943,6,Nondefense,3.2,govt_inv,FAAt604,SEED
+1944,1,Government fixed assets,36.53,govt_inv,FAAt604,SEED
+1944,2,National defense,33.27,govt_inv,FAAt604,SEED
+1944,6,Nondefense,3.25,govt_inv,FAAt604,SEED
+1945,1,Government fixed assets,53.74,govt_inv,FAAt604,SEED
+1945,2,National defense,50.43,govt_inv,FAAt604,SEED
+1945,6,Nondefense,3.31,govt_inv,FAAt604,SEED
+1946,1,Government fixed assets,6.9,govt_inv,FAAt604,SEED
+1946,2,National defense,0.1,govt_inv,FAAt604,SEED
+1946,6,Nondefense,6.8,govt_inv,FAAt604,SEED
+1947,1,Government fixed assets,7.36,govt_inv,FAAt604,SEED
+1947,2,National defense,0.1,govt_inv,FAAt604,SEED
+1947,6,Nondefense,7.26,govt_inv,FAAt604,SEED
+1948,1,Government fixed assets,7.84,govt_inv,FAAt604,SEED
+1948,2,National defense,0.1,govt_inv,FAAt604,SEED
+1948,6,Nondefense,7.74,govt_inv,FAAt604,SEED
+1949,1,Government fixed assets,8.37,govt_inv,FAAt604,SEED
+1949,2,National defense,0.1,govt_inv,FAAt604,SEED
+1949,6,Nondefense,8.27,govt_inv,FAAt604,SEED
+1950,1,Government fixed assets,8.92,govt_inv,FAAt604,SEED
+1950,2,National defense,0.1,govt_inv,FAAt604,SEED
+1950,6,Nondefense,8.82,govt_inv,FAAt604,SEED
+1951,1,Government fixed assets,29.73,govt_inv,FAAt604,SEED
+1951,2,National defense,17.97,govt_inv,FAAt604,SEED
+1951,6,Nondefense,11.76,govt_inv,FAAt604,SEED
+1952,1,Government fixed assets,33.22,govt_inv,FAAt604,SEED
+1952,2,National defense,20.38,govt_inv,FAAt604,SEED
+1952,6,Nondefense,12.84,govt_inv,FAAt604,SEED
+1953,1,Government fixed assets,37.14,govt_inv,FAAt604,SEED
+1953,2,National defense,23.11,govt_inv,FAAt604,SEED
+1953,6,Nondefense,14.03,govt_inv,FAAt604,SEED
+1954,1,Government fixed assets,41.53,govt_inv,FAAt604,SEED
+1954,2,National defense,26.21,govt_inv,FAAt604,SEED
+1954,6,Nondefense,15.32,govt_inv,FAAt604,SEED
+1955,1,Government fixed assets,46.46,govt_inv,FAAt604,SEED
+1955,2,National defense,29.72,govt_inv,FAAt604,SEED
+1955,6,Nondefense,16.74,govt_inv,FAAt604,SEED
+1956,1,Government fixed assets,45.07,govt_inv,FAAt604,SEED
+1956,2,National defense,26.46,govt_inv,FAAt604,SEED
+1956,6,Nondefense,18.61,govt_inv,FAAt604,SEED
+1957,1,Government fixed assets,49.19,govt_inv,FAAt604,SEED
+1957,2,National defense,28.82,govt_inv,FAAt604,SEED
+1957,6,Nondefense,20.37,govt_inv,FAAt604,SEED
+1958,1,Government fixed assets,53.69,govt_inv,FAAt604,SEED
+1958,2,National defense,31.39,govt_inv,FAAt604,SEED
+1958,6,Nondefense,22.3,govt_inv,FAAt604,SEED
+1959,1,Government fixed assets,58.6,govt_inv,FAAt604,SEED
+1959,2,National defense,34.19,govt_inv,FAAt604,SEED
+1959,6,Nondefense,24.41,govt_inv,FAAt604,SEED
+1960,1,Government fixed assets,63.96,govt_inv,FAAt604,SEED
+1960,2,National defense,37.25,govt_inv,FAAt604,SEED
+1960,6,Nondefense,26.71,govt_inv,FAAt604,SEED
+1961,1,Government fixed assets,53.43,govt_inv,FAAt604,SEED
+1961,2,National defense,26.49,govt_inv,FAAt604,SEED
+1961,6,Nondefense,26.93,govt_inv,FAAt604,SEED
+1962,1,Government fixed assets,56.57,govt_inv,FAAt604,SEED
+1962,2,National defense,27.36,govt_inv,FAAt604,SEED
+1962,6,Nondefense,29.21,govt_inv,FAAt604,SEED
+1963,1,Government fixed assets,59.93,govt_inv,FAAt604,SEED
+1963,2,National defense,28.25,govt_inv,FAAt604,SEED
+1963,6,Nondefense,31.68,govt_inv,FAAt604,SEED
+1964,1,Government fixed assets,63.52,govt_inv,FAAt604,SEED
+1964,2,National defense,29.17,govt_inv,FAAt604,SEED
+1964,6,Nondefense,34.35,govt_inv,FAAt604,SEED
+1965,1,Government fixed assets,67.38,govt_inv,FAAt604,SEED
+1965,2,National defense,30.12,govt_inv,FAAt604,SEED
+1965,6,Nondefense,37.25,govt_inv,FAAt604,SEED
+1966,1,Government fixed assets,70.92,govt_inv,FAAt604,SEED
+1966,2,National defense,29.77,govt_inv,FAAt604,SEED
+1966,6,Nondefense,41.15,govt_inv,FAAt604,SEED
+1967,1,Government fixed assets,75.32,govt_inv,FAAt604,SEED
+1967,2,National defense,30.6,govt_inv,FAAt604,SEED
+1967,6,Nondefense,44.71,govt_inv,FAAt604,SEED
+1968,1,Government fixed assets,80.05,govt_inv,FAAt604,SEED
+1968,2,National defense,31.46,govt_inv,FAAt604,SEED
+1968,6,Nondefense,48.59,govt_inv,FAAt604,SEED
+1969,1,Government fixed assets,85.14,govt_inv,FAAt604,SEED
+1969,2,National defense,32.34,govt_inv,FAAt604,SEED
+1969,6,Nondefense,52.8,govt_inv,FAAt604,SEED
+1970,1,Government fixed assets,90.62,govt_inv,FAAt604,SEED
+1970,2,National defense,33.25,govt_inv,FAAt604,SEED
+1970,6,Nondefense,57.37,govt_inv,FAAt604,SEED
+1971,1,Government fixed assets,114.15,govt_inv,FAAt604,SEED
+1971,2,National defense,38.71,govt_inv,FAAt604,SEED
+1971,6,Nondefense,75.44,govt_inv,FAAt604,SEED
+1972,1,Government fixed assets,124.21,govt_inv,FAAt604,SEED
+1972,2,National defense,40.32,govt_inv,FAAt604,SEED
+1972,6,Nondefense,83.89,govt_inv,FAAt604,SEED
+1973,1,Government fixed assets,135.28,govt_inv,FAAt604,SEED
+1973,2,National defense,42.0,govt_inv,FAAt604,SEED
+1973,6,Nondefense,93.28,govt_inv,FAAt604,SEED
+1974,1,Government fixed assets,147.47,govt_inv,FAAt604,SEED
+1974,2,National defense,43.74,govt_inv,FAAt604,SEED
+1974,6,Nondefense,103.72,govt_inv,FAAt604,SEED
+1975,1,Government fixed assets,160.9,govt_inv,FAAt604,SEED
+1975,2,National defense,45.56,govt_inv,FAAt604,SEED
+1975,6,Nondefense,115.34,govt_inv,FAAt604,SEED
+1976,1,Government fixed assets,197.48,govt_inv,FAAt604,SEED
+1976,2,National defense,61.9,govt_inv,FAAt604,SEED
+1976,6,Nondefense,135.58,govt_inv,FAAt604,SEED
+1977,1,Government fixed assets,218.55,govt_inv,FAAt604,SEED
+1977,2,National defense,66.65,govt_inv,FAAt604,SEED
+1977,6,Nondefense,151.9,govt_inv,FAAt604,SEED
+1978,1,Government fixed assets,241.93,govt_inv,FAAt604,SEED
+1978,2,National defense,71.77,govt_inv,FAAt604,SEED
+1978,6,Nondefense,170.17,govt_inv,FAAt604,SEED
+1979,1,Government fixed assets,267.91,govt_inv,FAAt604,SEED
+1979,2,National defense,77.27,govt_inv,FAAt604,SEED
+1979,6,Nondefense,190.64,govt_inv,FAAt604,SEED
+1980,1,Government fixed assets,296.78,govt_inv,FAAt604,SEED
+1980,2,National defense,83.2,govt_inv,FAAt604,SEED
+1980,6,Nondefense,213.57,govt_inv,FAAt604,SEED
+1981,1,Government fixed assets,274.13,govt_inv,FAAt604,SEED
+1981,2,National defense,98.03,govt_inv,FAAt604,SEED
+1981,6,Nondefense,176.09,govt_inv,FAAt604,SEED
+1982,1,Government fixed assets,297.06,govt_inv,FAAt604,SEED
+1982,2,National defense,106.95,govt_inv,FAAt604,SEED
+1982,6,Nondefense,190.11,govt_inv,FAAt604,SEED
+1983,1,Government fixed assets,321.93,govt_inv,FAAt604,SEED
+1983,2,National defense,116.68,govt_inv,FAAt604,SEED
+1983,6,Nondefense,205.24,govt_inv,FAAt604,SEED
+1984,1,Government fixed assets,348.88,govt_inv,FAAt604,SEED
+1984,2,National defense,127.29,govt_inv,FAAt604,SEED
+1984,6,Nondefense,221.58,govt_inv,FAAt604,SEED
+1985,1,Government fixed assets,378.1,govt_inv,FAAt604,SEED
+1985,2,National defense,138.87,govt_inv,FAAt604,SEED
+1985,6,Nondefense,239.22,govt_inv,FAAt604,SEED
+1986,1,Government fixed assets,346.29,govt_inv,FAAt604,SEED
+1986,2,National defense,107.63,govt_inv,FAAt604,SEED
+1986,6,Nondefense,238.66,govt_inv,FAAt604,SEED
+1987,1,Government fixed assets,367.88,govt_inv,FAAt604,SEED
+1987,2,National defense,112.27,govt_inv,FAAt604,SEED
+1987,6,Nondefense,255.6,govt_inv,FAAt604,SEED
+1988,1,Government fixed assets,390.87,govt_inv,FAAt604,SEED
+1988,2,National defense,117.12,govt_inv,FAAt604,SEED
+1988,6,Nondefense,273.75,govt_inv,FAAt604,SEED
+1989,1,Government fixed assets,415.36,govt_inv,FAAt604,SEED
+1989,2,National defense,122.18,govt_inv,FAAt604,SEED
+1989,6,Nondefense,293.18,govt_inv,FAAt604,SEED
+1990,1,Government fixed assets,441.45,govt_inv,FAAt604,SEED
+1990,2,National defense,127.45,govt_inv,FAAt604,SEED
+1990,6,Nondefense,314.0,govt_inv,FAAt604,SEED
+1991,1,Government fixed assets,291.42,govt_inv,FAAt604,SEED
+1991,2,National defense,49.57,govt_inv,FAAt604,SEED
+1991,6,Nondefense,241.85,govt_inv,FAAt604,SEED
+1992,1,Government fixed assets,299.96,govt_inv,FAAt604,SEED
+1992,2,National defense,48.07,govt_inv,FAAt604,SEED
+1992,6,Nondefense,251.9,govt_inv,FAAt604,SEED
+1993,1,Government fixed assets,308.97,govt_inv,FAAt604,SEED
+1993,2,National defense,46.61,govt_inv,FAAt604,SEED
+1993,6,Nondefense,262.37,govt_inv,FAAt604,SEED
+1994,1,Government fixed assets,318.46,govt_inv,FAAt604,SEED
+1994,2,National defense,45.19,govt_inv,FAAt604,SEED
+1994,6,Nondefense,273.27,govt_inv,FAAt604,SEED
+1995,1,Government fixed assets,328.45,govt_inv,FAAt604,SEED
+1995,2,National defense,43.82,govt_inv,FAAt604,SEED
+1995,6,Nondefense,284.63,govt_inv,FAAt604,SEED
+1996,1,Government fixed assets,347.14,govt_inv,FAAt604,SEED
+1996,2,National defense,60.95,govt_inv,FAAt604,SEED
+1996,6,Nondefense,286.19,govt_inv,FAAt604,SEED
+1997,1,Government fixed assets,357.6,govt_inv,FAAt604,SEED
+1997,2,National defense,60.26,govt_inv,FAAt604,SEED
+1997,6,Nondefense,297.34,govt_inv,FAAt604,SEED
+1998,1,Government fixed assets,368.49,govt_inv,FAAt604,SEED
+1998,2,National defense,59.57,govt_inv,FAAt604,SEED
+1998,6,Nondefense,308.92,govt_inv,FAAt604,SEED
+1999,1,Government fixed assets,379.85,govt_inv,FAAt604,SEED
+1999,2,National defense,58.9,govt_inv,FAAt604,SEED
+1999,6,Nondefense,320.95,govt_inv,FAAt604,SEED
+2000,1,Government fixed assets,391.68,govt_inv,FAAt604,SEED
+2000,2,National defense,58.23,govt_inv,FAAt604,SEED
+2000,6,Nondefense,333.45,govt_inv,FAAt604,SEED
+2001,1,Government fixed assets,485.25,govt_inv,FAAt604,SEED
+2001,2,National defense,98.33,govt_inv,FAAt604,SEED
+2001,6,Nondefense,386.92,govt_inv,FAAt604,SEED
+2002,1,Government fixed assets,506.86,govt_inv,FAAt604,SEED
+2002,2,National defense,101.58,govt_inv,FAAt604,SEED
+2002,6,Nondefense,405.28,govt_inv,FAAt604,SEED
+2003,1,Government fixed assets,529.44,govt_inv,FAAt604,SEED
+2003,2,National defense,104.93,govt_inv,FAAt604,SEED
+2003,6,Nondefense,424.51,govt_inv,FAAt604,SEED
+2004,1,Government fixed assets,553.05,govt_inv,FAAt604,SEED
+2004,2,National defense,108.4,govt_inv,FAAt604,SEED
+2004,6,Nondefense,444.65,govt_inv,FAAt604,SEED
+2005,1,Government fixed assets,577.73,govt_inv,FAAt604,SEED
+2005,2,National defense,111.98,govt_inv,FAAt604,SEED
+2005,6,Nondefense,465.75,govt_inv,FAAt604,SEED
+2006,1,Government fixed assets,606.48,govt_inv,FAAt604,SEED
+2006,2,National defense,138.18,govt_inv,FAAt604,SEED
+2006,6,Nondefense,468.29,govt_inv,FAAt604,SEED
+2007,1,Government fixed assets,634.62,govt_inv,FAAt604,SEED
+2007,2,National defense,145.63,govt_inv,FAAt604,SEED
+2007,6,Nondefense,488.99,govt_inv,FAAt604,SEED
+2008,1,Government fixed assets,664.07,govt_inv,FAAt604,SEED
+2008,2,National defense,153.47,govt_inv,FAAt604,SEED
+2008,6,Nondefense,510.6,govt_inv,FAAt604,SEED
+2009,1,Government fixed assets,694.9,govt_inv,FAAt604,SEED
+2009,2,National defense,161.74,govt_inv,FAAt604,SEED
+2009,6,Nondefense,533.16,govt_inv,FAAt604,SEED
+2010,1,Government fixed assets,727.18,govt_inv,FAAt604,SEED
+2010,2,National defense,170.46,govt_inv,FAAt604,SEED
+2010,6,Nondefense,556.72,govt_inv,FAAt604,SEED
+2011,1,Government fixed assets,628.5,govt_inv,FAAt604,SEED
+2011,2,National defense,124.96,govt_inv,FAAt604,SEED
+2011,6,Nondefense,503.54,govt_inv,FAAt604,SEED
+2012,1,Government fixed assets,647.36,govt_inv,FAAt604,SEED
+2012,2,National defense,126.83,govt_inv,FAAt604,SEED
+2012,6,Nondefense,520.53,govt_inv,FAAt604,SEED
+2013,1,Government fixed assets,666.83,govt_inv,FAAt604,SEED
+2013,2,National defense,128.72,govt_inv,FAAt604,SEED
+2013,6,Nondefense,538.1,govt_inv,FAAt604,SEED
+2014,1,Government fixed assets,686.91,govt_inv,FAAt604,SEED
+2014,2,National defense,130.65,govt_inv,FAAt604,SEED
+2014,6,Nondefense,556.27,govt_inv,FAAt604,SEED
+2015,1,Government fixed assets,707.64,govt_inv,FAAt604,SEED
+2015,2,National defense,132.6,govt_inv,FAAt604,SEED
+2015,6,Nondefense,575.04,govt_inv,FAAt604,SEED
+2016,1,Government fixed assets,817.65,govt_inv,FAAt604,SEED
+2016,2,National defense,165.07,govt_inv,FAAt604,SEED
+2016,6,Nondefense,652.58,govt_inv,FAAt604,SEED
+2017,1,Government fixed assets,849.79,govt_inv,FAAt604,SEED
+2017,2,National defense,170.86,govt_inv,FAAt604,SEED
+2017,6,Nondefense,678.92,govt_inv,FAAt604,SEED
+2018,1,Government fixed assets,939.91,govt_inv,FAAt604,SEED
+2018,2,National defense,189.02,govt_inv,FAAt604,SEED
+2018,6,Nondefense,750.89,govt_inv,FAAt604,SEED
+2019,1,Government fixed assets,981.78,govt_inv,FAAt604,SEED
+2019,2,National defense,197.07,govt_inv,FAAt604,SEED
+2019,6,Nondefense,784.71,govt_inv,FAAt604,SEED
+2020,1,Government fixed assets,1025.53,govt_inv,FAAt604,SEED
+2020,2,National defense,205.47,govt_inv,FAAt604,SEED
+2020,6,Nondefense,820.06,govt_inv,FAAt604,SEED
+2021,1,Government fixed assets,1347.43,govt_inv,FAAt604,SEED
+2021,2,National defense,238.2,govt_inv,FAAt604,SEED
+2021,6,Nondefense,1109.22,govt_inv,FAAt604,SEED
+2022,1,Government fixed assets,1436.4,govt_inv,FAAt604,SEED
+2022,2,National defense,251.47,govt_inv,FAAt604,SEED
+2022,6,Nondefense,1184.93,govt_inv,FAAt604,SEED
+2023,1,Government fixed assets,1531.27,govt_inv,FAAt604,SEED
+2023,2,National defense,265.46,govt_inv,FAAt604,SEED
+2023,6,Nondefense,1265.8,govt_inv,FAAt604,SEED

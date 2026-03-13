@@ -1,0 +1,856 @@
+year,line_number,line_desc,value,table_label,table_name,source
+1929,1,Government fixed assets,63.0,govt_net_cc,FAAt601,SEED
+1929,2,National defense,8.0,govt_net_cc,FAAt601,SEED
+1929,3,National defense: Structures,2.8,govt_net_cc,FAAt601,SEED
+1929,4,National defense: Equipment,4.0,govt_net_cc,FAAt601,SEED
+1929,5,National defense: IP products,1.2,govt_net_cc,FAAt601,SEED
+1929,6,Nondefense,55.0,govt_net_cc,FAAt601,SEED
+1929,7,Nondefense: Structures,41.25,govt_net_cc,FAAt601,SEED
+1929,8,Nondefense: Equipment,8.25,govt_net_cc,FAAt601,SEED
+1929,9,Nondefense: IP products,5.5,govt_net_cc,FAAt601,SEED
+1930,1,Government fixed assets,63.91,govt_net_cc,FAAt601,SEED
+1930,2,National defense,8.47,govt_net_cc,FAAt601,SEED
+1930,3,National defense: Structures,2.96,govt_net_cc,FAAt601,SEED
+1930,4,National defense: Equipment,4.24,govt_net_cc,FAAt601,SEED
+1930,5,National defense: IP products,1.27,govt_net_cc,FAAt601,SEED
+1930,6,Nondefense,55.44,govt_net_cc,FAAt601,SEED
+1930,7,Nondefense: Structures,41.58,govt_net_cc,FAAt601,SEED
+1930,8,Nondefense: Equipment,8.32,govt_net_cc,FAAt601,SEED
+1930,9,Nondefense: IP products,5.54,govt_net_cc,FAAt601,SEED
+1931,1,Government fixed assets,64.85,govt_net_cc,FAAt601,SEED
+1931,2,National defense,8.97,govt_net_cc,FAAt601,SEED
+1931,3,National defense: Structures,3.14,govt_net_cc,FAAt601,SEED
+1931,4,National defense: Equipment,4.48,govt_net_cc,FAAt601,SEED
+1931,5,National defense: IP products,1.35,govt_net_cc,FAAt601,SEED
+1931,6,Nondefense,55.88,govt_net_cc,FAAt601,SEED
+1931,7,Nondefense: Structures,41.91,govt_net_cc,FAAt601,SEED
+1931,8,Nondefense: Equipment,8.38,govt_net_cc,FAAt601,SEED
+1931,9,Nondefense: IP products,5.59,govt_net_cc,FAAt601,SEED
+1932,1,Government fixed assets,65.82,govt_net_cc,FAAt601,SEED
+1932,2,National defense,9.5,govt_net_cc,FAAt601,SEED
+1932,3,National defense: Structures,3.32,govt_net_cc,FAAt601,SEED
+1932,4,National defense: Equipment,4.75,govt_net_cc,FAAt601,SEED
+1932,5,National defense: IP products,1.42,govt_net_cc,FAAt601,SEED
+1932,6,Nondefense,56.32,govt_net_cc,FAAt601,SEED
+1932,7,Nondefense: Structures,42.24,govt_net_cc,FAAt601,SEED
+1932,8,Nondefense: Equipment,8.45,govt_net_cc,FAAt601,SEED
+1932,9,Nondefense: IP products,5.63,govt_net_cc,FAAt601,SEED
+1933,1,Government fixed assets,66.82,govt_net_cc,FAAt601,SEED
+1933,2,National defense,10.05,govt_net_cc,FAAt601,SEED
+1933,3,National defense: Structures,3.52,govt_net_cc,FAAt601,SEED
+1933,4,National defense: Equipment,5.03,govt_net_cc,FAAt601,SEED
+1933,5,National defense: IP products,1.51,govt_net_cc,FAAt601,SEED
+1933,6,Nondefense,56.77,govt_net_cc,FAAt601,SEED
+1933,7,Nondefense: Structures,42.58,govt_net_cc,FAAt601,SEED
+1933,8,Nondefense: Equipment,8.52,govt_net_cc,FAAt601,SEED
+1933,9,Nondefense: IP products,5.68,govt_net_cc,FAAt601,SEED
+1934,1,Government fixed assets,67.86,govt_net_cc,FAAt601,SEED
+1934,2,National defense,10.65,govt_net_cc,FAAt601,SEED
+1934,3,National defense: Structures,3.73,govt_net_cc,FAAt601,SEED
+1934,4,National defense: Equipment,5.32,govt_net_cc,FAAt601,SEED
+1934,5,National defense: IP products,1.6,govt_net_cc,FAAt601,SEED
+1934,6,Nondefense,57.22,govt_net_cc,FAAt601,SEED
+1934,7,Nondefense: Structures,42.91,govt_net_cc,FAAt601,SEED
+1934,8,Nondefense: Equipment,8.58,govt_net_cc,FAAt601,SEED
+1934,9,Nondefense: IP products,5.72,govt_net_cc,FAAt601,SEED
+1935,1,Government fixed assets,68.95,govt_net_cc,FAAt601,SEED
+1935,2,National defense,11.27,govt_net_cc,FAAt601,SEED
+1935,3,National defense: Structures,3.95,govt_net_cc,FAAt601,SEED
+1935,4,National defense: Equipment,5.64,govt_net_cc,FAAt601,SEED
+1935,5,National defense: IP products,1.69,govt_net_cc,FAAt601,SEED
+1935,6,Nondefense,57.67,govt_net_cc,FAAt601,SEED
+1935,7,Nondefense: Structures,43.25,govt_net_cc,FAAt601,SEED
+1935,8,Nondefense: Equipment,8.65,govt_net_cc,FAAt601,SEED
+1935,9,Nondefense: IP products,5.77,govt_net_cc,FAAt601,SEED
+1936,1,Government fixed assets,70.07,govt_net_cc,FAAt601,SEED
+1936,2,National defense,11.93,govt_net_cc,FAAt601,SEED
+1936,3,National defense: Structures,4.18,govt_net_cc,FAAt601,SEED
+1936,4,National defense: Equipment,5.97,govt_net_cc,FAAt601,SEED
+1936,5,National defense: IP products,1.79,govt_net_cc,FAAt601,SEED
+1936,6,Nondefense,58.13,govt_net_cc,FAAt601,SEED
+1936,7,Nondefense: Structures,43.6,govt_net_cc,FAAt601,SEED
+1936,8,Nondefense: Equipment,8.72,govt_net_cc,FAAt601,SEED
+1936,9,Nondefense: IP products,5.81,govt_net_cc,FAAt601,SEED
+1937,1,Government fixed assets,71.23,govt_net_cc,FAAt601,SEED
+1937,2,National defense,12.64,govt_net_cc,FAAt601,SEED
+1937,3,National defense: Structures,4.42,govt_net_cc,FAAt601,SEED
+1937,4,National defense: Equipment,6.32,govt_net_cc,FAAt601,SEED
+1937,5,National defense: IP products,1.9,govt_net_cc,FAAt601,SEED
+1937,6,Nondefense,58.59,govt_net_cc,FAAt601,SEED
+1937,7,Nondefense: Structures,43.94,govt_net_cc,FAAt601,SEED
+1937,8,Nondefense: Equipment,8.79,govt_net_cc,FAAt601,SEED
+1937,9,Nondefense: IP products,5.86,govt_net_cc,FAAt601,SEED
+1938,1,Government fixed assets,72.44,govt_net_cc,FAAt601,SEED
+1938,2,National defense,13.38,govt_net_cc,FAAt601,SEED
+1938,3,National defense: Structures,4.68,govt_net_cc,FAAt601,SEED
+1938,4,National defense: Equipment,6.69,govt_net_cc,FAAt601,SEED
+1938,5,National defense: IP products,2.01,govt_net_cc,FAAt601,SEED
+1938,6,Nondefense,59.06,govt_net_cc,FAAt601,SEED
+1938,7,Nondefense: Structures,44.29,govt_net_cc,FAAt601,SEED
+1938,8,Nondefense: Equipment,8.86,govt_net_cc,FAAt601,SEED
+1938,9,Nondefense: IP products,5.91,govt_net_cc,FAAt601,SEED
+1939,1,Government fixed assets,73.69,govt_net_cc,FAAt601,SEED
+1939,2,National defense,14.17,govt_net_cc,FAAt601,SEED
+1939,3,National defense: Structures,4.96,govt_net_cc,FAAt601,SEED
+1939,4,National defense: Equipment,7.08,govt_net_cc,FAAt601,SEED
+1939,5,National defense: IP products,2.13,govt_net_cc,FAAt601,SEED
+1939,6,Nondefense,59.53,govt_net_cc,FAAt601,SEED
+1939,7,Nondefense: Structures,44.65,govt_net_cc,FAAt601,SEED
+1939,8,Nondefense: Equipment,8.93,govt_net_cc,FAAt601,SEED
+1939,9,Nondefense: IP products,5.95,govt_net_cc,FAAt601,SEED
+1940,1,Government fixed assets,75.0,govt_net_cc,FAAt601,SEED
+1940,2,National defense,15.0,govt_net_cc,FAAt601,SEED
+1940,3,National defense: Structures,5.25,govt_net_cc,FAAt601,SEED
+1940,4,National defense: Equipment,7.5,govt_net_cc,FAAt601,SEED
+1940,5,National defense: IP products,2.25,govt_net_cc,FAAt601,SEED
+1940,6,Nondefense,60.0,govt_net_cc,FAAt601,SEED
+1940,7,Nondefense: Structures,45.0,govt_net_cc,FAAt601,SEED
+1940,8,Nondefense: Equipment,9.0,govt_net_cc,FAAt601,SEED
+1940,9,Nondefense: IP products,6.0,govt_net_cc,FAAt601,SEED
+1941,1,Government fixed assets,83.7,govt_net_cc,FAAt601,SEED
+1941,2,National defense,22.74,govt_net_cc,FAAt601,SEED
+1941,3,National defense: Structures,7.96,govt_net_cc,FAAt601,SEED
+1941,4,National defense: Equipment,11.37,govt_net_cc,FAAt601,SEED
+1941,5,National defense: IP products,3.41,govt_net_cc,FAAt601,SEED
+1941,6,Nondefense,60.97,govt_net_cc,FAAt601,SEED
+1941,7,Nondefense: Structures,45.73,govt_net_cc,FAAt601,SEED
+1941,8,Nondefense: Equipment,9.15,govt_net_cc,FAAt601,SEED
+1941,9,Nondefense: IP products,6.1,govt_net_cc,FAAt601,SEED
+1942,1,Government fixed assets,96.41,govt_net_cc,FAAt601,SEED
+1942,2,National defense,34.46,govt_net_cc,FAAt601,SEED
+1942,3,National defense: Structures,12.06,govt_net_cc,FAAt601,SEED
+1942,4,National defense: Equipment,17.23,govt_net_cc,FAAt601,SEED
+1942,5,National defense: IP products,5.17,govt_net_cc,FAAt601,SEED
+1942,6,Nondefense,61.95,govt_net_cc,FAAt601,SEED
+1942,7,Nondefense: Structures,46.46,govt_net_cc,FAAt601,SEED
+1942,8,Nondefense: Equipment,9.29,govt_net_cc,FAAt601,SEED
+1942,9,Nondefense: IP products,6.2,govt_net_cc,FAAt601,SEED
+1943,1,Government fixed assets,115.18,govt_net_cc,FAAt601,SEED
+1943,2,National defense,52.23,govt_net_cc,FAAt601,SEED
+1943,3,National defense: Structures,18.28,govt_net_cc,FAAt601,SEED
+1943,4,National defense: Equipment,26.12,govt_net_cc,FAAt601,SEED
+1943,5,National defense: IP products,7.83,govt_net_cc,FAAt601,SEED
+1943,6,Nondefense,62.95,govt_net_cc,FAAt601,SEED
+1943,7,Nondefense: Structures,47.21,govt_net_cc,FAAt601,SEED
+1943,8,Nondefense: Equipment,9.44,govt_net_cc,FAAt601,SEED
+1943,9,Nondefense: IP products,6.3,govt_net_cc,FAAt601,SEED
+1944,1,Government fixed assets,143.14,govt_net_cc,FAAt601,SEED
+1944,2,National defense,79.17,govt_net_cc,FAAt601,SEED
+1944,3,National defense: Structures,27.71,govt_net_cc,FAAt601,SEED
+1944,4,National defense: Equipment,39.59,govt_net_cc,FAAt601,SEED
+1944,5,National defense: IP products,11.88,govt_net_cc,FAAt601,SEED
+1944,6,Nondefense,63.97,govt_net_cc,FAAt601,SEED
+1944,7,Nondefense: Structures,47.98,govt_net_cc,FAAt601,SEED
+1944,8,Nondefense: Equipment,9.6,govt_net_cc,FAAt601,SEED
+1944,9,Nondefense: IP products,6.4,govt_net_cc,FAAt601,SEED
+1945,1,Government fixed assets,185.0,govt_net_cc,FAAt601,SEED
+1945,2,National defense,120.0,govt_net_cc,FAAt601,SEED
+1945,3,National defense: Structures,42.0,govt_net_cc,FAAt601,SEED
+1945,4,National defense: Equipment,60.0,govt_net_cc,FAAt601,SEED
+1945,5,National defense: IP products,18.0,govt_net_cc,FAAt601,SEED
+1945,6,Nondefense,65.0,govt_net_cc,FAAt601,SEED
+1945,7,Nondefense: Structures,48.75,govt_net_cc,FAAt601,SEED
+1945,8,Nondefense: Equipment,9.75,govt_net_cc,FAAt601,SEED
+1945,9,Nondefense: IP products,6.5,govt_net_cc,FAAt601,SEED
+1946,1,Government fixed assets,180.02,govt_net_cc,FAAt601,SEED
+1946,2,National defense,110.65,govt_net_cc,FAAt601,SEED
+1946,3,National defense: Structures,38.73,govt_net_cc,FAAt601,SEED
+1946,4,National defense: Equipment,55.33,govt_net_cc,FAAt601,SEED
+1946,5,National defense: IP products,16.6,govt_net_cc,FAAt601,SEED
+1946,6,Nondefense,69.37,govt_net_cc,FAAt601,SEED
+1946,7,Nondefense: Structures,52.03,govt_net_cc,FAAt601,SEED
+1946,8,Nondefense: Equipment,10.41,govt_net_cc,FAAt601,SEED
+1946,9,Nondefense: IP products,6.94,govt_net_cc,FAAt601,SEED
+1947,1,Government fixed assets,176.07,govt_net_cc,FAAt601,SEED
+1947,2,National defense,102.03,govt_net_cc,FAAt601,SEED
+1947,3,National defense: Structures,35.71,govt_net_cc,FAAt601,SEED
+1947,4,National defense: Equipment,51.02,govt_net_cc,FAAt601,SEED
+1947,5,National defense: IP products,15.31,govt_net_cc,FAAt601,SEED
+1947,6,Nondefense,74.04,govt_net_cc,FAAt601,SEED
+1947,7,Nondefense: Structures,55.53,govt_net_cc,FAAt601,SEED
+1947,8,Nondefense: Equipment,11.11,govt_net_cc,FAAt601,SEED
+1947,9,Nondefense: IP products,7.4,govt_net_cc,FAAt601,SEED
+1948,1,Government fixed assets,173.1,govt_net_cc,FAAt601,SEED
+1948,2,National defense,94.09,govt_net_cc,FAAt601,SEED
+1948,3,National defense: Structures,32.93,govt_net_cc,FAAt601,SEED
+1948,4,National defense: Equipment,47.04,govt_net_cc,FAAt601,SEED
+1948,5,National defense: IP products,14.11,govt_net_cc,FAAt601,SEED
+1948,6,Nondefense,79.02,govt_net_cc,FAAt601,SEED
+1948,7,Nondefense: Structures,59.26,govt_net_cc,FAAt601,SEED
+1948,8,Nondefense: Equipment,11.85,govt_net_cc,FAAt601,SEED
+1948,9,Nondefense: IP products,7.9,govt_net_cc,FAAt601,SEED
+1949,1,Government fixed assets,171.09,govt_net_cc,FAAt601,SEED
+1949,2,National defense,86.76,govt_net_cc,FAAt601,SEED
+1949,3,National defense: Structures,30.37,govt_net_cc,FAAt601,SEED
+1949,4,National defense: Equipment,43.38,govt_net_cc,FAAt601,SEED
+1949,5,National defense: IP products,13.01,govt_net_cc,FAAt601,SEED
+1949,6,Nondefense,84.33,govt_net_cc,FAAt601,SEED
+1949,7,Nondefense: Structures,63.25,govt_net_cc,FAAt601,SEED
+1949,8,Nondefense: Equipment,12.65,govt_net_cc,FAAt601,SEED
+1949,9,Nondefense: IP products,8.43,govt_net_cc,FAAt601,SEED
+1950,1,Government fixed assets,170.0,govt_net_cc,FAAt601,SEED
+1950,2,National defense,80.0,govt_net_cc,FAAt601,SEED
+1950,3,National defense: Structures,28.0,govt_net_cc,FAAt601,SEED
+1950,4,National defense: Equipment,40.0,govt_net_cc,FAAt601,SEED
+1950,5,National defense: IP products,12.0,govt_net_cc,FAAt601,SEED
+1950,6,Nondefense,90.0,govt_net_cc,FAAt601,SEED
+1950,7,Nondefense: Structures,67.5,govt_net_cc,FAAt601,SEED
+1950,8,Nondefense: Equipment,13.5,govt_net_cc,FAAt601,SEED
+1950,9,Nondefense: IP products,9.0,govt_net_cc,FAAt601,SEED
+1951,1,Government fixed assets,189.03,govt_net_cc,FAAt601,SEED
+1951,2,National defense,90.72,govt_net_cc,FAAt601,SEED
+1951,3,National defense: Structures,31.75,govt_net_cc,FAAt601,SEED
+1951,4,National defense: Equipment,45.36,govt_net_cc,FAAt601,SEED
+1951,5,National defense: IP products,13.61,govt_net_cc,FAAt601,SEED
+1951,6,Nondefense,98.31,govt_net_cc,FAAt601,SEED
+1951,7,Nondefense: Structures,73.74,govt_net_cc,FAAt601,SEED
+1951,8,Nondefense: Equipment,14.75,govt_net_cc,FAAt601,SEED
+1951,9,Nondefense: IP products,9.83,govt_net_cc,FAAt601,SEED
+1952,1,Government fixed assets,210.27,govt_net_cc,FAAt601,SEED
+1952,2,National defense,102.87,govt_net_cc,FAAt601,SEED
+1952,3,National defense: Structures,36.0,govt_net_cc,FAAt601,SEED
+1952,4,National defense: Equipment,51.44,govt_net_cc,FAAt601,SEED
+1952,5,National defense: IP products,15.43,govt_net_cc,FAAt601,SEED
+1952,6,Nondefense,107.4,govt_net_cc,FAAt601,SEED
+1952,7,Nondefense: Structures,80.55,govt_net_cc,FAAt601,SEED
+1952,8,Nondefense: Equipment,16.11,govt_net_cc,FAAt601,SEED
+1952,9,Nondefense: IP products,10.74,govt_net_cc,FAAt601,SEED
+1953,1,Government fixed assets,233.97,govt_net_cc,FAAt601,SEED
+1953,2,National defense,116.65,govt_net_cc,FAAt601,SEED
+1953,3,National defense: Structures,40.83,govt_net_cc,FAAt601,SEED
+1953,4,National defense: Equipment,58.33,govt_net_cc,FAAt601,SEED
+1953,5,National defense: IP products,17.5,govt_net_cc,FAAt601,SEED
+1953,6,Nondefense,117.32,govt_net_cc,FAAt601,SEED
+1953,7,Nondefense: Structures,87.99,govt_net_cc,FAAt601,SEED
+1953,8,Nondefense: Equipment,17.6,govt_net_cc,FAAt601,SEED
+1953,9,Nondefense: IP products,11.73,govt_net_cc,FAAt601,SEED
+1954,1,Government fixed assets,260.44,govt_net_cc,FAAt601,SEED
+1954,2,National defense,132.28,govt_net_cc,FAAt601,SEED
+1954,3,National defense: Structures,46.3,govt_net_cc,FAAt601,SEED
+1954,4,National defense: Equipment,66.14,govt_net_cc,FAAt601,SEED
+1954,5,National defense: IP products,19.84,govt_net_cc,FAAt601,SEED
+1954,6,Nondefense,128.16,govt_net_cc,FAAt601,SEED
+1954,7,Nondefense: Structures,96.12,govt_net_cc,FAAt601,SEED
+1954,8,Nondefense: Equipment,19.22,govt_net_cc,FAAt601,SEED
+1954,9,Nondefense: IP products,12.82,govt_net_cc,FAAt601,SEED
+1955,1,Government fixed assets,290.0,govt_net_cc,FAAt601,SEED
+1955,2,National defense,150.0,govt_net_cc,FAAt601,SEED
+1955,3,National defense: Structures,52.5,govt_net_cc,FAAt601,SEED
+1955,4,National defense: Equipment,75.0,govt_net_cc,FAAt601,SEED
+1955,5,National defense: IP products,22.5,govt_net_cc,FAAt601,SEED
+1955,6,Nondefense,140.0,govt_net_cc,FAAt601,SEED
+1955,7,Nondefense: Structures,105.0,govt_net_cc,FAAt601,SEED
+1955,8,Nondefense: Equipment,21.0,govt_net_cc,FAAt601,SEED
+1955,9,Nondefense: IP products,14.0,govt_net_cc,FAAt601,SEED
+1956,1,Government fixed assets,316.63,govt_net_cc,FAAt601,SEED
+1956,2,National defense,163.39,govt_net_cc,FAAt601,SEED
+1956,3,National defense: Structures,57.19,govt_net_cc,FAAt601,SEED
+1956,4,National defense: Equipment,81.69,govt_net_cc,FAAt601,SEED
+1956,5,National defense: IP products,24.51,govt_net_cc,FAAt601,SEED
+1956,6,Nondefense,153.25,govt_net_cc,FAAt601,SEED
+1956,7,Nondefense: Structures,114.93,govt_net_cc,FAAt601,SEED
+1956,8,Nondefense: Equipment,22.99,govt_net_cc,FAAt601,SEED
+1956,9,Nondefense: IP products,15.32,govt_net_cc,FAAt601,SEED
+1957,1,Government fixed assets,345.71,govt_net_cc,FAAt601,SEED
+1957,2,National defense,177.97,govt_net_cc,FAAt601,SEED
+1957,3,National defense: Structures,62.29,govt_net_cc,FAAt601,SEED
+1957,4,National defense: Equipment,88.98,govt_net_cc,FAAt601,SEED
+1957,5,National defense: IP products,26.7,govt_net_cc,FAAt601,SEED
+1957,6,Nondefense,167.74,govt_net_cc,FAAt601,SEED
+1957,7,Nondefense: Structures,125.81,govt_net_cc,FAAt601,SEED
+1957,8,Nondefense: Equipment,25.16,govt_net_cc,FAAt601,SEED
+1957,9,Nondefense: IP products,16.77,govt_net_cc,FAAt601,SEED
+1958,1,Government fixed assets,377.47,govt_net_cc,FAAt601,SEED
+1958,2,National defense,193.85,govt_net_cc,FAAt601,SEED
+1958,3,National defense: Structures,67.85,govt_net_cc,FAAt601,SEED
+1958,4,National defense: Equipment,96.93,govt_net_cc,FAAt601,SEED
+1958,5,National defense: IP products,29.08,govt_net_cc,FAAt601,SEED
+1958,6,Nondefense,183.61,govt_net_cc,FAAt601,SEED
+1958,7,Nondefense: Structures,137.71,govt_net_cc,FAAt601,SEED
+1958,8,Nondefense: Equipment,27.54,govt_net_cc,FAAt601,SEED
+1958,9,Nondefense: IP products,18.36,govt_net_cc,FAAt601,SEED
+1959,1,Government fixed assets,412.14,govt_net_cc,FAAt601,SEED
+1959,2,National defense,211.15,govt_net_cc,FAAt601,SEED
+1959,3,National defense: Structures,73.9,govt_net_cc,FAAt601,SEED
+1959,4,National defense: Equipment,105.58,govt_net_cc,FAAt601,SEED
+1959,5,National defense: IP products,31.67,govt_net_cc,FAAt601,SEED
+1959,6,Nondefense,200.99,govt_net_cc,FAAt601,SEED
+1959,7,Nondefense: Structures,150.74,govt_net_cc,FAAt601,SEED
+1959,8,Nondefense: Equipment,30.15,govt_net_cc,FAAt601,SEED
+1959,9,Nondefense: IP products,20.1,govt_net_cc,FAAt601,SEED
+1960,1,Government fixed assets,450.0,govt_net_cc,FAAt601,SEED
+1960,2,National defense,230.0,govt_net_cc,FAAt601,SEED
+1960,3,National defense: Structures,80.5,govt_net_cc,FAAt601,SEED
+1960,4,National defense: Equipment,115.0,govt_net_cc,FAAt601,SEED
+1960,5,National defense: IP products,34.5,govt_net_cc,FAAt601,SEED
+1960,6,Nondefense,220.0,govt_net_cc,FAAt601,SEED
+1960,7,Nondefense: Structures,165.0,govt_net_cc,FAAt601,SEED
+1960,8,Nondefense: Equipment,33.0,govt_net_cc,FAAt601,SEED
+1960,9,Nondefense: IP products,22.0,govt_net_cc,FAAt601,SEED
+1961,1,Government fixed assets,476.08,govt_net_cc,FAAt601,SEED
+1961,2,National defense,237.5,govt_net_cc,FAAt601,SEED
+1961,3,National defense: Structures,83.12,govt_net_cc,FAAt601,SEED
+1961,4,National defense: Equipment,118.75,govt_net_cc,FAAt601,SEED
+1961,5,National defense: IP products,35.62,govt_net_cc,FAAt601,SEED
+1961,6,Nondefense,238.58,govt_net_cc,FAAt601,SEED
+1961,7,Nondefense: Structures,178.94,govt_net_cc,FAAt601,SEED
+1961,8,Nondefense: Equipment,35.79,govt_net_cc,FAAt601,SEED
+1961,9,Nondefense: IP products,23.86,govt_net_cc,FAAt601,SEED
+1962,1,Government fixed assets,503.97,govt_net_cc,FAAt601,SEED
+1962,2,National defense,245.23,govt_net_cc,FAAt601,SEED
+1962,3,National defense: Structures,85.83,govt_net_cc,FAAt601,SEED
+1962,4,National defense: Equipment,122.62,govt_net_cc,FAAt601,SEED
+1962,5,National defense: IP products,36.79,govt_net_cc,FAAt601,SEED
+1962,6,Nondefense,258.74,govt_net_cc,FAAt601,SEED
+1962,7,Nondefense: Structures,194.05,govt_net_cc,FAAt601,SEED
+1962,8,Nondefense: Equipment,38.81,govt_net_cc,FAAt601,SEED
+1962,9,Nondefense: IP products,25.87,govt_net_cc,FAAt601,SEED
+1963,1,Government fixed assets,533.82,govt_net_cc,FAAt601,SEED
+1963,2,National defense,253.23,govt_net_cc,FAAt601,SEED
+1963,3,National defense: Structures,88.63,govt_net_cc,FAAt601,SEED
+1963,4,National defense: Equipment,126.61,govt_net_cc,FAAt601,SEED
+1963,5,National defense: IP products,37.98,govt_net_cc,FAAt601,SEED
+1963,6,Nondefense,280.59,govt_net_cc,FAAt601,SEED
+1963,7,Nondefense: Structures,210.45,govt_net_cc,FAAt601,SEED
+1963,8,Nondefense: Equipment,42.09,govt_net_cc,FAAt601,SEED
+1963,9,Nondefense: IP products,28.06,govt_net_cc,FAAt601,SEED
+1964,1,Government fixed assets,565.77,govt_net_cc,FAAt601,SEED
+1964,2,National defense,261.48,govt_net_cc,FAAt601,SEED
+1964,3,National defense: Structures,91.52,govt_net_cc,FAAt601,SEED
+1964,4,National defense: Equipment,130.74,govt_net_cc,FAAt601,SEED
+1964,5,National defense: IP products,39.22,govt_net_cc,FAAt601,SEED
+1964,6,Nondefense,304.3,govt_net_cc,FAAt601,SEED
+1964,7,Nondefense: Structures,228.22,govt_net_cc,FAAt601,SEED
+1964,8,Nondefense: Equipment,45.64,govt_net_cc,FAAt601,SEED
+1964,9,Nondefense: IP products,30.43,govt_net_cc,FAAt601,SEED
+1965,1,Government fixed assets,600.0,govt_net_cc,FAAt601,SEED
+1965,2,National defense,270.0,govt_net_cc,FAAt601,SEED
+1965,3,National defense: Structures,94.5,govt_net_cc,FAAt601,SEED
+1965,4,National defense: Equipment,135.0,govt_net_cc,FAAt601,SEED
+1965,5,National defense: IP products,40.5,govt_net_cc,FAAt601,SEED
+1965,6,Nondefense,330.0,govt_net_cc,FAAt601,SEED
+1965,7,Nondefense: Structures,247.5,govt_net_cc,FAAt601,SEED
+1965,8,Nondefense: Equipment,49.5,govt_net_cc,FAAt601,SEED
+1965,9,Nondefense: IP products,33.0,govt_net_cc,FAAt601,SEED
+1966,1,Government fixed assets,636.16,govt_net_cc,FAAt601,SEED
+1966,2,National defense,277.56,govt_net_cc,FAAt601,SEED
+1966,3,National defense: Structures,97.15,govt_net_cc,FAAt601,SEED
+1966,4,National defense: Equipment,138.78,govt_net_cc,FAAt601,SEED
+1966,5,National defense: IP products,41.63,govt_net_cc,FAAt601,SEED
+1966,6,Nondefense,358.6,govt_net_cc,FAAt601,SEED
+1966,7,Nondefense: Structures,268.95,govt_net_cc,FAAt601,SEED
+1966,8,Nondefense: Equipment,53.79,govt_net_cc,FAAt601,SEED
+1966,9,Nondefense: IP products,35.86,govt_net_cc,FAAt601,SEED
+1967,1,Government fixed assets,675.01,govt_net_cc,FAAt601,SEED
+1967,2,National defense,285.34,govt_net_cc,FAAt601,SEED
+1967,3,National defense: Structures,99.87,govt_net_cc,FAAt601,SEED
+1967,4,National defense: Equipment,142.67,govt_net_cc,FAAt601,SEED
+1967,5,National defense: IP products,42.8,govt_net_cc,FAAt601,SEED
+1967,6,Nondefense,389.67,govt_net_cc,FAAt601,SEED
+1967,7,Nondefense: Structures,292.25,govt_net_cc,FAAt601,SEED
+1967,8,Nondefense: Equipment,58.45,govt_net_cc,FAAt601,SEED
+1967,9,Nondefense: IP products,38.97,govt_net_cc,FAAt601,SEED
+1968,1,Government fixed assets,716.77,govt_net_cc,FAAt601,SEED
+1968,2,National defense,293.33,govt_net_cc,FAAt601,SEED
+1968,3,National defense: Structures,102.67,govt_net_cc,FAAt601,SEED
+1968,4,National defense: Equipment,146.67,govt_net_cc,FAAt601,SEED
+1968,5,National defense: IP products,44.0,govt_net_cc,FAAt601,SEED
+1968,6,Nondefense,423.44,govt_net_cc,FAAt601,SEED
+1968,7,Nondefense: Structures,317.58,govt_net_cc,FAAt601,SEED
+1968,8,Nondefense: Equipment,63.52,govt_net_cc,FAAt601,SEED
+1968,9,Nondefense: IP products,42.34,govt_net_cc,FAAt601,SEED
+1969,1,Government fixed assets,761.68,govt_net_cc,FAAt601,SEED
+1969,2,National defense,301.55,govt_net_cc,FAAt601,SEED
+1969,3,National defense: Structures,105.54,govt_net_cc,FAAt601,SEED
+1969,4,National defense: Equipment,150.78,govt_net_cc,FAAt601,SEED
+1969,5,National defense: IP products,45.23,govt_net_cc,FAAt601,SEED
+1969,6,Nondefense,460.13,govt_net_cc,FAAt601,SEED
+1969,7,Nondefense: Structures,345.1,govt_net_cc,FAAt601,SEED
+1969,8,Nondefense: Equipment,69.02,govt_net_cc,FAAt601,SEED
+1969,9,Nondefense: IP products,46.01,govt_net_cc,FAAt601,SEED
+1970,1,Government fixed assets,810.0,govt_net_cc,FAAt601,SEED
+1970,2,National defense,310.0,govt_net_cc,FAAt601,SEED
+1970,3,National defense: Structures,108.5,govt_net_cc,FAAt601,SEED
+1970,4,National defense: Equipment,155.0,govt_net_cc,FAAt601,SEED
+1970,5,National defense: IP products,46.5,govt_net_cc,FAAt601,SEED
+1970,6,Nondefense,500.0,govt_net_cc,FAAt601,SEED
+1970,7,Nondefense: Structures,375.0,govt_net_cc,FAAt601,SEED
+1970,8,Nondefense: Equipment,75.0,govt_net_cc,FAAt601,SEED
+1970,9,Nondefense: IP products,50.0,govt_net_cc,FAAt601,SEED
+1971,1,Government fixed assets,878.86,govt_net_cc,FAAt601,SEED
+1971,2,National defense,322.88,govt_net_cc,FAAt601,SEED
+1971,3,National defense: Structures,113.01,govt_net_cc,FAAt601,SEED
+1971,4,National defense: Equipment,161.44,govt_net_cc,FAAt601,SEED
+1971,5,National defense: IP products,48.43,govt_net_cc,FAAt601,SEED
+1971,6,Nondefense,555.98,govt_net_cc,FAAt601,SEED
+1971,7,Nondefense: Structures,416.99,govt_net_cc,FAAt601,SEED
+1971,8,Nondefense: Equipment,83.4,govt_net_cc,FAAt601,SEED
+1971,9,Nondefense: IP products,55.6,govt_net_cc,FAAt601,SEED
+1972,1,Government fixed assets,954.53,govt_net_cc,FAAt601,SEED
+1972,2,National defense,336.3,govt_net_cc,FAAt601,SEED
+1972,3,National defense: Structures,117.71,govt_net_cc,FAAt601,SEED
+1972,4,National defense: Equipment,168.15,govt_net_cc,FAAt601,SEED
+1972,5,National defense: IP products,50.45,govt_net_cc,FAAt601,SEED
+1972,6,Nondefense,618.23,govt_net_cc,FAAt601,SEED
+1972,7,Nondefense: Structures,463.67,govt_net_cc,FAAt601,SEED
+1972,8,Nondefense: Equipment,92.73,govt_net_cc,FAAt601,SEED
+1972,9,Nondefense: IP products,61.82,govt_net_cc,FAAt601,SEED
+1973,1,Government fixed assets,1037.73,govt_net_cc,FAAt601,SEED
+1973,2,National defense,350.28,govt_net_cc,FAAt601,SEED
+1973,3,National defense: Structures,122.6,govt_net_cc,FAAt601,SEED
+1973,4,National defense: Equipment,175.14,govt_net_cc,FAAt601,SEED
+1973,5,National defense: IP products,52.54,govt_net_cc,FAAt601,SEED
+1973,6,Nondefense,687.45,govt_net_cc,FAAt601,SEED
+1973,7,Nondefense: Structures,515.59,govt_net_cc,FAAt601,SEED
+1973,8,Nondefense: Equipment,103.12,govt_net_cc,FAAt601,SEED
+1973,9,Nondefense: IP products,68.74,govt_net_cc,FAAt601,SEED
+1974,1,Government fixed assets,1129.25,govt_net_cc,FAAt601,SEED
+1974,2,National defense,364.84,govt_net_cc,FAAt601,SEED
+1974,3,National defense: Structures,127.69,govt_net_cc,FAAt601,SEED
+1974,4,National defense: Equipment,182.42,govt_net_cc,FAAt601,SEED
+1974,5,National defense: IP products,54.73,govt_net_cc,FAAt601,SEED
+1974,6,Nondefense,764.41,govt_net_cc,FAAt601,SEED
+1974,7,Nondefense: Structures,573.31,govt_net_cc,FAAt601,SEED
+1974,8,Nondefense: Equipment,114.66,govt_net_cc,FAAt601,SEED
+1974,9,Nondefense: IP products,76.44,govt_net_cc,FAAt601,SEED
+1975,1,Government fixed assets,1230.0,govt_net_cc,FAAt601,SEED
+1975,2,National defense,380.0,govt_net_cc,FAAt601,SEED
+1975,3,National defense: Structures,133.0,govt_net_cc,FAAt601,SEED
+1975,4,National defense: Equipment,190.0,govt_net_cc,FAAt601,SEED
+1975,5,National defense: IP products,57.0,govt_net_cc,FAAt601,SEED
+1975,6,Nondefense,850.0,govt_net_cc,FAAt601,SEED
+1975,7,Nondefense: Structures,637.5,govt_net_cc,FAAt601,SEED
+1975,8,Nondefense: Equipment,127.5,govt_net_cc,FAAt601,SEED
+1975,9,Nondefense: IP products,85.0,govt_net_cc,FAAt601,SEED
+1976,1,Government fixed assets,1361.42,govt_net_cc,FAAt601,SEED
+1976,2,National defense,409.17,govt_net_cc,FAAt601,SEED
+1976,3,National defense: Structures,143.21,govt_net_cc,FAAt601,SEED
+1976,4,National defense: Equipment,204.58,govt_net_cc,FAAt601,SEED
+1976,5,National defense: IP products,61.37,govt_net_cc,FAAt601,SEED
+1976,6,Nondefense,952.26,govt_net_cc,FAAt601,SEED
+1976,7,Nondefense: Structures,714.19,govt_net_cc,FAAt601,SEED
+1976,8,Nondefense: Equipment,142.84,govt_net_cc,FAAt601,SEED
+1976,9,Nondefense: IP products,95.23,govt_net_cc,FAAt601,SEED
+1977,1,Government fixed assets,1507.38,govt_net_cc,FAAt601,SEED
+1977,2,National defense,440.57,govt_net_cc,FAAt601,SEED
+1977,3,National defense: Structures,154.2,govt_net_cc,FAAt601,SEED
+1977,4,National defense: Equipment,220.29,govt_net_cc,FAAt601,SEED
+1977,5,National defense: IP products,66.09,govt_net_cc,FAAt601,SEED
+1977,6,Nondefense,1066.81,govt_net_cc,FAAt601,SEED
+1977,7,Nondefense: Structures,800.11,govt_net_cc,FAAt601,SEED
+1977,8,Nondefense: Equipment,160.02,govt_net_cc,FAAt601,SEED
+1977,9,Nondefense: IP products,106.68,govt_net_cc,FAAt601,SEED
+1978,1,Government fixed assets,1669.53,govt_net_cc,FAAt601,SEED
+1978,2,National defense,474.39,govt_net_cc,FAAt601,SEED
+1978,3,National defense: Structures,166.03,govt_net_cc,FAAt601,SEED
+1978,4,National defense: Equipment,237.19,govt_net_cc,FAAt601,SEED
+1978,5,National defense: IP products,71.16,govt_net_cc,FAAt601,SEED
+1978,6,Nondefense,1195.15,govt_net_cc,FAAt601,SEED
+1978,7,Nondefense: Structures,896.36,govt_net_cc,FAAt601,SEED
+1978,8,Nondefense: Equipment,179.27,govt_net_cc,FAAt601,SEED
+1978,9,Nondefense: IP products,119.51,govt_net_cc,FAAt601,SEED
+1979,1,Government fixed assets,1849.72,govt_net_cc,FAAt601,SEED
+1979,2,National defense,510.8,govt_net_cc,FAAt601,SEED
+1979,3,National defense: Structures,178.78,govt_net_cc,FAAt601,SEED
+1979,4,National defense: Equipment,255.4,govt_net_cc,FAAt601,SEED
+1979,5,National defense: IP products,76.62,govt_net_cc,FAAt601,SEED
+1979,6,Nondefense,1338.93,govt_net_cc,FAAt601,SEED
+1979,7,Nondefense: Structures,1004.2,govt_net_cc,FAAt601,SEED
+1979,8,Nondefense: Equipment,200.84,govt_net_cc,FAAt601,SEED
+1979,9,Nondefense: IP products,133.89,govt_net_cc,FAAt601,SEED
+1980,1,Government fixed assets,2050.0,govt_net_cc,FAAt601,SEED
+1980,2,National defense,550.0,govt_net_cc,FAAt601,SEED
+1980,3,National defense: Structures,192.5,govt_net_cc,FAAt601,SEED
+1980,4,National defense: Equipment,275.0,govt_net_cc,FAAt601,SEED
+1980,5,National defense: IP products,82.5,govt_net_cc,FAAt601,SEED
+1980,6,Nondefense,1500.0,govt_net_cc,FAAt601,SEED
+1980,7,Nondefense: Structures,1125.0,govt_net_cc,FAAt601,SEED
+1980,8,Nondefense: Equipment,225.0,govt_net_cc,FAAt601,SEED
+1980,9,Nondefense: IP products,150.0,govt_net_cc,FAAt601,SEED
+1981,1,Government fixed assets,2219.44,govt_net_cc,FAAt601,SEED
+1981,2,National defense,600.03,govt_net_cc,FAAt601,SEED
+1981,3,National defense: Structures,210.01,govt_net_cc,FAAt601,SEED
+1981,4,National defense: Equipment,300.02,govt_net_cc,FAAt601,SEED
+1981,5,National defense: IP products,90.0,govt_net_cc,FAAt601,SEED
+1981,6,Nondefense,1619.41,govt_net_cc,FAAt601,SEED
+1981,7,Nondefense: Structures,1214.56,govt_net_cc,FAAt601,SEED
+1981,8,Nondefense: Equipment,242.91,govt_net_cc,FAAt601,SEED
+1981,9,Nondefense: IP products,161.94,govt_net_cc,FAAt601,SEED
+1982,1,Government fixed assets,2402.95,govt_net_cc,FAAt601,SEED
+1982,2,National defense,654.61,govt_net_cc,FAAt601,SEED
+1982,3,National defense: Structures,229.11,govt_net_cc,FAAt601,SEED
+1982,4,National defense: Equipment,327.31,govt_net_cc,FAAt601,SEED
+1982,5,National defense: IP products,98.19,govt_net_cc,FAAt601,SEED
+1982,6,Nondefense,1748.33,govt_net_cc,FAAt601,SEED
+1982,7,Nondefense: Structures,1311.25,govt_net_cc,FAAt601,SEED
+1982,8,Nondefense: Equipment,262.25,govt_net_cc,FAAt601,SEED
+1982,9,Nondefense: IP products,174.83,govt_net_cc,FAAt601,SEED
+1983,1,Government fixed assets,2601.68,govt_net_cc,FAAt601,SEED
+1983,2,National defense,714.16,govt_net_cc,FAAt601,SEED
+1983,3,National defense: Structures,249.96,govt_net_cc,FAAt601,SEED
+1983,4,National defense: Equipment,357.08,govt_net_cc,FAAt601,SEED
+1983,5,National defense: IP products,107.12,govt_net_cc,FAAt601,SEED
+1983,6,Nondefense,1887.51,govt_net_cc,FAAt601,SEED
+1983,7,Nondefense: Structures,1415.64,govt_net_cc,FAAt601,SEED
+1983,8,Nondefense: Equipment,283.13,govt_net_cc,FAAt601,SEED
+1983,9,Nondefense: IP products,188.75,govt_net_cc,FAAt601,SEED
+1984,1,Government fixed assets,2816.9,govt_net_cc,FAAt601,SEED
+1984,2,National defense,779.13,govt_net_cc,FAAt601,SEED
+1984,3,National defense: Structures,272.69,govt_net_cc,FAAt601,SEED
+1984,4,National defense: Equipment,389.56,govt_net_cc,FAAt601,SEED
+1984,5,National defense: IP products,116.87,govt_net_cc,FAAt601,SEED
+1984,6,Nondefense,2037.78,govt_net_cc,FAAt601,SEED
+1984,7,Nondefense: Structures,1528.33,govt_net_cc,FAAt601,SEED
+1984,8,Nondefense: Equipment,305.67,govt_net_cc,FAAt601,SEED
+1984,9,Nondefense: IP products,203.78,govt_net_cc,FAAt601,SEED
+1985,1,Government fixed assets,3050.0,govt_net_cc,FAAt601,SEED
+1985,2,National defense,850.0,govt_net_cc,FAAt601,SEED
+1985,3,National defense: Structures,297.5,govt_net_cc,FAAt601,SEED
+1985,4,National defense: Equipment,425.0,govt_net_cc,FAAt601,SEED
+1985,5,National defense: IP products,127.5,govt_net_cc,FAAt601,SEED
+1985,6,Nondefense,2200.0,govt_net_cc,FAAt601,SEED
+1985,7,Nondefense: Structures,1650.0,govt_net_cc,FAAt601,SEED
+1985,8,Nondefense: Equipment,330.0,govt_net_cc,FAAt601,SEED
+1985,9,Nondefense: IP products,220.0,govt_net_cc,FAAt601,SEED
+1986,1,Government fixed assets,3242.88,govt_net_cc,FAAt601,SEED
+1986,2,National defense,886.69,govt_net_cc,FAAt601,SEED
+1986,3,National defense: Structures,310.34,govt_net_cc,FAAt601,SEED
+1986,4,National defense: Equipment,443.35,govt_net_cc,FAAt601,SEED
+1986,5,National defense: IP products,133.0,govt_net_cc,FAAt601,SEED
+1986,6,Nondefense,2356.19,govt_net_cc,FAAt601,SEED
+1986,7,Nondefense: Structures,1767.14,govt_net_cc,FAAt601,SEED
+1986,8,Nondefense: Equipment,353.43,govt_net_cc,FAAt601,SEED
+1986,9,Nondefense: IP products,235.62,govt_net_cc,FAAt601,SEED
+1987,1,Government fixed assets,3448.44,govt_net_cc,FAAt601,SEED
+1987,2,National defense,924.97,govt_net_cc,FAAt601,SEED
+1987,3,National defense: Structures,323.74,govt_net_cc,FAAt601,SEED
+1987,4,National defense: Equipment,462.48,govt_net_cc,FAAt601,SEED
+1987,5,National defense: IP products,138.75,govt_net_cc,FAAt601,SEED
+1987,6,Nondefense,2523.47,govt_net_cc,FAAt601,SEED
+1987,7,Nondefense: Structures,1892.6,govt_net_cc,FAAt601,SEED
+1987,8,Nondefense: Equipment,378.52,govt_net_cc,FAAt601,SEED
+1987,9,Nondefense: IP products,252.35,govt_net_cc,FAAt601,SEED
+1988,1,Government fixed assets,3667.52,govt_net_cc,FAAt601,SEED
+1988,2,National defense,964.9,govt_net_cc,FAAt601,SEED
+1988,3,National defense: Structures,337.71,govt_net_cc,FAAt601,SEED
+1988,4,National defense: Equipment,482.45,govt_net_cc,FAAt601,SEED
+1988,5,National defense: IP products,144.73,govt_net_cc,FAAt601,SEED
+1988,6,Nondefense,2702.63,govt_net_cc,FAAt601,SEED
+1988,7,Nondefense: Structures,2026.97,govt_net_cc,FAAt601,SEED
+1988,8,Nondefense: Equipment,405.39,govt_net_cc,FAAt601,SEED
+1988,9,Nondefense: IP products,270.26,govt_net_cc,FAAt601,SEED
+1989,1,Government fixed assets,3901.05,govt_net_cc,FAAt601,SEED
+1989,2,National defense,1006.55,govt_net_cc,FAAt601,SEED
+1989,3,National defense: Structures,352.29,govt_net_cc,FAAt601,SEED
+1989,4,National defense: Equipment,503.27,govt_net_cc,FAAt601,SEED
+1989,5,National defense: IP products,150.98,govt_net_cc,FAAt601,SEED
+1989,6,Nondefense,2894.5,govt_net_cc,FAAt601,SEED
+1989,7,Nondefense: Structures,2170.88,govt_net_cc,FAAt601,SEED
+1989,8,Nondefense: Equipment,434.18,govt_net_cc,FAAt601,SEED
+1989,9,Nondefense: IP products,289.45,govt_net_cc,FAAt601,SEED
+1990,1,Government fixed assets,4150.0,govt_net_cc,FAAt601,SEED
+1990,2,National defense,1050.0,govt_net_cc,FAAt601,SEED
+1990,3,National defense: Structures,367.5,govt_net_cc,FAAt601,SEED
+1990,4,National defense: Equipment,525.0,govt_net_cc,FAAt601,SEED
+1990,5,National defense: IP products,157.5,govt_net_cc,FAAt601,SEED
+1990,6,Nondefense,3100.0,govt_net_cc,FAAt601,SEED
+1990,7,Nondefense: Structures,2325.0,govt_net_cc,FAAt601,SEED
+1990,8,Nondefense: Equipment,465.0,govt_net_cc,FAAt601,SEED
+1990,9,Nondefense: IP products,310.0,govt_net_cc,FAAt601,SEED
+1991,1,Government fixed assets,4246.96,govt_net_cc,FAAt601,SEED
+1991,2,National defense,1018.12,govt_net_cc,FAAt601,SEED
+1991,3,National defense: Structures,356.34,govt_net_cc,FAAt601,SEED
+1991,4,National defense: Equipment,509.06,govt_net_cc,FAAt601,SEED
+1991,5,National defense: IP products,152.72,govt_net_cc,FAAt601,SEED
+1991,6,Nondefense,3228.84,govt_net_cc,FAAt601,SEED
+1991,7,Nondefense: Structures,2421.63,govt_net_cc,FAAt601,SEED
+1991,8,Nondefense: Equipment,484.33,govt_net_cc,FAAt601,SEED
+1991,9,Nondefense: IP products,322.88,govt_net_cc,FAAt601,SEED
+1992,1,Government fixed assets,4350.24,govt_net_cc,FAAt601,SEED
+1992,2,National defense,987.21,govt_net_cc,FAAt601,SEED
+1992,3,National defense: Structures,345.52,govt_net_cc,FAAt601,SEED
+1992,4,National defense: Equipment,493.61,govt_net_cc,FAAt601,SEED
+1992,5,National defense: IP products,148.08,govt_net_cc,FAAt601,SEED
+1992,6,Nondefense,3363.03,govt_net_cc,FAAt601,SEED
+1992,7,Nondefense: Structures,2522.27,govt_net_cc,FAAt601,SEED
+1992,8,Nondefense: Equipment,504.45,govt_net_cc,FAAt601,SEED
+1992,9,Nondefense: IP products,336.3,govt_net_cc,FAAt601,SEED
+1993,1,Government fixed assets,4460.04,govt_net_cc,FAAt601,SEED
+1993,2,National defense,957.24,govt_net_cc,FAAt601,SEED
+1993,3,National defense: Structures,335.03,govt_net_cc,FAAt601,SEED
+1993,4,National defense: Equipment,478.62,govt_net_cc,FAAt601,SEED
+1993,5,National defense: IP products,143.59,govt_net_cc,FAAt601,SEED
+1993,6,Nondefense,3502.8,govt_net_cc,FAAt601,SEED
+1993,7,Nondefense: Structures,2627.1,govt_net_cc,FAAt601,SEED
+1993,8,Nondefense: Equipment,525.42,govt_net_cc,FAAt601,SEED
+1993,9,Nondefense: IP products,350.28,govt_net_cc,FAAt601,SEED
+1994,1,Government fixed assets,4576.55,govt_net_cc,FAAt601,SEED
+1994,2,National defense,928.18,govt_net_cc,FAAt601,SEED
+1994,3,National defense: Structures,324.86,govt_net_cc,FAAt601,SEED
+1994,4,National defense: Equipment,464.09,govt_net_cc,FAAt601,SEED
+1994,5,National defense: IP products,139.23,govt_net_cc,FAAt601,SEED
+1994,6,Nondefense,3648.37,govt_net_cc,FAAt601,SEED
+1994,7,Nondefense: Structures,2736.28,govt_net_cc,FAAt601,SEED
+1994,8,Nondefense: Equipment,547.26,govt_net_cc,FAAt601,SEED
+1994,9,Nondefense: IP products,364.84,govt_net_cc,FAAt601,SEED
+1995,1,Government fixed assets,4700.0,govt_net_cc,FAAt601,SEED
+1995,2,National defense,900.0,govt_net_cc,FAAt601,SEED
+1995,3,National defense: Structures,315.0,govt_net_cc,FAAt601,SEED
+1995,4,National defense: Equipment,450.0,govt_net_cc,FAAt601,SEED
+1995,5,National defense: IP products,135.0,govt_net_cc,FAAt601,SEED
+1995,6,Nondefense,3800.0,govt_net_cc,FAAt601,SEED
+1995,7,Nondefense: Structures,2850.0,govt_net_cc,FAAt601,SEED
+1995,8,Nondefense: Equipment,570.0,govt_net_cc,FAAt601,SEED
+1995,9,Nondefense: IP products,380.0,govt_net_cc,FAAt601,SEED
+1996,1,Government fixed assets,4837.78,govt_net_cc,FAAt601,SEED
+1996,2,National defense,889.77,govt_net_cc,FAAt601,SEED
+1996,3,National defense: Structures,311.42,govt_net_cc,FAAt601,SEED
+1996,4,National defense: Equipment,444.89,govt_net_cc,FAAt601,SEED
+1996,5,National defense: IP products,133.47,govt_net_cc,FAAt601,SEED
+1996,6,Nondefense,3948.01,govt_net_cc,FAAt601,SEED
+1996,7,Nondefense: Structures,2961.01,govt_net_cc,FAAt601,SEED
+1996,8,Nondefense: Equipment,592.2,govt_net_cc,FAAt601,SEED
+1996,9,Nondefense: IP products,394.8,govt_net_cc,FAAt601,SEED
+1997,1,Government fixed assets,4981.45,govt_net_cc,FAAt601,SEED
+1997,2,National defense,879.66,govt_net_cc,FAAt601,SEED
+1997,3,National defense: Structures,307.88,govt_net_cc,FAAt601,SEED
+1997,4,National defense: Equipment,439.83,govt_net_cc,FAAt601,SEED
+1997,5,National defense: IP products,131.95,govt_net_cc,FAAt601,SEED
+1997,6,Nondefense,4101.79,govt_net_cc,FAAt601,SEED
+1997,7,Nondefense: Structures,3076.34,govt_net_cc,FAAt601,SEED
+1997,8,Nondefense: Equipment,615.27,govt_net_cc,FAAt601,SEED
+1997,9,Nondefense: IP products,410.18,govt_net_cc,FAAt601,SEED
+1998,1,Government fixed assets,5131.21,govt_net_cc,FAAt601,SEED
+1998,2,National defense,869.66,govt_net_cc,FAAt601,SEED
+1998,3,National defense: Structures,304.38,govt_net_cc,FAAt601,SEED
+1998,4,National defense: Equipment,434.83,govt_net_cc,FAAt601,SEED
+1998,5,National defense: IP products,130.45,govt_net_cc,FAAt601,SEED
+1998,6,Nondefense,4261.56,govt_net_cc,FAAt601,SEED
+1998,7,Nondefense: Structures,3196.17,govt_net_cc,FAAt601,SEED
+1998,8,Nondefense: Equipment,639.23,govt_net_cc,FAAt601,SEED
+1998,9,Nondefense: IP products,426.16,govt_net_cc,FAAt601,SEED
+1999,1,Government fixed assets,5287.32,govt_net_cc,FAAt601,SEED
+1999,2,National defense,859.77,govt_net_cc,FAAt601,SEED
+1999,3,National defense: Structures,300.92,govt_net_cc,FAAt601,SEED
+1999,4,National defense: Equipment,429.89,govt_net_cc,FAAt601,SEED
+1999,5,National defense: IP products,128.97,govt_net_cc,FAAt601,SEED
+1999,6,Nondefense,4427.55,govt_net_cc,FAAt601,SEED
+1999,7,Nondefense: Structures,3320.66,govt_net_cc,FAAt601,SEED
+1999,8,Nondefense: Equipment,664.13,govt_net_cc,FAAt601,SEED
+1999,9,Nondefense: IP products,442.75,govt_net_cc,FAAt601,SEED
+2000,1,Government fixed assets,5450.0,govt_net_cc,FAAt601,SEED
+2000,2,National defense,850.0,govt_net_cc,FAAt601,SEED
+2000,3,National defense: Structures,297.5,govt_net_cc,FAAt601,SEED
+2000,4,National defense: Equipment,425.0,govt_net_cc,FAAt601,SEED
+2000,5,National defense: IP products,127.5,govt_net_cc,FAAt601,SEED
+2000,6,Nondefense,4600.0,govt_net_cc,FAAt601,SEED
+2000,7,Nondefense: Structures,3450.0,govt_net_cc,FAAt601,SEED
+2000,8,Nondefense: Equipment,690.0,govt_net_cc,FAAt601,SEED
+2000,9,Nondefense: IP products,460.0,govt_net_cc,FAAt601,SEED
+2001,1,Government fixed assets,5696.36,govt_net_cc,FAAt601,SEED
+2001,2,National defense,878.08,govt_net_cc,FAAt601,SEED
+2001,3,National defense: Structures,307.33,govt_net_cc,FAAt601,SEED
+2001,4,National defense: Equipment,439.04,govt_net_cc,FAAt601,SEED
+2001,5,National defense: IP products,131.71,govt_net_cc,FAAt601,SEED
+2001,6,Nondefense,4818.28,govt_net_cc,FAAt601,SEED
+2001,7,Nondefense: Structures,3613.71,govt_net_cc,FAAt601,SEED
+2001,8,Nondefense: Equipment,722.74,govt_net_cc,FAAt601,SEED
+2001,9,Nondefense: IP products,481.83,govt_net_cc,FAAt601,SEED
+2002,1,Government fixed assets,5954.01,govt_net_cc,FAAt601,SEED
+2002,2,National defense,907.09,govt_net_cc,FAAt601,SEED
+2002,3,National defense: Structures,317.48,govt_net_cc,FAAt601,SEED
+2002,4,National defense: Equipment,453.55,govt_net_cc,FAAt601,SEED
+2002,5,National defense: IP products,136.06,govt_net_cc,FAAt601,SEED
+2002,6,Nondefense,5046.91,govt_net_cc,FAAt601,SEED
+2002,7,Nondefense: Structures,3785.19,govt_net_cc,FAAt601,SEED
+2002,8,Nondefense: Equipment,757.04,govt_net_cc,FAAt601,SEED
+2002,9,Nondefense: IP products,504.69,govt_net_cc,FAAt601,SEED
+2003,1,Government fixed assets,6223.46,govt_net_cc,FAAt601,SEED
+2003,2,National defense,937.06,govt_net_cc,FAAt601,SEED
+2003,3,National defense: Structures,327.97,govt_net_cc,FAAt601,SEED
+2003,4,National defense: Equipment,468.53,govt_net_cc,FAAt601,SEED
+2003,5,National defense: IP products,140.56,govt_net_cc,FAAt601,SEED
+2003,6,Nondefense,5286.4,govt_net_cc,FAAt601,SEED
+2003,7,Nondefense: Structures,3964.8,govt_net_cc,FAAt601,SEED
+2003,8,Nondefense: Equipment,792.96,govt_net_cc,FAAt601,SEED
+2003,9,Nondefense: IP products,528.64,govt_net_cc,FAAt601,SEED
+2004,1,Government fixed assets,6505.27,govt_net_cc,FAAt601,SEED
+2004,2,National defense,968.02,govt_net_cc,FAAt601,SEED
+2004,3,National defense: Structures,338.81,govt_net_cc,FAAt601,SEED
+2004,4,National defense: Equipment,484.01,govt_net_cc,FAAt601,SEED
+2004,5,National defense: IP products,145.2,govt_net_cc,FAAt601,SEED
+2004,6,Nondefense,5537.25,govt_net_cc,FAAt601,SEED
+2004,7,Nondefense: Structures,4152.94,govt_net_cc,FAAt601,SEED
+2004,8,Nondefense: Equipment,830.59,govt_net_cc,FAAt601,SEED
+2004,9,Nondefense: IP products,553.72,govt_net_cc,FAAt601,SEED
+2005,1,Government fixed assets,6800.0,govt_net_cc,FAAt601,SEED
+2005,2,National defense,1000.0,govt_net_cc,FAAt601,SEED
+2005,3,National defense: Structures,350.0,govt_net_cc,FAAt601,SEED
+2005,4,National defense: Equipment,500.0,govt_net_cc,FAAt601,SEED
+2005,5,National defense: IP products,150.0,govt_net_cc,FAAt601,SEED
+2005,6,Nondefense,5800.0,govt_net_cc,FAAt601,SEED
+2005,7,Nondefense: Structures,4350.0,govt_net_cc,FAAt601,SEED
+2005,8,Nondefense: Equipment,870.0,govt_net_cc,FAAt601,SEED
+2005,9,Nondefense: IP products,580.0,govt_net_cc,FAAt601,SEED
+2006,1,Government fixed assets,7110.2,govt_net_cc,FAAt601,SEED
+2006,2,National defense,1053.87,govt_net_cc,FAAt601,SEED
+2006,3,National defense: Structures,368.86,govt_net_cc,FAAt601,SEED
+2006,4,National defense: Equipment,526.94,govt_net_cc,FAAt601,SEED
+2006,5,National defense: IP products,158.08,govt_net_cc,FAAt601,SEED
+2006,6,Nondefense,6056.32,govt_net_cc,FAAt601,SEED
+2006,7,Nondefense: Structures,4542.24,govt_net_cc,FAAt601,SEED
+2006,8,Nondefense: Equipment,908.45,govt_net_cc,FAAt601,SEED
+2006,9,Nondefense: IP products,605.63,govt_net_cc,FAAt601,SEED
+2007,1,Government fixed assets,7434.62,govt_net_cc,FAAt601,SEED
+2007,2,National defense,1110.65,govt_net_cc,FAAt601,SEED
+2007,3,National defense: Structures,388.73,govt_net_cc,FAAt601,SEED
+2007,4,National defense: Equipment,555.33,govt_net_cc,FAAt601,SEED
+2007,5,National defense: IP products,166.6,govt_net_cc,FAAt601,SEED
+2007,6,Nondefense,6323.97,govt_net_cc,FAAt601,SEED
+2007,7,Nondefense: Structures,4742.98,govt_net_cc,FAAt601,SEED
+2007,8,Nondefense: Equipment,948.6,govt_net_cc,FAAt601,SEED
+2007,9,Nondefense: IP products,632.4,govt_net_cc,FAAt601,SEED
+2008,1,Government fixed assets,7773.93,govt_net_cc,FAAt601,SEED
+2008,2,National defense,1170.49,govt_net_cc,FAAt601,SEED
+2008,3,National defense: Structures,409.67,govt_net_cc,FAAt601,SEED
+2008,4,National defense: Equipment,585.24,govt_net_cc,FAAt601,SEED
+2008,5,National defense: IP products,175.57,govt_net_cc,FAAt601,SEED
+2008,6,Nondefense,6603.45,govt_net_cc,FAAt601,SEED
+2008,7,Nondefense: Structures,4952.59,govt_net_cc,FAAt601,SEED
+2008,8,Nondefense: Equipment,990.52,govt_net_cc,FAAt601,SEED
+2008,9,Nondefense: IP products,660.34,govt_net_cc,FAAt601,SEED
+2009,1,Government fixed assets,8128.82,govt_net_cc,FAAt601,SEED
+2009,2,National defense,1233.54,govt_net_cc,FAAt601,SEED
+2009,3,National defense: Structures,431.74,govt_net_cc,FAAt601,SEED
+2009,4,National defense: Equipment,616.77,govt_net_cc,FAAt601,SEED
+2009,5,National defense: IP products,185.03,govt_net_cc,FAAt601,SEED
+2009,6,Nondefense,6895.28,govt_net_cc,FAAt601,SEED
+2009,7,Nondefense: Structures,5171.46,govt_net_cc,FAAt601,SEED
+2009,8,Nondefense: Equipment,1034.29,govt_net_cc,FAAt601,SEED
+2009,9,Nondefense: IP products,689.53,govt_net_cc,FAAt601,SEED
+2010,1,Government fixed assets,8500.0,govt_net_cc,FAAt601,SEED
+2010,2,National defense,1300.0,govt_net_cc,FAAt601,SEED
+2010,3,National defense: Structures,455.0,govt_net_cc,FAAt601,SEED
+2010,4,National defense: Equipment,650.0,govt_net_cc,FAAt601,SEED
+2010,5,National defense: IP products,195.0,govt_net_cc,FAAt601,SEED
+2010,6,Nondefense,7200.0,govt_net_cc,FAAt601,SEED
+2010,7,Nondefense: Structures,5400.0,govt_net_cc,FAAt601,SEED
+2010,8,Nondefense: Equipment,1080.0,govt_net_cc,FAAt601,SEED
+2010,9,Nondefense: IP products,720.0,govt_net_cc,FAAt601,SEED
+2011,1,Government fixed assets,8762.44,govt_net_cc,FAAt601,SEED
+2011,2,National defense,1319.41,govt_net_cc,FAAt601,SEED
+2011,3,National defense: Structures,461.79,govt_net_cc,FAAt601,SEED
+2011,4,National defense: Equipment,659.71,govt_net_cc,FAAt601,SEED
+2011,5,National defense: IP products,197.91,govt_net_cc,FAAt601,SEED
+2011,6,Nondefense,7443.03,govt_net_cc,FAAt601,SEED
+2011,7,Nondefense: Structures,5582.27,govt_net_cc,FAAt601,SEED
+2011,8,Nondefense: Equipment,1116.45,govt_net_cc,FAAt601,SEED
+2011,9,Nondefense: IP products,744.3,govt_net_cc,FAAt601,SEED
+2012,1,Government fixed assets,9033.38,govt_net_cc,FAAt601,SEED
+2012,2,National defense,1339.11,govt_net_cc,FAAt601,SEED
+2012,3,National defense: Structures,468.69,govt_net_cc,FAAt601,SEED
+2012,4,National defense: Equipment,669.56,govt_net_cc,FAAt601,SEED
+2012,5,National defense: IP products,200.87,govt_net_cc,FAAt601,SEED
+2012,6,Nondefense,7694.26,govt_net_cc,FAAt601,SEED
+2012,7,Nondefense: Structures,5770.7,govt_net_cc,FAAt601,SEED
+2012,8,Nondefense: Equipment,1154.14,govt_net_cc,FAAt601,SEED
+2012,9,Nondefense: IP products,769.43,govt_net_cc,FAAt601,SEED
+2013,1,Government fixed assets,9313.09,govt_net_cc,FAAt601,SEED
+2013,2,National defense,1359.11,govt_net_cc,FAAt601,SEED
+2013,3,National defense: Structures,475.69,govt_net_cc,FAAt601,SEED
+2013,4,National defense: Equipment,679.55,govt_net_cc,FAAt601,SEED
+2013,5,National defense: IP products,203.87,govt_net_cc,FAAt601,SEED
+2013,6,Nondefense,7953.98,govt_net_cc,FAAt601,SEED
+2013,7,Nondefense: Structures,5965.48,govt_net_cc,FAAt601,SEED
+2013,8,Nondefense: Equipment,1193.1,govt_net_cc,FAAt601,SEED
+2013,9,Nondefense: IP products,795.4,govt_net_cc,FAAt601,SEED
+2014,1,Government fixed assets,9601.86,govt_net_cc,FAAt601,SEED
+2014,2,National defense,1379.4,govt_net_cc,FAAt601,SEED
+2014,3,National defense: Structures,482.79,govt_net_cc,FAAt601,SEED
+2014,4,National defense: Equipment,689.7,govt_net_cc,FAAt601,SEED
+2014,5,National defense: IP products,206.91,govt_net_cc,FAAt601,SEED
+2014,6,Nondefense,8222.46,govt_net_cc,FAAt601,SEED
+2014,7,Nondefense: Structures,6166.84,govt_net_cc,FAAt601,SEED
+2014,8,Nondefense: Equipment,1233.37,govt_net_cc,FAAt601,SEED
+2014,9,Nondefense: IP products,822.25,govt_net_cc,FAAt601,SEED
+2015,1,Government fixed assets,9900.0,govt_net_cc,FAAt601,SEED
+2015,2,National defense,1400.0,govt_net_cc,FAAt601,SEED
+2015,3,National defense: Structures,490.0,govt_net_cc,FAAt601,SEED
+2015,4,National defense: Equipment,700.0,govt_net_cc,FAAt601,SEED
+2015,5,National defense: IP products,210.0,govt_net_cc,FAAt601,SEED
+2015,6,Nondefense,8500.0,govt_net_cc,FAAt601,SEED
+2015,7,Nondefense: Structures,6375.0,govt_net_cc,FAAt601,SEED
+2015,8,Nondefense: Equipment,1275.0,govt_net_cc,FAAt601,SEED
+2015,9,Nondefense: IP products,850.0,govt_net_cc,FAAt601,SEED
+2016,1,Government fixed assets,10292.21,govt_net_cc,FAAt601,SEED
+2016,2,National defense,1449.14,govt_net_cc,FAAt601,SEED
+2016,3,National defense: Structures,507.2,govt_net_cc,FAAt601,SEED
+2016,4,National defense: Equipment,724.57,govt_net_cc,FAAt601,SEED
+2016,5,National defense: IP products,217.37,govt_net_cc,FAAt601,SEED
+2016,6,Nondefense,8843.08,govt_net_cc,FAAt601,SEED
+2016,7,Nondefense: Structures,6632.31,govt_net_cc,FAAt601,SEED
+2016,8,Nondefense: Equipment,1326.46,govt_net_cc,FAAt601,SEED
+2016,9,Nondefense: IP products,884.31,govt_net_cc,FAAt601,SEED
+2017,1,Government fixed assets,10700.0,govt_net_cc,FAAt601,SEED
+2017,2,National defense,1500.0,govt_net_cc,FAAt601,SEED
+2017,3,National defense: Structures,525.0,govt_net_cc,FAAt601,SEED
+2017,4,National defense: Equipment,750.0,govt_net_cc,FAAt601,SEED
+2017,5,National defense: IP products,225.0,govt_net_cc,FAAt601,SEED
+2017,6,Nondefense,9200.0,govt_net_cc,FAAt601,SEED
+2017,7,Nondefense: Structures,6900.0,govt_net_cc,FAAt601,SEED
+2017,8,Nondefense: Equipment,1380.0,govt_net_cc,FAAt601,SEED
+2017,9,Nondefense: IP products,920.0,govt_net_cc,FAAt601,SEED
+2018,1,Government fixed assets,11178.29,govt_net_cc,FAAt601,SEED
+2018,2,National defense,1563.91,govt_net_cc,FAAt601,SEED
+2018,3,National defense: Structures,547.37,govt_net_cc,FAAt601,SEED
+2018,4,National defense: Equipment,781.95,govt_net_cc,FAAt601,SEED
+2018,5,National defense: IP products,234.59,govt_net_cc,FAAt601,SEED
+2018,6,Nondefense,9614.39,govt_net_cc,FAAt601,SEED
+2018,7,Nondefense: Structures,7210.79,govt_net_cc,FAAt601,SEED
+2018,8,Nondefense: Equipment,1442.16,govt_net_cc,FAAt601,SEED
+2018,9,Nondefense: IP products,961.44,govt_net_cc,FAAt601,SEED
+2019,1,Government fixed assets,11677.97,govt_net_cc,FAAt601,SEED
+2019,2,National defense,1630.53,govt_net_cc,FAAt601,SEED
+2019,3,National defense: Structures,570.69,govt_net_cc,FAAt601,SEED
+2019,4,National defense: Equipment,815.27,govt_net_cc,FAAt601,SEED
+2019,5,National defense: IP products,244.58,govt_net_cc,FAAt601,SEED
+2019,6,Nondefense,10047.44,govt_net_cc,FAAt601,SEED
+2019,7,Nondefense: Structures,7535.58,govt_net_cc,FAAt601,SEED
+2019,8,Nondefense: Equipment,1507.12,govt_net_cc,FAAt601,SEED
+2019,9,Nondefense: IP products,1004.74,govt_net_cc,FAAt601,SEED
+2020,1,Government fixed assets,12200.0,govt_net_cc,FAAt601,SEED
+2020,2,National defense,1700.0,govt_net_cc,FAAt601,SEED
+2020,3,National defense: Structures,595.0,govt_net_cc,FAAt601,SEED
+2020,4,National defense: Equipment,850.0,govt_net_cc,FAAt601,SEED
+2020,5,National defense: IP products,255.0,govt_net_cc,FAAt601,SEED
+2020,6,Nondefense,10500.0,govt_net_cc,FAAt601,SEED
+2020,7,Nondefense: Structures,7875.0,govt_net_cc,FAAt601,SEED
+2020,8,Nondefense: Equipment,1575.0,govt_net_cc,FAAt601,SEED
+2020,9,Nondefense: IP products,1050.0,govt_net_cc,FAAt601,SEED
+2021,1,Government fixed assets,13011.28,govt_net_cc,FAAt601,SEED
+2021,2,National defense,1794.63,govt_net_cc,FAAt601,SEED
+2021,3,National defense: Structures,628.12,govt_net_cc,FAAt601,SEED
+2021,4,National defense: Equipment,897.32,govt_net_cc,FAAt601,SEED
+2021,5,National defense: IP products,269.2,govt_net_cc,FAAt601,SEED
+2021,6,Nondefense,11216.64,govt_net_cc,FAAt601,SEED
+2021,7,Nondefense: Structures,8412.48,govt_net_cc,FAAt601,SEED
+2021,8,Nondefense: Equipment,1682.5,govt_net_cc,FAAt601,SEED
+2021,9,Nondefense: IP products,1121.66,govt_net_cc,FAAt601,SEED
+2022,1,Government fixed assets,13876.73,govt_net_cc,FAAt601,SEED
+2022,2,National defense,1894.54,govt_net_cc,FAAt601,SEED
+2022,3,National defense: Structures,663.09,govt_net_cc,FAAt601,SEED
+2022,4,National defense: Equipment,947.27,govt_net_cc,FAAt601,SEED
+2022,5,National defense: IP products,284.18,govt_net_cc,FAAt601,SEED
+2022,6,Nondefense,11982.2,govt_net_cc,FAAt601,SEED
+2022,7,Nondefense: Structures,8986.65,govt_net_cc,FAAt601,SEED
+2022,8,Nondefense: Equipment,1797.33,govt_net_cc,FAAt601,SEED
+2022,9,Nondefense: IP products,1198.22,govt_net_cc,FAAt601,SEED
+2023,1,Government fixed assets,14800.0,govt_net_cc,FAAt601,SEED
+2023,2,National defense,2000.0,govt_net_cc,FAAt601,SEED
+2023,3,National defense: Structures,700.0,govt_net_cc,FAAt601,SEED
+2023,4,National defense: Equipment,1000.0,govt_net_cc,FAAt601,SEED
+2023,5,National defense: IP products,300.0,govt_net_cc,FAAt601,SEED
+2023,6,Nondefense,12800.0,govt_net_cc,FAAt601,SEED
+2023,7,Nondefense: Structures,9600.0,govt_net_cc,FAAt601,SEED
+2023,8,Nondefense: Equipment,1920.0,govt_net_cc,FAAt601,SEED
+2023,9,Nondefense: IP products,1280.0,govt_net_cc,FAAt601,SEED

@@ -1,0 +1,571 @@
+year,line_number,line_desc,value,table_label,table_name,source
+1929,1,Private fixed assets,336.0,private_net_cc,FAAt401,SEED
+1929,2,Nonresidential,211.0,private_net_cc,FAAt401,SEED
+1929,3,Structures,160.0,private_net_cc,FAAt401,SEED
+1929,6,Equipment,48.0,private_net_cc,FAAt401,SEED
+1929,9,Intellectual property products,3.0,private_net_cc,FAAt401,SEED
+1929,13,Residential,125.0,private_net_cc,FAAt401,SEED
+1930,1,Private fixed assets,314.93,private_net_cc,FAAt401,SEED
+1930,2,Nonresidential,198.89,private_net_cc,FAAt401,SEED
+1930,3,Structures,151.43,private_net_cc,FAAt401,SEED
+1930,6,Equipment,44.38,private_net_cc,FAAt401,SEED
+1930,9,Intellectual property products,3.08,private_net_cc,FAAt401,SEED
+1930,13,Residential,116.04,private_net_cc,FAAt401,SEED
+1931,1,Private fixed assets,295.24,private_net_cc,FAAt401,SEED
+1931,2,Nonresidential,187.52,private_net_cc,FAAt401,SEED
+1931,3,Structures,143.32,private_net_cc,FAAt401,SEED
+1931,6,Equipment,41.04,private_net_cc,FAAt401,SEED
+1931,9,Intellectual property products,3.16,private_net_cc,FAAt401,SEED
+1931,13,Residential,107.72,private_net_cc,FAAt401,SEED
+1932,1,Private fixed assets,276.84,private_net_cc,FAAt401,SEED
+1932,2,Nonresidential,176.84,private_net_cc,FAAt401,SEED
+1932,3,Structures,135.65,private_net_cc,FAAt401,SEED
+1932,6,Equipment,37.95,private_net_cc,FAAt401,SEED
+1932,9,Intellectual property products,3.24,private_net_cc,FAAt401,SEED
+1932,13,Residential,100.0,private_net_cc,FAAt401,SEED
+1933,1,Private fixed assets,259.63,private_net_cc,FAAt401,SEED
+1933,2,Nonresidential,166.8,private_net_cc,FAAt401,SEED
+1933,3,Structures,128.38,private_net_cc,FAAt401,SEED
+1933,6,Equipment,35.09,private_net_cc,FAAt401,SEED
+1933,9,Intellectual property products,3.33,private_net_cc,FAAt401,SEED
+1933,13,Residential,92.83,private_net_cc,FAAt401,SEED
+1934,1,Private fixed assets,243.55,private_net_cc,FAAt401,SEED
+1934,2,Nonresidential,157.37,private_net_cc,FAAt401,SEED
+1934,3,Structures,121.51,private_net_cc,FAAt401,SEED
+1934,6,Equipment,32.44,private_net_cc,FAAt401,SEED
+1934,9,Intellectual property products,3.42,private_net_cc,FAAt401,SEED
+1934,13,Residential,86.18,private_net_cc,FAAt401,SEED
+1935,1,Private fixed assets,228.51,private_net_cc,FAAt401,SEED
+1935,2,Nonresidential,148.51,private_net_cc,FAAt401,SEED
+1935,3,Structures,115.0,private_net_cc,FAAt401,SEED
+1935,6,Equipment,30.0,private_net_cc,FAAt401,SEED
+1935,9,Intellectual property products,3.51,private_net_cc,FAAt401,SEED
+1935,13,Residential,80.0,private_net_cc,FAAt401,SEED
+1936,1,Private fixed assets,230.34,private_net_cc,FAAt401,SEED
+1936,2,Nonresidential,149.36,private_net_cc,FAAt401,SEED
+1936,3,Structures,115.0,private_net_cc,FAAt401,SEED
+1936,6,Equipment,30.76,private_net_cc,FAAt401,SEED
+1936,9,Intellectual property products,3.6,private_net_cc,FAAt401,SEED
+1936,13,Residential,80.98,private_net_cc,FAAt401,SEED
+1937,1,Private fixed assets,232.2,private_net_cc,FAAt401,SEED
+1937,2,Nonresidential,150.24,private_net_cc,FAAt401,SEED
+1937,3,Structures,115.0,private_net_cc,FAAt401,SEED
+1937,6,Equipment,31.54,private_net_cc,FAAt401,SEED
+1937,9,Intellectual property products,3.7,private_net_cc,FAAt401,SEED
+1937,13,Residential,81.96,private_net_cc,FAAt401,SEED
+1938,1,Private fixed assets,234.1,private_net_cc,FAAt401,SEED
+1938,2,Nonresidential,151.14,private_net_cc,FAAt401,SEED
+1938,3,Structures,115.0,private_net_cc,FAAt401,SEED
+1938,6,Equipment,32.34,private_net_cc,FAAt401,SEED
+1938,9,Intellectual property products,3.8,private_net_cc,FAAt401,SEED
+1938,13,Residential,82.96,private_net_cc,FAAt401,SEED
+1939,1,Private fixed assets,236.03,private_net_cc,FAAt401,SEED
+1939,2,Nonresidential,152.06,private_net_cc,FAAt401,SEED
+1939,3,Structures,115.0,private_net_cc,FAAt401,SEED
+1939,6,Equipment,33.16,private_net_cc,FAAt401,SEED
+1939,9,Intellectual property products,3.9,private_net_cc,FAAt401,SEED
+1939,13,Residential,83.98,private_net_cc,FAAt401,SEED
+1940,1,Private fixed assets,238.0,private_net_cc,FAAt401,SEED
+1940,2,Nonresidential,153.0,private_net_cc,FAAt401,SEED
+1940,3,Structures,115.0,private_net_cc,FAAt401,SEED
+1940,6,Equipment,34.0,private_net_cc,FAAt401,SEED
+1940,9,Intellectual property products,4.0,private_net_cc,FAAt401,SEED
+1940,13,Residential,85.0,private_net_cc,FAAt401,SEED
+1941,1,Private fixed assets,245.42,private_net_cc,FAAt401,SEED
+1941,2,Nonresidential,157.61,private_net_cc,FAAt401,SEED
+1941,3,Structures,117.85,private_net_cc,FAAt401,SEED
+1941,6,Equipment,35.47,private_net_cc,FAAt401,SEED
+1941,9,Intellectual property products,4.29,private_net_cc,FAAt401,SEED
+1941,13,Residential,87.81,private_net_cc,FAAt401,SEED
+1942,1,Private fixed assets,253.08,private_net_cc,FAAt401,SEED
+1942,2,Nonresidential,162.37,private_net_cc,FAAt401,SEED
+1942,3,Structures,120.78,private_net_cc,FAAt401,SEED
+1942,6,Equipment,37.0,private_net_cc,FAAt401,SEED
+1942,9,Intellectual property products,4.59,private_net_cc,FAAt401,SEED
+1942,13,Residential,90.71,private_net_cc,FAAt401,SEED
+1943,1,Private fixed assets,261.0,private_net_cc,FAAt401,SEED
+1943,2,Nonresidential,167.3,private_net_cc,FAAt401,SEED
+1943,3,Structures,123.78,private_net_cc,FAAt401,SEED
+1943,6,Equipment,38.6,private_net_cc,FAAt401,SEED
+1943,9,Intellectual property products,4.92,private_net_cc,FAAt401,SEED
+1943,13,Residential,93.71,private_net_cc,FAAt401,SEED
+1944,1,Private fixed assets,269.19,private_net_cc,FAAt401,SEED
+1944,2,Nonresidential,172.39,private_net_cc,FAAt401,SEED
+1944,3,Structures,126.85,private_net_cc,FAAt401,SEED
+1944,6,Equipment,40.26,private_net_cc,FAAt401,SEED
+1944,9,Intellectual property products,5.28,private_net_cc,FAAt401,SEED
+1944,13,Residential,96.8,private_net_cc,FAAt401,SEED
+1945,1,Private fixed assets,277.66,private_net_cc,FAAt401,SEED
+1945,2,Nonresidential,177.66,private_net_cc,FAAt401,SEED
+1945,3,Structures,130.0,private_net_cc,FAAt401,SEED
+1945,6,Equipment,42.0,private_net_cc,FAAt401,SEED
+1945,9,Intellectual property products,5.66,private_net_cc,FAAt401,SEED
+1945,13,Residential,100.0,private_net_cc,FAAt401,SEED
+1946,1,Private fixed assets,310.8,private_net_cc,FAAt401,SEED
+1946,2,Nonresidential,195.93,private_net_cc,FAAt401,SEED
+1946,3,Structures,143.09,private_net_cc,FAAt401,SEED
+1946,6,Equipment,46.78,private_net_cc,FAAt401,SEED
+1946,9,Intellectual property products,6.06,private_net_cc,FAAt401,SEED
+1946,13,Residential,114.87,private_net_cc,FAAt401,SEED
+1947,1,Private fixed assets,348.04,private_net_cc,FAAt401,SEED
+1947,2,Nonresidential,216.09,private_net_cc,FAAt401,SEED
+1947,3,Structures,157.49,private_net_cc,FAAt401,SEED
+1947,6,Equipment,52.11,private_net_cc,FAAt401,SEED
+1947,9,Intellectual property products,6.5,private_net_cc,FAAt401,SEED
+1947,13,Residential,131.95,private_net_cc,FAAt401,SEED
+1948,1,Private fixed assets,389.92,private_net_cc,FAAt401,SEED
+1948,2,Nonresidential,238.34,private_net_cc,FAAt401,SEED
+1948,3,Structures,173.34,private_net_cc,FAAt401,SEED
+1948,6,Equipment,58.04,private_net_cc,FAAt401,SEED
+1948,9,Intellectual property products,6.96,private_net_cc,FAAt401,SEED
+1948,13,Residential,151.57,private_net_cc,FAAt401,SEED
+1949,1,Private fixed assets,437.01,private_net_cc,FAAt401,SEED
+1949,2,Nonresidential,262.9,private_net_cc,FAAt401,SEED
+1949,3,Structures,190.79,private_net_cc,FAAt401,SEED
+1949,6,Equipment,64.64,private_net_cc,FAAt401,SEED
+1949,9,Intellectual property products,7.46,private_net_cc,FAAt401,SEED
+1949,13,Residential,174.11,private_net_cc,FAAt401,SEED
+1950,1,Private fixed assets,490.0,private_net_cc,FAAt401,SEED
+1950,2,Nonresidential,290.0,private_net_cc,FAAt401,SEED
+1950,3,Structures,210.0,private_net_cc,FAAt401,SEED
+1950,6,Equipment,72.0,private_net_cc,FAAt401,SEED
+1950,9,Intellectual property products,8.0,private_net_cc,FAAt401,SEED
+1950,13,Residential,200.0,private_net_cc,FAAt401,SEED
+1951,1,Private fixed assets,536.35,private_net_cc,FAAt401,SEED
+1951,2,Nonresidential,312.67,private_net_cc,FAAt401,SEED
+1951,3,Structures,227.01,private_net_cc,FAAt401,SEED
+1951,6,Equipment,76.89,private_net_cc,FAAt401,SEED
+1951,9,Intellectual property products,8.77,private_net_cc,FAAt401,SEED
+1951,13,Residential,223.69,private_net_cc,FAAt401,SEED
+1952,1,Private fixed assets,587.3,private_net_cc,FAAt401,SEED
+1952,2,Nonresidential,337.12,private_net_cc,FAAt401,SEED
+1952,3,Structures,245.4,private_net_cc,FAAt401,SEED
+1952,6,Equipment,82.11,private_net_cc,FAAt401,SEED
+1952,9,Intellectual property products,9.61,private_net_cc,FAAt401,SEED
+1952,13,Residential,250.18,private_net_cc,FAAt401,SEED
+1953,1,Private fixed assets,643.3,private_net_cc,FAAt401,SEED
+1953,2,Nonresidential,363.5,private_net_cc,FAAt401,SEED
+1953,3,Structures,265.28,private_net_cc,FAAt401,SEED
+1953,6,Equipment,87.69,private_net_cc,FAAt401,SEED
+1953,9,Intellectual property products,10.53,private_net_cc,FAAt401,SEED
+1953,13,Residential,279.8,private_net_cc,FAAt401,SEED
+1954,1,Private fixed assets,704.89,private_net_cc,FAAt401,SEED
+1954,2,Nonresidential,391.95,private_net_cc,FAAt401,SEED
+1954,3,Structures,286.77,private_net_cc,FAAt401,SEED
+1954,6,Equipment,93.64,private_net_cc,FAAt401,SEED
+1954,9,Intellectual property products,11.54,private_net_cc,FAAt401,SEED
+1954,13,Residential,312.94,private_net_cc,FAAt401,SEED
+1955,1,Private fixed assets,772.65,private_net_cc,FAAt401,SEED
+1955,2,Nonresidential,422.65,private_net_cc,FAAt401,SEED
+1955,3,Structures,310.0,private_net_cc,FAAt401,SEED
+1955,6,Equipment,100.0,private_net_cc,FAAt401,SEED
+1955,9,Intellectual property products,12.65,private_net_cc,FAAt401,SEED
+1955,13,Residential,350.0,private_net_cc,FAAt401,SEED
+1956,1,Private fixed assets,826.1,private_net_cc,FAAt401,SEED
+1956,2,Nonresidential,450.22,private_net_cc,FAAt401,SEED
+1956,3,Structures,330.97,private_net_cc,FAAt401,SEED
+1956,6,Equipment,105.39,private_net_cc,FAAt401,SEED
+1956,9,Intellectual property products,13.86,private_net_cc,FAAt401,SEED
+1956,13,Residential,375.88,private_net_cc,FAAt401,SEED
+1957,1,Private fixed assets,883.28,private_net_cc,FAAt401,SEED
+1957,2,Nonresidential,479.61,private_net_cc,FAAt401,SEED
+1957,3,Structures,353.35,private_net_cc,FAAt401,SEED
+1957,6,Equipment,111.07,private_net_cc,FAAt401,SEED
+1957,9,Intellectual property products,15.19,private_net_cc,FAAt401,SEED
+1957,13,Residential,403.67,private_net_cc,FAAt401,SEED
+1958,1,Private fixed assets,944.47,private_net_cc,FAAt401,SEED
+1958,2,Nonresidential,510.95,private_net_cc,FAAt401,SEED
+1958,3,Structures,377.25,private_net_cc,FAAt401,SEED
+1958,6,Equipment,117.05,private_net_cc,FAAt401,SEED
+1958,9,Intellectual property products,16.65,private_net_cc,FAAt401,SEED
+1958,13,Residential,433.52,private_net_cc,FAAt401,SEED
+1959,1,Private fixed assets,1009.94,private_net_cc,FAAt401,SEED
+1959,2,Nonresidential,544.36,private_net_cc,FAAt401,SEED
+1959,3,Structures,402.76,private_net_cc,FAAt401,SEED
+1959,6,Equipment,123.35,private_net_cc,FAAt401,SEED
+1959,9,Intellectual property products,18.25,private_net_cc,FAAt401,SEED
+1959,13,Residential,465.57,private_net_cc,FAAt401,SEED
+1960,1,Private fixed assets,1080.0,private_net_cc,FAAt401,SEED
+1960,2,Nonresidential,580.0,private_net_cc,FAAt401,SEED
+1960,3,Structures,430.0,private_net_cc,FAAt401,SEED
+1960,6,Equipment,130.0,private_net_cc,FAAt401,SEED
+1960,9,Intellectual property products,20.0,private_net_cc,FAAt401,SEED
+1960,13,Residential,500.0,private_net_cc,FAAt401,SEED
+1961,1,Private fixed assets,1145.7,private_net_cc,FAAt401,SEED
+1961,2,Nonresidential,613.99,private_net_cc,FAAt401,SEED
+1961,3,Structures,453.33,private_net_cc,FAAt401,SEED
+1961,6,Equipment,138.74,private_net_cc,FAAt401,SEED
+1961,9,Intellectual property products,21.92,private_net_cc,FAAt401,SEED
+1961,13,Residential,531.71,private_net_cc,FAAt401,SEED
+1962,1,Private fixed assets,1215.46,private_net_cc,FAAt401,SEED
+1962,2,Nonresidential,650.02,private_net_cc,FAAt401,SEED
+1962,3,Structures,477.92,private_net_cc,FAAt401,SEED
+1962,6,Equipment,148.07,private_net_cc,FAAt401,SEED
+1962,9,Intellectual property products,24.02,private_net_cc,FAAt401,SEED
+1962,13,Residential,565.44,private_net_cc,FAAt401,SEED
+1963,1,Private fixed assets,1289.51,private_net_cc,FAAt401,SEED
+1963,2,Nonresidential,688.21,private_net_cc,FAAt401,SEED
+1963,3,Structures,503.85,private_net_cc,FAAt401,SEED
+1963,6,Equipment,158.03,private_net_cc,FAAt401,SEED
+1963,9,Intellectual property products,26.33,private_net_cc,FAAt401,SEED
+1963,13,Residential,601.3,private_net_cc,FAAt401,SEED
+1964,1,Private fixed assets,1368.14,private_net_cc,FAAt401,SEED
+1964,2,Nonresidential,728.69,private_net_cc,FAAt401,SEED
+1964,3,Structures,531.18,private_net_cc,FAAt401,SEED
+1964,6,Equipment,168.66,private_net_cc,FAAt401,SEED
+1964,9,Intellectual property products,28.85,private_net_cc,FAAt401,SEED
+1964,13,Residential,639.44,private_net_cc,FAAt401,SEED
+1965,1,Private fixed assets,1451.62,private_net_cc,FAAt401,SEED
+1965,2,Nonresidential,771.62,private_net_cc,FAAt401,SEED
+1965,3,Structures,560.0,private_net_cc,FAAt401,SEED
+1965,6,Equipment,180.0,private_net_cc,FAAt401,SEED
+1965,9,Intellectual property products,31.62,private_net_cc,FAAt401,SEED
+1965,13,Residential,680.0,private_net_cc,FAAt401,SEED
+1966,1,Private fixed assets,1556.84,private_net_cc,FAAt401,SEED
+1966,2,Nonresidential,828.29,private_net_cc,FAAt401,SEED
+1966,3,Structures,599.9,private_net_cc,FAAt401,SEED
+1966,6,Equipment,193.74,private_net_cc,FAAt401,SEED
+1966,9,Intellectual property products,34.66,private_net_cc,FAAt401,SEED
+1966,13,Residential,728.55,private_net_cc,FAAt401,SEED
+1967,1,Private fixed assets,1669.71,private_net_cc,FAAt401,SEED
+1967,2,Nonresidential,889.14,private_net_cc,FAAt401,SEED
+1967,3,Structures,642.63,private_net_cc,FAAt401,SEED
+1967,6,Equipment,208.52,private_net_cc,FAAt401,SEED
+1967,9,Intellectual property products,37.98,private_net_cc,FAAt401,SEED
+1967,13,Residential,780.57,private_net_cc,FAAt401,SEED
+1968,1,Private fixed assets,1790.79,private_net_cc,FAAt401,SEED
+1968,2,Nonresidential,954.48,private_net_cc,FAAt401,SEED
+1968,3,Structures,688.42,private_net_cc,FAAt401,SEED
+1968,6,Equipment,224.44,private_net_cc,FAAt401,SEED
+1968,9,Intellectual property products,41.63,private_net_cc,FAAt401,SEED
+1968,13,Residential,836.31,private_net_cc,FAAt401,SEED
+1969,1,Private fixed assets,1920.67,private_net_cc,FAAt401,SEED
+1969,2,Nonresidential,1024.65,private_net_cc,FAAt401,SEED
+1969,3,Structures,737.46,private_net_cc,FAAt401,SEED
+1969,6,Equipment,241.56,private_net_cc,FAAt401,SEED
+1969,9,Intellectual property products,45.62,private_net_cc,FAAt401,SEED
+1969,13,Residential,896.02,private_net_cc,FAAt401,SEED
+1970,1,Private fixed assets,2060.0,private_net_cc,FAAt401,SEED
+1970,2,Nonresidential,1100.0,private_net_cc,FAAt401,SEED
+1970,3,Structures,790.0,private_net_cc,FAAt401,SEED
+1970,6,Equipment,260.0,private_net_cc,FAAt401,SEED
+1970,9,Intellectual property products,50.0,private_net_cc,FAAt401,SEED
+1970,13,Residential,960.0,private_net_cc,FAAt401,SEED
+1971,1,Private fixed assets,2293.65,private_net_cc,FAAt401,SEED
+1971,2,Nonresidential,1211.16,private_net_cc,FAAt401,SEED
+1971,3,Structures,872.75,private_net_cc,FAAt401,SEED
+1971,6,Equipment,283.39,private_net_cc,FAAt401,SEED
+1971,9,Intellectual property products,55.01,private_net_cc,FAAt401,SEED
+1971,13,Residential,1082.49,private_net_cc,FAAt401,SEED
+1972,1,Private fixed assets,2554.2,private_net_cc,FAAt401,SEED
+1972,2,Nonresidential,1333.59,private_net_cc,FAAt401,SEED
+1972,3,Structures,964.17,private_net_cc,FAAt401,SEED
+1972,6,Equipment,308.89,private_net_cc,FAAt401,SEED
+1972,9,Intellectual property products,60.53,private_net_cc,FAAt401,SEED
+1972,13,Residential,1220.61,private_net_cc,FAAt401,SEED
+1973,1,Private fixed assets,2844.81,private_net_cc,FAAt401,SEED
+1973,2,Nonresidential,1468.45,private_net_cc,FAAt401,SEED
+1973,3,Structures,1065.16,private_net_cc,FAAt401,SEED
+1973,6,Equipment,336.69,private_net_cc,FAAt401,SEED
+1973,9,Intellectual property products,66.6,private_net_cc,FAAt401,SEED
+1973,13,Residential,1376.36,private_net_cc,FAAt401,SEED
+1974,1,Private fixed assets,3168.97,private_net_cc,FAAt401,SEED
+1974,2,Nonresidential,1616.99,private_net_cc,FAAt401,SEED
+1974,3,Structures,1176.74,private_net_cc,FAAt401,SEED
+1974,6,Equipment,366.98,private_net_cc,FAAt401,SEED
+1974,9,Intellectual property products,73.28,private_net_cc,FAAt401,SEED
+1974,13,Residential,1551.97,private_net_cc,FAAt401,SEED
+1975,1,Private fixed assets,3530.62,private_net_cc,FAAt401,SEED
+1975,2,Nonresidential,1780.62,private_net_cc,FAAt401,SEED
+1975,3,Structures,1300.0,private_net_cc,FAAt401,SEED
+1975,6,Equipment,400.0,private_net_cc,FAAt401,SEED
+1975,9,Intellectual property products,80.62,private_net_cc,FAAt401,SEED
+1975,13,Residential,1750.0,private_net_cc,FAAt401,SEED
+1976,1,Private fixed assets,3998.59,private_net_cc,FAAt401,SEED
+1976,2,Nonresidential,2011.89,private_net_cc,FAAt401,SEED
+1976,3,Structures,1469.59,private_net_cc,FAAt401,SEED
+1976,6,Equipment,453.59,private_net_cc,FAAt401,SEED
+1976,9,Intellectual property products,88.71,private_net_cc,FAAt401,SEED
+1976,13,Residential,1986.7,private_net_cc,FAAt401,SEED
+1977,1,Private fixed assets,4528.69,private_net_cc,FAAt401,SEED
+1977,2,Nonresidential,2273.26,private_net_cc,FAAt401,SEED
+1977,3,Structures,1661.31,private_net_cc,FAAt401,SEED
+1977,6,Equipment,514.35,private_net_cc,FAAt401,SEED
+1977,9,Intellectual property products,97.6,private_net_cc,FAAt401,SEED
+1977,13,Residential,2255.43,private_net_cc,FAAt401,SEED
+1978,1,Private fixed assets,5129.17,private_net_cc,FAAt401,SEED
+1978,2,Nonresidential,2568.68,private_net_cc,FAAt401,SEED
+1978,3,Structures,1878.04,private_net_cc,FAAt401,SEED
+1978,6,Equipment,583.26,private_net_cc,FAAt401,SEED
+1978,9,Intellectual property products,107.39,private_net_cc,FAAt401,SEED
+1978,13,Residential,2560.49,private_net_cc,FAAt401,SEED
+1979,1,Private fixed assets,5809.41,private_net_cc,FAAt401,SEED
+1979,2,Nonresidential,2902.59,private_net_cc,FAAt401,SEED
+1979,3,Structures,2123.04,private_net_cc,FAAt401,SEED
+1979,6,Equipment,661.4,private_net_cc,FAAt401,SEED
+1979,9,Intellectual property products,118.15,private_net_cc,FAAt401,SEED
+1979,13,Residential,2906.82,private_net_cc,FAAt401,SEED
+1980,1,Private fixed assets,6580.0,private_net_cc,FAAt401,SEED
+1980,2,Nonresidential,3280.0,private_net_cc,FAAt401,SEED
+1980,3,Structures,2400.0,private_net_cc,FAAt401,SEED
+1980,6,Equipment,750.0,private_net_cc,FAAt401,SEED
+1980,9,Intellectual property products,130.0,private_net_cc,FAAt401,SEED
+1980,13,Residential,3300.0,private_net_cc,FAAt401,SEED
+1981,1,Private fixed assets,7115.03,private_net_cc,FAAt401,SEED
+1981,2,Nonresidential,3543.53,private_net_cc,FAAt401,SEED
+1981,3,Structures,2588.11,private_net_cc,FAAt401,SEED
+1981,6,Equipment,809.71,private_net_cc,FAAt401,SEED
+1981,9,Intellectual property products,145.71,private_net_cc,FAAt401,SEED
+1981,13,Residential,3571.5,private_net_cc,FAAt401,SEED
+1982,1,Private fixed assets,7693.79,private_net_cc,FAAt401,SEED
+1982,2,Nonresidential,3828.45,private_net_cc,FAAt401,SEED
+1982,3,Structures,2790.96,private_net_cc,FAAt401,SEED
+1982,6,Equipment,874.17,private_net_cc,FAAt401,SEED
+1982,9,Intellectual property products,163.33,private_net_cc,FAAt401,SEED
+1982,13,Residential,3865.33,private_net_cc,FAAt401,SEED
+1983,1,Private fixed assets,8319.88,private_net_cc,FAAt401,SEED
+1983,2,Nonresidential,4136.54,private_net_cc,FAAt401,SEED
+1983,3,Structures,3009.71,private_net_cc,FAAt401,SEED
+1983,6,Equipment,943.76,private_net_cc,FAAt401,SEED
+1983,9,Intellectual property products,183.07,private_net_cc,FAAt401,SEED
+1983,13,Residential,4183.34,private_net_cc,FAAt401,SEED
+1984,1,Private fixed assets,8997.21,private_net_cc,FAAt401,SEED
+1984,2,Nonresidential,4469.7,private_net_cc,FAAt401,SEED
+1984,3,Structures,3245.61,private_net_cc,FAAt401,SEED
+1984,6,Equipment,1018.89,private_net_cc,FAAt401,SEED
+1984,9,Intellectual property products,205.2,private_net_cc,FAAt401,SEED
+1984,13,Residential,4527.51,private_net_cc,FAAt401,SEED
+1985,1,Private fixed assets,9730.0,private_net_cc,FAAt401,SEED
+1985,2,Nonresidential,4830.0,private_net_cc,FAAt401,SEED
+1985,3,Structures,3500.0,private_net_cc,FAAt401,SEED
+1985,6,Equipment,1100.0,private_net_cc,FAAt401,SEED
+1985,9,Intellectual property products,230.0,private_net_cc,FAAt401,SEED
+1985,13,Residential,4900.0,private_net_cc,FAAt401,SEED
+1986,1,Private fixed assets,10335.92,private_net_cc,FAAt401,SEED
+1986,2,Nonresidential,5135.17,private_net_cc,FAAt401,SEED
+1986,3,Structures,3696.63,private_net_cc,FAAt401,SEED
+1986,6,Equipment,1185.6,private_net_cc,FAAt401,SEED
+1986,9,Intellectual property products,252.94,private_net_cc,FAAt401,SEED
+1986,13,Residential,5200.75,private_net_cc,FAAt401,SEED
+1987,1,Private fixed assets,10980.29,private_net_cc,FAAt401,SEED
+1987,2,Nonresidential,5460.34,private_net_cc,FAAt401,SEED
+1987,3,Structures,3904.31,private_net_cc,FAAt401,SEED
+1987,6,Equipment,1277.86,private_net_cc,FAAt401,SEED
+1987,9,Intellectual property products,278.17,private_net_cc,FAAt401,SEED
+1987,13,Residential,5519.95,private_net_cc,FAAt401,SEED
+1988,1,Private fixed assets,11665.62,private_net_cc,FAAt401,SEED
+1988,2,Nonresidential,5806.88,private_net_cc,FAAt401,SEED
+1988,3,Structures,4123.65,private_net_cc,FAAt401,SEED
+1988,6,Equipment,1377.3,private_net_cc,FAAt401,SEED
+1988,9,Intellectual property products,305.92,private_net_cc,FAAt401,SEED
+1988,13,Residential,5858.75,private_net_cc,FAAt401,SEED
+1989,1,Private fixed assets,12394.58,private_net_cc,FAAt401,SEED
+1989,2,Nonresidential,6176.24,private_net_cc,FAAt401,SEED
+1989,3,Structures,4355.32,private_net_cc,FAAt401,SEED
+1989,6,Equipment,1484.48,private_net_cc,FAAt401,SEED
+1989,9,Intellectual property products,336.44,private_net_cc,FAAt401,SEED
+1989,13,Residential,6218.34,private_net_cc,FAAt401,SEED
+1990,1,Private fixed assets,13170.0,private_net_cc,FAAt401,SEED
+1990,2,Nonresidential,6570.0,private_net_cc,FAAt401,SEED
+1990,3,Structures,4600.0,private_net_cc,FAAt401,SEED
+1990,6,Equipment,1600.0,private_net_cc,FAAt401,SEED
+1990,9,Intellectual property products,370.0,private_net_cc,FAAt401,SEED
+1990,13,Residential,6600.0,private_net_cc,FAAt401,SEED
+1991,1,Private fixed assets,13668.38,private_net_cc,FAAt401,SEED
+1991,2,Nonresidential,6844.14,private_net_cc,FAAt401,SEED
+1991,3,Structures,4749.91,private_net_cc,FAAt401,SEED
+1991,6,Equipment,1689.43,private_net_cc,FAAt401,SEED
+1991,9,Intellectual property products,404.81,private_net_cc,FAAt401,SEED
+1991,13,Residential,6824.24,private_net_cc,FAAt401,SEED
+1992,1,Private fixed assets,14187.53,private_net_cc,FAAt401,SEED
+1992,2,Nonresidential,7131.44,private_net_cc,FAAt401,SEED
+1992,3,Structures,4904.7,private_net_cc,FAAt401,SEED
+1992,6,Equipment,1783.86,private_net_cc,FAAt401,SEED
+1992,9,Intellectual property products,442.89,private_net_cc,FAAt401,SEED
+1992,13,Residential,7056.09,private_net_cc,FAAt401,SEED
+1993,1,Private fixed assets,14728.47,private_net_cc,FAAt401,SEED
+1993,2,Nonresidential,7432.64,private_net_cc,FAAt401,SEED
+1993,3,Structures,5064.53,private_net_cc,FAAt401,SEED
+1993,6,Equipment,1883.56,private_net_cc,FAAt401,SEED
+1993,9,Intellectual property products,484.55,private_net_cc,FAAt401,SEED
+1993,13,Residential,7295.82,private_net_cc,FAAt401,SEED
+1994,1,Private fixed assets,15292.25,private_net_cc,FAAt401,SEED
+1994,2,Nonresidential,7748.55,private_net_cc,FAAt401,SEED
+1994,3,Structures,5229.58,private_net_cc,FAAt401,SEED
+1994,6,Equipment,1988.84,private_net_cc,FAAt401,SEED
+1994,9,Intellectual property products,530.13,private_net_cc,FAAt401,SEED
+1994,13,Residential,7543.7,private_net_cc,FAAt401,SEED
+1995,1,Private fixed assets,15880.0,private_net_cc,FAAt401,SEED
+1995,2,Nonresidential,8080.0,private_net_cc,FAAt401,SEED
+1995,3,Structures,5400.0,private_net_cc,FAAt401,SEED
+1995,6,Equipment,2100.0,private_net_cc,FAAt401,SEED
+1995,9,Intellectual property products,580.0,private_net_cc,FAAt401,SEED
+1995,13,Residential,7800.0,private_net_cc,FAAt401,SEED
+1996,1,Private fixed assets,16794.38,private_net_cc,FAAt401,SEED
+1996,2,Nonresidential,8516.6,private_net_cc,FAAt401,SEED
+1996,3,Structures,5654.79,private_net_cc,FAAt401,SEED
+1996,6,Equipment,2224.37,private_net_cc,FAAt401,SEED
+1996,9,Intellectual property products,637.44,private_net_cc,FAAt401,SEED
+1996,13,Residential,8277.77,private_net_cc,FAAt401,SEED
+1997,1,Private fixed assets,17763.1,private_net_cc,FAAt401,SEED
+1997,2,Nonresidential,8978.28,private_net_cc,FAAt401,SEED
+1997,3,Structures,5921.61,private_net_cc,FAAt401,SEED
+1997,6,Equipment,2356.11,private_net_cc,FAAt401,SEED
+1997,9,Intellectual property products,700.57,private_net_cc,FAAt401,SEED
+1997,13,Residential,8784.81,private_net_cc,FAAt401,SEED
+1998,1,Private fixed assets,18789.52,private_net_cc,FAAt401,SEED
+1998,2,Nonresidential,9466.61,private_net_cc,FAAt401,SEED
+1998,3,Structures,6201.02,private_net_cc,FAAt401,SEED
+1998,6,Equipment,2495.64,private_net_cc,FAAt401,SEED
+1998,9,Intellectual property products,769.95,private_net_cc,FAAt401,SEED
+1998,13,Residential,9322.91,private_net_cc,FAAt401,SEED
+1999,1,Private fixed assets,19877.21,private_net_cc,FAAt401,SEED
+1999,2,Nonresidential,9983.25,private_net_cc,FAAt401,SEED
+1999,3,Structures,6493.61,private_net_cc,FAAt401,SEED
+1999,6,Equipment,2643.45,private_net_cc,FAAt401,SEED
+1999,9,Intellectual property products,846.2,private_net_cc,FAAt401,SEED
+1999,13,Residential,9893.96,private_net_cc,FAAt401,SEED
+2000,1,Private fixed assets,21030.0,private_net_cc,FAAt401,SEED
+2000,2,Nonresidential,10530.0,private_net_cc,FAAt401,SEED
+2000,3,Structures,6800.0,private_net_cc,FAAt401,SEED
+2000,6,Equipment,2800.0,private_net_cc,FAAt401,SEED
+2000,9,Intellectual property products,930.0,private_net_cc,FAAt401,SEED
+2000,13,Residential,10500.0,private_net_cc,FAAt401,SEED
+2001,1,Private fixed assets,22648.45,private_net_cc,FAAt401,SEED
+2001,2,Nonresidential,11086.23,private_net_cc,FAAt401,SEED
+2001,3,Structures,7223.78,private_net_cc,FAAt401,SEED
+2001,6,Equipment,2875.79,private_net_cc,FAAt401,SEED
+2001,9,Intellectual property products,986.66,private_net_cc,FAAt401,SEED
+2001,13,Residential,11562.22,private_net_cc,FAAt401,SEED
+2002,1,Private fixed assets,24406.27,private_net_cc,FAAt401,SEED
+2002,2,Nonresidential,11674.37,private_net_cc,FAAt401,SEED
+2002,3,Structures,7673.98,private_net_cc,FAAt401,SEED
+2002,6,Equipment,2953.62,private_net_cc,FAAt401,SEED
+2002,9,Intellectual property products,1046.78,private_net_cc,FAAt401,SEED
+2002,13,Residential,12731.9,private_net_cc,FAAt401,SEED
+2003,1,Private fixed assets,26316.25,private_net_cc,FAAt401,SEED
+2003,2,Nonresidential,12296.34,private_net_cc,FAAt401,SEED
+2003,3,Structures,8152.23,private_net_cc,FAAt401,SEED
+2003,6,Equipment,3033.56,private_net_cc,FAAt401,SEED
+2003,9,Intellectual property products,1110.55,private_net_cc,FAAt401,SEED
+2003,13,Residential,14019.91,private_net_cc,FAAt401,SEED
+2004,1,Private fixed assets,28392.38,private_net_cc,FAAt401,SEED
+2004,2,Nonresidential,12954.17,private_net_cc,FAAt401,SEED
+2004,3,Structures,8660.28,private_net_cc,FAAt401,SEED
+2004,6,Equipment,3115.67,private_net_cc,FAAt401,SEED
+2004,9,Intellectual property products,1178.22,private_net_cc,FAAt401,SEED
+2004,13,Residential,15438.21,private_net_cc,FAAt401,SEED
+2005,1,Private fixed assets,30650.0,private_net_cc,FAAt401,SEED
+2005,2,Nonresidential,13650.0,private_net_cc,FAAt401,SEED
+2005,3,Structures,9200.0,private_net_cc,FAAt401,SEED
+2005,6,Equipment,3200.0,private_net_cc,FAAt401,SEED
+2005,9,Intellectual property products,1250.0,private_net_cc,FAAt401,SEED
+2005,13,Residential,17000.0,private_net_cc,FAAt401,SEED
+2006,1,Private fixed assets,32846.46,private_net_cc,FAAt401,SEED
+2006,2,Nonresidential,14874.26,private_net_cc,FAAt401,SEED
+2006,3,Structures,10150.86,private_net_cc,FAAt401,SEED
+2006,6,Equipment,3394.11,private_net_cc,FAAt401,SEED
+2006,9,Intellectual property products,1329.28,private_net_cc,FAAt401,SEED
+2006,13,Residential,17972.2,private_net_cc,FAAt401,SEED
+2007,1,Private fixed assets,35213.6,private_net_cc,FAAt401,SEED
+2007,2,Nonresidential,16213.6,private_net_cc,FAAt401,SEED
+2007,3,Structures,11200.0,private_net_cc,FAAt401,SEED
+2007,6,Equipment,3600.0,private_net_cc,FAAt401,SEED
+2007,9,Intellectual property products,1413.6,private_net_cc,FAAt401,SEED
+2007,13,Residential,19000.0,private_net_cc,FAAt401,SEED
+2008,1,Private fixed assets,33887.98,private_net_cc,FAAt401,SEED
+2008,2,Nonresidential,16134.66,private_net_cc,FAAt401,SEED
+2008,3,Structures,11065.05,private_net_cc,FAAt401,SEED
+2008,6,Equipment,3566.35,private_net_cc,FAAt401,SEED
+2008,9,Intellectual property products,1503.26,private_net_cc,FAAt401,SEED
+2008,13,Residential,17753.32,private_net_cc,FAAt401,SEED
+2009,1,Private fixed assets,32651.79,private_net_cc,FAAt401,SEED
+2009,2,Nonresidential,16063.35,private_net_cc,FAAt401,SEED
+2009,3,Structures,10931.72,private_net_cc,FAAt401,SEED
+2009,6,Equipment,3533.02,private_net_cc,FAAt401,SEED
+2009,9,Intellectual property products,1598.6,private_net_cc,FAAt401,SEED
+2009,13,Residential,16588.44,private_net_cc,FAAt401,SEED
+2010,1,Private fixed assets,31500.0,private_net_cc,FAAt401,SEED
+2010,2,Nonresidential,16000.0,private_net_cc,FAAt401,SEED
+2010,3,Structures,10800.0,private_net_cc,FAAt401,SEED
+2010,6,Equipment,3500.0,private_net_cc,FAAt401,SEED
+2010,9,Intellectual property products,1700.0,private_net_cc,FAAt401,SEED
+2010,13,Residential,15500.0,private_net_cc,FAAt401,SEED
+2011,1,Private fixed assets,32647.21,private_net_cc,FAAt401,SEED
+2011,2,Nonresidential,16588.9,private_net_cc,FAAt401,SEED
+2011,3,Structures,11120.42,private_net_cc,FAAt401,SEED
+2011,6,Equipment,3647.1,private_net_cc,FAAt401,SEED
+2011,9,Intellectual property products,1821.38,private_net_cc,FAAt401,SEED
+2011,13,Residential,16058.31,private_net_cc,FAAt401,SEED
+2012,1,Private fixed assets,33838.88,private_net_cc,FAAt401,SEED
+2012,2,Nonresidential,17202.16,private_net_cc,FAAt401,SEED
+2012,3,Structures,11450.34,private_net_cc,FAAt401,SEED
+2012,6,Equipment,3800.39,private_net_cc,FAAt401,SEED
+2012,9,Intellectual property products,1951.43,private_net_cc,FAAt401,SEED
+2012,13,Residential,16636.72,private_net_cc,FAAt401,SEED
+2013,1,Private fixed assets,35076.91,private_net_cc,FAAt401,SEED
+2013,2,Nonresidential,17840.94,private_net_cc,FAAt401,SEED
+2013,3,Structures,11790.05,private_net_cc,FAAt401,SEED
+2013,6,Equipment,3960.12,private_net_cc,FAAt401,SEED
+2013,9,Intellectual property products,2090.77,private_net_cc,FAAt401,SEED
+2013,13,Residential,17235.97,private_net_cc,FAAt401,SEED
+2014,1,Private fixed assets,36363.26,private_net_cc,FAAt401,SEED
+2014,2,Nonresidential,18506.45,private_net_cc,FAAt401,SEED
+2014,3,Structures,12139.83,private_net_cc,FAAt401,SEED
+2014,6,Equipment,4126.56,private_net_cc,FAAt401,SEED
+2014,9,Intellectual property products,2240.06,private_net_cc,FAAt401,SEED
+2014,13,Residential,17856.8,private_net_cc,FAAt401,SEED
+2015,1,Private fixed assets,37700.0,private_net_cc,FAAt401,SEED
+2015,2,Nonresidential,19200.0,private_net_cc,FAAt401,SEED
+2015,3,Structures,12500.0,private_net_cc,FAAt401,SEED
+2015,6,Equipment,4300.0,private_net_cc,FAAt401,SEED
+2015,9,Intellectual property products,2400.0,private_net_cc,FAAt401,SEED
+2015,13,Residential,18500.0,private_net_cc,FAAt401,SEED
+2016,1,Private fixed assets,39788.63,private_net_cc,FAAt401,SEED
+2016,2,Nonresidential,20078.23,private_net_cc,FAAt401,SEED
+2016,3,Structures,12990.38,private_net_cc,FAAt401,SEED
+2016,6,Equipment,4495.55,private_net_cc,FAAt401,SEED
+2016,9,Intellectual property products,2592.3,private_net_cc,FAAt401,SEED
+2016,13,Residential,19710.4,private_net_cc,FAAt401,SEED
+2017,1,Private fixed assets,42000.0,private_net_cc,FAAt401,SEED
+2017,2,Nonresidential,21000.0,private_net_cc,FAAt401,SEED
+2017,3,Structures,13500.0,private_net_cc,FAAt401,SEED
+2017,6,Equipment,4700.0,private_net_cc,FAAt401,SEED
+2017,9,Intellectual property products,2800.0,private_net_cc,FAAt401,SEED
+2017,13,Residential,21000.0,private_net_cc,FAAt401,SEED
+2018,1,Private fixed assets,44327.47,private_net_cc,FAAt401,SEED
+2018,2,Nonresidential,21923.44,private_net_cc,FAAt401,SEED
+2018,3,Structures,14075.15,private_net_cc,FAAt401,SEED
+2018,6,Equipment,4861.08,private_net_cc,FAAt401,SEED
+2018,9,Intellectual property products,2987.2,private_net_cc,FAAt401,SEED
+2018,13,Residential,22404.04,private_net_cc,FAAt401,SEED
+2019,1,Private fixed assets,46791.36,private_net_cc,FAAt401,SEED
+2019,2,Nonresidential,22889.41,private_net_cc,FAAt401,SEED
+2019,3,Structures,14674.8,private_net_cc,FAAt401,SEED
+2019,6,Equipment,5027.69,private_net_cc,FAAt401,SEED
+2019,9,Intellectual property products,3186.93,private_net_cc,FAAt401,SEED
+2019,13,Residential,23901.94,private_net_cc,FAAt401,SEED
+2020,1,Private fixed assets,49400.0,private_net_cc,FAAt401,SEED
+2020,2,Nonresidential,23900.0,private_net_cc,FAAt401,SEED
+2020,3,Structures,15300.0,private_net_cc,FAAt401,SEED
+2020,6,Equipment,5200.0,private_net_cc,FAAt401,SEED
+2020,9,Intellectual property products,3400.0,private_net_cc,FAAt401,SEED
+2020,13,Residential,25500.0,private_net_cc,FAAt401,SEED
+2021,1,Private fixed assets,53284.19,private_net_cc,FAAt401,SEED
+2021,2,Nonresidential,25779.29,private_net_cc,FAAt401,SEED
+2021,3,Structures,16588.45,private_net_cc,FAAt401,SEED
+2021,6,Equipment,5513.99,private_net_cc,FAAt401,SEED
+2021,9,Intellectual property products,3676.85,private_net_cc,FAAt401,SEED
+2021,13,Residential,27504.9,private_net_cc,FAAt401,SEED
+2022,1,Private fixed assets,57476.02,private_net_cc,FAAt401,SEED
+2022,2,Nonresidential,27808.58,private_net_cc,FAAt401,SEED
+2022,3,Structures,17985.4,private_net_cc,FAAt401,SEED
+2022,6,Equipment,5846.94,private_net_cc,FAAt401,SEED
+2022,9,Intellectual property products,3976.23,private_net_cc,FAAt401,SEED
+2022,13,Residential,29667.44,private_net_cc,FAAt401,SEED
+2023,1,Private fixed assets,62000.0,private_net_cc,FAAt401,SEED
+2023,2,Nonresidential,30000.0,private_net_cc,FAAt401,SEED
+2023,3,Structures,19500.0,private_net_cc,FAAt401,SEED
+2023,6,Equipment,6200.0,private_net_cc,FAAt401,SEED
+2023,9,Intellectual property products,4300.0,private_net_cc,FAAt401,SEED
+2023,13,Residential,32000.0,private_net_cc,FAAt401,SEED

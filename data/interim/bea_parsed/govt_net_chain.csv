@@ -1,0 +1,286 @@
+year,line_number,line_desc,value,table_label,table_name,source
+1929,1,Government fixed assets,1.87,govt_net_chain,FAAt602,SEED
+1929,2,National defense,1.0,govt_net_chain,FAAt602,SEED
+1929,6,Nondefense,2.0,govt_net_chain,FAAt602,SEED
+1930,1,Government fixed assets,1.93,govt_net_chain,FAAt602,SEED
+1930,2,National defense,1.18,govt_net_chain,FAAt602,SEED
+1930,6,Nondefense,2.04,govt_net_chain,FAAt602,SEED
+1931,1,Government fixed assets,1.99,govt_net_chain,FAAt602,SEED
+1931,2,National defense,1.4,govt_net_chain,FAAt602,SEED
+1931,6,Nondefense,2.08,govt_net_chain,FAAt602,SEED
+1932,1,Government fixed assets,2.06,govt_net_chain,FAAt602,SEED
+1932,2,National defense,1.66,govt_net_chain,FAAt602,SEED
+1932,6,Nondefense,2.13,govt_net_chain,FAAt602,SEED
+1933,1,Government fixed assets,2.14,govt_net_chain,FAAt602,SEED
+1933,2,National defense,1.97,govt_net_chain,FAAt602,SEED
+1933,6,Nondefense,2.17,govt_net_chain,FAAt602,SEED
+1934,1,Government fixed assets,2.23,govt_net_chain,FAAt602,SEED
+1934,2,National defense,2.33,govt_net_chain,FAAt602,SEED
+1934,6,Nondefense,2.21,govt_net_chain,FAAt602,SEED
+1935,1,Government fixed assets,2.34,govt_net_chain,FAAt602,SEED
+1935,2,National defense,2.76,govt_net_chain,FAAt602,SEED
+1935,6,Nondefense,2.26,govt_net_chain,FAAt602,SEED
+1936,1,Government fixed assets,2.47,govt_net_chain,FAAt602,SEED
+1936,2,National defense,3.27,govt_net_chain,FAAt602,SEED
+1936,6,Nondefense,2.31,govt_net_chain,FAAt602,SEED
+1937,1,Government fixed assets,2.62,govt_net_chain,FAAt602,SEED
+1937,2,National defense,3.87,govt_net_chain,FAAt602,SEED
+1937,6,Nondefense,2.35,govt_net_chain,FAAt602,SEED
+1938,1,Government fixed assets,2.8,govt_net_chain,FAAt602,SEED
+1938,2,National defense,4.59,govt_net_chain,FAAt602,SEED
+1938,6,Nondefense,2.4,govt_net_chain,FAAt602,SEED
+1939,1,Government fixed assets,3.02,govt_net_chain,FAAt602,SEED
+1939,2,National defense,5.43,govt_net_chain,FAAt602,SEED
+1939,6,Nondefense,2.45,govt_net_chain,FAAt602,SEED
+1940,1,Government fixed assets,3.29,govt_net_chain,FAAt602,SEED
+1940,2,National defense,6.44,govt_net_chain,FAAt602,SEED
+1940,6,Nondefense,2.5,govt_net_chain,FAAt602,SEED
+1941,1,Government fixed assets,3.98,govt_net_chain,FAAt602,SEED
+1941,2,National defense,7.62,govt_net_chain,FAAt602,SEED
+1941,6,Nondefense,2.62,govt_net_chain,FAAt602,SEED
+1942,1,Government fixed assets,4.99,govt_net_chain,FAAt602,SEED
+1942,2,National defense,9.03,govt_net_chain,FAAt602,SEED
+1942,6,Nondefense,2.75,govt_net_chain,FAAt602,SEED
+1943,1,Government fixed assets,6.42,govt_net_chain,FAAt602,SEED
+1943,2,National defense,10.69,govt_net_chain,FAAt602,SEED
+1943,6,Nondefense,2.88,govt_net_chain,FAAt602,SEED
+1944,1,Government fixed assets,8.35,govt_net_chain,FAAt602,SEED
+1944,2,National defense,12.66,govt_net_chain,FAAt602,SEED
+1944,6,Nondefense,3.02,govt_net_chain,FAAt602,SEED
+1945,1,Government fixed assets,10.84,govt_net_chain,FAAt602,SEED
+1945,2,National defense,15.0,govt_net_chain,FAAt602,SEED
+1945,6,Nondefense,3.16,govt_net_chain,FAAt602,SEED
+1946,1,Government fixed assets,9.78,govt_net_chain,FAAt602,SEED
+1946,2,National defense,13.83,govt_net_chain,FAAt602,SEED
+1946,6,Nondefense,3.31,govt_net_chain,FAAt602,SEED
+1947,1,Government fixed assets,8.85,govt_net_chain,FAAt602,SEED
+1947,2,National defense,12.75,govt_net_chain,FAAt602,SEED
+1947,6,Nondefense,3.47,govt_net_chain,FAAt602,SEED
+1948,1,Government fixed assets,8.05,govt_net_chain,FAAt602,SEED
+1948,2,National defense,11.76,govt_net_chain,FAAt602,SEED
+1948,6,Nondefense,3.64,govt_net_chain,FAAt602,SEED
+1949,1,Government fixed assets,7.38,govt_net_chain,FAAt602,SEED
+1949,2,National defense,10.84,govt_net_chain,FAAt602,SEED
+1949,6,Nondefense,3.82,govt_net_chain,FAAt602,SEED
+1950,1,Government fixed assets,6.82,govt_net_chain,FAAt602,SEED
+1950,2,National defense,10.0,govt_net_chain,FAAt602,SEED
+1950,6,Nondefense,4.0,govt_net_chain,FAAt602,SEED
+1951,1,Government fixed assets,7.49,govt_net_chain,FAAt602,SEED
+1951,2,National defense,10.96,govt_net_chain,FAAt602,SEED
+1951,6,Nondefense,4.29,govt_net_chain,FAAt602,SEED
+1952,1,Government fixed assets,8.22,govt_net_chain,FAAt602,SEED
+1952,2,National defense,12.01,govt_net_chain,FAAt602,SEED
+1952,6,Nondefense,4.59,govt_net_chain,FAAt602,SEED
+1953,1,Government fixed assets,9.03,govt_net_chain,FAAt602,SEED
+1953,2,National defense,13.16,govt_net_chain,FAAt602,SEED
+1953,6,Nondefense,4.92,govt_net_chain,FAAt602,SEED
+1954,1,Government fixed assets,9.92,govt_net_chain,FAAt602,SEED
+1954,2,National defense,14.43,govt_net_chain,FAAt602,SEED
+1954,6,Nondefense,5.28,govt_net_chain,FAAt602,SEED
+1955,1,Government fixed assets,10.91,govt_net_chain,FAAt602,SEED
+1955,2,National defense,15.81,govt_net_chain,FAAt602,SEED
+1955,6,Nondefense,5.66,govt_net_chain,FAAt602,SEED
+1956,1,Government fixed assets,11.88,govt_net_chain,FAAt602,SEED
+1956,2,National defense,17.33,govt_net_chain,FAAt602,SEED
+1956,6,Nondefense,6.06,govt_net_chain,FAAt602,SEED
+1957,1,Government fixed assets,12.93,govt_net_chain,FAAt602,SEED
+1957,2,National defense,18.99,govt_net_chain,FAAt602,SEED
+1957,6,Nondefense,6.5,govt_net_chain,FAAt602,SEED
+1958,1,Government fixed assets,14.08,govt_net_chain,FAAt602,SEED
+1958,2,National defense,20.81,govt_net_chain,FAAt602,SEED
+1958,6,Nondefense,6.96,govt_net_chain,FAAt602,SEED
+1959,1,Government fixed assets,15.33,govt_net_chain,FAAt602,SEED
+1959,2,National defense,22.81,govt_net_chain,FAAt602,SEED
+1959,6,Nondefense,7.46,govt_net_chain,FAAt602,SEED
+1960,1,Government fixed assets,16.69,govt_net_chain,FAAt602,SEED
+1960,2,National defense,25.0,govt_net_chain,FAAt602,SEED
+1960,6,Nondefense,8.0,govt_net_chain,FAAt602,SEED
+1961,1,Government fixed assets,17.17,govt_net_chain,FAAt602,SEED
+1961,2,National defense,25.86,govt_net_chain,FAAt602,SEED
+1961,6,Nondefense,8.52,govt_net_chain,FAAt602,SEED
+1962,1,Government fixed assets,17.67,govt_net_chain,FAAt602,SEED
+1962,2,National defense,26.74,govt_net_chain,FAAt602,SEED
+1962,6,Nondefense,9.07,govt_net_chain,FAAt602,SEED
+1963,1,Government fixed assets,18.2,govt_net_chain,FAAt602,SEED
+1963,2,National defense,27.66,govt_net_chain,FAAt602,SEED
+1963,6,Nondefense,9.66,govt_net_chain,FAAt602,SEED
+1964,1,Government fixed assets,18.75,govt_net_chain,FAAt602,SEED
+1964,2,National defense,28.6,govt_net_chain,FAAt602,SEED
+1964,6,Nondefense,10.29,govt_net_chain,FAAt602,SEED
+1965,1,Government fixed assets,19.34,govt_net_chain,FAAt602,SEED
+1965,2,National defense,29.58,govt_net_chain,FAAt602,SEED
+1965,6,Nondefense,10.95,govt_net_chain,FAAt602,SEED
+1966,1,Government fixed assets,19.92,govt_net_chain,FAAt602,SEED
+1966,2,National defense,30.59,govt_net_chain,FAAt602,SEED
+1966,6,Nondefense,11.67,govt_net_chain,FAAt602,SEED
+1967,1,Government fixed assets,20.55,govt_net_chain,FAAt602,SEED
+1967,2,National defense,31.64,govt_net_chain,FAAt602,SEED
+1967,6,Nondefense,12.42,govt_net_chain,FAAt602,SEED
+1968,1,Government fixed assets,21.21,govt_net_chain,FAAt602,SEED
+1968,2,National defense,32.72,govt_net_chain,FAAt602,SEED
+1968,6,Nondefense,13.23,govt_net_chain,FAAt602,SEED
+1969,1,Government fixed assets,21.91,govt_net_chain,FAAt602,SEED
+1969,2,National defense,33.84,govt_net_chain,FAAt602,SEED
+1969,6,Nondefense,14.09,govt_net_chain,FAAt602,SEED
+1970,1,Government fixed assets,22.65,govt_net_chain,FAAt602,SEED
+1970,2,National defense,35.0,govt_net_chain,FAAt602,SEED
+1970,6,Nondefense,15.0,govt_net_chain,FAAt602,SEED
+1971,1,Government fixed assets,23.17,govt_net_chain,FAAt602,SEED
+1971,2,National defense,35.89,govt_net_chain,FAAt602,SEED
+1971,6,Nondefense,15.79,govt_net_chain,FAAt602,SEED
+1972,1,Government fixed assets,23.73,govt_net_chain,FAAt602,SEED
+1972,2,National defense,36.8,govt_net_chain,FAAt602,SEED
+1972,6,Nondefense,16.61,govt_net_chain,FAAt602,SEED
+1973,1,Government fixed assets,24.32,govt_net_chain,FAAt602,SEED
+1973,2,National defense,37.74,govt_net_chain,FAAt602,SEED
+1973,6,Nondefense,17.48,govt_net_chain,FAAt602,SEED
+1974,1,Government fixed assets,24.96,govt_net_chain,FAAt602,SEED
+1974,2,National defense,38.7,govt_net_chain,FAAt602,SEED
+1974,6,Nondefense,18.4,govt_net_chain,FAAt602,SEED
+1975,1,Government fixed assets,25.64,govt_net_chain,FAAt602,SEED
+1975,2,National defense,39.69,govt_net_chain,FAAt602,SEED
+1975,6,Nondefense,19.36,govt_net_chain,FAAt602,SEED
+1976,1,Government fixed assets,26.49,govt_net_chain,FAAt602,SEED
+1976,2,National defense,40.7,govt_net_chain,FAAt602,SEED
+1976,6,Nondefense,20.38,govt_net_chain,FAAt602,SEED
+1977,1,Government fixed assets,27.38,govt_net_chain,FAAt602,SEED
+1977,2,National defense,41.73,govt_net_chain,FAAt602,SEED
+1977,6,Nondefense,21.45,govt_net_chain,FAAt602,SEED
+1978,1,Government fixed assets,28.32,govt_net_chain,FAAt602,SEED
+1978,2,National defense,42.79,govt_net_chain,FAAt602,SEED
+1978,6,Nondefense,22.57,govt_net_chain,FAAt602,SEED
+1979,1,Government fixed assets,29.31,govt_net_chain,FAAt602,SEED
+1979,2,National defense,43.88,govt_net_chain,FAAt602,SEED
+1979,6,Nondefense,23.76,govt_net_chain,FAAt602,SEED
+1980,1,Government fixed assets,30.37,govt_net_chain,FAAt602,SEED
+1980,2,National defense,45.0,govt_net_chain,FAAt602,SEED
+1980,6,Nondefense,25.0,govt_net_chain,FAAt602,SEED
+1981,1,Government fixed assets,31.83,govt_net_chain,FAAt602,SEED
+1981,2,National defense,46.69,govt_net_chain,FAAt602,SEED
+1981,6,Nondefense,26.33,govt_net_chain,FAAt602,SEED
+1982,1,Government fixed assets,33.37,govt_net_chain,FAAt602,SEED
+1982,2,National defense,48.43,govt_net_chain,FAAt602,SEED
+1982,6,Nondefense,27.73,govt_net_chain,FAAt602,SEED
+1983,1,Government fixed assets,34.99,govt_net_chain,FAAt602,SEED
+1983,2,National defense,50.25,govt_net_chain,FAAt602,SEED
+1983,6,Nondefense,29.21,govt_net_chain,FAAt602,SEED
+1984,1,Government fixed assets,36.67,govt_net_chain,FAAt602,SEED
+1984,2,National defense,52.13,govt_net_chain,FAAt602,SEED
+1984,6,Nondefense,30.77,govt_net_chain,FAAt602,SEED
+1985,1,Government fixed assets,38.45,govt_net_chain,FAAt602,SEED
+1985,2,National defense,54.08,govt_net_chain,FAAt602,SEED
+1985,6,Nondefense,32.4,govt_net_chain,FAAt602,SEED
+1986,1,Government fixed assets,40.14,govt_net_chain,FAAt602,SEED
+1986,2,National defense,56.11,govt_net_chain,FAAt602,SEED
+1986,6,Nondefense,34.13,govt_net_chain,FAAt602,SEED
+1987,1,Government fixed assets,41.92,govt_net_chain,FAAt602,SEED
+1987,2,National defense,58.21,govt_net_chain,FAAt602,SEED
+1987,6,Nondefense,35.95,govt_net_chain,FAAt602,SEED
+1988,1,Government fixed assets,43.79,govt_net_chain,FAAt602,SEED
+1988,2,National defense,60.39,govt_net_chain,FAAt602,SEED
+1988,6,Nondefense,37.86,govt_net_chain,FAAt602,SEED
+1989,1,Government fixed assets,45.75,govt_net_chain,FAAt602,SEED
+1989,2,National defense,62.65,govt_net_chain,FAAt602,SEED
+1989,6,Nondefense,39.88,govt_net_chain,FAAt602,SEED
+1990,1,Government fixed assets,47.82,govt_net_chain,FAAt602,SEED
+1990,2,National defense,65.0,govt_net_chain,FAAt602,SEED
+1990,6,Nondefense,42.0,govt_net_chain,FAAt602,SEED
+1991,1,Government fixed assets,48.3,govt_net_chain,FAAt602,SEED
+1991,2,National defense,63.92,govt_net_chain,FAAt602,SEED
+1991,6,Nondefense,43.38,govt_net_chain,FAAt602,SEED
+1992,1,Government fixed assets,48.9,govt_net_chain,FAAt602,SEED
+1992,2,National defense,62.86,govt_net_chain,FAAt602,SEED
+1992,6,Nondefense,44.8,govt_net_chain,FAAt602,SEED
+1993,1,Government fixed assets,49.61,govt_net_chain,FAAt602,SEED
+1993,2,National defense,61.82,govt_net_chain,FAAt602,SEED
+1993,6,Nondefense,46.27,govt_net_chain,FAAt602,SEED
+1994,1,Government fixed assets,50.43,govt_net_chain,FAAt602,SEED
+1994,2,National defense,60.8,govt_net_chain,FAAt602,SEED
+1994,6,Nondefense,47.79,govt_net_chain,FAAt602,SEED
+1995,1,Government fixed assets,51.35,govt_net_chain,FAAt602,SEED
+1995,2,National defense,59.79,govt_net_chain,FAAt602,SEED
+1995,6,Nondefense,49.36,govt_net_chain,FAAt602,SEED
+1996,1,Government fixed assets,52.41,govt_net_chain,FAAt602,SEED
+1996,2,National defense,58.8,govt_net_chain,FAAt602,SEED
+1996,6,Nondefense,50.97,govt_net_chain,FAAt602,SEED
+1997,1,Government fixed assets,53.56,govt_net_chain,FAAt602,SEED
+1997,2,National defense,57.83,govt_net_chain,FAAt602,SEED
+1997,6,Nondefense,52.65,govt_net_chain,FAAt602,SEED
+1998,1,Government fixed assets,54.8,govt_net_chain,FAAt602,SEED
+1998,2,National defense,56.87,govt_net_chain,FAAt602,SEED
+1998,6,Nondefense,54.37,govt_net_chain,FAAt602,SEED
+1999,1,Government fixed assets,56.12,govt_net_chain,FAAt602,SEED
+1999,2,National defense,55.93,govt_net_chain,FAAt602,SEED
+1999,6,Nondefense,56.16,govt_net_chain,FAAt602,SEED
+2000,1,Government fixed assets,57.53,govt_net_chain,FAAt602,SEED
+2000,2,National defense,55.0,govt_net_chain,FAAt602,SEED
+2000,6,Nondefense,58.0,govt_net_chain,FAAt602,SEED
+2001,1,Government fixed assets,59.34,govt_net_chain,FAAt602,SEED
+2001,2,National defense,57.1,govt_net_chain,FAAt602,SEED
+2001,6,Nondefense,59.74,govt_net_chain,FAAt602,SEED
+2002,1,Government fixed assets,61.2,govt_net_chain,FAAt602,SEED
+2002,2,National defense,59.28,govt_net_chain,FAAt602,SEED
+2002,6,Nondefense,61.54,govt_net_chain,FAAt602,SEED
+2003,1,Government fixed assets,63.11,govt_net_chain,FAAt602,SEED
+2003,2,National defense,61.54,govt_net_chain,FAAt602,SEED
+2003,6,Nondefense,63.39,govt_net_chain,FAAt602,SEED
+2004,1,Government fixed assets,65.09,govt_net_chain,FAAt602,SEED
+2004,2,National defense,63.89,govt_net_chain,FAAt602,SEED
+2004,6,Nondefense,65.3,govt_net_chain,FAAt602,SEED
+2005,1,Government fixed assets,67.12,govt_net_chain,FAAt602,SEED
+2005,2,National defense,66.33,govt_net_chain,FAAt602,SEED
+2005,6,Nondefense,67.26,govt_net_chain,FAAt602,SEED
+2006,1,Government fixed assets,69.22,govt_net_chain,FAAt602,SEED
+2006,2,National defense,68.87,govt_net_chain,FAAt602,SEED
+2006,6,Nondefense,69.28,govt_net_chain,FAAt602,SEED
+2007,1,Government fixed assets,71.39,govt_net_chain,FAAt602,SEED
+2007,2,National defense,71.49,govt_net_chain,FAAt602,SEED
+2007,6,Nondefense,71.37,govt_net_chain,FAAt602,SEED
+2008,1,Government fixed assets,73.62,govt_net_chain,FAAt602,SEED
+2008,2,National defense,74.22,govt_net_chain,FAAt602,SEED
+2008,6,Nondefense,73.51,govt_net_chain,FAAt602,SEED
+2009,1,Government fixed assets,75.93,govt_net_chain,FAAt602,SEED
+2009,2,National defense,77.06,govt_net_chain,FAAt602,SEED
+2009,6,Nondefense,75.72,govt_net_chain,FAAt602,SEED
+2010,1,Government fixed assets,78.31,govt_net_chain,FAAt602,SEED
+2010,2,National defense,80.0,govt_net_chain,FAAt602,SEED
+2010,6,Nondefense,78.0,govt_net_chain,FAAt602,SEED
+2011,1,Government fixed assets,80.31,govt_net_chain,FAAt602,SEED
+2011,2,National defense,82.59,govt_net_chain,FAAt602,SEED
+2011,6,Nondefense,79.9,govt_net_chain,FAAt602,SEED
+2012,1,Government fixed assets,82.36,govt_net_chain,FAAt602,SEED
+2012,2,National defense,85.27,govt_net_chain,FAAt602,SEED
+2012,6,Nondefense,81.86,govt_net_chain,FAAt602,SEED
+2013,1,Government fixed assets,84.46,govt_net_chain,FAAt602,SEED
+2013,2,National defense,88.03,govt_net_chain,FAAt602,SEED
+2013,6,Nondefense,83.85,govt_net_chain,FAAt602,SEED
+2014,1,Government fixed assets,86.62,govt_net_chain,FAAt602,SEED
+2014,2,National defense,90.88,govt_net_chain,FAAt602,SEED
+2014,6,Nondefense,85.9,govt_net_chain,FAAt602,SEED
+2015,1,Government fixed assets,88.82,govt_net_chain,FAAt602,SEED
+2015,2,National defense,93.82,govt_net_chain,FAAt602,SEED
+2015,6,Nondefense,88.0,govt_net_chain,FAAt602,SEED
+2016,1,Government fixed assets,94.24,govt_net_chain,FAAt602,SEED
+2016,2,National defense,96.86,govt_net_chain,FAAt602,SEED
+2016,6,Nondefense,93.81,govt_net_chain,FAAt602,SEED
+2017,1,Government fixed assets,100.0,govt_net_chain,FAAt602,SEED
+2017,2,National defense,100.0,govt_net_chain,FAAt602,SEED
+2017,6,Nondefense,100.0,govt_net_chain,FAAt602,SEED
+2018,1,Government fixed assets,102.33,govt_net_chain,FAAt602,SEED
+2018,2,National defense,102.6,govt_net_chain,FAAt602,SEED
+2018,6,Nondefense,102.28,govt_net_chain,FAAt602,SEED
+2019,1,Government fixed assets,104.7,govt_net_chain,FAAt602,SEED
+2019,2,National defense,105.26,govt_net_chain,FAAt602,SEED
+2019,6,Nondefense,104.61,govt_net_chain,FAAt602,SEED
+2020,1,Government fixed assets,107.14,govt_net_chain,FAAt602,SEED
+2020,2,National defense,108.0,govt_net_chain,FAAt602,SEED
+2020,6,Nondefense,107.0,govt_net_chain,FAAt602,SEED
+2021,1,Government fixed assets,109.7,govt_net_chain,FAAt602,SEED
+2021,2,National defense,110.28,govt_net_chain,FAAt602,SEED
+2021,6,Nondefense,109.6,govt_net_chain,FAAt602,SEED
+2022,1,Government fixed assets,112.32,govt_net_chain,FAAt602,SEED
+2022,2,National defense,112.62,govt_net_chain,FAAt602,SEED
+2022,6,Nondefense,112.27,govt_net_chain,FAAt602,SEED
+2023,1,Government fixed assets,115.0,govt_net_chain,FAAt602,SEED
+2023,2,National defense,115.0,govt_net_chain,FAAt602,SEED
+2023,6,Nondefense,115.0,govt_net_chain,FAAt602,SEED
