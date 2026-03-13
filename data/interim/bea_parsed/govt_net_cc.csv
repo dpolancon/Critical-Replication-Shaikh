@@ -1,4 +1,40 @@
 year,line_number,line_desc,value,table_label,table_name,source
+1925,1,Government fixed assets,51.0,govt_net_cc,FAAt601,SEED
+1925,2,National defense,6.0,govt_net_cc,FAAt601,SEED
+1925,3,National defense: Structures,2.1,govt_net_cc,FAAt601,SEED
+1925,4,National defense: Equipment,3.0,govt_net_cc,FAAt601,SEED
+1925,5,National defense: IP products,0.9,govt_net_cc,FAAt601,SEED
+1925,6,Nondefense,45.0,govt_net_cc,FAAt601,SEED
+1925,7,Nondefense: Structures,33.75,govt_net_cc,FAAt601,SEED
+1925,8,Nondefense: Equipment,6.75,govt_net_cc,FAAt601,SEED
+1925,9,Nondefense: IP products,4.5,govt_net_cc,FAAt601,SEED
+1926,1,Government fixed assets,53.76,govt_net_cc,FAAt601,SEED
+1926,2,National defense,6.45,govt_net_cc,FAAt601,SEED
+1926,3,National defense: Structures,2.26,govt_net_cc,FAAt601,SEED
+1926,4,National defense: Equipment,3.22,govt_net_cc,FAAt601,SEED
+1926,5,National defense: IP products,0.97,govt_net_cc,FAAt601,SEED
+1926,6,Nondefense,47.32,govt_net_cc,FAAt601,SEED
+1926,7,Nondefense: Structures,35.49,govt_net_cc,FAAt601,SEED
+1926,8,Nondefense: Equipment,7.1,govt_net_cc,FAAt601,SEED
+1926,9,Nondefense: IP products,4.73,govt_net_cc,FAAt601,SEED
+1927,1,Government fixed assets,56.68,govt_net_cc,FAAt601,SEED
+1927,2,National defense,6.93,govt_net_cc,FAAt601,SEED
+1927,3,National defense: Structures,2.42,govt_net_cc,FAAt601,SEED
+1927,4,National defense: Equipment,3.46,govt_net_cc,FAAt601,SEED
+1927,5,National defense: IP products,1.04,govt_net_cc,FAAt601,SEED
+1927,6,Nondefense,49.75,govt_net_cc,FAAt601,SEED
+1927,7,Nondefense: Structures,37.31,govt_net_cc,FAAt601,SEED
+1927,8,Nondefense: Equipment,7.46,govt_net_cc,FAAt601,SEED
+1927,9,Nondefense: IP products,4.97,govt_net_cc,FAAt601,SEED
+1928,1,Government fixed assets,59.75,govt_net_cc,FAAt601,SEED
+1928,2,National defense,7.44,govt_net_cc,FAAt601,SEED
+1928,3,National defense: Structures,2.61,govt_net_cc,FAAt601,SEED
+1928,4,National defense: Equipment,3.72,govt_net_cc,FAAt601,SEED
+1928,5,National defense: IP products,1.12,govt_net_cc,FAAt601,SEED
+1928,6,Nondefense,52.31,govt_net_cc,FAAt601,SEED
+1928,7,Nondefense: Structures,39.23,govt_net_cc,FAAt601,SEED
+1928,8,Nondefense: Equipment,7.85,govt_net_cc,FAAt601,SEED
+1928,9,Nondefense: IP products,5.23,govt_net_cc,FAAt601,SEED
 1929,1,Government fixed assets,63.0,govt_net_cc,FAAt601,SEED
 1929,2,National defense,8.0,govt_net_cc,FAAt601,SEED
 1929,3,National defense: Structures,2.8,govt_net_cc,FAAt601,SEED

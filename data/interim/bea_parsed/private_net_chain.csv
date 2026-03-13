@@ -1,4 +1,28 @@
 year,line_number,line_desc,value,table_label,table_name,source
+1925,1,Private fixed assets,6.54,private_net_chain,FAAt402,SEED
+1925,2,Nonresidential,4.54,private_net_chain,FAAt402,SEED
+1925,3,Structures,3.5,private_net_chain,FAAt402,SEED
+1925,6,Equipment,1.0,private_net_chain,FAAt402,SEED
+1925,9,Intellectual property products,0.04,private_net_chain,FAAt402,SEED
+1925,13,Residential,2.0,private_net_chain,FAAt402,SEED
+1926,1,Private fixed assets,6.82,private_net_chain,FAAt402,SEED
+1926,2,Nonresidential,4.71,private_net_chain,FAAt402,SEED
+1926,3,Structures,3.62,private_net_chain,FAAt402,SEED
+1926,6,Equipment,1.05,private_net_chain,FAAt402,SEED
+1926,9,Intellectual property products,0.04,private_net_chain,FAAt402,SEED
+1926,13,Residential,2.11,private_net_chain,FAAt402,SEED
+1927,1,Private fixed assets,7.12,private_net_chain,FAAt402,SEED
+1927,2,Nonresidential,4.88,private_net_chain,FAAt402,SEED
+1927,3,Structures,3.74,private_net_chain,FAAt402,SEED
+1927,6,Equipment,1.1,private_net_chain,FAAt402,SEED
+1927,9,Intellectual property products,0.04,private_net_chain,FAAt402,SEED
+1927,13,Residential,2.24,private_net_chain,FAAt402,SEED
+1928,1,Private fixed assets,7.43,private_net_chain,FAAt402,SEED
+1928,2,Nonresidential,5.06,private_net_chain,FAAt402,SEED
+1928,3,Structures,3.87,private_net_chain,FAAt402,SEED
+1928,6,Equipment,1.15,private_net_chain,FAAt402,SEED
+1928,9,Intellectual property products,0.05,private_net_chain,FAAt402,SEED
+1928,13,Residential,2.36,private_net_chain,FAAt402,SEED
 1929,1,Private fixed assets,3.01,private_net_chain,FAAt402,SEED
 1929,2,Nonresidential,3.31,private_net_chain,FAAt402,SEED
 1929,3,Structures,4.0,private_net_chain,FAAt402,SEED

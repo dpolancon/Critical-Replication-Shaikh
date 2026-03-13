@@ -1,4 +1,28 @@
 year,line_number,line_desc,value,table_label,table_name,source
+1925,1,Private fixed assets,19.27,private_inv,FAAt407,SEED
+1925,2,Nonresidential,15.63,private_inv,FAAt407,SEED
+1925,3,Structures,6.92,private_inv,FAAt407,SEED
+1925,6,Equipment,8.06,private_inv,FAAt407,SEED
+1925,9,Intellectual property products,0.65,private_inv,FAAt407,SEED
+1925,13,Residential,3.64,private_inv,FAAt407,SEED
+1926,1,Private fixed assets,27.94,private_inv,FAAt407,SEED
+1926,2,Nonresidential,19.24,private_inv,FAAt407,SEED
+1926,3,Structures,10.25,private_inv,FAAt407,SEED
+1926,6,Equipment,8.36,private_inv,FAAt407,SEED
+1926,9,Intellectual property products,0.64,private_inv,FAAt407,SEED
+1926,13,Residential,8.7,private_inv,FAAt407,SEED
+1927,1,Private fixed assets,29.21,private_inv,FAAt407,SEED
+1927,2,Nonresidential,20.02,private_inv,FAAt407,SEED
+1927,3,Structures,10.6,private_inv,FAAt407,SEED
+1927,6,Equipment,8.74,private_inv,FAAt407,SEED
+1927,9,Intellectual property products,0.67,private_inv,FAAt407,SEED
+1927,13,Residential,9.2,private_inv,FAAt407,SEED
+1928,1,Private fixed assets,30.54,private_inv,FAAt407,SEED
+1928,2,Nonresidential,20.81,private_inv,FAAt407,SEED
+1928,3,Structures,10.96,private_inv,FAAt407,SEED
+1928,6,Equipment,9.15,private_inv,FAAt407,SEED
+1928,9,Intellectual property products,0.7,private_inv,FAAt407,SEED
+1928,13,Residential,9.72,private_inv,FAAt407,SEED
 1929,1,Private fixed assets,21.14,private_inv,FAAt407,SEED
 1929,2,Nonresidential,16.94,private_inv,FAAt407,SEED
 1929,3,Structures,7.3,private_inv,FAAt407,SEED

@@ -1,4 +1,16 @@
 year,line_number,line_desc,value,table_label,table_name,source
+1925,1,Government fixed assets,3.42,govt_inv,FAAt604,SEED
+1925,2,National defense,0.72,govt_inv,FAAt604,SEED
+1925,6,Nondefense,2.7,govt_inv,FAAt604,SEED
+1926,1,Government fixed assets,3.61,govt_inv,FAAt604,SEED
+1926,2,National defense,0.77,govt_inv,FAAt604,SEED
+1926,6,Nondefense,2.84,govt_inv,FAAt604,SEED
+1927,1,Government fixed assets,3.82,govt_inv,FAAt604,SEED
+1927,2,National defense,0.83,govt_inv,FAAt604,SEED
+1927,6,Nondefense,2.98,govt_inv,FAAt604,SEED
+1928,1,Government fixed assets,4.03,govt_inv,FAAt604,SEED
+1928,2,National defense,0.89,govt_inv,FAAt604,SEED
+1928,6,Nondefense,3.14,govt_inv,FAAt604,SEED
 1929,1,Government fixed assets,3.08,govt_inv,FAAt604,SEED
 1929,2,National defense,0.77,govt_inv,FAAt604,SEED
 1929,6,Nondefense,2.31,govt_inv,FAAt604,SEED

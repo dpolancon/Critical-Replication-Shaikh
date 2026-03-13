@@ -24,7 +24,7 @@ GDP_CONFIG <- list(
   ## ----------------------------------------------------------
   year_start = 1925L,
   year_end   = 2024L,
-  year_trim  = 1929L,   # fallback if pre-1929 GDP unavailable
+  year_trim  = 1925L,   # use 1925 when pre-1929 GDP is available
 
   ## ----------------------------------------------------------
   ## FRED series IDs
