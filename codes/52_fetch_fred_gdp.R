@@ -1,10 +1,10 @@
 ############################################################
 # 52_fetch_fred_gdp.R — Download FRED GDP/GNP/Deflator
 #
-# Downloads: GDPA, GNPA, A191RD3A086NBEA via fredr.
+# Downloads: GDPA, GNPA, A191RD3A086NBEA via direct FRED API.
 # Writes to: data/raw/fred/
 #
-# Requires: fredr, dplyr, readr
+# Requires: httr, jsonlite, dplyr, readr
 # Sources:  50_gdp_kstock_config.R, 97_kstock_helpers.R
 ############################################################
 
@@ -12,6 +12,8 @@ rm(list = ls())
 
 library(dplyr)
 library(readr)
+library(httr)
+library(jsonlite)
 
 source("codes/50_gdp_kstock_config.R")
 source("codes/99_utils.R")
@@ -20,69 +22,72 @@ source("codes/97_kstock_helpers.R")
 ensure_dirs(GDP_CONFIG)
 
 ## ----------------------------------------------------------
-## FRED API setup
+## FRED API fetch function (direct httr)
 ## ----------------------------------------------------------
 
-if (!requireNamespace("fredr", quietly = TRUE)) {
-  stop("fredr package required. Install with: install.packages('fredr')")
-}
-
-fredr::fredr_set_key(GDP_CONFIG$FRED_API_KEY)
-
-## ----------------------------------------------------------
-## Fetch function with retry logic
-## ----------------------------------------------------------
-
-#' Fetch a FRED series with exponential backoff retry
+#' Fetch a FRED series via direct API call with retry
 #'
 #' @param series_id FRED series ID
-#' @param start_date Start date string
-#' @param end_date   End date string
+#' @param api_key FRED API key
 #' @param max_retries Maximum retries
 #' @return tibble(date, year, value, series_id) or NULL
-fetch_fred_series <- function(series_id,
-                               start_date = "1925-01-01",
-                               end_date   = "2024-12-31",
-                               max_retries = 4L) {
-  wait_secs <- 2
+fetch_fred_series <- function(series_id, api_key, max_retries = 4L) {
+  url <- "https://api.stlouisfed.org/fred/series/observations"
 
+  params <- list(
+    series_id  = series_id,
+    api_key    = api_key,
+    file_type  = "json",
+    frequency  = "a",
+    observation_start = "1925-01-01",
+    observation_end   = "2024-12-31"
+  )
+
+  wait_secs <- 2
   for (attempt in seq_len(max_retries)) {
-    result <- tryCatch({
+    tryCatch({
       message(sprintf("  Fetching %s (attempt %d)...", series_id, attempt))
 
-      obs <- fredr::fredr(
-        series_id         = series_id,
-        observation_start = as.Date(start_date),
-        observation_end   = as.Date(end_date),
-        frequency         = "a"  # annual
-      )
+      resp <- httr::GET(url, query = params, httr::timeout(30))
 
-      if (is.null(obs) || nrow(obs) == 0) {
-        message(sprintf("  Empty response for %s", series_id))
+      if (httr::status_code(resp) != 200) {
+        message(sprintf("  HTTP %d for %s", httr::status_code(resp), series_id))
+        if (attempt < max_retries) {
+          Sys.sleep(wait_secs)
+          wait_secs <- wait_secs * 2
+          next
+        }
         return(NULL)
       }
 
-      obs |>
+      content_text <- httr::content(resp, as = "text", encoding = "UTF-8")
+      parsed <- jsonlite::fromJSON(content_text)
+
+      if (is.null(parsed$observations) || nrow(parsed$observations) == 0) {
+        message(sprintf("  No observations for %s", series_id))
+        return(NULL)
+      }
+
+      result <- parsed$observations |>
         dplyr::transmute(
-          date      = .data$date,
-          year      = as.integer(format(.data$date, "%Y")),
-          value     = .data$value,
+          date      = as.Date(date),
+          year      = as.integer(format(as.Date(date), "%Y")),
+          value     = suppressWarnings(as.numeric(value)),
           series_id = series_id
-        )
+        ) |>
+        dplyr::filter(!is.na(value))
+
+      message(sprintf("  Got %d observations for %s", nrow(result), series_id))
+      return(result)
 
     }, error = function(e) {
       message(sprintf("  Error fetching %s: %s", series_id, e$message))
-      NULL
+      if (attempt < max_retries) {
+        message(sprintf("  Retrying in %d seconds...", wait_secs))
+        Sys.sleep(wait_secs)
+        wait_secs <<- wait_secs * 2
+      }
     })
-
-    if (!is.null(result)) return(result)
-
-    # Exponential backoff on failure
-    if (attempt < max_retries) {
-      message(sprintf("  Retrying in %d seconds...", wait_secs))
-      Sys.sleep(wait_secs)
-      wait_secs <- wait_secs * 2
-    }
   }
 
   message(sprintf("  FAILED: %s after %d attempts", series_id, max_retries))
@@ -105,7 +110,7 @@ for (label in names(GDP_CONFIG$FRED_SERIES)) {
   series_id <- GDP_CONFIG$FRED_SERIES[[label]]
   message(sprintf("\n[%s] Fetching %s (%s)...", now_stamp(), label, series_id))
 
-  df <- fetch_fred_series(series_id)
+  df <- fetch_fred_series(series_id, GDP_CONFIG$FRED_API_KEY)
 
   if (is.null(df) || nrow(df) == 0) {
     msg <- sprintf("FAILED: %s (%s)", label, series_id)
@@ -132,6 +137,8 @@ for (label in names(GDP_CONFIG$FRED_SERIES)) {
 
   log_data_quality(df, label)
   results[[label]] <- df
+
+  Sys.sleep(0.5)  # Rate limit
 }
 
 

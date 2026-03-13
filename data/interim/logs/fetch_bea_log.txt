@@ -1,0 +1,13 @@
+BEA Fixed Assets Fetch — 2026-03-13 19:19:05
+API Key: 6EA6700D...FA4F
+FAILED: private_net_cc (FAAt401) — no data from API or CSV 
+FAILED: private_net_chain (FAAt402) — no data from API or CSV 
+FAILED: private_net_hist (FAAt403) — no data from API or CSV 
+FAILED: private_dep_cc (FAAt404) — no data from API or CSV 
+FAILED: private_inv (FAAt407) — no data from API or CSV 
+FAILED: govt_net_cc (FAAt601) — no data from API or CSV 
+FAILED: govt_net_chain (FAAt602) — no data from API or CSV 
+FAILED: govt_dep_cc (FAAt603) — no data from API or CSV 
+FAILED: govt_inv (FAAt604) — no data from API or CSV 
+
+Fetch complete: 0/9 tables retrieved — 2026-03-13 19:21:12
