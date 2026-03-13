@@ -1,15 +1,15 @@
 ############################################################
-# 45_build_kstock_government.R — Government Capital Stocks
+# 55_build_kstock_government.R — Government Capital Stocks
 #
 # Builds government fixed assets from BEA Tables 6.1-6.4.
 # Sub-breakdown: defense vs nondefense, each with
 # structures/equipment/IP (broad measures only).
 #
-# Follows same GPIM structure as 44_build_kstock_private.R.
+# Follows same GPIM structure as 54_build_kstock_private.R.
 #
 # Output: data/processed/kstock_government.csv
 #
-# Sources: 40_gdp_kstock_config.R, 97_kstock_helpers.R
+# Sources: 50_gdp_kstock_config.R, 97_kstock_helpers.R
 ############################################################
 
 rm(list = ls())
@@ -18,7 +18,7 @@ library(dplyr)
 library(tidyr)
 library(readr)
 
-source("codes/40_gdp_kstock_config.R")
+source("codes/50_gdp_kstock_config.R")
 source("codes/99_utils.R")
 source("codes/97_kstock_helpers.R")
 
@@ -32,7 +32,7 @@ load_parsed <- function(label) {
   path <- file.path(GDP_CONFIG$INTERIM_BEA_PARSED, sprintf("%s.csv", label))
   if (!file.exists(path)) {
     stop("Parsed BEA table not found: ", path,
-         "\nRun 41_fetch_bea_fixed_assets.R first.")
+         "\nRun 51_fetch_bea_fixed_assets.R first.")
   }
   readr::read_csv(path, show_col_types = FALSE)
 }

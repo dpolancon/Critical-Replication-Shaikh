@@ -1,7 +1,7 @@
 ############################################################
-# 43_build_gdp_series.R — GDP Construction (1925/1929-2024)
+# 53_build_gdp_series.R — GDP Construction (1925/1929-2024)
 #
-# Builds the GDP series from FRED data (42_fetch_fred_gdp.R).
+# Builds the GDP series from FRED data (52_fetch_fred_gdp.R).
 # Attempts splicing for 1925-1928 via historical estimates;
 # trims to 1929 if unavailable.
 #
@@ -9,7 +9,7 @@
 #   Columns: year, gdp_nominal, gdp_real_2017, gdp_deflator,
 #            gnp_nominal, nfia
 #
-# Sources: 40_gdp_kstock_config.R, 97_kstock_helpers.R
+# Sources: 50_gdp_kstock_config.R, 97_kstock_helpers.R
 ############################################################
 
 rm(list = ls())
@@ -17,7 +17,7 @@ rm(list = ls())
 library(dplyr)
 library(readr)
 
-source("codes/40_gdp_kstock_config.R")
+source("codes/50_gdp_kstock_config.R")
 source("codes/99_utils.R")
 source("codes/97_kstock_helpers.R")
 

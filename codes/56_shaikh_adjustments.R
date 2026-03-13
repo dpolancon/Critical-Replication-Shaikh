@@ -1,5 +1,5 @@
 ############################################################
-# 46_shaikh_adjustments.R — Toggle-able Shaikh Adjustments
+# 56_shaikh_adjustments.R — Toggle-able Shaikh Adjustments
 #
 # Applies four orthogonal adjustments to capital stocks
 # (per §6-7 of GPIM formalization, §7.7 separability):
@@ -16,7 +16,7 @@
 # Inputs: data/processed/kstock_private_*.csv
 # Output: data/processed/kstock_shaikh_adjusted.csv
 #
-# Sources: 40_gdp_kstock_config.R, 97_kstock_helpers.R
+# Sources: 50_gdp_kstock_config.R, 97_kstock_helpers.R
 ############################################################
 
 rm(list = ls())
@@ -24,7 +24,7 @@ rm(list = ls())
 library(dplyr)
 library(readr)
 
-source("codes/40_gdp_kstock_config.R")
+source("codes/50_gdp_kstock_config.R")
 source("codes/99_utils.R")
 source("codes/97_kstock_helpers.R")
 

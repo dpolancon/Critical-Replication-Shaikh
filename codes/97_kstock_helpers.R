@@ -6,7 +6,7 @@
 # and 6.7 §V.
 #
 # Notation follows docs/notation.md.
-# Configuration from 40_gdp_kstock_config.R (GDP_CONFIG).
+# Configuration from 50_gdp_kstock_config.R (GDP_CONFIG).
 #
 # Dependencies: dplyr, tidyr, readr
 # (No side effects — pure functions only)

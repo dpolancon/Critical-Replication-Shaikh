@@ -1,5 +1,5 @@
 ############################################################
-# 48_assemble_dataset.R — Final Assembly
+# 58_assemble_dataset.R — Final Assembly
 #
 # Merges GDP with capital stocks, computes derived ratios,
 # cross-validates against Shaikh canonical series (1947-2011),
@@ -7,7 +7,7 @@
 #
 # Output: data/processed/master_dataset.csv
 #
-# Sources: 40_gdp_kstock_config.R, 97_kstock_helpers.R
+# Sources: 50_gdp_kstock_config.R, 97_kstock_helpers.R
 ############################################################
 
 rm(list = ls())
@@ -16,7 +16,7 @@ library(dplyr)
 library(readr)
 library(ggplot2)
 
-source("codes/40_gdp_kstock_config.R")
+source("codes/50_gdp_kstock_config.R")
 source("codes/99_utils.R")
 source("codes/97_kstock_helpers.R")
 

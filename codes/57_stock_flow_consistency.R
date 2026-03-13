@@ -1,5 +1,5 @@
 ############################################################
-# 47_stock_flow_consistency.R — SFC Validation + Deflator Tests
+# 57_stock_flow_consistency.R — SFC Validation + Deflator Tests
 #
 # Part A: Stock-flow consistency validation
 #   For each asset and valuation, check:
@@ -23,7 +23,7 @@
 #   data/interim/figures/fig_quality_wedge.png
 #   data/processed/stock_flow_validation.csv
 #
-# Sources: 40_gdp_kstock_config.R, 97_kstock_helpers.R
+# Sources: 50_gdp_kstock_config.R, 97_kstock_helpers.R
 ############################################################
 
 rm(list = ls())
@@ -32,7 +32,7 @@ library(dplyr)
 library(readr)
 library(ggplot2)
 
-source("codes/40_gdp_kstock_config.R")
+source("codes/50_gdp_kstock_config.R")
 source("codes/99_utils.R")
 source("codes/97_kstock_helpers.R")
 
@@ -56,7 +56,7 @@ component_files <- list.files(GDP_CONFIG$INTERIM_KSTOCK,
                                full.names = TRUE)
 
 if (length(component_files) == 0) {
-  stop("No component files found. Run 44_build_kstock_private.R first.")
+  stop("No component files found. Run 54_build_kstock_private.R first.")
 }
 
 sfc_all <- list()

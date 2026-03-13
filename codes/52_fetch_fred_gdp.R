@@ -1,11 +1,11 @@
 ############################################################
-# 42_fetch_fred_gdp.R — Download FRED GDP/GNP/Deflator
+# 52_fetch_fred_gdp.R — Download FRED GDP/GNP/Deflator
 #
 # Downloads: GDPA, GNPA, A191RD3A086NBEA via fredr.
 # Writes to: data/raw/fred/
 #
 # Requires: fredr, dplyr, readr
-# Sources:  40_gdp_kstock_config.R, 97_kstock_helpers.R
+# Sources:  50_gdp_kstock_config.R, 97_kstock_helpers.R
 ############################################################
 
 rm(list = ls())
@@ -13,7 +13,7 @@ rm(list = ls())
 library(dplyr)
 library(readr)
 
-source("codes/40_gdp_kstock_config.R")
+source("codes/50_gdp_kstock_config.R")
 source("codes/99_utils.R")
 source("codes/97_kstock_helpers.R")
 

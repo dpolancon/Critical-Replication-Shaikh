@@ -1,20 +1,20 @@
 ############################################################
-# 40_gdp_kstock_config.R — GDP & Capital Stock Dataset
+# 50_gdp_kstock_config.R — GDP & Capital Stock Dataset
 #                           Module Configuration
 #
 # GPIM formalization: Shaikh (2016), Appendix 6.5 §V,
 #   Appendix 6.6 §I, Appendix 6.7 §V
 # Notation reference: docs/notation.md
 #
-# This config drives the 40-series pipeline:
-#   41 → BEA fetch
-#   42 → FRED fetch
-#   43 → GDP construction
-#   44 → Private capital stocks (GPIM)
-#   45 → Government capital stocks
-#   46 → Shaikh adjustments (toggle-able)
-#   47 → Stock-flow consistency + deflator tests T1-T3
-#   48 → Final assembly
+# This config drives the 50-series pipeline:
+#   51 → BEA fetch
+#   52 → FRED fetch
+#   53 → GDP construction
+#   54 → Private capital stocks (GPIM)
+#   55 → Government capital stocks
+#   56 → Shaikh adjustments (toggle-able)
+#   57 → Stock-flow consistency + deflator tests T1-T3
+#   58 → Final assembly
 ############################################################
 
 GDP_CONFIG <- list(

@@ -1,5 +1,5 @@
 ############################################################
-# 41_fetch_bea_fixed_assets.R — Download BEA Fixed Assets
+# 51_fetch_bea_fixed_assets.R — Download BEA Fixed Assets
 #
 # Strategy: API-first (bea.R), CSV fallback.
 # Downloads Tables 4.1-4.7 (private) and 6.1-6.4 (govt).
@@ -8,7 +8,7 @@
 #   data/interim/bea_parsed/  (standardized long format)
 #
 # Requires: bea.R (or beaR), dplyr, readr
-# Sources:  40_gdp_kstock_config.R, 97_kstock_helpers.R
+# Sources:  50_gdp_kstock_config.R, 97_kstock_helpers.R
 ############################################################
 
 rm(list = ls())
@@ -16,7 +16,7 @@ rm(list = ls())
 library(dplyr)
 library(readr)
 
-source("codes/40_gdp_kstock_config.R")
+source("codes/50_gdp_kstock_config.R")
 source("codes/99_utils.R")
 source("codes/97_kstock_helpers.R")
 
