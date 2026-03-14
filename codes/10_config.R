@@ -16,21 +16,25 @@
 CONFIG <- list(
 
   ## ----------------------------------------------------------
-  ## Shaikh replication data (raw)
+  ## Shaikh replication data — corporate sector dataset
   ## ----------------------------------------------------------
-  data_shaikh       = "data/raw/Shaikh_canonical_series_v1.csv",
+  ## Previous (Shaikh canonical CSV):
+  #   data_shaikh = "data/raw/Shaikh_canonical_series_v1.csv"
+  #   y_nom = "VAcorp", k_nom = "KGCcorp", p_index = "pIGcorpbea"
+  #   pi_share = "Profshcorp", e_rate = "exploit_rate"
+  data_shaikh       = "data/processed/corporate_sector_dataset.csv",
   SHOCK_TYPE        = "permanent",   # "permanent" (step) or "transitory" (impulse)
   # exploitation rate construction audit trail (not loaded directly):
   # data/raw/Shaikh_exploitation_rate_faithful_v1.csv
 
-  ## Variables in the Shaikh sheet
+  ## Variables in the corporate sector dataset
   year_col = "year",
-  y_nom    = "VAcorp",       # was "GVAcorp"
-  k_nom    = "KGCcorp",
-  u_shaikh = "uK",           # was "u_shaikh" — used by CONFIG$u_shaikh path in S0 line 227
-  pi_share = "Profshcorp",
-  p_index  = "pIGcorpbea",   # was "Py"
-  e_rate   = "exploit_rate",  # verify this matches CSV column name — it does
+  y_nom    = "GVAcorp",       # Corporate GVA (with imputed interest adj)
+  k_nom    = "KGCcorp",       # Shaikh GPIM-adjusted gross corporate K stock
+  u_shaikh = "uK",            # Capacity utilization (NA until ARDL run)
+  pi_share = "profit_share",  # Pcorp / VAcorp
+  p_index  = "Py",            # GDP implicit price deflator (common deflator, 2017=100)
+  e_rate   = "exploit_rate",  # NOScorp / ECcorp
 
   
 
