@@ -30,3 +30,6 @@ docs/essay_tex/*.pdf
 
 # ── OS ───────────────────────────────────────────────
 .DS_Store
+
+data/interim/
+data/interim/**
