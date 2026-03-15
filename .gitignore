@@ -33,3 +33,5 @@ docs/essay_tex/*.pdf
 
 data/interim/
 data/interim/**
+
+output/
