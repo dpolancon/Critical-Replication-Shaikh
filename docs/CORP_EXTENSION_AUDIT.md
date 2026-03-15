@@ -21,20 +21,19 @@ The corporate pipeline (script 50) must fetch its own tables independently.
 - `FAAt607` — Private FA by Legal Form: Investment
 
 **NIPA tables needed (not yet fetched)**:
-- `T10114` — NIPA Table 1.14: Gross Value Added of Corporate Business
-- `T70011` — NIPA Table 7.11: Interest Paid and Received
+- `T11400` — NIPA Table 1.14: Gross Value Added of Corporate Business
+- `T71100` — NIPA Table 7.11: Interest Paid and Received
 - `T10104` — NIPA Table 1.1.4: GDP Implicit Price Deflator (for Py)
 
-### BEA Table Naming Conflict
+### BEA Table Naming — RESOLVED
 
-The existing `GDP_CONFIG$BEA_TABLES` in `40_gdp_kstock_config.R` maps:
-- `govt_net_cc = "FAAt601"` (labeled "Table 6.1: Current-Cost Net Stock, Govt")
-- `govt_net_chain = "FAAt602"`, `govt_dep_cc = "FAAt603"`, `govt_inv = "FAAt604"`
+BEA Fixed Assets Section 6 (FAAt601-604) = **Private FA by Industry Group and Legal Form
+of Organization** (contains corporate lines). Government FA is in Section 7 (FAAt701-704).
 
-The task description maps these SAME API names to "Private FA by Legal Form."
-This conflict must be resolved at runtime by examining actual line descriptions:
-- If line descriptions contain "Corporate" → correct for corporate pipeline
-- If line descriptions contain "National defense" / "Nondefense" → government data; need different table names
+The `40_gdp_kstock_config.R` previously mislabeled FAAt601-604 as "Government" — this has
+been corrected. The config now maps:
+- `private_lf_*` → FAAt601-604 (Section 6: Private FA by Legal Form)
+- `govt_*` → FAAt701-704 (Section 7: Government Fixed Assets)
 
 ---
 
@@ -138,4 +137,4 @@ From `codes/99_utils.R`:
 **GO**: All required API access is available. Helper functions exist for GPIM construction.
 Script 50 must fetch 8 BEA tables (5 FixedAssets + 3 NIPA) before downstream scripts can run.
 ADJ_3 (IRS scrapping) is unavailable and will be skipped.
-BEA table naming conflict must be resolved at runtime.
+BEA table naming conflict has been resolved (FAAt6xx = Section 6 legal form, FAAt7xx = Section 7 government).

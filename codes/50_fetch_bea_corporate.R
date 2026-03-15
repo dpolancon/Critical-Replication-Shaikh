@@ -6,7 +6,7 @@
 #
 # Tables fetched:
 #   FixedAssets: FAAt601-604, FAAt607 (Private FA by Legal Form)
-#   NIPA: T10114 (Corporate GVA), T70011 (Interest), T10104 (GDP deflator)
+#   NIPA: T11400 (Corporate GVA), T71100 (Interest), T10104 (GDP deflator)
 #
 # Writes standardized long-format CSVs to:
 #   data/interim/bea_parsed/corp_*.csv   (FixedAssets)
@@ -119,12 +119,12 @@ CORP_TABLES <- list(
 
   # NIPA tables
   nipa_t1014 = list(
-    table_name = "T10114",
+    table_name = "T11400",
     dataset    = "NIPA",
     desc       = "NIPA Table 1.14: Gross Value Added of Corporate Business"
   ),
   nipa_t7011 = list(
-    table_name = "T70011",
+    table_name = "T71100",
     dataset    = "NIPA",
     desc       = "NIPA Table 7.11: Interest Paid and Received by Sector"
   ),
