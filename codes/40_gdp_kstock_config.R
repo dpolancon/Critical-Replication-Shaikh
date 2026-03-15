@@ -51,11 +51,16 @@ GDP_CONFIG <- list(
     private_net_hist  = "FAAt403",   # Table 4.3: Historical-Cost Net Stock
     private_dep_cc    = "FAAt404",   # Table 4.4: Current-Cost Depreciation
     private_inv       = "FAAt407",   # Table 4.7: Investment in Private FA
-    # Government
-    govt_net_cc       = "FAAt601",   # Table 6.1: Current-Cost Net Stock
-    govt_net_chain    = "FAAt602",   # Table 6.2: Chain-Type QI Net Stock
-    govt_dep_cc       = "FAAt603",   # Table 6.3: Current-Cost Depreciation
-    govt_inv          = "FAAt604"    # Table 6.4: Investment in Govt FA
+    # Private FA by Industry Group and Legal Form of Organization (Section 6)
+    private_lf_net_cc    = "FAAt601",   # Table 6.1: Current-Cost Net Stock
+    private_lf_net_chain = "FAAt602",   # Table 6.2: Chain-Type QI Net Stock
+    private_lf_dep_cc    = "FAAt603",   # Table 6.3: Current-Cost Depreciation
+    private_lf_inv       = "FAAt604",   # Table 6.4: Investment by Legal Form
+    # Government Fixed Assets (Section 7)
+    govt_net_cc       = "FAAt701",   # Table 7.1: Current-Cost Net Stock
+    govt_net_chain    = "FAAt702",   # Table 7.2: Chain-Type QI Net Stock
+    govt_dep_cc       = "FAAt703",   # Table 7.3: Current-Cost Depreciation
+    govt_inv          = "FAAt704"    # Table 7.4: Investment in Govt FA
   ),
 
   ## ----------------------------------------------------------
@@ -102,7 +107,7 @@ GDP_CONFIG <- list(
     residential    = 13L
   ),
 
-  ## Government (Table 6.1 structure)
+  ## Government (Table 7.1 structure)
   LINE_MAP_GOVT = list(
     total           = 1L,
     national_defense = 2L,

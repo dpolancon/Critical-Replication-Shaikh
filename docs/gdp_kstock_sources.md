@@ -31,14 +31,23 @@
 | 4.4 | Current-Cost Depreciation of Private Fixed Assets by Type | Current cost | D^{cc}, depreciation flows |
 | 4.7 | Investment in Private Fixed Assets by Type | Current cost | IG^{cc}, gross investment flows |
 
-### Government Fixed Assets (Tables 6.x)
+### Private Fixed Assets by Industry Group and Legal Form (Tables 6.x)
 
 | Table | Content | Valuation | Used For |
 |-------|---------|-----------|----------|
-| 6.1 | Current-Cost Net Stock of Government Fixed Assets | Current cost | Government K by defense/nondefense |
-| 6.2 | Chain-Type Quantity Indexes for Net Stock of Govt FA | Chain-type QI | Government comparison series |
-| 6.3 | Current-Cost Depreciation of Government Fixed Assets | Current cost | Government depreciation |
-| 6.4 | Investment in Government Fixed Assets | Current cost | Government investment |
+| 6.1 | Current-Cost Net Stock by Industry Group & Legal Form | Current cost | Corporate K extraction |
+| 6.2 | Chain-Type QI for Net Stock by Industry Group & Legal Form | Chain-type QI | Corporate comparison series |
+| 6.3 | Current-Cost Depreciation by Industry Group & Legal Form | Current cost | Corporate depreciation |
+| 6.4 | Investment by Industry Group & Legal Form | Current cost | Corporate investment |
+
+### Government Fixed Assets (Tables 7.x)
+
+| Table | Content | Valuation | Used For |
+|-------|---------|-----------|----------|
+| 7.1 | Current-Cost Net Stock of Government Fixed Assets | Current cost | Government K by defense/nondefense |
+| 7.2 | Chain-Type Quantity Indexes for Net Stock of Govt FA | Chain-type QI | Government comparison series |
+| 7.3 | Current-Cost Depreciation of Government Fixed Assets | Current cost | Government depreciation |
+| 7.4 | Investment in Government Fixed Assets | Current cost | Government investment |
 
 **Coverage**: 1925-2024 (most series). Some detail lines start later.
 
@@ -69,7 +78,18 @@ BEA line numbers to our asset taxonomy (see docs/notation.md) is:
 | IP | Nonresidential: Intellectual property products | 9 |
 | RC | Residential | 13 |
 
-### Table 6.1 (Government Fixed Assets)
+### Table 6.1 (Private FA by Industry Group & Legal Form)
+
+| Our Code | BEA Line Description | Approx Line |
+|----------|---------------------|-------------|
+| Corporate | Corporate business | TBD |
+| Sole_Prop | Sole proprietorships | TBD |
+| Partnership | Partnerships and associations | TBD |
+
+**Note**: Corporate line numbers in Section 6 tables must be validated
+at runtime via `validate_line_map()`.
+
+### Table 7.1 (Government Fixed Assets)
 
 | Our Code | BEA Line Description | Approx Line |
 |----------|---------------------|-------------|
