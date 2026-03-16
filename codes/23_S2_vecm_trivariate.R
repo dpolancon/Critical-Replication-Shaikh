@@ -16,7 +16,7 @@
 #   lambda < 0 required for canonical rotation (reserve-army prior)
 #   Pure diagnostic — no admissibility gate on rotation.
 #
-# ICs: AIC, BIC, HQ, ICOMP, ICOMP_Misspec
+# ICs: AIC, BIC, HQ, ICOMP, RICOMP
 # Omega_20: bottom 20% of neg2logL among admissible
 #
 # Uses:
@@ -75,7 +75,7 @@ H_SETS <- list(
   h2 = c("d1956", "d1974", "d1980")
 )
 
-IC_NAMES <- c("AIC", "BIC", "HQ", "ICOMP", "ICOMP_Misspec")
+IC_NAMES <- c("AIC", "BIC", "HQ", "ICOMP", "RICOMP")
 
 # ------------------------------------------------------------
 # 0) Data preparation
@@ -287,7 +287,7 @@ for (p_lag in P_LAG_SET) {
             neg2logL = NA_real_, k_total = NA_integer_, T_eff = NA_real_,
             logLik = NA_real_, AIC = NA_real_, BIC = NA_real_,
             HQ = NA_real_, AICc = NA_real_,
-            ICOMP = NA_real_, ICOMP_Misspec = NA_real_,
+            ICOMP = NA_real_, RICOMP = NA_real_,
             admissible = FALSE, converged = FALSE,
             rank_ok = FALSE, stable = FALSE,
             boundsJo_stat = NA_real_, boundsJo_cval = NA_real_,

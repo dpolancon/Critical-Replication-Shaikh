@@ -63,8 +63,7 @@ T_BOUNDS_CASES <- c(1L, 3L, 5L)
 # ------------------------------------------------------------
 # 0) Data preparation (mirrors S0)
 # ------------------------------------------------------------
-df_raw <- readxl::read_excel(here::here(CONFIG$data_shaikh),
-                              sheet = CONFIG$data_shaikh_sheet)
+df_raw <- readxl::read_excel(here::here(CONFIG$data_shaikh))
 
 Py <- as.numeric(df_raw[[CONFIG$p_index]])
 p_scale <- Py / 100
@@ -284,10 +283,10 @@ for (i in seq_len(n_grid)) {
     # ICOMP: vcov-based
     vc <- tryCatch(vcov(fit), error = function(e) NULL)
 
-    # ICOMP_Misspec: sandwich vcov
+    # RICOMP: sandwich vcov
     sw <- compute_sandwich_hc0(fit)
 
-    # Build canonical spec row (AIC, BIC, HQ, ICOMP, ICOMP_Misspec)
+    # Build canonical spec row (AIC, BIC, HQ, ICOMP, RICOMP)
     row <- make_spec_row(p = pp, q = qq, case = cc, s = ss,
                           logLik = ll, k_total = k, T_eff = T_eff,
                           vcov_mat = vc, sandwich_mat = sw)
@@ -320,7 +319,7 @@ for (i in seq_len(n_grid)) {
       neg2logL = NA_real_, k_total = NA_integer_, T_eff = NA_real_,
       logLik = NA_real_, AIC = NA_real_, BIC = NA_real_,
       HQ = NA_real_, AICc = NA_real_,
-      ICOMP = NA_real_, ICOMP_Misspec = NA_real_,
+      ICOMP = NA_real_, RICOMP = NA_real_,
       boundsF_stat = NA_real_, boundsF_p = NA_real_,
       boundsT_stat = NA_real_, boundsT_p = NA_real_,
       theta_hat = NA_real_, theta_se = NA_real_,
@@ -394,7 +393,7 @@ if (length(m0_idx) == 1 && !lattice$failed[m0_idx]) {
 # ------------------------------------------------------------
 # 9) IC winners
 # ------------------------------------------------------------
-ic_names <- c("AIC", "BIC", "HQ", "ICOMP", "ICOMP_Misspec")
+ic_names <- c("AIC", "BIC", "HQ", "ICOMP", "RICOMP")
 ic_winners <- list()
 for (ic in ic_names) {
   vals <- A_S1[[ic]]

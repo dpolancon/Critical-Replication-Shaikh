@@ -19,6 +19,9 @@ CONFIG <- list(
   ## Shaikh replication data (raw)
   ## ----------------------------------------------------------
   data_shaikh       = "data/processed/corporate_sector_dataset.csv",
+  canonical_csv    = "data/raw/Shaikh_canonical_series_v1.csv",
+  u_frb        = "uFRB",          # FRB capacity utilization (canonical CSV)
+  p_inv        = "pIGcorpbea",    # investment deflator (canonical CSV, sensitivity only)
   # exploitation rate construction audit trail (not loaded directly):
   # data/raw/Shaikh_exploitation_rate_faithful_v1.csv
 
@@ -73,6 +76,7 @@ CONFIG <- list(
   ## ----------------------------------------------------------
   OUT_CR = list(
     S0_faithful  = "output/CriticalReplication/S0_faithful",
+    S0_redesign  = "output/CriticalReplication/S0_redesign",
     S1_geometry  = "output/CriticalReplication/S1_geometry",
     S2_vecm      = "output/CriticalReplication/S2_vecm",
     results_pack = "output/CriticalReplication/ResultsPack",
