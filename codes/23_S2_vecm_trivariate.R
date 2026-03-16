@@ -80,8 +80,8 @@ IC_NAMES <- c("AIC", "BIC", "HQ", "ICOMP", "RICOMP")
 # ------------------------------------------------------------
 # 0) Data preparation
 # ------------------------------------------------------------
-df_raw <- readxl::read_excel(here::here(CONFIG$data_shaikh),
-                              sheet = CONFIG$data_shaikh_sheet)
+df_raw <- readr::read_csv(here::here(CONFIG[["data_shaikh"]]), show_col_types=FALSE)
+
 
 Py <- as.numeric(df_raw[[CONFIG$p_index]])
 p_scale <- Py / 100

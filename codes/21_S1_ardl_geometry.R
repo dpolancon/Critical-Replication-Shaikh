@@ -63,7 +63,7 @@ T_BOUNDS_CASES <- c(1L, 3L, 5L)
 # ------------------------------------------------------------
 # 0) Data preparation (mirrors S0)
 # ------------------------------------------------------------
-df_raw <- readxl::read_excel(here::here(CONFIG$data_shaikh))
+df_raw <- readr::read_csv(here::here(CONFIG[["data_shaikh"]]), show_col_types=FALSE)
 
 Py <- as.numeric(df_raw[[CONFIG$p_index]])
 p_scale <- Py / 100

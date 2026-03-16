@@ -13,7 +13,7 @@
 #   Gate 2: Rank consistency (Johansen trace test at 5%)
 #   Gate 3: Stability (no explosive companion roots)
 #
-# ICs: AIC, BIC, HQ, ICOMP, ICOMP_Misspec
+# ICs: AIC, BIC, HQ, ICOMP, RICOMP
 # Omega_20: bottom 20% of neg2logL among admissible
 #
 # Uses:
@@ -73,13 +73,12 @@ H_SETS <- list(
 )
 
 # IC set
-IC_NAMES <- c("AIC", "BIC", "HQ", "ICOMP", "ICOMP_Misspec")
+IC_NAMES <- c("AIC", "BIC", "HQ", "ICOMP", "RICOMP")
 
 # ------------------------------------------------------------
 # 0) Data preparation (mirrors S0/S1)
 # ------------------------------------------------------------
-df_raw <- readxl::read_excel(here::here(CONFIG$data_shaikh),
-                              sheet = CONFIG$data_shaikh_sheet)
+df_raw <- readr::read_csv(here::here(CONFIG[["data_shaikh"]]), show_col_types=FALSE)
 
 Py <- as.numeric(df_raw[[CONFIG$p_index]])
 p_scale <- Py / 100
@@ -224,7 +223,7 @@ for (p_lag in P_LAG_SET) {
         # ----- ICOMP: model vcov -----
         vc_for_icomp <- tryCatch(vcov(vecm_fit), error = function(e) NULL)
 
-        # ICOMP_Misspec: not straightforward for VECM; pass NULL
+        # RICOMP: not straightforward for VECM; pass NULL
         sw_for_icomp <- NULL
 
         # Build canonical spec row
@@ -282,7 +281,7 @@ for (p_lag in P_LAG_SET) {
           neg2logL = NA_real_, k_total = NA_integer_, T_eff = NA_real_,
           logLik = NA_real_, AIC = NA_real_, BIC = NA_real_,
           HQ = NA_real_, AICc = NA_real_,
-          ICOMP = NA_real_, ICOMP_Misspec = NA_real_,
+          ICOMP = NA_real_, RICOMP = NA_real_,
           admissible = FALSE, converged = FALSE,
           rank_ok = FALSE, stable = FALSE,
           boundsJo_stat = NA_real_, boundsJo_cval = NA_real_,
