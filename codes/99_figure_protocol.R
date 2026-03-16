@@ -139,7 +139,7 @@ scale_x_k <- function(k_range = NULL) {
 #' @param dir target directory
 #' @param width,height inches
 #' @param dpi resolution (PNG only; PDF is vector)
-save_ch3_fig <- function(plot, filename, dir, width = 7, height = 5, dpi = 300) {
+save_png_pdf_dual <- function(plot, filename, dir, width = 7, height = 5, dpi = 300) {
   dir.create(dir, recursive = TRUE, showWarnings = FALSE)
   stem <- tools::file_path_sans_ext(filename)
 
