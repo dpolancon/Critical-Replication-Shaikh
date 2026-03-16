@@ -1,7 +1,7 @@
 # ============================================================
 # 80_pack_ch3_replication.R
 #
-# Results packaging for Chapter 3 Critical Replication.
+# Results packaging for Chapter 1 Critical Replication.
 # STRICT CONSUMER of declared public S0/S1/S2 outputs.
 # CONTRACT ERROR on any missing input. No fallbacks. No heuristic
 # discovery. No schema repair.
@@ -375,7 +375,7 @@ pdf_files <- sort(list.files(PACK_FIGURES, pattern = "\\.pdf$"))
 png_files <- sort(list.files(PACK_FIGURES, pattern = "\\.png$"))
 
 index_lines <- c(
-  "# INDEX \u2014 Chapter 3 Results Pack",
+  "# INDEX \u2014 Chapter 1 Results Pack",
   sprintf("Generated: %s", Sys.time()),
   "",
   "## Tables",

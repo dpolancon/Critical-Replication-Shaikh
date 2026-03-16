@@ -1,6 +1,6 @@
 # ============================================================
 # 24_manifest_runner.R
-# Sole orchestrator + sole manifest writer for Chapter 3
+# Sole orchestrator + sole manifest writer for Chapter 1
 # Critical Replication pipeline (S0/S1/S2).
 #
 # Script registry: 20_S0 → 21_S1 → 22_S2_m2 → 23_S2_m3 → 80_pack
@@ -31,7 +31,7 @@ source(here::here("codes", "10_config.R"))
 
 run_start <- Sys.time()
 run_stamp <- format(run_start, "%Y%m%d_%H%M%S")
-run_id    <- paste0("ch3_", run_stamp)
+run_id    <- paste0("ch1_", run_stamp)
 
 tz_name <- Sys.timezone()
 if (is.na(tz_name) || !nzchar(tz_name)) tz_name <- "UNKNOWN"
@@ -47,7 +47,7 @@ manifest_dir <- here::here(CONFIG$OUT_CR$manifest)
 manifest_logs_dir <- file.path(manifest_dir, "logs")
 dir.create(manifest_logs_dir, recursive = TRUE, showWarnings = FALSE)
 
-sessioninfo_path <- file.path(manifest_logs_dir, "SESSIONINFO_ch3.txt")
+sessioninfo_path <- file.path(manifest_logs_dir, "SESSIONINFO_ch1.txt")
 writeLines(capture.output(sessionInfo()), con = sessioninfo_path)
 
 # ---- smoke test: all registered scripts must exist -------------------------
@@ -57,7 +57,7 @@ script_plan <- data.frame(
     "21_S1_ardl_geometry.R",
     "22_S2_vecm_bivariate.R",
     "23_S2_vecm_trivariate.R",
-    "80_pack_ch3_replication.R"
+    "80_pack_ch1_replication.R"
   ),
   description = c(
     "S0: faithful ARDL(2,4) replication",
@@ -224,8 +224,8 @@ for (script_name in names(public_contracts)) {
 }
 
 # ---- write manifest markdown -----------------------------------------------
-manifest_md_path  <- file.path(manifest_dir, "RUN_MANIFEST_ch3.md")
-manifest_csv_path <- file.path(manifest_dir, "RUN_MANIFEST_ch3.csv")
+manifest_md_path  <- file.path(manifest_dir, "RUN_MANIFEST_ch1.md")
+manifest_csv_path <- file.path(manifest_dir, "RUN_MANIFEST_ch1.csv")
 
 window_years <- CONFIG$WINDOWS_LOCKED$shaikh_window
 window_label <- if (!is.null(window_years) && length(window_years) == 2L) {
@@ -235,7 +235,7 @@ window_label <- if (!is.null(window_years) && length(window_years) == 2L) {
 }
 
 md <- c(
-  "# RUN MANIFEST — Chapter 3 Critical Replication",
+  "# RUN MANIFEST — Chapter 1 Critical Replication",
   "",
   "## Run metadata",
   sprintf("- Run ID: `%s`", run_id),
@@ -304,6 +304,6 @@ csv_manifest$run_started_at <- iso_stamp(run_start)
 csv_manifest$timezone       <- tz_name
 write.csv(csv_manifest, file = manifest_csv_path, row.names = FALSE)
 
-message("Chapter 3 runner complete.")
+message("Chapter 1 runner complete.")
 message("Manifest written: ", manifest_md_path)
 message("Manifest CSV written: ", manifest_csv_path)
