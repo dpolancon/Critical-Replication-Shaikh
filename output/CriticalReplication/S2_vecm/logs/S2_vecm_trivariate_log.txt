@@ -1,76 +1,76 @@
 === S2 VECM Trivariate (m=3, r in {1,2}) ===
-Timestamp:  2026-03-14 14:56:16 
+Timestamp:  2026-03-16 14:32:15 
 Lattice:   p=1: 4  d={ d0,d1,d2,d3 } h={ h0,h1,h2 } r={ 1,2 }
 Total:      96  specs
-Window:     shaikh_window  ( 1947 - 2011 , T= 65 )
+Window:     shaikh_window  ( 1947 - 2011 , T= 56 )
 
 Estimating 96 specifications...
-  [25/96] done | 6 failed | 6 admissible | elapsed 0.3s
-  [50/96] done | 12 failed | 12 admissible | elapsed 0.4s
-  [75/96] done | 18 failed | 18 admissible | elapsed 0.6s
-  [96/96] done | 24 failed | 18 admissible | elapsed 0.7s
+  [25/96] done | 6 failed | 3 admissible | elapsed 0.3s
+  [50/96] done | 12 failed | 6 admissible | elapsed 0.4s
+  [75/96] done | 18 failed | 8 admissible | elapsed 0.5s
+  [96/96] done | 24 failed | 10 admissible | elapsed 0.6s
 
-Grid complete: 96 specs | 24 failed | 18 admissible
-A_S2_m3 (admissible): 18 specs
+Grid complete: 96 specs | 24 failed | 10 admissible
+A_S2_m3 (admissible): 10 specs
 
 Gate diagnostics (m=3):
   Convergence failures: 0 
-  Rank test failures:  54 
-  Stability failures:  5 
-  r=1 admissible: 18
+  Rank test failures:  60 
+  Stability failures:  15 
+  r=1 admissible: 10
   r=2 admissible: 0
-Omega_20_m3: 4 specs (neg2logL <= -785.26 )
+Omega_20_m3: 2 specs (neg2logL <= -414.27 )
 
 Rank distribution in Omega_20_m3:
 
 1 
-4 
-              AIC winner: p=3 d=d2 h=h1 r=1 | AIC=-731.57 | theta=0.8626
-              BIC winner: p=1 d=d0 h=h1 r=1 | BIC=-702.27 | theta=0.8934
-               HQ winner: p=2 d=d2 h=h1 r=1 | HQ=-711.40 | theta=0.8778
-            ICOMP winner: p=1 d=d0 h=h1 r=1 | ICOMP=-717.98 | theta=0.8934
+2 
+              AIC winner: p=1 d=d2 h=h2 r=1 | AIC=-366.95 | theta=1.7537
+              BIC winner: p=1 d=d2 h=h2 r=1 | BIC=-336.84 | theta=1.7537
+               HQ winner: p=1 d=d2 h=h2 r=1 | HQ=-355.31 | theta=1.7537
+            ICOMP winner: p=1 d=d0 h=h2 r=1 | ICOMP=-322.26 | theta=0.9030
 
-IC DIAGNOSTIC (m=3): 3 distinct winner(s) across 5 criteria
+IC DIAGNOSTIC (m=3): 2 distinct winner(s) across 5 criteria
 IC winner ranks: 1, 1, 1, 1, NA 
 
 Theta (beta_k) across Omega_20_m3:
-  range: 0.7693 7.0145 
-  mean:  2.3576 
+  range: 0.049 0.0693 
+  mean:  0.0592 
 
 Utilization band Omega_20_m3:
-  mean(u_med): 1.0036 
-  mean band width: 1373.507 
+  mean(u_med): 1.149 
+  mean band width: 0.0492 
 
 Alpha across Omega_20_m3:
-  alpha_y range: 0.0417 0.2069 
-  alpha_k range: 0.0192 0.2647 
-  alpha_e range: 0.0954 0.3263 
+  alpha_y range: -0.3937 -0.318 
+  alpha_k range: 0.0425 0.2714 
+  alpha_e range: -10.8118 -8.4095 
 
 Deterministic branch in Omega_20_m3:
 
-d2 d3 
- 2  2 
+d3 
+ 2 
 
 Shock structure in Omega_20_m3:
 
-h1 h2 
- 2  2 
+h2 
+ 2 
 
 === P8 ROTATION DIAGNOSTIC ===
 Omega_20_m3 with r=2: 0 specs
   No r=2 specs in Omega_20_m3 -- rotation diagnostic skipped
 
-CSVs written to: /home/user/Capacity-Utilization-US_Chile/output/CriticalReplication/S2_vecm/csv 
-Figures saved to: /home/user/Capacity-Utilization-US_Chile/output/CriticalReplication/S2_vecm/figures 
+CSVs written to: C:/ReposGitHub/Critical-Replication-Shaikh/output/CriticalReplication/S2_vecm/csv 
+Figures saved to: C:/ReposGitHub/Critical-Replication-Shaikh/output/CriticalReplication/S2_vecm/figures 
 
 === S2 TRIVARIATE (m=3) VERIFICATION ===
 Total grid:        96 
 Failed:            24 
 Estimated:         72 
-Admissible (A_S2): 18 
-Omega_20 specs:    4 
-IC distinct winners: 3 / 5 
-Theta range Omega_20: [ 0.7693 , 7.0145 ]
+Admissible (A_S2): 10 
+Omega_20 specs:    2 
+IC distinct winners: 2 / 5 
+Theta range Omega_20: [ 0.049 , 0.0693 ]
 ========================================
 STAGE_STATUS_HINT: stage=S2_m3 status=complete
 Omega_20_m3 non-empty: TRUE 
