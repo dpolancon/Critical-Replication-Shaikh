@@ -1035,7 +1035,7 @@ if (length(winners) > 0) {
       )
 
     fig_stem <- paste0("FIG_S0_redesign_u_ARDL", wp, wq)
-    save_ch3_fig(p_fig, fig_stem, FIG_DIR, width = 11, height = 6.6)
+    save_png_pdf_dual(p_fig, fig_stem, FIG_DIR, width = 11, height = 6.6)
     cat("Saved figure:", fig_stem, "\n")
   }
 
@@ -1068,7 +1068,7 @@ if (length(winners) > 0) {
         title = "S0 Redesign: All IC winners vs Shaikh vs FRB"
       )
 
-    save_ch3_fig(p_comb, "FIG_S0_redesign_u_combined", FIG_DIR, width = 11, height = 6.6)
+    save_png_pdf_dual(p_comb, "FIG_S0_redesign_u_combined", FIG_DIR, width = 11, height = 6.6)
     cat("Saved figure: FIG_S0_redesign_u_combined\n")
   }
 } else {

@@ -261,7 +261,7 @@ cat("Tables written to:", PACK_TABLES, "\n")
 
 
 # ============================================================
-# BUILD FIGURES (dual PDF + PNG via save_ch3_fig)
+# BUILD FIGURES (dual PDF + PNG via save_png_pdf_dual)
 # ============================================================
 
 cat("\n--- Building figures (PDF + PNG) ---\n")
@@ -270,50 +270,50 @@ cat("\n--- Building figures (PDF + PNG) ---\n")
 
 # S0.1: Utilization replication
 fig <- build_fig_S0_utilization(s0_u)
-save_ch3_fig(fig, "fig_S0_utilization_replication", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S0_utilization_replication", PACK_FIGURES)
 
 # S0.2: Capacity benchmark
 fig <- build_fig_S0_capacity_benchmark(s0_u, lnY_vec)
-save_ch3_fig(fig, "fig_S0_capacity_benchmark", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S0_capacity_benchmark", PACK_FIGURES)
 
 # S0.3: Five-case comparison
 fig <- build_fig_S0_fivecase(s0_u, s0_spec)
-if (!is.null(fig)) save_ch3_fig(fig, "fig_S0_fivecase_comparison", PACK_FIGURES,
+if (!is.null(fig)) save_png_pdf_dual(fig, "fig_S0_fivecase_comparison", PACK_FIGURES,
                                  width = 11, height = 4)
 
 # S0.4: Fit-complexity seed point
 fig <- build_fig_S0_seed(s0_spec, s1_adm)
-if (!is.null(fig)) save_ch3_fig(fig, "fig_S0_fitcomplexity_seed", PACK_FIGURES)
+if (!is.null(fig)) save_png_pdf_dual(fig, "fig_S0_fitcomplexity_seed", PACK_FIGURES)
 
 
 # ---- S1 figures ----
 
 # S1.1: Global frontier
 fig <- build_fig_S1_global_frontier(s1_adm, m0_row)
-save_ch3_fig(fig, "fig_S1_global_frontier", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S1_global_frontier", PACK_FIGURES)
 
 # S1.2: IC tangencies
 fig <- build_fig_S1_ic_tangencies(s1_adm, m0_row)
-save_ch3_fig(fig, "fig_S1_ic_tangencies", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S1_ic_tangencies", PACK_FIGURES)
 
 # S1.3: Informational domain
 fig <- build_fig_S1_informational_domain(s1_adm, s1_f20, m0_row)
-save_ch3_fig(fig, "fig_S1_informational_domain", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S1_informational_domain", PACK_FIGURES)
 
 # S1 supplementary
 if (!is.null(s1_theta) && nrow(s1_theta) > 0) {
   fig <- build_fig_S1_theta_dist(s1_theta)
-  save_ch3_fig(fig, "fig_S1_theta_distribution", PACK_FIGURES)
+  save_png_pdf_dual(fig, "fig_S1_theta_distribution", PACK_FIGURES)
 }
 
 if (!is.null(s1_u_band) && nrow(s1_u_band) > 0) {
   fig <- build_fig_S1_u_band(s1_u_band)
-  save_ch3_fig(fig, "fig_S1_utilization_band", PACK_FIGURES)
+  save_png_pdf_dual(fig, "fig_S1_utilization_band", PACK_FIGURES)
 }
 
 if (nrow(s1_f20) > 0 && "s_K" %in% names(s1_f20)) {
   fig <- build_fig_S1_sK_dist(s1_f20)
-  save_ch3_fig(fig, "fig_S1_sK_distribution", PACK_FIGURES)
+  save_png_pdf_dual(fig, "fig_S1_sK_distribution", PACK_FIGURES)
 }
 
 
@@ -321,48 +321,48 @@ if (nrow(s1_f20) > 0 && "s_K" %in% names(s1_f20)) {
 
 # S2.1 m=2: Global frontier
 fig <- build_fig_S2_global_frontier(s2_m2_a, s2_m2_o, m_dim = 2)
-save_ch3_fig(fig, "fig_S2_global_frontier_m2", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S2_global_frontier_m2", PACK_FIGURES)
 
 # S2.1 m=3: Global frontier
 fig <- build_fig_S2_global_frontier(s2_m3_a, s2_m3_o, m_dim = 3,
                                      include_r = TRUE)
-save_ch3_fig(fig, "fig_S2_global_frontier_m3", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S2_global_frontier_m3", PACK_FIGURES)
 
 # S2.2 m=2: IC tangencies
 fig <- build_fig_S2_ic_tangencies(s2_m2_a, m_dim = 2)
-save_ch3_fig(fig, "fig_S2_ic_tangencies_m2", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S2_ic_tangencies_m2", PACK_FIGURES)
 
 # S2.2 m=3: IC tangencies
 fig <- build_fig_S2_ic_tangencies(s2_m3_a, m_dim = 3)
-save_ch3_fig(fig, "fig_S2_ic_tangencies_m3", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S2_ic_tangencies_m3", PACK_FIGURES)
 
 # S2.3 m=2: Informational domain
 fig <- build_fig_S2_informational_domain(s2_m2_a, s2_m2_o, m_dim = 2)
-save_ch3_fig(fig, "fig_S2_informational_domain_m2", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S2_informational_domain_m2", PACK_FIGURES)
 
 # S2.3 m=3: Informational domain
 fig <- build_fig_S2_informational_domain(s2_m3_a, s2_m3_o, m_dim = 3,
                                           include_r = TRUE)
-save_ch3_fig(fig, "fig_S2_informational_domain_m3", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S2_informational_domain_m3", PACK_FIGURES)
 
 # S2 supplementary: theta distribution
 fig <- build_fig_S2_theta_dist(s2_m2_o, s2_m3_o)
-save_ch3_fig(fig, "fig_S2_theta_distribution", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S2_theta_distribution", PACK_FIGURES)
 
 # S2 supplementary: utilization bands
 if (!is.null(s2_m2_uband) && !is.null(s2_m3_uband)) {
   fig <- build_fig_S2_u_band(s2_m2_uband, s2_m3_uband)
-  save_ch3_fig(fig, "fig_S2_utilization_band", PACK_FIGURES, width = 10, height = 5)
+  save_png_pdf_dual(fig, "fig_S2_utilization_band", PACK_FIGURES, width = 10, height = 5)
 }
 
 # S2 supplementary: alpha heatmap
 fig <- build_fig_S2_alpha_heatmap(s2_m2_o, s2_m3_o)
-save_ch3_fig(fig, "fig_S2_alpha_heatmap", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S2_alpha_heatmap", PACK_FIGURES)
 
 
 # ---- Cross-stage synthesis ----
 fig <- build_fig_cross_synthesis(s1_adm, s2_m2_a, s2_m3_a, m0_row)
-save_ch3_fig(fig, "fig_CROSS_synthesis", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_CROSS_synthesis", PACK_FIGURES)
 
 
 cat("\nPack complete. Output:", PACK_ROOT, "\n")
