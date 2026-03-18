@@ -1,5 +1,5 @@
 ############################################################
-# 99_utils.R — Shared utilities for Chapter 3 pipeline
+# 99_utils.R — Shared utilities for Chapter 1 pipeline
 ############################################################
 
 `%||%` <- function(x, y) if (is.null(x)) y else x

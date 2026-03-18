@@ -1,5 +1,5 @@
 # INDEX — Chapter 1 Results Pack
-Generated: 2026-03-16 14:32:34.782065
+Generated: 2026-03-18 03:55:13.068593
 
 ## Tables
 - TAB_CROSS_theta_comparison.csv

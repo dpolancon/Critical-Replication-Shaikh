@@ -1,2 +1,0 @@
-
-> on.exit(try(sink(), silent = TRUE), add = TRUE)
