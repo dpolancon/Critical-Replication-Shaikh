@@ -18,8 +18,8 @@ CONFIG <- list(
   ## ----------------------------------------------------------
   ## Shaikh replication data (raw)
   ## ----------------------------------------------------------
-  data_shaikh       = "data/processed/corporate_sector_dataset.csv",
-  canonical_csv    = "data/raw/Shaikh_canonical_series_v1.csv",
+  data_corp       = "data/processed/corporate_sector_dataset.csv",
+  data_shaikh    = "data/raw/Shaikh_canonical_series_v1.csv",
   u_frb        = "uFRB",          # FRB capacity utilization (canonical CSV)
   p_inv        = "pIGcorpbea",    # investment deflator (canonical CSV, sensitivity only)
   # exploitation rate construction audit trail (not loaded directly):
@@ -32,16 +32,13 @@ CONFIG <- list(
   ## NIPA T1.1.4, base 2011=100) for BOTH output and capital.
   ## See docs/ardl_series_identification.md for full provenance.
   year_col = "year",
-  y_nom    = "GVAcorp",      # Gross Value Added = VAcorp + DEPCcorp
+  y_nom    = "VAcorp",      # Gross Value Added = VAcorp + DEPCcorp
   k_nom    = "KGCcorp",
   u_shaikh = "uK",
   pi_share = "Profshcorp",
   p_index  = "Py",           # GDP price index (NIPA T1.1.4, base 2011=100)
   e_rate   = "exploit_rate",
 
-  
-
-  
   
   ## ----------------------------------------------------------
   ## Sample windows (full sample must be first)
