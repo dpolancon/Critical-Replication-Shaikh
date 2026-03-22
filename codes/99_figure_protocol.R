@@ -84,7 +84,7 @@ IC_COLORS <- c(
   BIC           = "#56B4E9",
   HQ            = "#009E73",
   ICOMP         = "#0072B2",
-  ICOMP_Misspec = "#D55E00"
+  RICOMP = "#D55E00"
 )
 
 IC_SHAPES <- c(
@@ -92,7 +92,7 @@ IC_SHAPES <- c(
   BIC           = 16L,
   HQ            = 17L,
   ICOMP         = 18L,
-  ICOMP_Misspec =  4L
+  RICOMP =  4L
 )
 
 IC_LABELS <- c(
@@ -100,10 +100,10 @@ IC_LABELS <- c(
   BIC           = "BIC",
   HQ            = "HQ",
   ICOMP         = "ICOMP",
-  ICOMP_Misspec = expression(ICOMP[Misspec])
+  RICOMP = expression(RICOMP)
 )
 
-IC_NAMES <- c("AIC", "BIC", "HQ", "ICOMP", "ICOMP_Misspec")
+IC_NAMES <- c("AIC", "BIC", "HQ", "ICOMP", "RICOMP")
 
 
 # ---- 4. Integer x-axis for k_total ----

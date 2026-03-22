@@ -7,7 +7,7 @@
 #
 # Contents:
 #   1. Covariance sanitization & log-determinant
-#   2. C1/ICOMP/ICOMP_Misspec computation (Bozdogan 1990, 2016)
+#   2. C1/ICOMP/RICOMP computation (Bozdogan 1990, 2016)
 #   3. Canonical spec-row builder: make_spec_row()
 #   4. Pareto frontier extraction: extract_envelope()
 #   5. VECM q-profile generator: q_profiles_for_p()
@@ -72,7 +72,7 @@ stable_logdet <- function(M) {
 }
 
 
-# ---- 2. C1 / ICOMP / ICOMP_Misspec ----
+# ---- 2. C1 / ICOMP / RICOMP ----
 
 #' Core C1(Σ) computation: (k/2)*log(tr(Σ)/k) - (1/2)*log|Σ|
 #' Bozdogan (1990) information complexity measure.
@@ -118,23 +118,23 @@ compute_icomp_penalty <- function(vcov_mat, eps = 1e-10) {
   )
 }
 
-#' ICOMP_Misspec penalty: 2*C1(F^{-1} R F^{-1})
+#' RICOMP penalty: 2*C1(F^{-1} R F^{-1})
 #' Sandwich covariance estimator — Bozdogan & Pamukçu (2016)
 #' @param sandwich_mat sandwich vcov matrix (F^{-1} R F^{-1})
-#' @return list(ICOMP_Misspec_pen, ICOMP_Misspec_flag, ...)
-compute_icomp_misspec_penalty <- function(sandwich_mat, eps = 1e-10) {
+#' @return list(RICOMP_pen, RICOMP_flag, ...)
+compute_RICOMP_penalty <- function(sandwich_mat, eps = 1e-10) {
   c1 <- compute_c1_core(vcov_mat = sandwich_mat, eps = eps)
 
   if (!is.finite(c1$C1)) {
-    return(list(ICOMP_Misspec_pen = NA_real_, ICOMP_Misspec_flag = c1$flag,
-                ICOMP_Misspec_stabilized = c1$stabilized, ICOMP_Misspec_k_sigma = c1$k))
+    return(list(RICOMP_pen = NA_real_, RICOMP_flag = c1$flag,
+                RICOMP_stabilized = c1$stabilized, RICOMP_k_sigma = c1$k))
   }
 
   list(
-    ICOMP_Misspec_pen        = 2 * c1$C1,
-    ICOMP_Misspec_flag       = c1$flag,
-    ICOMP_Misspec_stabilized = c1$stabilized,
-    ICOMP_Misspec_k_sigma    = c1$k
+    RICOMP_pen        = 2 * c1$C1,
+    RICOMP_flag       = c1$flag,
+    RICOMP_stabilized = c1$stabilized,
+    RICOMP_k_sigma    = c1$k
   )
 }
 
@@ -143,7 +143,7 @@ compute_icomp_misspec_penalty <- function(sandwich_mat, eps = 1e-10) {
 
 #' Build one canonical row of the specification lattice.
 #' Replaces BOTH versions of compute_complexity_record().
-#' Canonical columns only: AIC, BIC, HQ, AICc, ICOMP, ICOMP_Misspec,
+#' Canonical columns only: AIC, BIC, HQ, AICc, ICOMP, RICOMP,
 #' neg2logL, k_total. No aliases.
 #'
 #' @param p lag order on y (or VAR lag order for VECM)
@@ -154,7 +154,7 @@ compute_icomp_misspec_penalty <- function(sandwich_mat, eps = 1e-10) {
 #' @param k_total integer total number of estimated parameters
 #' @param T_eff integer effective sample size
 #' @param vcov_mat model vcov matrix (for ICOMP); NULL if unavailable
-#' @param sandwich_mat sandwich vcov (for ICOMP_Misspec); NULL if unavailable
+#' @param sandwich_mat sandwich vcov (for RICOMP); NULL if unavailable
 #' @return single-row data.frame with canonical IC columns
 make_spec_row <- function(p, q, case, s, logLik, k_total, T_eff,
                           vcov_mat = NULL, sandwich_mat = NULL) {
@@ -176,12 +176,12 @@ make_spec_row <- function(p, q, case, s, logLik, k_total, T_eff,
     }
   }
 
-  # ICOMP_Misspec = -2*logL + 2*C1(F^{-1} R F^{-1})
-  ICOMP_Misspec_val <- NA_real_
+  # RICOMP = -2*logL + 2*C1(F^{-1} R F^{-1})
+  RICOMP_val <- NA_real_
   if (!is.null(sandwich_mat)) {
-    icomp_m <- compute_icomp_misspec_penalty(sandwich_mat)
-    if (is.finite(icomp_m$ICOMP_Misspec_pen)) {
-      ICOMP_Misspec_val <- neg2logL + icomp_m$ICOMP_Misspec_pen
+    icomp_m <- compute_RICOMP_penalty(sandwich_mat)
+    if (is.finite(icomp_m$RICOMP_pen)) {
+      RICOMP_val <- neg2logL + icomp_m$RICOMP_pen
     }
   }
 
@@ -199,7 +199,7 @@ make_spec_row <- function(p, q, case, s, logLik, k_total, T_eff,
     HQ       = HQ_val,
     AICc     = AICc_val,
     ICOMP    = ICOMP_val,
-    ICOMP_Misspec = ICOMP_Misspec_val,
+    RICOMP = RICOMP_val,
     stringsAsFactors = FALSE
   )
 }
@@ -304,7 +304,7 @@ plot_fitcomplexity_cloud <- function(df, m0 = NULL, envelope = NULL,
 
 #' Plot IC tangency winners (S1.2 / S2.2 backbone)
 #' @param df data.frame with full admissible cloud
-#' @param winners named list of single-row data.frames (AIC, BIC, HQ, ICOMP, ICOMP_Misspec)
+#' @param winners named list of single-row data.frames (AIC, BIC, HQ, ICOMP, RICOMP)
 #' @param envelope optional Pareto frontier
 #' @param m0 optional benchmark point
 #' @param title character plot title
@@ -312,8 +312,8 @@ plot_fitcomplexity_cloud <- function(df, m0 = NULL, envelope = NULL,
 plot_ic_tangencies <- function(df, winners, envelope = NULL, m0 = NULL,
                                title = "IC Tangency Points") {
   ic_colors <- c(AIC = "#E41A1C", BIC = "#377EB8", HQ = "#4DAF4A",
-                 ICOMP = "#984EA3", ICOMP_Misspec = "#FF7F00")
-  ic_shapes <- c(AIC = 15, BIC = 16, HQ = 17, ICOMP = 18, ICOMP_Misspec = 4)
+                 ICOMP = "#984EA3", RICOMP = "#FF7F00")
+  ic_shapes <- c(AIC = 15, BIC = 16, HQ = 17, ICOMP = 18, RICOMP = 4)
 
   p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$k_total, y = .data$neg2logL)) +
     ggplot2::geom_point(alpha = 0.15, color = "grey70") +
