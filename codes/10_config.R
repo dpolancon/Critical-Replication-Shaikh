@@ -20,6 +20,7 @@ CONFIG <- list(
   ## ----------------------------------------------------------
   data_corp       = "data/processed/corporate_sector_dataset.csv",
   data_shaikh    = "data/raw/shaikh_data/Shaikh_canonical_series_v1.csv",
+  canonical_csv   = "data/raw/shaikh_data/Shaikh_canonical_series_v1.csv",
   u_frb        = "uFRB",          # FRB capacity utilization (canonical CSV)
   p_inv        = "pIGcorpbea",    # investment deflator (canonical CSV, sensitivity only)
   # exploitation rate construction audit trail (not loaded directly):
