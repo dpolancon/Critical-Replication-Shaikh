@@ -572,17 +572,18 @@ gpim_NF_corporate <- function(raw, warmup, cfg) {
   }
 
   gpim_account(
-    KNC           = df$KNC,
-    KNR_idx       = df$KNR_idx,
-    IG            = df$IG,
-    year_vec      = df$year,
-    L             = params$L,
-    alpha         = params$alpha,
-    use_weibull   = use_wb,
-    account_label = "NF_corp",
-    warmup_IG_R   = wu_IG_R,
-    warmup_years  = wu_years,
-    base_year     = cfg$GPIM$base_year %||% 2017L
+    KNC             = df$KNC,
+    KNR_idx         = df$KNR_idx,
+    IG              = df$IG,
+    year_vec        = df$year,
+    L               = params$L,
+    alpha           = params$alpha,
+    use_weibull     = use_wb,
+    account_label   = "NF_corp",
+    warmup_IG_R     = wu_IG_R,
+    warmup_years    = wu_years,
+    use_fixed_point = TRUE,
+    base_year       = cfg$GPIM$base_year %||% 2017L
   )
 }
 
@@ -661,17 +662,18 @@ gpim_NF_IPP <- function(raw, warmup, cfg) {
   }
 
   gpim_account(
-    KNC           = df$KNC,
-    KNR_idx       = df$KNR_idx,
-    IG            = df$IG,
-    year_vec      = df$year,
-    L             = L_ipp,
-    alpha         = alpha_ipp,
-    use_weibull   = use_wb,
-    account_label = "NF_IPP",
-    warmup_IG_R   = wu_IG_R,
-    warmup_years  = wu_years,
-    base_year     = cfg$GPIM$base_year %||% 2017L
+    KNC             = df$KNC,
+    KNR_idx         = df$KNR_idx,
+    IG              = df$IG,
+    year_vec        = df$year,
+    L               = L_ipp,
+    alpha           = alpha_ipp,
+    use_weibull     = use_wb,
+    account_label   = "NF_IPP",
+    warmup_IG_R     = wu_IG_R,
+    warmup_years    = wu_years,
+    use_fixed_point = TRUE,
+    base_year       = cfg$GPIM$base_year %||% 2017L
   )
 }
 
@@ -704,17 +706,18 @@ gpim_financial_corporate <- function(raw, warmup, cfg) {
   }
 
   gpim_account(
-    KNC           = df$KNC,
-    KNR_idx       = df$KNR_idx,
-    IG            = df$IG,
-    year_vec      = df$year,
-    L             = params$L,
-    alpha         = params$alpha,
-    use_weibull   = use_wb,
-    account_label = "fin_corp",
-    warmup_IG_R   = wu_IG_R,
-    warmup_years  = wu_years,
-    base_year     = cfg$GPIM$base_year %||% 2017L
+    KNC             = df$KNC,
+    KNR_idx         = df$KNR_idx,
+    IG              = df$IG,
+    year_vec        = df$year,
+    L               = params$L,
+    alpha           = params$alpha,
+    use_weibull     = use_wb,
+    account_label   = "fin_corp",
+    warmup_IG_R     = wu_IG_R,
+    warmup_years    = wu_years,
+    use_fixed_point = TRUE,
+    base_year       = cfg$GPIM$base_year %||% 2017L
   )
 }
 
@@ -818,12 +821,16 @@ build_income_accounts <- function(raw_t1014, Py) {
 # Aggregation Agent 2: Aggregate Productive Capital
 # ------------------------------------------------------------------
 
-#' Aggregate NF corporate + gov transport into productive capital.
+#' Aggregate productive capital (NF corporate only).
+#'
+#' Gov transport is retained as an auxiliary conditioning variable
+#' (kept in the output for master CSV) but excluded from the
+#' productive aggregate sum.
 #'
 #' @param nf_corp  tibble from gpim_NF_corporate()
 #' @param govt     tibble from gpim_gov_transport()
 #' @param years    Optional: restrict to year range
-#' @return tibble with productive aggregates + component shares
+#' @return tibble with productive aggregates + gov_trans auxiliary columns
 aggregate_productive <- function(nf_corp, govt, years = NULL) {
   message(sprintf("\n[%s] === Aggregate: Productive capital ===", now_stamp()))
 
@@ -861,19 +868,16 @@ aggregate_productive <- function(nf_corp, govt, years = NULL) {
     df <- df |> dplyr::filter(year %in% years)
   }
 
-  ## Productive aggregates (NF corporate + govt transport)
+  ## Productive aggregates = NF corporate ONLY
+  ## Gov transport retained as auxiliary conditioning variable
   df <- df |>
     dplyr::mutate(
-      KGC_productive = KGC_NF_corp + KGC_gov_trans,
-      KNC_productive = KNC_NF_corp + KNC_gov_trans,
-      KNR_productive = KNR_NF_corp + KNR_gov_trans,
-      KGR_productive = KGR_NF_corp + KGR_gov_trans,
-      IG_productive  = IG_cc_NF_corp + IG_cc_gov_trans,
-      pK_productive  = (KNC_productive / KNR_productive) * 100,
-
-      ## Component shares
-      share_NF_corp = KGC_NF_corp  / KGC_productive,
-      share_govt    = KGC_gov_trans / KGC_productive
+      KGC_productive = KGC_NF_corp,
+      KNC_productive = KNC_NF_corp,
+      KNR_productive = KNR_NF_corp,
+      KGR_productive = KGR_NF_corp,
+      IG_productive  = IG_cc_NF_corp,
+      pK_productive  = pK_NF_corp
     )
 
   ## Rebase pK_productive to 2017 = 100
@@ -952,10 +956,10 @@ build_master_csv <- function(prod, income, nf_corp, govt, IPP, fin_corp,
                   nrow(master), ncol(master),
                   min(master$year), max(master$year)))
 
-  ## Spot check
+  ## Spot check: NVA / KGC_NF_corp (productive = NF_corp only)
   if (1947 %in% master$year) {
     r47 <- master$R_NVA_KGC[master$year == 1947]
-    message(sprintf("  Rcorp_1947 = NVA/KGC = %.4f (target: ~0.685)", r47))
+    message(sprintf("  Rcorp_1947 = NVA_NF / KGC_NF_corp = %.4f", r47))
   }
 
   master

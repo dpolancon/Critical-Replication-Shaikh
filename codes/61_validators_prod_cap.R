@@ -151,10 +151,10 @@ gate_check_SFC_per_account <- function(results) {
 # Gate 2: Aggregate SFC Validation
 # ==================================================================
 
-#' Validate SFC for the aggregate productive capital stock.
+#' Validate SFC for the productive capital stock (NF corporate only).
 #'
-#' KGC_productive_t - KGC_productive_{t-1} = IG_productive_t - Ret_productive_t
-#' Tolerance: 1e-3 (looser than per-account due to summation rounding).
+#' KGR_NF_corp_t - KGR_NF_corp_{t-1} = IG_R_NF_corp_t - rho_NF_corp_t * KGR_NF_corp_{t-1}
+#' Tolerance: 1e-3.
 #'
 #' @param prod tibble from aggregate_productive()
 #' @return list(pass, message, max_resid, resid_series)
@@ -165,35 +165,22 @@ gate_check_SFC_aggregate <- function(prod) {
                 max_resid = NA, resid_series = NULL))
   }
 
-  ## Aggregate net SFC: KNC_t - KNC_{t-1} = IG_t - DEP_t
-  ## We can check: KNC change vs IG - derived DEP
-  KNC     <- prod$KNC_productive
-  KNC_lag <- c(KNC[1], KNC[-TT])
-  IG      <- prod$IG_productive
-  delta_KNC <- KNC - KNC_lag
-
-  ## For gross SFC: compute from component retirement
-  ## KGR_t - KGR_{t-1} = IG_R_t - rho * KGR_{t-1}
-  KGR     <- prod$KGR_productive
+  ## Gross SFC for NF corporate (= productive aggregate)
+  KGR     <- prod$KGR_NF_corp
   KGR_lag <- c(KGR[1], KGR[-TT])
+  IG_R    <- prod$IG_R_NF_corp
+  Ret     <- prod$rho_NF_corp * KGR_lag
 
-  ## Sum IG_R across accounts (NF corporate + gov transport)
-  IG_R_agg <- prod$IG_R_NF_corp + prod$IG_R_gov_trans
-
-  ## Sum retirements: rho_i * KGR_i_{t-1}
-  Ret_agg <- prod$rho_NF_corp  * c(prod$KGR_NF_corp[1],  prod$KGR_NF_corp[-TT]) +
-             prod$rho_gov_trans * c(prod$KGR_gov_trans[1], prod$KGR_gov_trans[-TT])
-
-  implied_KGR <- KGR_lag + IG_R_agg - Ret_agg
+  implied_KGR <- KGR_lag + IG_R - Ret
   resid <- abs(KGR[-1] - implied_KGR[-1])
   max_resid <- max(resid, na.rm = TRUE)
 
   pass <- max_resid < 1e-3
   msg <- if (pass) {
-    sprintf("Gate 2 PASS: Aggregate SFC max |resid| = %.6e", max_resid)
+    sprintf("Gate 2 PASS: NF_corp SFC max |resid| = %.6e", max_resid)
   } else {
-    worst_idx <- which.max(resid) + 1  # offset for removed first element
-    sprintf("Gate 2 FAIL: Aggregate SFC max |resid| = %.6e at year %d",
+    worst_idx <- which.max(resid) + 1
+    sprintf("Gate 2 FAIL: NF_corp SFC max |resid| = %.6e at year %d",
             max_resid, prod$year[worst_idx])
   }
 

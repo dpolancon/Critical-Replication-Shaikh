@@ -242,13 +242,12 @@ rebase_2017 <- function(series, year_vec, base_year = 2017L) {
 
 #' GPIM warmup from historical investment flows (1901+).
 #'
-#' Runs a cold-start GPIM recursion from K0 = 0, tau_bar = 0 using
-#' investment flows only, co-evolving the mean age and retirement
-#' rate at each step. No balanced-growth assumption: rho_t is
+#' Runs a GPIM recursion co-evolving tau_bar and KGC_R from the given
+#' initial conditions. No balanced-growth assumption: rho_t is
 #' computed from the evolving tau_bar_t via the Weibull hazard.
 #'
-#' Returns terminal KGC_R AND terminal tau_bar so the post-warmup
-#' recursion starts from the historically accumulated age distribution.
+#' Returns terminal KGC_R, terminal tau_bar, mean rho, and the full
+#' K_R series so the caller can implement fixed-point initialization.
 #'
 #' @param IG_vec        Investment vector (nominal, starting from 1901)
 #' @param L             Mean service life (years)
@@ -256,11 +255,15 @@ rebase_2017 <- function(series, year_vec, base_year = 2017L) {
 #' @param year_vec      Year vector matching IG_vec
 #' @param pK_vec        Price deflator matching IG_vec (for converting
 #'                      nominal IG to real). If NULL, assumes already real.
-#' @param checkpoint_year Year to extract warmup gap (default 1925)
+#' @param KGR_init      Initial gross stock (default 0 = cold start)
+#' @param tau_bar_init  Initial mean age (default 0 = cold start)
+#' @param checkpoint_year Year to extract checkpoint value (default 1925)
 #' @param checkpoint_KNC BEA-reported KNC at checkpoint year (for gap calc)
-#' @return Named list: K_R_terminal, tau_bar_terminal, warmup_gap (%), K_R_series
+#' @return Named list: K_R_terminal, tau_bar_terminal, rho_bar, warmup_gap, K_R_series
 warmup_from_investment <- function(IG_vec, L, alpha, year_vec,
                                    pK_vec = NULL,
+                                   KGR_init = 0,
+                                   tau_bar_init = 0,
                                    checkpoint_year = 1925L,
                                    checkpoint_KNC = NULL) {
   stopifnot(length(IG_vec) == length(year_vec))
@@ -275,11 +278,10 @@ warmup_from_investment <- function(IG_vec, L, alpha, year_vec,
 
   TT <- length(IG_R)
 
-  ## Cold start: K = 0, tau_bar = 0, no stock exists
   K_R     <- numeric(TT)
   rho_wu  <- numeric(TT)
-  tau_bar <- 0
-  K_prev  <- 0
+  tau_bar <- tau_bar_init
+  K_prev  <- KGR_init
 
   for (t in seq_len(TT)) {
     ## Retirement rate from current mean age
@@ -287,7 +289,6 @@ warmup_from_investment <- function(IG_vec, L, alpha, year_vec,
       rho_wu[t] <- weibull_hazard(tau_bar, L, alpha)
       rho_wu[t] <- min(max(rho_wu[t], 0), 1)
     } else {
-      ## No stock yet — nothing to retire
       rho_wu[t] <- 0
     }
 
@@ -317,6 +318,7 @@ warmup_from_investment <- function(IG_vec, L, alpha, year_vec,
   list(
     K_R_terminal    = K_R[TT],
     tau_bar_terminal = tau_bar,
+    rho_bar         = mean(rho_wu[rho_wu > 0]),
     warmup_gap      = warmup_gap,
     K_R_series      = K_R
   )
@@ -349,6 +351,8 @@ warmup_from_investment <- function(IG_vec, L, alpha, year_vec,
 #' @param account_label Character label for messages and SFC errors
 #' @param warmup_IG_R   Optional: real investment for 1901 warmup (vector)
 #' @param warmup_years  Optional: year vector for warmup
+#' @param use_fixed_point Logical: run two-pass fixed-point initialization
+#'                        anchored to KNR_BEA_1925 (default FALSE)
 #' @param base_year     Deflator base year (default 2017)
 #' @return tibble with full GPIM output columns
 gpim_account <- function(KNC, KNR_idx, IG, year_vec,
@@ -357,6 +361,7 @@ gpim_account <- function(KNC, KNR_idx, IG, year_vec,
                          account_label = "account",
                          warmup_IG_R = NULL,
                          warmup_years = NULL,
+                         use_fixed_point = FALSE,
                          base_year = 2017L) {
 
   TT <- length(KNC)
@@ -417,18 +422,63 @@ gpim_account <- function(KNC, KNR_idx, IG, year_vec,
   avg_z <- mean(z, na.rm = TRUE)
 
   if (!is.null(warmup_IG_R) && !is.null(warmup_years)) {
-    message("  Running 1901 warmup (cold start: K=0, tau_bar=0)...")
-    wu <- warmup_from_investment(
+
+    ## --- Pass 1: cold-start warmup (K=0, tau_bar=0) ---
+    message("  Running 1901 warmup pass 1 (cold start: K=0, tau_bar=0)...")
+    wu1 <- warmup_from_investment(
       IG_vec          = warmup_IG_R,
       L               = L,
       alpha           = alpha,
       year_vec        = warmup_years,
-      pK_vec          = NULL,   # already real
+      pK_vec          = NULL,
+      KGR_init        = 0,
+      tau_bar_init    = 0,
       checkpoint_year = year_vec[1],
       checkpoint_KNC  = NULL
     )
-    KGC_R_init <- wu$K_R_terminal
-    tau_bar_init <- wu$tau_bar_terminal
+
+    if (use_fixed_point && wu1$K_R_terminal > 0) {
+      ## --- Fixed-point back-projection anchored to KNR_BEA_1925 ---
+      ## KNR[1] is the BEA 1925 net stock anchor
+      KNR_BEA_1925 <- KNR[1]
+      psi_cold <- KNR_BEA_1925 / wu1$K_R_terminal
+      rho_bar  <- wu1$rho_bar
+
+      ## Back-project: K_GR_1901 = KNR_BEA_1925 / (psi * (1-rho_bar)^N_warmup)
+      N_warmup <- length(warmup_years)
+      decay_factor <- (1 - rho_bar)^N_warmup
+      KGR_1901_init <- KNR_BEA_1925 / (psi_cold * decay_factor)
+
+      message(sprintf("  Fixed-point: psi_cold=%.4f, rho_bar=%.5f, KGR_1901_init=%.2f",
+                      psi_cold, rho_bar, KGR_1901_init))
+
+      ## --- Pass 2: re-run warmup with back-projected K_GR_1901 ---
+      message("  Running 1901 warmup pass 2 (fixed-point)...")
+      wu2 <- warmup_from_investment(
+        IG_vec          = warmup_IG_R,
+        L               = L,
+        alpha           = alpha,
+        year_vec        = warmup_years,
+        pK_vec          = NULL,
+        KGR_init        = KGR_1901_init,
+        tau_bar_init    = L / 2,  # reasonable for pre-existing stock
+        checkpoint_year = year_vec[1],
+        checkpoint_KNC  = NULL
+      )
+
+      psi_fixed <- KNR_BEA_1925 / wu2$K_R_terminal
+      message(sprintf("  Fixed-point result: psi_1925 %.4f -> %.4f, KGC_R_terminal %.2f -> %.2f",
+                      psi_cold, psi_fixed,
+                      wu1$K_R_terminal, wu2$K_R_terminal))
+
+      KGC_R_init   <- wu2$K_R_terminal
+      tau_bar_init <- wu2$tau_bar_terminal
+    } else {
+      ## No fixed-point — use cold-start result directly
+      KGC_R_init   <- wu1$K_R_terminal
+      tau_bar_init <- wu1$tau_bar_terminal
+    }
+
     message(sprintf("  Warmup terminal KGC_R: %.2f, tau_bar: %.2f",
                     KGC_R_init, tau_bar_init))
   } else {

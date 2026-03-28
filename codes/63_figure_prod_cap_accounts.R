@@ -90,38 +90,35 @@ save_png_pdf_dual(fig1, "fig01_KGC_productive_vs_total", fig_dir)
 
 
 ## ==================================================================
-## Figure 2: Account Share Decomposition
+## Figure 2: KGC_NF_corp vs KGC_gov_trans (auxiliary comparison)
 ## ==================================================================
 
 fig2_data <- master_est |>
-  dplyr::select(year, share_NF_corp, share_govt) |>
-  tidyr::pivot_longer(-year, names_to = "account", values_to = "share") |>
+  dplyr::select(year, KGC_NF_corp, KGC_gov_trans) |>
+  tidyr::pivot_longer(-year, names_to = "series", values_to = "KGC") |>
   dplyr::mutate(
-    account = dplyr::case_when(
-      account == "share_NF_corp" ~ "NF Corporate",
-      account == "share_govt"    ~ "Gov Transport",
-      TRUE ~ account
-    ),
-    account = factor(account,
-      levels = c("Gov Transport", "NF Corporate"))
+    series = dplyr::case_when(
+      series == "KGC_NF_corp"   ~ "NF Corporate (productive)",
+      series == "KGC_gov_trans" ~ "Gov Transport (auxiliary)",
+      TRUE ~ series
+    )
   )
 
-fig2 <- ggplot(fig2_data, aes(x = year, y = share, fill = account)) +
-  geom_area(alpha = 0.85) +
-  scale_fill_manual(values = c(
-    "NF Corporate"  = unname(PAL_OI["orange"]),
-    "Gov Transport" = unname(PAL_OI["green"])
+fig2 <- ggplot(fig2_data, aes(x = year, y = KGC, color = series)) +
+  geom_line(linewidth = 0.9) +
+  scale_color_manual(values = c(
+    "NF Corporate (productive)" = unname(PAL_OI["orange"]),
+    "Gov Transport (auxiliary)"  = unname(PAL_OI["green"])
   )) +
-  scale_y_continuous(labels = scales::percent_format()) +
   labs(
-    title    = "Productive Capital: Account Share Decomposition",
-    subtitle = "Share of KGC_productive by account",
-    x = NULL, y = "Share of KGC_productive",
-    caption  = "Source: BEA Fixed Assets; GPIM construction"
+    title    = "Gross Capital Stock: NF Corporate vs Gov Transport",
+    subtitle = "NF Corporate = productive aggregate; Gov transport = auxiliary",
+    x = NULL, y = "KGC (billions $)",
+    caption  = "Source: BEA Fixed Assets Tables 6.1, 7.1; GPIM construction"
   ) +
   theme_ch3()
 
-save_png_pdf_dual(fig2, "fig02_account_share_decomposition", fig_dir)
+save_png_pdf_dual(fig2, "fig02_NF_corp_vs_gov_trans", fig_dir)
 
 
 ## ==================================================================
@@ -252,7 +249,7 @@ if (!is.null(accounts_long)) {
 message("\n=== Dataset 2 Figures Complete ===")
 message(sprintf("  Output directory: %s", fig_dir))
 message("  fig01: KGC_productive vs KGC_total")
-message("  fig02: Account share decomposition")
+message("  fig02: NF corporate vs gov transport")
 message("  fig03: pK by account (2017=100)")
 message("  fig04: z and rho by account")
 message("  fig05: KNC vs KGC gap by account")
