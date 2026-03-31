@@ -22,7 +22,7 @@
 #   - make_spec_row() from codes/98_ardl_helpers.R
 #   - extract_envelope(), plot_*() from 98_ardl_helpers.R
 #
-# Outputs under: output/CriticalReplication/S2_vecm/
+# Outputs under: output/S2_vecm/
 # ============================================================
 
 rm(list = ls())
@@ -111,7 +111,7 @@ u_shaikh <- as.numeric(df_raw[["u_shaikh"]])[match(df$year, as.integer(df_raw[[C
 # ------------------------------------------------------------
 # 1) Output directories + log
 # ------------------------------------------------------------
-EXERCISE_DIR <- here::here(CONFIG$OUT_CR$S2_vecm %||% "output/CriticalReplication/S2_vecm")
+EXERCISE_DIR <- here::here(CONFIG$OUT_CR$S2_vecm %||% "output/S2_vecm")
 CSV_DIR <- file.path(EXERCISE_DIR, "csv")
 LOG_DIR <- file.path(EXERCISE_DIR, "logs")
 FIG_DIR <- file.path(EXERCISE_DIR, "figures")

@@ -18,7 +18,7 @@ CONFIG <- list(
   ## ----------------------------------------------------------
   ## Shaikh replication data (raw)
   ## ----------------------------------------------------------
-  data_corp       = "data/processed/corporate_sector_dataset.csv",
+  data_corp       = "data/processed/prod_cap_dataset_d1.csv",
   data_shaikh    = "data/raw/shaikh_data/Shaikh_canonical_series_v1.csv",
   canonical_csv   = "data/raw/shaikh_data/Shaikh_canonical_series_v1.csv",
   u_frb        = "uFRB",          # FRB capacity utilization (canonical CSV)
@@ -73,12 +73,12 @@ CONFIG <- list(
   ## Critical replication canonical outputs (S0/S1/S2 structure)
   ## ----------------------------------------------------------
   OUT_CR = list(
-    S0_faithful  = "output/CriticalReplication/S0_faithful",
-    S0_redesign  = "output/CriticalReplication/S0_redesign",
-    S1_geometry  = "output/CriticalReplication/S1_geometry",
-    S2_vecm      = "output/CriticalReplication/S2_vecm",
-    results_pack = "output/CriticalReplication/ResultsPack",
-    manifest     = "output/CriticalReplication/Manifest"
+    S0_faithful  = "output/S0_faithful",
+    S0_redesign  = "output/S0_redesign",
+    S1_geometry  = "output/S1_geometry",
+    S2_vecm      = "output/S2_vecm",
+    results_pack = "output/ResultsPack",
+    manifest     = "output/Manifest"
   ),
 
   ## ----------------------------------------------------------

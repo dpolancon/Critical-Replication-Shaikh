@@ -41,7 +41,7 @@ if (file.exists(long_path)) {
 }
 
 ## Output directory
-fig_dir <- "output/CriticalReplication/figures_prod_cap"
+fig_dir <- "output/figures_prod_cap"
 dir.create(fig_dir, showWarnings = FALSE, recursive = TRUE)
 
 ## Account palette (colorblind-safe Okabe-Ito)

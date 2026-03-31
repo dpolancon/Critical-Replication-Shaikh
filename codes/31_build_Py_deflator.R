@@ -27,7 +27,7 @@
 #   Py is the ONLY column in Shaikh_canonical_series_v1.csv that
 #   does not trace back to Shaikh's published Appendix 6.8 tables.
 #   All other 33 columns are exact match or explained divergence.
-#   See output/CriticalReplication/data_audit/audit3_canonical_vs_shaikh.md
+#   See output/data_audit/audit3_canonical_vs_shaikh.md
 #
 # USAGE:
 #   source("codes/31_build_Py_deflator.R")

@@ -102,7 +102,7 @@ for (i in seq_len(nrow(script_plan))) {
   log_file <- file.path(manifest_logs_dir,
                          sub("\\.R$", "_run.log", script_plan$script[i]))
   script_plan$log_path[i] <- file.path(
-    "output/CriticalReplication/Manifest/logs", basename(log_file)
+    "output/Manifest/logs", basename(log_file)
   )
 
   if (!isTRUE(script_plan$exists[i])) {
@@ -188,23 +188,23 @@ if (!length(artifact_files)) {
 # After execution, verify each stage's public outputs exist
 public_contracts <- list(
   "20_S0_shaikh_faithful.R" = c(
-    "output/CriticalReplication/S0_faithful/csv/S0_spec_report.csv",
-    "output/CriticalReplication/S0_faithful/csv/S0_utilization_series.csv",
-    "output/CriticalReplication/S0_faithful/csv/S0_fivecase_summary.csv"
+    "output/S0_faithful/csv/S0_spec_report.csv",
+    "output/S0_faithful/csv/S0_utilization_series.csv",
+    "output/S0_faithful/csv/S0_fivecase_summary.csv"
   ),
   "21_S1_ardl_geometry.R" = c(
-    "output/CriticalReplication/S1_geometry/csv/S1_lattice_full.csv",
-    "output/CriticalReplication/S1_geometry/csv/S1_admissible.csv",
-    "output/CriticalReplication/S1_geometry/csv/S1_frontier_F020.csv"
+    "output/S1_geometry/csv/S1_lattice_full.csv",
+    "output/S1_geometry/csv/S1_admissible.csv",
+    "output/S1_geometry/csv/S1_frontier_F020.csv"
   ),
   "22_S2_vecm_bivariate.R" = c(
-    "output/CriticalReplication/S2_vecm/csv/S2_m2_admissible.csv",
-    "output/CriticalReplication/S2_vecm/csv/S2_m2_omega20.csv"
+    "output/S2_vecm/csv/S2_m2_admissible.csv",
+    "output/S2_vecm/csv/S2_m2_omega20.csv"
   ),
   "23_S2_vecm_trivariate.R" = c(
-    "output/CriticalReplication/S2_vecm/csv/S2_m3_admissible.csv",
-    "output/CriticalReplication/S2_vecm/csv/S2_m3_omega20.csv",
-    "output/CriticalReplication/S2_vecm/csv/S2_rotation_check.csv"
+    "output/S2_vecm/csv/S2_m3_admissible.csv",
+    "output/S2_vecm/csv/S2_m3_omega20.csv",
+    "output/S2_vecm/csv/S2_rotation_check.csv"
   )
 )
 
@@ -282,7 +282,7 @@ if (length(artifact_files)) {
 md <- c(md, "",
   "## Session snapshot",
   sprintf("- `sessionInfo()` → `%s`",
-          file.path("output/CriticalReplication/Manifest/logs",
+          file.path("output/Manifest/logs",
                     basename(sessioninfo_path))),
   "",
   "## Deviations / notes"

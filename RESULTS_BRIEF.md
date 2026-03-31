@@ -2,7 +2,7 @@
 
 ## Overview
 
-The results package (`output/CriticalReplication/ResultsPack/`) contains
+The results package (`output/ResultsPack/`) contains
 8 summary tables and 20 dual-format figures (PDF + PNG) produced by the
 pack script from the public CSV outputs of stages S0, S1, and S2.
 

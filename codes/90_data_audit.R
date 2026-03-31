@@ -23,7 +23,7 @@ xlsx_original   <- "data/raw/shaikh_data/_Appendix6.8DataTables_REA_release.xlsx
 xlsx_corrected  <- "data/raw/shaikh_data/_Appendix6.8DataTablesCorrected_REA_release.xlsx"
 xlsx_rearranged <- "data/raw/shaikh_data/_Appendix6.8DataTablesCorrected_MyReArrangement.xlsx"
 csv_canonical   <- "data/raw/shaikh_data/Shaikh_canonical_series_v1.csv"
-out_dir         <- "output/CriticalReplication/data_audit"
+out_dir         <- "output/data_audit"
 
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 

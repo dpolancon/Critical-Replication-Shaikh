@@ -83,7 +83,7 @@ codes/
   99_figure_protocol.R      <- save_png_pdf_dual() — use this, not ggsave
   99_utils.R                <- shared utilities
 data/raw/                   <- source of truth — do not modify
-output/CriticalReplication/ <- all outputs go here
+output/                     <- all outputs go here
 docs/                       <- methodology notes
 
 ---

@@ -25,7 +25,7 @@ Three-stage specification audit of Shaikh (2016) ARDL estimation of productive c
 ## Structure
 - `codes/` — pipeline scripts 10–99
 - `data/raw/` — Shaikh canonical series (do not modify)
-- `output/CriticalReplication/figures/` — fig_*.png + fig_*.pdf
+- `output/figures/` — fig_*.png + fig_*.pdf
 - `docs/` — methodology notes and handoffs
 
 ## Branch Strategy

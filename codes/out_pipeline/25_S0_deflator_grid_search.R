@@ -18,9 +18,9 @@
 #   data/raw/BEA_T1014_realGVA.csv (written by Phase 1 if API available)
 #
 # Outputs:
-#   output/CriticalReplication/S0_faithful/csv/S0_grid_results.csv
-#   output/CriticalReplication/S0_faithful/logs/grid_search_log.txt
-#   output/CriticalReplication/S0_faithful/S0_agent_report.md
+#   output/S0_faithful/csv/S0_grid_results.csv
+#   output/S0_faithful/logs/grid_search_log.txt
+#   output/S0_faithful/S0_agent_report.md
 # ============================================================
 
 rm(list = ls())
@@ -65,7 +65,7 @@ SUCCESS_THRESHOLD <- 0.05   # |theta - target| for declaring success
 # ------------------------------------------------------------
 # OUTPUT PATHS
 # ------------------------------------------------------------
-OUT_DIR  <- here::here("output/CriticalReplication/S0_faithful")
+OUT_DIR  <- here::here("output/S0_faithful")
 CSV_DIR  <- file.path(OUT_DIR, "csv")
 LOG_DIR  <- file.path(OUT_DIR, "logs")
 dir.create(CSV_DIR, recursive = TRUE, showWarnings = FALSE)

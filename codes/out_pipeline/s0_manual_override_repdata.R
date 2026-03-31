@@ -17,7 +17,7 @@
 #
 # Outputs:
 #   Printed verification blocks for all candidates
-#   output/CriticalReplication/S0_faithful/csv/S0_override_results.csv
+#   output/S0_faithful/csv/S0_override_results.csv
 # ============================================================
 
 rm(list = ls())
@@ -387,7 +387,7 @@ cat(sprintf("  theta=%.4f | a=%.4f | c_d74=%.4f | c_d56=%.4f | c_d80=%.4f | AIC=
 
 # Write CSV
 out_path <- here::here(
-  "output/CriticalReplication/S0_faithful/csv/S0_override_results.csv"
+  "output/S0_faithful/csv/S0_override_results.csv"
 )
 dir.create(dirname(out_path), recursive = TRUE, showWarnings = FALSE)
 readr::write_csv(summary_tbl, out_path)

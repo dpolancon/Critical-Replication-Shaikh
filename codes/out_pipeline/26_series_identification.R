@@ -20,8 +20,8 @@
 #   data/raw/_Appendix6.8DataTablesCorrected.xlsx (BEA extractions)
 #
 # Outputs:
-#   output/CriticalReplication/S0_faithful/csv/S0_series_id_summary.csv
-#   output/CriticalReplication/S0_faithful/logs/series_id_log.txt
+#   output/S0_faithful/csv/S0_series_id_summary.csv
+#   output/S0_faithful/logs/series_id_log.txt
 #   docs/ardl_series_identification.md  (formal report)
 # ============================================================
 
@@ -60,7 +60,7 @@ DUMMY_YEARS <- c(1956L, 1974L, 1980L)
 # ------------------------------------------------------------
 # OUTPUT PATHS
 # ------------------------------------------------------------
-OUT_DIR  <- here::here("output/CriticalReplication/S0_faithful")
+OUT_DIR  <- here::here("output/S0_faithful")
 CSV_DIR  <- file.path(OUT_DIR, "csv")
 LOG_DIR  <- file.path(OUT_DIR, "logs")
 dir.create(CSV_DIR, recursive = TRUE, showWarnings = FALSE)

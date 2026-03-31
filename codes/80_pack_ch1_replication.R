@@ -19,8 +19,8 @@
 #       S2_rotation_check.csv
 #
 # Writes:
-#   output/CriticalReplication/ResultsPack/tables/
-#   output/CriticalReplication/ResultsPack/figures/
+#   output/ResultsPack/tables/
+#   output/ResultsPack/figures/
 #
 # Date: 2026-03-11
 # ============================================================
