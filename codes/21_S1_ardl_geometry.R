@@ -2,7 +2,7 @@
 # 21_S1_ardl_geometry.R
 #
 # S1 — ARDL specification geometry: full lattice, admissibility
-#       screening, IC contours, fattened frontier F^(0.20).
+#       screening, IC contours, fattened frontier F^(0.20) by -2logL.
 #
 # Grid: p in 1:5, q in 1:5, case in 1:5, s in {s0,s1,s2,s3}
 #        => 500 specifications
@@ -34,6 +34,7 @@ suppressPackageStartupMessages({
 source(here::here("codes", "10_config.R"))
 source(here::here("codes", "99_utils.R"))
 source(here::here("codes", "98_ardl_helpers.R"))
+source(here::here("codes", "99_figure_protocol.R"))
 
 stopifnot(exists("CONFIG"))
 
@@ -45,7 +46,7 @@ Q_MAX       <- 5L
 CASES       <- 1:5
 EXACT_TEST  <- FALSE          # asymptotic; flip to TRUE for exact-sample later
 F_GATE_ALPHA <- 0.10          # admissibility threshold for F-bounds
-F020_QUANTILE <- 0.20         # fattened frontier: bottom 20% AIC
+F020_QUANTILE <- 0.20         # fattened frontier: bottom 20% of delta (distance to envelope)
 
 WINDOW_TAG  <- "shaikh_window"
 DUMMY_YEARS <- c(1956L, 1974L, 1980L)
@@ -65,8 +66,8 @@ T_BOUNDS_CASES <- c(1L, 3L, 5L)
 # ------------------------------------------------------------
 df_raw <- readr::read_csv(here::here(CONFIG[["data_shaikh"]]), show_col_types=FALSE)
 
-Py <- as.numeric(df_raw[[CONFIG$p_index]])
-p_scale <- Py / 100
+Pk <- as.numeric(df_raw[[CONFIG$p_index]])
+p_scale <- Pk / 100
 
 df0 <- data.frame(
   year  = as.integer(df_raw[[CONFIG$year_col]]),
@@ -367,27 +368,60 @@ if (nrow(A_S1) == 0) {
 }
 
 # ------------------------------------------------------------
-# 8) F^(0.20) frontier (bottom 20% AIC among admissible)
+# 8) F^(0.20) fattened frontier — delta-distance from Pareto envelope
+#
+#    E_S1(k) = argmax logL among admissible specs at complexity k
+#    delta(m) = neg2logL(m) - neg2logL(E_S1(k(m))) >= 0
+#    F^(0.20) = { m : delta(m) <= Q_0.20(delta distribution) }
+#
+#    E_S1 is a strict subset of F^(0.20) (delta=0 <= any quantile).
+#    No tuning parameters — defined purely by the delta distribution.
 # ------------------------------------------------------------
-q20_aic <- quantile(A_S1$AIC, probs = F020_QUANTILE, na.rm = TRUE)
-F020 <- A_S1[!is.na(A_S1$AIC) & A_S1$AIC <= q20_aic, ]
-cat("F^(0.20) frontier:", nrow(F020), "specs (AIC <=", round(q20_aic, 2), ")\n")
 
-# Also compute BIC frontier for comparison
-q20_bic <- quantile(A_S1$BIC, probs = F020_QUANTILE, na.rm = TRUE)
-F020_bic <- A_S1[!is.na(A_S1$BIC) & A_S1$BIC <= q20_bic, ]
-cat("F^(0.20) BIC:     ", nrow(F020_bic), "specs (BIC <=", round(q20_bic, 2), ")\n")
+# Step 1: Pareto envelope — best logLik at each k
+env_df <- A_S1 %>%
+  group_by(k_total) %>%
+  slice_max(logLik, n = 1, with_ties = FALSE) %>%
+  ungroup() %>%
+  select(k_total, env_logLik = logLik, env_neg2logL = neg2logL)
+
+# Step 2: delta(m) for every admissible spec
+A_S1 <- A_S1 %>%
+  left_join(env_df, by = "k_total") %>%
+  mutate(delta_frontier = pmax(neg2logL - env_neg2logL, 0))
+
+# Delta quantile distribution (where does F^(q) fatten beyond E_S1?)
+cat("\nDelta quantile distribution:\n")
+print(quantile(A_S1$delta_frontier,
+               probs = c(0.20, 0.25, 0.30, 0.40, 0.50, 0.60),
+               na.rm = TRUE))
+cat("\n")
+
+# Step 3: F^(0.20) = bottom 20% of delta distribution
+q20_delta <- quantile(A_S1$delta_frontier, probs = F020_QUANTILE, na.rm = TRUE)
+F020 <- A_S1 %>% filter(delta_frontier <= q20_delta)
+
+cat("F^(0.20) frontier:", nrow(F020),
+    "specs (delta <= Q_0.20 =", round(q20_delta, 4), ")\n")
+
+# E_S1 subset check
+E_S1 <- A_S1 %>% filter(delta_frontier == 0)
+cat("E_S1 (envelope):", nrow(E_S1), "specs |",
+    "all in F020:", all(E_S1$spec_idx %in% F020$spec_idx), "\n")
 
 # m0 check: (p=2, q=4, case=3, s=s3)
 m0_idx <- which(lattice$p == 2 & lattice$q == 4 & lattice$case == 3 & lattice$s == "s3")
 m0_admissible <- if (length(m0_idx) == 1) lattice$admissible[m0_idx] else FALSE
-m0_in_F020 <- if (length(m0_idx) == 1 && !is.na(lattice$AIC[m0_idx]))
-                lattice$AIC[m0_idx] <= q20_aic else FALSE
+m0_in_F020 <- FALSE
+if (m0_admissible && length(m0_idx) == 1) {
+  m0_spec <- lattice$spec_idx[m0_idx]
+  m0_in_F020 <- m0_spec %in% F020$spec_idx
+}
 cat("\nm0 (p=2,q=4,c=3,s3): admissible=", m0_admissible,
     " | in F^(0.20)=", m0_in_F020, "\n")
 if (length(m0_idx) == 1 && !lattice$failed[m0_idx]) {
   cat("  theta_m0 =", round(lattice$theta_hat[m0_idx], 4),
-      " | AIC_m0 =", round(lattice$AIC[m0_idx], 2), "\n")
+      " | neg2logL_m0 =", round(lattice$neg2logL[m0_idx], 2), "\n")
 }
 
 # ------------------------------------------------------------
@@ -428,6 +462,16 @@ cat("\nTheta across F^(0.20):\n")
 cat("  range:", round(range(theta_frontier), 4), "\n")
 cat("  mean: ", round(mean(theta_frontier), 4), "\n")
 cat("  sd:   ", round(sd(theta_frontier), 4), "\n")
+
+cat("\nk_total distribution in F^(0.20):\n")
+print(table(F020$k_total))
+
+# E_S1 (envelope) theta stats
+theta_env <- E_S1$theta_hat[is.finite(E_S1$theta_hat)]
+cat("\nTheta across E_S1 (envelope, delta=0):\n")
+cat("  range:", round(range(theta_env), 4), "\n")
+cat("  mean: ", round(mean(theta_env), 4), "\n")
+cat("  sd:   ", round(sd(theta_env), 4), "\n")
 
 # u_hat band across F^(0.20)
 u_mat_frontier <- u_hat_store[, F020$spec_idx, drop = FALSE]
@@ -480,20 +524,21 @@ envelope <- extract_envelope(A_S1, x_col = "k_total", y_col = "logLik")
 # m0 row
 m0_row <- if (length(m0_idx) == 1 && !lattice$failed[m0_idx]) lattice[m0_idx, ] else NULL
 
-# S1.1 Global Frontier
-fig1 <- plot_fitcomplexity_cloud(A_S1, m0 = m0_row, envelope = envelope,
-                                  title = "S1.1: ARDL Admissible Cloud (fit-complexity plane)")
-ggsave(file.path(FIG_DIR, "fig_S1_global_frontier.png"), fig1, width = 10, height = 7, dpi = 300)
+# S1.1 Global Frontier (production builder from 99_figure_protocol.R)
+fig1 <- build_fig_S1_global_frontier(A_S1, m0_row)
+save_png_pdf_dual(fig1, "fig_S1_global_frontier", FIG_DIR)
 
-# S1.2 IC Tangency Points
-fig2 <- plot_ic_tangencies(A_S1, winners = ic_winners, envelope = envelope, m0 = m0_row,
-                            title = "S1.2: IC Tangency Points (H0: IC is coordinate selector)")
-ggsave(file.path(FIG_DIR, "fig_S1_ic_tangencies.png"), fig2, width = 10, height = 7, dpi = 300)
+# S1.2 IC Tangency Points (with isoquants, merged labels)
+fig2 <- build_fig_S1_ic_tangencies(A_S1, m0_row)
+save_png_pdf_dual(fig2, "fig_S1_ic_tangencies", FIG_DIR)
 
-# S1.3 Informational Domain
-fig3 <- plot_informational_domain(A_S1, frontier_df = F020, envelope = envelope, m0 = m0_row,
-                                   title = "S1.3: Informational Domain F^(0.20)")
-ggsave(file.path(FIG_DIR, "fig_S1_informational_domain.png"), fig3, width = 10, height = 7, dpi = 300)
+# S1.3 Informational Domain (kernel-shaded near-frontier region)
+fig3 <- build_fig_S1_informational_domain(A_S1, F020, m0_row)
+save_png_pdf_dual(fig3, "fig_S1_informational_domain", FIG_DIR)
+
+# S1.4 Theta Landscape (new)
+fig4 <- build_fig_S1_theta_landscape(A_S1, m0_row)
+save_png_pdf_dual(fig4, "fig_S1_theta_landscape", FIG_DIR)
 
 cat("Figures saved to:", FIG_DIR, "\n")
 

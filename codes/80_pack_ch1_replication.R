@@ -56,10 +56,18 @@ S2_DIR <- here::here(CONFIG$OUT_CR$S2_vecm, "csv")
 
 PACK_ROOT <- here::here(CONFIG$OUT_CR$results_pack)
 PACK_TABLES  <- file.path(PACK_ROOT, "tables")
-PACK_FIGURES <- file.path(PACK_ROOT, "figures")
 
-dir.create(PACK_TABLES,  recursive = TRUE, showWarnings = FALSE)
-dir.create(PACK_FIGURES, recursive = TRUE, showWarnings = FALSE)
+# Stage-specific figure directories (de-duplicated — no ResultsPack/figures/)
+S0_FIGURES <- here::here(CONFIG$OUT_CR$S0_faithful, "figures")
+S1_FIGURES <- here::here(CONFIG$OUT_CR$S1_geometry, "figures")
+S2_FIGURES <- here::here(CONFIG$OUT_CR$S2_vecm, "figures")
+CROSS_FIGURES <- file.path(PACK_ROOT, "figures")  # cross-stage synthesis only
+
+dir.create(PACK_TABLES,   recursive = TRUE, showWarnings = FALSE)
+dir.create(S0_FIGURES,     recursive = TRUE, showWarnings = FALSE)
+dir.create(S1_FIGURES,     recursive = TRUE, showWarnings = FALSE)
+dir.create(S2_FIGURES,     recursive = TRUE, showWarnings = FALSE)
+dir.create(CROSS_FIGURES,  recursive = TRUE, showWarnings = FALSE)
 
 # ============================================================
 # LOAD ALL INPUTS
@@ -186,9 +194,9 @@ s2_summary <- data.frame(
   total_grid     = c(48L, 96L),
   admissible     = c(nrow(s2_m2_a), nrow(s2_m3_a)),
   omega20        = c(nrow(s2_m2_o), nrow(s2_m3_o)),
-  theta_min      = c(round(min(s2_m2_o$theta_hat, na.rm = TRUE), 4),
+  theta_min      = c(if (nrow(s2_m2_o) > 0) round(min(s2_m2_o$theta_hat, na.rm = TRUE), 4) else NA_real_,
                      round(min(s2_m3_o$theta_hat, na.rm = TRUE), 4)),
-  theta_max      = c(round(max(s2_m2_o$theta_hat, na.rm = TRUE), 4),
+  theta_max      = c(if (nrow(s2_m2_o) > 0) round(max(s2_m2_o$theta_hat, na.rm = TRUE), 4) else NA_real_,
                      round(max(s2_m3_o$theta_hat, na.rm = TRUE), 4)),
   stringsAsFactors = FALSE
 )
@@ -250,14 +258,14 @@ theta_cross <- data.frame(
                 round(mean(s1_f20$theta_hat, na.rm = TRUE), 4),
                 paste0("[", round(min(s1_f20$theta_hat, na.rm = TRUE), 4),
                        ", ", round(max(s1_f20$theta_hat, na.rm = TRUE), 4), "]"),
-                round(mean(s2_m2_o$theta_hat, na.rm = TRUE), 4),
+                if (nrow(s2_m2_o) > 0) round(mean(s2_m2_o$theta_hat, na.rm = TRUE), 4) else NA_real_,
                 round(mean(s2_m3_o$theta_hat, na.rm = TRUE), 4)),
   stringsAsFactors = FALSE
 )
 write.csv(theta_cross, file.path(PACK_TABLES, "TAB_CROSS_theta_comparison.csv"),
           row.names = FALSE)
 
-cat("Tables written to:", PACK_TABLES, "\n")
+#cat("Tables written to:", PACK_TABLES, "\n")
 
 
 # ============================================================
@@ -270,99 +278,142 @@ cat("\n--- Building figures (PDF + PNG) ---\n")
 
 # S0.1: Utilization replication
 fig <- build_fig_S0_utilization(s0_u)
-save_png_pdf_dual(fig, "fig_S0_utilization_replication", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S0_utilization_replication", S0_FIGURES)
 
 # S0.2: Capacity benchmark
 fig <- build_fig_S0_capacity_benchmark(s0_u, lnY_vec)
-save_png_pdf_dual(fig, "fig_S0_capacity_benchmark", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S0_capacity_benchmark", S0_FIGURES)
 
 # S0.3: Five-case comparison
 fig <- build_fig_S0_fivecase(s0_u, s0_spec)
-if (!is.null(fig)) save_png_pdf_dual(fig, "fig_S0_fivecase_comparison", PACK_FIGURES,
+if (!is.null(fig)) save_png_pdf_dual(fig, "fig_S0_fivecase_comparison", S0_FIGURES,
                                  width = 11, height = 4)
 
 # S0.4: Fit-complexity seed point
 fig <- build_fig_S0_seed(s0_spec, s1_adm)
-if (!is.null(fig)) save_png_pdf_dual(fig, "fig_S0_fitcomplexity_seed", PACK_FIGURES)
+if (!is.null(fig)) save_png_pdf_dual(fig, "fig_S0_fitcomplexity_seed", S0_FIGURES)
 
 
 # ---- S1 figures ----
 
 # S1.1: Global frontier
 fig <- build_fig_S1_global_frontier(s1_adm, m0_row)
-save_png_pdf_dual(fig, "fig_S1_global_frontier", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S1_global_frontier", S1_FIGURES)
 
 # S1.2: IC tangencies
 fig <- build_fig_S1_ic_tangencies(s1_adm, m0_row)
-save_png_pdf_dual(fig, "fig_S1_ic_tangencies", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S1_ic_tangencies", S1_FIGURES)
 
 # S1.3: Informational domain
 fig <- build_fig_S1_informational_domain(s1_adm, s1_f20, m0_row)
-save_png_pdf_dual(fig, "fig_S1_informational_domain", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S1_informational_domain", S1_FIGURES)
+
+# S1.4: Theta landscape (new)
+fig <- build_fig_S1_theta_landscape(s1_adm, m0_row)
+save_png_pdf_dual(fig, "fig_S1_theta_landscape", S1_FIGURES)
 
 # S1 supplementary
 if (!is.null(s1_theta) && nrow(s1_theta) > 0) {
   fig <- build_fig_S1_theta_dist(s1_theta)
-  save_png_pdf_dual(fig, "fig_S1_theta_distribution", PACK_FIGURES)
+  save_png_pdf_dual(fig, "fig_S1_theta_distribution", S1_FIGURES)
 }
 
 if (!is.null(s1_u_band) && nrow(s1_u_band) > 0) {
   fig <- build_fig_S1_u_band(s1_u_band)
-  save_png_pdf_dual(fig, "fig_S1_utilization_band", PACK_FIGURES)
+  save_png_pdf_dual(fig, "fig_S1_utilization_band", S1_FIGURES)
 }
 
 if (nrow(s1_f20) > 0 && "s_K" %in% names(s1_f20)) {
   fig <- build_fig_S1_sK_dist(s1_f20)
-  save_png_pdf_dual(fig, "fig_S1_sK_distribution", PACK_FIGURES)
+  save_png_pdf_dual(fig, "fig_S1_sK_distribution", S1_FIGURES)
 }
 
 
 # ---- S2 figures ----
 
-# S2.1 m=2: Global frontier
-fig <- build_fig_S2_global_frontier(s2_m2_a, s2_m2_o, m_dim = 2)
-save_png_pdf_dual(fig, "fig_S2_global_frontier_m2", PACK_FIGURES)
+# S2 m=2 figures (guarded — m=2 omega/admissible may be empty)
+if (nrow(s2_m2_a) > 0 && nrow(s2_m2_o) > 0) {
+  fig <- build_fig_S2_global_frontier(s2_m2_a, s2_m2_o, m_dim = 2)
+  save_png_pdf_dual(fig, "fig_S2_global_frontier_m2", S2_FIGURES)
 
-# S2.1 m=3: Global frontier
+  fig <- build_fig_S2_informational_domain(s2_m2_a, s2_m2_o, m_dim = 2)
+  save_png_pdf_dual(fig, "fig_S2_informational_domain_m2", S2_FIGURES)
+} else {
+  cat("  NOTE: S2 m=2 admissible/omega empty — skipping m=2 frontier/domain figures\n")
+}
+
+if (nrow(s2_m2_a) > 0) {
+  fig <- build_fig_S2_ic_tangencies(s2_m2_a, m_dim = 2)
+  save_png_pdf_dual(fig, "fig_S2_ic_tangencies_m2", S2_FIGURES)
+} else {
+  cat("  NOTE: S2 m=2 admissible empty — skipping m=2 IC tangencies\n")
+}
+
+# S2 m=3 figures
 fig <- build_fig_S2_global_frontier(s2_m3_a, s2_m3_o, m_dim = 3,
                                      include_r = TRUE)
-save_png_pdf_dual(fig, "fig_S2_global_frontier_m3", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S2_global_frontier_m3", S2_FIGURES)
 
-# S2.2 m=2: IC tangencies
-fig <- build_fig_S2_ic_tangencies(s2_m2_a, m_dim = 2)
-save_png_pdf_dual(fig, "fig_S2_ic_tangencies_m2", PACK_FIGURES)
-
-# S2.2 m=3: IC tangencies
 fig <- build_fig_S2_ic_tangencies(s2_m3_a, m_dim = 3)
-save_png_pdf_dual(fig, "fig_S2_ic_tangencies_m3", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S2_ic_tangencies_m3", S2_FIGURES)
 
-# S2.3 m=2: Informational domain
-fig <- build_fig_S2_informational_domain(s2_m2_a, s2_m2_o, m_dim = 2)
-save_png_pdf_dual(fig, "fig_S2_informational_domain_m2", PACK_FIGURES)
-
-# S2.3 m=3: Informational domain
 fig <- build_fig_S2_informational_domain(s2_m3_a, s2_m3_o, m_dim = 3,
                                           include_r = TRUE)
-save_png_pdf_dual(fig, "fig_S2_informational_domain_m3", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_S2_informational_domain_m3", S2_FIGURES)
 
-# S2 supplementary: theta distribution
-fig <- build_fig_S2_theta_dist(s2_m2_o, s2_m3_o)
-save_png_pdf_dual(fig, "fig_S2_theta_distribution", PACK_FIGURES)
+# S2 supplementary: theta distribution (guard for empty m=2)
+if (nrow(s2_m2_o) > 0 || nrow(s2_m3_o) > 0) {
+  fig <- build_fig_S2_theta_dist(s2_m2_o, s2_m3_o)
+  save_png_pdf_dual(fig, "fig_S2_theta_distribution", S2_FIGURES)
+}
 
 # S2 supplementary: utilization bands
 if (!is.null(s2_m2_uband) && !is.null(s2_m3_uband)) {
   fig <- build_fig_S2_u_band(s2_m2_uband, s2_m3_uband)
-  save_png_pdf_dual(fig, "fig_S2_utilization_band", PACK_FIGURES, width = 10, height = 5)
+  save_png_pdf_dual(fig, "fig_S2_utilization_band", S2_FIGURES, width = 10, height = 5)
 }
 
-# S2 supplementary: alpha heatmap
-fig <- build_fig_S2_alpha_heatmap(s2_m2_o, s2_m3_o)
-save_png_pdf_dual(fig, "fig_S2_alpha_heatmap", PACK_FIGURES)
+# S2 supplementary: alpha heatmap (guard for empty m=2)
+if (nrow(s2_m2_o) > 0 || nrow(s2_m3_o) > 0) {
+  fig <- build_fig_S2_alpha_heatmap(s2_m2_o, s2_m3_o)
+} else {
+  fig <- NULL
+}
+if (!is.null(fig)) save_png_pdf_dual(fig, "fig_S2_alpha_heatmap", S2_FIGURES)
+
+# ---- S2 bundled cross-dimensional figures ----
+
+s2_pool_path  <- file.path(S2_DIR, "S2_pooled_admissible.csv")
+s2_pool_o_path <- file.path(S2_DIR, "S2_pooled_omega20.csv")
+s2_winner_path <- file.path(S2_DIR, "S2_ic_winner_table.csv")
+
+if (all(file.exists(s2_pool_path, s2_pool_o_path, s2_winner_path))) {
+  s2_pooled   <- read.csv(s2_pool_path, stringsAsFactors = FALSE)
+  s2_pooled_o <- read.csv(s2_pool_o_path, stringsAsFactors = FALSE)
+  s2_winners  <- read.csv(s2_winner_path, stringsAsFactors = FALSE)
+
+  s2_pooled$mr_group   <- factor(s2_pooled$mr_group,
+                                  levels = c("m2_r1", "m3_r1", "m3_r2"))
+  s2_pooled_o$mr_group <- factor(s2_pooled_o$mr_group,
+                                  levels = c("m2_r1", "m3_r1", "m3_r2"))
+
+  fig <- build_fig_S2_pooled_frontier(s2_pooled, s2_pooled_o)
+  save_png_pdf_dual(fig, "fig_S2_pooled_frontier", S2_FIGURES)
+
+  fig <- build_fig_S2_rank_dominance(s2_winners)
+  save_png_pdf_dual(fig, "fig_S2_rank_dominance", S2_FIGURES)
+
+  fig <- build_fig_S2_theta_by_mr(s2_pooled_o)
+  if (!is.null(fig))
+    save_png_pdf_dual(fig, "fig_S2_theta_by_mr", S2_FIGURES, width = 10, height = 4)
+} else {
+  cat("  NOTE: S2 pooled CSVs not found -- run 26_S2_vecm_bundle.R first\n")
+}
 
 
 # ---- Cross-stage synthesis ----
 fig <- build_fig_cross_synthesis(s1_adm, s2_m2_a, s2_m3_a, m0_row)
-save_png_pdf_dual(fig, "fig_CROSS_synthesis", PACK_FIGURES)
+save_png_pdf_dual(fig, "fig_CROSS_synthesis", CROSS_FIGURES)
 
 
 cat("\nPack complete. Output:", PACK_ROOT, "\n")
@@ -371,8 +422,14 @@ cat("\nPack complete. Output:", PACK_ROOT, "\n")
 # ============================================================
 # INDEX
 # ============================================================
-pdf_files <- sort(list.files(PACK_FIGURES, pattern = "\\.pdf$"))
-png_files <- sort(list.files(PACK_FIGURES, pattern = "\\.png$"))
+# Collect figures from all stage directories
+all_fig_dirs <- c(S0 = S0_FIGURES, S1 = S1_FIGURES, S2 = S2_FIGURES,
+                  Cross = CROSS_FIGURES)
+fig_index <- unlist(lapply(names(all_fig_dirs), function(stage) {
+  figs <- sort(list.files(all_fig_dirs[stage], pattern = "\\.(pdf|png)$"))
+  if (length(figs) == 0) return(character(0))
+  paste0("- ", stage, ": ", figs)
+}))
 
 index_lines <- c(
   "# INDEX \u2014 Chapter 1 Results Pack",
@@ -381,11 +438,8 @@ index_lines <- c(
   "## Tables",
   paste0("- ", sort(list.files(PACK_TABLES))),
   "",
-  "## Figures (PDF \u2014 archival)",
-  paste0("- ", pdf_files),
-  "",
-  "## Figures (PNG \u2014 Notion embed)",
-  paste0("- ", png_files)
+  "## Figures (by stage)",
+  fig_index
 )
 writeLines(index_lines, file.path(PACK_ROOT, "INDEX_RESULTS_PACK.md"))
 cat("Index written.\n")

@@ -100,11 +100,11 @@ Five information criteria are computed for each admissible specification:
 | AIC | −2ℓ + 2k | Akaike (1974) |
 | BIC | −2ℓ + k·ln(T) | Schwarz (1978) |
 | HQ | −2ℓ + 2k·ln(ln(T)) | Hannan & Quinn (1979) |
-| ICOMP | −2ℓ + 2·C₁(Σ̂) | Bozdogan (1990) |
-| ICOMP_Misspec | −2ℓ + 2·C₁(Σ̂_HC) | Bozdogan (2016) |
+| ICOMP | −2ℓ + 2·C₁(F̂⁻¹) | Bozdogan (1990) |
+| RICOMP | −2ℓ + 2·C₁(F̂⁻¹R̂F̂⁻¹) | Bozdogan & Pamukçu (2016) |
 
 where C₁(Σ̂) is the maximum-entropy complexity of the estimated covariance
-matrix, and Σ̂_HC is the heteroskedasticity-consistent (HC3) covariance.
+matrix, and F̂⁻¹R̂F̂⁻¹ is the HC0 (White 1980) sandwich covariance.
 ICOMP penalizes both the number and interdependence of parameters.
 
 ### Frontier Construction

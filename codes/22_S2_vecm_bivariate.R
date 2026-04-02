@@ -43,6 +43,7 @@ suppressPackageStartupMessages({
 source(here::here("codes", "10_config.R"))
 source(here::here("codes", "99_utils.R"))
 source(here::here("codes", "98_ardl_helpers.R"))
+source(here::here("codes", "99_figure_protocol.R"))
 
 stopifnot(exists("CONFIG"))
 
@@ -330,6 +331,12 @@ cat("A_S2_m2 (admissible):", nrow(A_S2_m2), "specs\n")
 if (nrow(A_S2_m2) == 0) {
   cat("WARNING: No admissible m=2 specs! Cannot build Omega_20.\n")
   safe_write_csv(lattice_m2, file.path(CSV_DIR, "S2_m2_lattice_full.csv"))
+  safe_write_csv(A_S2_m2,    file.path(CSV_DIR, "S2_m2_admissible.csv"))
+  safe_write_csv(A_S2_m2,    file.path(CSV_DIR, "S2_m2_omega20.csv"))
+  safe_write_csv(data.frame(year = df$year, u_med = NA_real_,
+                             u_lower = NA_real_, u_upper = NA_real_,
+                             u_shaikh = u_shaikh),
+                 file.path(CSV_DIR, "S2_m2_u_band.csv"))
   cat("STAGE_STATUS_HINT: stage=S2_m2 status=no_admissible\n")
   cat("DONE (no admissible specs).\n")
   sink()
@@ -429,28 +436,15 @@ cat("\nCSVs written to:", CSV_DIR, "\n")
 # ------------------------------------------------------------
 # 8) Figures (parallel to S1.1-S1.3)
 # ------------------------------------------------------------
-envelope_m2 <- extract_envelope(A_S2_m2, x_col = "k_total", y_col = "logLik")
+# Production figure builders from 99_figure_protocol.R
+fig1 <- build_fig_S2_global_frontier(A_S2_m2, Omega_20_m2, m_dim = 2)
+save_png_pdf_dual(fig1, "fig_S2_global_frontier_m2", FIG_DIR)
 
-fig1 <- plot_fitcomplexity_cloud(
-  A_S2_m2, envelope = envelope_m2,
-  title = "S2.1: VECM m=2 Admissible Cloud (fit-complexity)"
-)
-ggsave(file.path(FIG_DIR, "fig_S2_global_frontier_m2.pdf"),
-       fig1, width = 7, height = 5, dpi = 300)
+fig2 <- build_fig_S2_ic_tangencies(A_S2_m2, m_dim = 2)
+save_png_pdf_dual(fig2, "fig_S2_ic_tangencies_m2", FIG_DIR)
 
-fig2 <- plot_ic_tangencies(
-  A_S2_m2, winners = ic_winners_m2, envelope = envelope_m2,
-  title = "S2.2: IC Tangency Points m=2 (H0: IC is coordinate selector)"
-)
-ggsave(file.path(FIG_DIR, "fig_S2_ic_tangencies_m2.pdf"),
-       fig2, width = 7, height = 5, dpi = 300)
-
-fig3 <- plot_informational_domain(
-  A_S2_m2, frontier_df = Omega_20_m2, envelope = envelope_m2,
-  title = "S2.3: Informational Domain Omega_20 (m=2)"
-)
-ggsave(file.path(FIG_DIR, "fig_S2_informational_domain_m2.pdf"),
-       fig3, width = 7, height = 5, dpi = 300)
+fig3 <- build_fig_S2_informational_domain(A_S2_m2, Omega_20_m2, m_dim = 2)
+save_png_pdf_dual(fig3, "fig_S2_informational_domain_m2", FIG_DIR)
 
 cat("Figures saved to:", FIG_DIR, "\n")
 

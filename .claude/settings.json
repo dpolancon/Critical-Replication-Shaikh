@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Rscript codes/_inspect_s3.R)"
+    ]
+  }
+}

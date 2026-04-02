@@ -33,11 +33,11 @@ CONFIG <- list(
   ## NIPA T1.1.4, base 2011=100) for BOTH output and capital.
   ## See docs/ardl_series_identification.md for full provenance.
   year_col = "year",
-  y_nom    = "VAcorp",      # Gross Value Added = VAcorp + DEPCcorp
+  y_nom    = "GVAcorp",      # Gross Value Added = VAcorp + DEPCcorp
   k_nom    = "KGCcorp",
   u_shaikh = "uK",
   pi_share = "Profshcorp",
-  p_index  = "Py",           # GDP price index (NIPA T1.1.4, base 2011=100)
+  p_index  = "pKN",           # GDP price index (NIPA T1.1.4, base 2011=100)
   e_rate   = "exploit_rate",
 
   
@@ -77,6 +77,7 @@ CONFIG <- list(
     S0_redesign  = "output/S0_redesign",
     S1_geometry  = "output/S1_geometry",
     S2_vecm      = "output/S2_vecm",
+    S3_regime    = "output/S3_regime",
     results_pack = "output/ResultsPack",
     manifest     = "output/Manifest"
   ),

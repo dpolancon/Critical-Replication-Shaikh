@@ -58,7 +58,7 @@ DO NOT auto-merge pull requests. Always stop and ask for review.
 | S1 | codes/21_S1_ardl_geometry.R | Complete |
 | S2 bivariate | codes/22_S2_vecm_bivariate.R | Complete |
 | S2 trivariate | codes/23_S2_vecm_trivariate.R | Complete |
-| S3 | codes/26_S3_regime_break.R | Pending |
+| S3 | codes/27_S3_regime_break.R | Complete |
 
 Key results locked in RESULTS_BRIEF.md:
 - S0: theta = 0.749, Case II, ARDL(2,4), T=61

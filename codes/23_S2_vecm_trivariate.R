@@ -46,6 +46,7 @@ suppressPackageStartupMessages({
 source(here::here("codes", "10_config.R"))
 source(here::here("codes", "99_utils.R"))
 source(here::here("codes", "98_ardl_helpers.R"))
+source(here::here("codes", "99_figure_protocol.R"))
 
 stopifnot(exists("CONFIG"))
 
@@ -533,28 +534,17 @@ cat("\nCSVs written to:", CSV_DIR, "\n")
 # ------------------------------------------------------------
 # 9) Figures (parallel to S1.1-S1.3)
 # ------------------------------------------------------------
-envelope_m3 <- extract_envelope(A_S2_m3, x_col = "k_total", y_col = "logLik")
+# Production figure builders from 99_figure_protocol.R
+fig1 <- build_fig_S2_global_frontier(A_S2_m3, Omega_20_m3, m_dim = 3,
+                                      include_r = TRUE)
+save_png_pdf_dual(fig1, "fig_S2_global_frontier_m3", FIG_DIR)
 
-fig1 <- plot_fitcomplexity_cloud(
-  A_S2_m3, envelope = envelope_m3,
-  title = "S2.1: VECM m=3 Admissible Cloud (fit-complexity)"
-)
-ggsave(file.path(FIG_DIR, "fig_S2_global_frontier_m3.pdf"),
-       fig1, width = 7, height = 5, dpi = 300)
+fig2 <- build_fig_S2_ic_tangencies(A_S2_m3, m_dim = 3)
+save_png_pdf_dual(fig2, "fig_S2_ic_tangencies_m3", FIG_DIR)
 
-fig2 <- plot_ic_tangencies(
-  A_S2_m3, winners = ic_winners_m3, envelope = envelope_m3,
-  title = "S2.2: IC Tangency Points m=3 (H0: IC is coordinate selector)"
-)
-ggsave(file.path(FIG_DIR, "fig_S2_ic_tangencies_m3.pdf"),
-       fig2, width = 7, height = 5, dpi = 300)
-
-fig3 <- plot_informational_domain(
-  A_S2_m3, frontier_df = Omega_20_m3, envelope = envelope_m3,
-  title = "S2.3: Informational Domain Omega_20 (m=3)"
-)
-ggsave(file.path(FIG_DIR, "fig_S2_informational_domain_m3.pdf"),
-       fig3, width = 7, height = 5, dpi = 300)
+fig3 <- build_fig_S2_informational_domain(A_S2_m3, Omega_20_m3, m_dim = 3,
+                                           include_r = TRUE)
+save_png_pdf_dual(fig3, "fig_S2_informational_domain_m3", FIG_DIR)
 
 cat("Figures saved to:", FIG_DIR, "\n")
 

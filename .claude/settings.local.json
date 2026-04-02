@@ -6,7 +6,9 @@
       "Bash(Rscript codes/90_data_audit.R)",
       "Bash(find /c/ReposGitHub/Critical-Replication-Shaikh/output -type f -name *audit*)",
       "Bash(awk -F, '{print NF}')",
-      "Bash(Rscript -e ':*)"
+      "Bash(Rscript -e ':*)",
+      "Bash(Rscript codes/26_S2_vecm_bundle.R)",
+      "Bash(Rscript codes/27_S2_vecm_focal_p2d2h2.R)"
     ]
   }
 }

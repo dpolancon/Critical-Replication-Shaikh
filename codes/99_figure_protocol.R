@@ -5,8 +5,8 @@
 # Colorblind-safe Okabe-Ito palette, integer x-axes on
 # fit-complexity planes, ggrepel for lag-structure labeling.
 #
-# Sourced by 80_pack_ch3_replication.R only — stage scripts
-# keep their own diagnostic plot functions in 98_ardl_helpers.R.
+# Sourced by 80_pack_ch1_replication.R and stage scripts (21, 22, 23).
+# Supersedes diagnostic plot functions in 98_ardl_helpers.R.
 #
 # Dependencies: ggplot2, ggrepel, dplyr
 # Date: 2026-03-11
@@ -169,12 +169,23 @@ FRONT_ALPHA <- 0.7
 FRONT_COLOR <- PAL_OI["orange"]
 FRONT_SIZE  <- 2.0
 
+# Kernel ribbon (near-frontier fade)
+RIBBON_BW   <- 5.0          # bandwidth for exp(-delta/BW) decay
+RIBBON_BASE_ALPHA <- 0.55   # alpha at delta = 0 (frontier)
+RIBBON_COLOR <- PAL_OI["orange"]
+RIBBON_SIZE  <- 1.6
+
 # Envelope line
 ENVL_COLOR  <- "grey30"
 ENVL_LW     <- 0.5
 
 # IC winner points
 IC_SIZE     <- 3.5
+
+# IC isoquant lines (AIC/BIC/HQ)
+ISO_LW      <- 0.4
+ISO_LT      <- "dashed"
+ISO_ALPHA   <- 0.6
 
 # m0 benchmark
 M0_SHAPE    <- 8L   # asterisk
@@ -186,6 +197,10 @@ REPEL_SIZE  <- 2.2
 REPEL_SEG_COLOR <- "grey70"
 REPEL_SEG_LW    <- 0.3
 REPEL_SEED      <- 42L
+
+# Rug defaults
+RUG_ALPHA   <- 0.12
+RUG_LENGTH  <- grid::unit(0.02, "npc")
 
 
 # ============================================================
@@ -377,36 +392,141 @@ build_fig_S0_seed <- function(s0_spec, s1_adm) {
 }
 
 
+# ---- 7c-bis. Kernel-weight and label helpers ----
+
+#' Compute vertical distance from Pareto envelope and kernel-weighted alpha.
+#' @param df admissible specs (must have k_total, neg2logL)
+#' @param envelope output of extract_envelope_proto()
+#' @param bw bandwidth for exponential decay (default RIBBON_BW)
+#' @return df with delta_frontier and alpha_w columns added
+add_frontier_kernel <- function(df, envelope, bw = RIBBON_BW) {
+  env_lookup <- stats::setNames(envelope$neg2logL, as.character(envelope$k_total))
+  # For each spec, find the envelope neg2logL at the nearest k_total
+  df$env_neg2logL <- vapply(df$k_total, function(k) {
+    dists <- abs(as.numeric(names(env_lookup)) - k)
+    env_lookup[which.min(dists)]
+  }, numeric(1))
+  df$delta_frontier <- df$neg2logL - df$env_neg2logL
+  df$delta_frontier <- pmax(df$delta_frontier, 0)
+  df$alpha_w <- RIBBON_BASE_ALPHA * exp(-df$delta_frontier / bw)
+  df
+}
+
+#' Build full ARDL spec label: (p,q,C,s)
+ardl_spec_label <- function(df) {
+  paste0("(", df$p, ",", df$q, ",", df$case, ",", df$s, ")")
+}
+
+#' Merge coincident IC winners into "AIC / BIC" labels.
+#' @param wdf data.frame from ic_winners_df()
+#' @return wdf with coincident points collapsed, labels joined
+merge_coincident_winners <- function(wdf) {
+  if (is.null(wdf) || nrow(wdf) == 0) return(wdf)
+  wdf$key <- paste(wdf$k_total, wdf$neg2logL, sep = "_")
+  merged <- do.call(rbind, lapply(split(wdf, wdf$key), function(grp) {
+    data.frame(
+      ic       = grp$ic[1],
+      k_total  = grp$k_total[1],
+      neg2logL = grp$neg2logL[1],
+      label    = paste(grp$ic, collapse = " / "),
+      stringsAsFactors = FALSE
+    )
+  }))
+  merged$key <- NULL
+  rownames(merged) <- NULL
+  merged
+}
+
+#' Build IC isoquant lines for AIC, BIC, HQ through their winner points.
+#' @param wdf merged winners data.frame
+#' @param df admissible specs (for T_eff and k range)
+#' @return data.frame with k, neg2logL, ic columns for geom_line
+build_ic_isoquants <- function(wdf, df) {
+  if (is.null(wdf) || nrow(wdf) == 0) return(NULL)
+  T_eff <- if ("T_eff" %in% names(df)) median(df$T_eff, na.rm = TRUE) else 63
+  k_range <- range(df$k_total, na.rm = TRUE)
+  k_seq <- seq(k_range[1] - 1, k_range[2] + 1, length.out = 200)
+
+  # Penalty slopes: IC = neg2logL + penalty*k  =>  neg2logL = IC_star - penalty*k
+  slopes <- c(AIC = 2, BIC = log(T_eff), HQ = 2 * log(log(T_eff)))
+
+  rows <- list()
+  for (ic_name in names(slopes)) {
+    # Find the winner row for this IC (may be merged label)
+    w_row <- wdf[grepl(ic_name, wdf$label), ]
+    if (nrow(w_row) == 0) next
+    ic_star <- w_row$neg2logL[1] + slopes[ic_name] * w_row$k_total[1]
+    rows[[ic_name]] <- data.frame(
+      k = k_seq,
+      neg2logL = as.numeric(ic_star) - slopes[ic_name] * k_seq,
+      ic = ic_name,
+      stringsAsFactors = FALSE
+    )
+  }
+  if (length(rows) == 0) return(NULL)
+  do.call(rbind, rows)
+}
+
+
 # ---- 7d. S1 figures (ARDL geometry) ----
 
-#' S1.1: Global frontier — cloud + envelope + m0, envelope labeled (p,q)
+#' S1.1: Global frontier — kernel-shaded near-frontier region,
+#'        envelope line, frontier specs labeled (p,q,C,s), marginal rugs.
 build_fig_S1_global_frontier <- function(s1_adm, m0_row = NULL) {
   envelope <- extract_envelope_proto(s1_adm)
-  envelope$pq_label <- paste0("(", envelope$p, ",", envelope$q, ")")
+  envelope$spec_label <- ardl_spec_label(envelope)
 
-  p <- ggplot2::ggplot(s1_adm, ggplot2::aes(x = k_total, y = neg2logL)) +
-    ggplot2::geom_point(alpha = CLOUD_ALPHA, color = CLOUD_COLOR,
+  # Kernel-weighted alpha for near-frontier shading
+  df_k <- add_frontier_kernel(s1_adm, envelope)
+
+  p <- ggplot2::ggplot(df_k, ggplot2::aes(x = k_total, y = neg2logL)) +
+    # Near-frontier kernel ribbon (fading points)
+    ggplot2::geom_point(ggplot2::aes(alpha = alpha_w),
+                        color = RIBBON_COLOR, size = RIBBON_SIZE) +
+    ggplot2::scale_alpha_identity() +
+    # Faint cloud underneath (all specs)
+    ggplot2::geom_point(data = s1_adm, ggplot2::aes(x = k_total, y = neg2logL),
+                        alpha = CLOUD_ALPHA, color = CLOUD_COLOR,
                         size = CLOUD_SIZE) +
+    # Pareto envelope line + points
     ggplot2::geom_line(data = envelope,
                        ggplot2::aes(x = k_total, y = neg2logL),
                        color = ENVL_COLOR, linewidth = ENVL_LW) +
     ggplot2::geom_point(data = envelope,
                         ggplot2::aes(x = k_total, y = neg2logL),
                         color = ENVL_COLOR, size = 1.8, alpha = 0.8) +
+    # Marginal density rugs
+    ggplot2::geom_rug(data = s1_adm, ggplot2::aes(x = k_total, y = neg2logL),
+                      alpha = RUG_ALPHA, length = RUG_LENGTH,
+                      color = "grey50", sides = "bl") +
+    # Envelope spec labels
     ggrepel::geom_text_repel(
       data = envelope,
-      ggplot2::aes(x = k_total, y = neg2logL, label = pq_label),
+      ggplot2::aes(x = k_total, y = neg2logL, label = spec_label),
       size = REPEL_SIZE, color = "grey30",
       segment.color = REPEL_SEG_COLOR, segment.size = REPEL_SEG_LW,
-      max.overlaps = 20, box.padding = 0.35, point.padding = 0.2,
-      min.segment.length = 0.1, seed = REPEL_SEED
+      segment.linetype = "solid",
+      max.overlaps = 25, box.padding = 0.4, point.padding = 0.2,
+      force = 2, min.segment.length = 0.1, seed = REPEL_SEED
     )
 
   if (!is.null(m0_row) && nrow(m0_row) > 0) {
-    p <- p + ggplot2::geom_point(
-      data = m0_row, ggplot2::aes(x = k_total, y = neg2logL),
-      shape = M0_SHAPE, size = M0_SIZE, color = M0_COLOR
-    )
+    p <- p +
+      ggplot2::geom_point(
+        data = m0_row,
+        ggplot2::aes(x = k_total, y = neg2logL),
+        shape = M0_SHAPE, size = M0_SIZE + 1, color = M0_COLOR
+      ) +
+      ggrepel::geom_text_repel(
+        data = m0_row,
+        ggplot2::aes(x = k_total, y = neg2logL),
+        label = "m0 (Shaikh, inadmissible)",
+        size = REPEL_SIZE + 0.5, color = M0_COLOR, fontface = "bold",
+        nudge_x = 1.5, nudge_y = 8,
+        segment.color = M0_COLOR, segment.size = 0.4,
+        segment.linetype = "dashed",
+        max.overlaps = Inf, seed = REPEL_SEED
+      )
   }
 
   p + scale_x_k(s1_adm$k_total) +
@@ -417,19 +537,41 @@ build_fig_S1_global_frontier <- function(s1_adm, m0_row = NULL) {
     theme_ch3()
 }
 
-#' S1.2: IC tangencies — IC winners labeled via ggrepel
+#' S1.2: IC tangencies — IC winners with isoquant lines (AIC/BIC/HQ),
+#'        coincident winners merged, marginal rugs.
 build_fig_S1_ic_tangencies <- function(s1_adm, m0_row = NULL) {
   envelope <- extract_envelope_proto(s1_adm)
   winners <- extract_ic_winners(s1_adm)
   wdf <- ic_winners_df(winners)
+  wdf_merged <- merge_coincident_winners(wdf)
+
+  # IC isoquant lines (AIC, BIC, HQ only — ICOMP/RICOMP are non-linear)
+  iso_df <- build_ic_isoquants(wdf, s1_adm)
 
   p <- ggplot2::ggplot(s1_adm, ggplot2::aes(x = k_total, y = neg2logL)) +
     ggplot2::geom_point(alpha = CLOUD_ALPHA, color = CLOUD_COLOR,
                         size = CLOUD_SIZE) +
     ggplot2::geom_line(data = envelope,
                        ggplot2::aes(x = k_total, y = neg2logL),
-                       color = ENVL_COLOR, linewidth = ENVL_LW)
+                       color = ENVL_COLOR, linewidth = ENVL_LW) +
+    ggplot2::geom_rug(alpha = RUG_ALPHA, length = RUG_LENGTH,
+                      color = "grey50", sides = "bl")
 
+  # Isoquant lines (clipped to y-range of data)
+  if (!is.null(iso_df) && nrow(iso_df) > 0) {
+    y_range <- range(s1_adm$neg2logL, na.rm = TRUE)
+    iso_clipped <- iso_df[iso_df$neg2logL >= y_range[1] &
+                          iso_df$neg2logL <= y_range[2], ]
+    if (nrow(iso_clipped) > 0) {
+      p <- p + ggplot2::geom_line(
+        data = iso_clipped,
+        ggplot2::aes(x = k, y = neg2logL, color = ic),
+        linetype = ISO_LT, linewidth = ISO_LW, alpha = ISO_ALPHA
+      )
+    }
+  }
+
+  # IC winner points + merged labels
   if (!is.null(wdf) && nrow(wdf) > 0) {
     p <- p +
       ggplot2::geom_point(
@@ -440,20 +582,32 @@ build_fig_S1_ic_tangencies <- function(s1_adm, m0_row = NULL) {
       ggplot2::scale_color_manual(values = IC_COLORS, labels = IC_LABELS) +
       ggplot2::scale_shape_manual(values = IC_SHAPES, labels = IC_LABELS) +
       ggrepel::geom_text_repel(
-        data = wdf,
+        data = wdf_merged,
         ggplot2::aes(x = k_total, y = neg2logL, label = label),
         size = REPEL_SIZE + 0.3, fontface = "bold",
         segment.color = REPEL_SEG_COLOR, segment.size = REPEL_SEG_LW,
-        max.overlaps = Inf, box.padding = 0.5,
+        max.overlaps = Inf, box.padding = 0.6, force = 3,
         min.segment.length = 0, seed = REPEL_SEED
       )
   }
 
   if (!is.null(m0_row) && nrow(m0_row) > 0) {
-    p <- p + ggplot2::geom_point(
-      data = m0_row, ggplot2::aes(x = k_total, y = neg2logL),
-      shape = M0_SHAPE, size = M0_SIZE, color = M0_COLOR
-    )
+    p <- p +
+      ggplot2::geom_point(
+        data = m0_row,
+        ggplot2::aes(x = k_total, y = neg2logL),
+        shape = M0_SHAPE, size = M0_SIZE + 1, color = M0_COLOR
+      ) +
+      ggrepel::geom_text_repel(
+        data = m0_row,
+        ggplot2::aes(x = k_total, y = neg2logL),
+        label = "m0 (Shaikh, inadmissible)",
+        size = REPEL_SIZE + 0.5, color = M0_COLOR, fontface = "bold",
+        nudge_x = 1.5, nudge_y = 8,
+        segment.color = M0_COLOR, segment.size = 0.4,
+        segment.linetype = "dashed",
+        max.overlaps = Inf, seed = REPEL_SEED
+      )
   }
 
   p + scale_x_k(s1_adm$k_total) +
@@ -465,38 +619,67 @@ build_fig_S1_ic_tangencies <- function(s1_adm, m0_row = NULL) {
     ggplot2::theme(legend.position = "bottom")
 }
 
-#' S1.3: Informational domain — F^(0.20) specs labeled (p,q)
+#' S1.3: Informational domain — kernel-shaded near-frontier region,
+#'        F^(0.20) specs labeled (p,q,C,s), marginal rugs.
 build_fig_S1_informational_domain <- function(s1_adm, s1_f20, m0_row = NULL) {
   envelope <- extract_envelope_proto(s1_adm)
-  s1_f20$pq_label <- paste0("(", s1_f20$p, ",", s1_f20$q, ")")
+  s1_f20$spec_label <- ardl_spec_label(s1_f20)
 
-  p <- ggplot2::ggplot(s1_adm, ggplot2::aes(x = k_total, y = neg2logL)) +
-    ggplot2::geom_point(alpha = CLOUD_ALPHA, color = CLOUD_COLOR,
+  # Kernel-weighted shading for near-frontier region
+  df_k <- add_frontier_kernel(s1_adm, envelope)
+
+  p <- ggplot2::ggplot(df_k, ggplot2::aes(x = k_total, y = neg2logL)) +
+    # Near-frontier kernel ribbon
+    ggplot2::geom_point(ggplot2::aes(alpha = alpha_w),
+                        color = RIBBON_COLOR, size = RIBBON_SIZE) +
+    ggplot2::scale_alpha_identity() +
+    # Faint cloud (all specs)
+    ggplot2::geom_point(data = s1_adm, ggplot2::aes(x = k_total, y = neg2logL),
+                        alpha = CLOUD_ALPHA, color = CLOUD_COLOR,
                         size = CLOUD_SIZE) +
+    # Pareto envelope
     ggplot2::geom_line(data = envelope,
                        ggplot2::aes(x = k_total, y = neg2logL),
                        color = ENVL_COLOR, linewidth = ENVL_LW) +
+    # F^(0.20) frontier specs (highlighted)
     ggplot2::geom_point(data = s1_f20,
                         ggplot2::aes(x = k_total, y = neg2logL),
                         color = FRONT_COLOR, size = FRONT_SIZE,
                         alpha = FRONT_ALPHA) +
+    # Marginal rugs
+    ggplot2::geom_rug(data = s1_adm, ggplot2::aes(x = k_total, y = neg2logL),
+                      alpha = RUG_ALPHA, length = RUG_LENGTH,
+                      color = "grey50", sides = "bl") +
+    # F^(0.20) spec labels
     ggrepel::geom_text_repel(
       data = s1_f20,
-      ggplot2::aes(x = k_total, y = neg2logL, label = pq_label),
+      ggplot2::aes(x = k_total, y = neg2logL, label = spec_label),
       size = REPEL_SIZE, color = "grey30",
       segment.color = REPEL_SEG_COLOR, segment.size = REPEL_SEG_LW,
-      max.overlaps = 20, box.padding = 0.3, point.padding = 0.2,
-      min.segment.length = 0.1, seed = REPEL_SEED
+      max.overlaps = 25, box.padding = 0.4, point.padding = 0.2,
+      force = 2, min.segment.length = 0.1, seed = REPEL_SEED
     ) +
     ggplot2::annotate("text", x = Inf, y = Inf,
                       label = paste0("n = ", nrow(s1_f20), " specs"),
                       hjust = 1.1, vjust = 1.5, size = 2.8, color = "grey40")
 
   if (!is.null(m0_row) && nrow(m0_row) > 0) {
-    p <- p + ggplot2::geom_point(
-      data = m0_row, ggplot2::aes(x = k_total, y = neg2logL),
-      shape = M0_SHAPE, size = M0_SIZE, color = M0_COLOR
-    )
+    p <- p +
+      ggplot2::geom_point(
+        data = m0_row,
+        ggplot2::aes(x = k_total, y = neg2logL),
+        shape = M0_SHAPE, size = M0_SIZE + 1, color = M0_COLOR
+      ) +
+      ggrepel::geom_text_repel(
+        data = m0_row,
+        ggplot2::aes(x = k_total, y = neg2logL),
+        label = "m0 (Shaikh, inadmissible)",
+        size = REPEL_SIZE + 0.5, color = M0_COLOR, fontface = "bold",
+        nudge_x = 1.5, nudge_y = 8,
+        segment.color = M0_COLOR, segment.size = 0.4,
+        segment.linetype = "dashed",
+        max.overlaps = Inf, seed = REPEL_SEED
+      )
   }
 
   p + scale_x_k(s1_adm$k_total) +
@@ -550,6 +733,42 @@ build_fig_S1_sK_dist <- function(s1_f20) {
 }
 
 
+# ---- 7e-bis. S1 theta landscape (new) ----
+
+#' S1 theta landscape: theta mapped to color on the (k, -2logL) plane.
+build_fig_S1_theta_landscape <- function(s1_adm, m0_row = NULL) {
+  envelope <- extract_envelope_proto(s1_adm)
+
+  # Filter specs with finite theta
+  df <- s1_adm[is.finite(s1_adm$theta_hat), ]
+
+  p <- ggplot2::ggplot(df, ggplot2::aes(x = k_total, y = neg2logL)) +
+    ggplot2::geom_point(ggplot2::aes(color = theta_hat),
+                        size = 1.8, alpha = 0.7) +
+    ggplot2::scale_color_viridis_c(option = "C", name = expression(hat(theta))) +
+    ggplot2::geom_line(data = envelope,
+                       ggplot2::aes(x = k_total, y = neg2logL),
+                       color = ENVL_COLOR, linewidth = ENVL_LW + 0.2) +
+    ggplot2::geom_rug(alpha = RUG_ALPHA, length = RUG_LENGTH,
+                      color = "grey50", sides = "bl")
+
+  if (!is.null(m0_row) && nrow(m0_row) > 0) {
+    p <- p + ggplot2::geom_point(
+      data = m0_row, ggplot2::aes(x = k_total, y = neg2logL),
+      shape = M0_SHAPE, size = M0_SIZE, color = "white"
+    )
+  }
+
+  p + scale_x_k(s1_adm$k_total) +
+    ggplot2::labs(
+      x = expression(italic(k)(m)),
+      y = expression(-2 ~ log ~ italic(L)(m))
+    ) +
+    theme_ch3() +
+    ggplot2::theme(legend.position = "right")
+}
+
+
 # ---- 7f. S2 figures (VECM) ----
 
 #' Build VECM spec label: "(p, d, h)" or "(p, d, h, r)" for m=3
@@ -561,14 +780,20 @@ vecm_label <- function(df, include_r = FALSE) {
   }
 }
 
-#' S2.1: Global frontier per system dimension
+#' S2.1: Global frontier per system dimension — kernel-shaded, rugs, labels.
 build_fig_S2_global_frontier <- function(s2_adm, s2_omega, m_dim,
                                           include_r = FALSE) {
   envelope <- extract_envelope_proto(s2_adm)
   s2_omega$spec_label <- vecm_label(s2_omega, include_r = include_r)
 
-  p <- ggplot2::ggplot(s2_adm, ggplot2::aes(x = k_total, y = neg2logL)) +
-    ggplot2::geom_point(alpha = CLOUD_ALPHA, color = CLOUD_COLOR,
+  df_k <- add_frontier_kernel(s2_adm, envelope)
+
+  p <- ggplot2::ggplot(df_k, ggplot2::aes(x = k_total, y = neg2logL)) +
+    ggplot2::geom_point(ggplot2::aes(alpha = alpha_w),
+                        color = RIBBON_COLOR, size = RIBBON_SIZE) +
+    ggplot2::scale_alpha_identity() +
+    ggplot2::geom_point(data = s2_adm, ggplot2::aes(x = k_total, y = neg2logL),
+                        alpha = CLOUD_ALPHA, color = CLOUD_COLOR,
                         size = CLOUD_SIZE) +
     ggplot2::geom_line(data = envelope,
                        ggplot2::aes(x = k_total, y = neg2logL),
@@ -576,15 +801,18 @@ build_fig_S2_global_frontier <- function(s2_adm, s2_omega, m_dim,
     ggplot2::geom_point(data = s2_omega,
                         ggplot2::aes(x = k_total, y = neg2logL),
                         color = FRONT_COLOR, size = FRONT_SIZE,
-                        alpha = FRONT_ALPHA)
+                        alpha = FRONT_ALPHA) +
+    ggplot2::geom_rug(data = s2_adm, ggplot2::aes(x = k_total, y = neg2logL),
+                      alpha = RUG_ALPHA, length = RUG_LENGTH,
+                      color = "grey50", sides = "bl")
 
-  if (nrow(s2_omega) <= 15) {
+  if (nrow(s2_omega) <= 20) {
     p <- p + ggrepel::geom_text_repel(
       data = s2_omega,
       ggplot2::aes(x = k_total, y = neg2logL, label = spec_label),
       size = REPEL_SIZE, color = "grey30",
       segment.color = REPEL_SEG_COLOR, segment.size = REPEL_SEG_LW,
-      max.overlaps = 20, box.padding = 0.3,
+      max.overlaps = 25, box.padding = 0.4, force = 2,
       min.segment.length = 0.1, seed = REPEL_SEED
     )
   }
@@ -597,18 +825,35 @@ build_fig_S2_global_frontier <- function(s2_adm, s2_omega, m_dim,
     theme_ch3()
 }
 
-#' S2.2: IC tangencies per system dimension
+#' S2.2: IC tangencies per system dimension — isoquants, merged labels, rugs.
 build_fig_S2_ic_tangencies <- function(s2_adm, m_dim) {
   envelope <- extract_envelope_proto(s2_adm)
   winners <- extract_ic_winners(s2_adm)
   wdf <- ic_winners_df(winners)
+  wdf_merged <- merge_coincident_winners(wdf)
+  iso_df <- build_ic_isoquants(wdf, s2_adm)
 
   p <- ggplot2::ggplot(s2_adm, ggplot2::aes(x = k_total, y = neg2logL)) +
     ggplot2::geom_point(alpha = CLOUD_ALPHA, color = CLOUD_COLOR,
                         size = CLOUD_SIZE) +
     ggplot2::geom_line(data = envelope,
                        ggplot2::aes(x = k_total, y = neg2logL),
-                       color = ENVL_COLOR, linewidth = ENVL_LW)
+                       color = ENVL_COLOR, linewidth = ENVL_LW) +
+    ggplot2::geom_rug(alpha = RUG_ALPHA, length = RUG_LENGTH,
+                      color = "grey50", sides = "bl")
+
+  if (!is.null(iso_df) && nrow(iso_df) > 0) {
+    y_range <- range(s2_adm$neg2logL, na.rm = TRUE)
+    iso_clipped <- iso_df[iso_df$neg2logL >= y_range[1] &
+                          iso_df$neg2logL <= y_range[2], ]
+    if (nrow(iso_clipped) > 0) {
+      p <- p + ggplot2::geom_line(
+        data = iso_clipped,
+        ggplot2::aes(x = k, y = neg2logL, color = ic),
+        linetype = ISO_LT, linewidth = ISO_LW, alpha = ISO_ALPHA
+      )
+    }
+  }
 
   if (!is.null(wdf) && nrow(wdf) > 0) {
     p <- p +
@@ -620,11 +865,11 @@ build_fig_S2_ic_tangencies <- function(s2_adm, m_dim) {
       ggplot2::scale_color_manual(values = IC_COLORS, labels = IC_LABELS) +
       ggplot2::scale_shape_manual(values = IC_SHAPES, labels = IC_LABELS) +
       ggrepel::geom_text_repel(
-        data = wdf,
+        data = wdf_merged,
         ggplot2::aes(x = k_total, y = neg2logL, label = label),
         size = REPEL_SIZE + 0.3, fontface = "bold",
         segment.color = REPEL_SEG_COLOR, segment.size = REPEL_SEG_LW,
-        max.overlaps = Inf, box.padding = 0.5,
+        max.overlaps = Inf, box.padding = 0.6, force = 3,
         min.segment.length = 0, seed = REPEL_SEED
       )
   }
@@ -638,14 +883,20 @@ build_fig_S2_ic_tangencies <- function(s2_adm, m_dim) {
     ggplot2::theme(legend.position = "bottom")
 }
 
-#' S2.3: Informational domain per system dimension
+#' S2.3: Informational domain per system dimension — kernel-shaded, rugs.
 build_fig_S2_informational_domain <- function(s2_adm, s2_omega, m_dim,
                                                include_r = FALSE) {
   envelope <- extract_envelope_proto(s2_adm)
   s2_omega$spec_label <- vecm_label(s2_omega, include_r = include_r)
 
-  p <- ggplot2::ggplot(s2_adm, ggplot2::aes(x = k_total, y = neg2logL)) +
-    ggplot2::geom_point(alpha = CLOUD_ALPHA, color = CLOUD_COLOR,
+  df_k <- add_frontier_kernel(s2_adm, envelope)
+
+  p <- ggplot2::ggplot(df_k, ggplot2::aes(x = k_total, y = neg2logL)) +
+    ggplot2::geom_point(ggplot2::aes(alpha = alpha_w),
+                        color = RIBBON_COLOR, size = RIBBON_SIZE) +
+    ggplot2::scale_alpha_identity() +
+    ggplot2::geom_point(data = s2_adm, ggplot2::aes(x = k_total, y = neg2logL),
+                        alpha = CLOUD_ALPHA, color = CLOUD_COLOR,
                         size = CLOUD_SIZE) +
     ggplot2::geom_line(data = envelope,
                        ggplot2::aes(x = k_total, y = neg2logL),
@@ -654,17 +905,20 @@ build_fig_S2_informational_domain <- function(s2_adm, s2_omega, m_dim,
                         ggplot2::aes(x = k_total, y = neg2logL),
                         color = FRONT_COLOR, size = FRONT_SIZE,
                         alpha = FRONT_ALPHA) +
+    ggplot2::geom_rug(data = s2_adm, ggplot2::aes(x = k_total, y = neg2logL),
+                      alpha = RUG_ALPHA, length = RUG_LENGTH,
+                      color = "grey50", sides = "bl") +
     ggplot2::annotate("text", x = Inf, y = Inf,
                       label = paste0("n = ", nrow(s2_omega), " specs"),
                       hjust = 1.1, vjust = 1.5, size = 2.8, color = "grey40")
 
-  if (nrow(s2_omega) <= 15) {
+  if (nrow(s2_omega) <= 20) {
     p <- p + ggrepel::geom_text_repel(
       data = s2_omega,
       ggplot2::aes(x = k_total, y = neg2logL, label = spec_label),
       size = REPEL_SIZE, color = "grey30",
       segment.color = REPEL_SEG_COLOR, segment.size = REPEL_SEG_LW,
-      max.overlaps = 20, box.padding = 0.3,
+      max.overlaps = 25, box.padding = 0.4, force = 2,
       min.segment.length = 0.1, seed = REPEL_SEED
     )
   }
@@ -683,10 +937,10 @@ build_fig_S2_informational_domain <- function(s2_adm, s2_omega, m_dim,
 #' S2-supp-a: theta (beta_k) distribution across Omega_20, by m
 #' Handles sparse data: density for groups with >=2 obs, points for singletons.
 build_fig_S2_theta_dist <- function(s2_m2_o, s2_m3_o, theta_m0 = 0.6609) {
-  df <- rbind(
-    data.frame(theta = s2_m2_o$theta_hat, m = "m = 2", stringsAsFactors = FALSE),
-    data.frame(theta = s2_m3_o$theta_hat, m = "m = 3", stringsAsFactors = FALSE)
-  )
+  parts <- list()
+  if (nrow(s2_m2_o) > 0) parts[[1]] <- data.frame(theta = s2_m2_o$theta_hat, m = "m = 2", stringsAsFactors = FALSE)
+  if (nrow(s2_m3_o) > 0) parts[[2]] <- data.frame(theta = s2_m3_o$theta_hat, m = "m = 3", stringsAsFactors = FALSE)
+  df <- do.call(rbind, parts)
   df <- df[is.finite(df$theta), ]
 
   # Split into groups with enough data for density vs singletons
@@ -745,12 +999,17 @@ build_fig_S2_u_band <- function(s2_m2_uband, s2_m3_uband) {
 
 #' S2-supp-c: Alpha heatmap
 build_fig_S2_alpha_heatmap <- function(s2_m2_o, s2_m3_o) {
-  rows_m2 <- data.frame(
-    spec = paste0("m2:", s2_m2_o$spec_id),
-    alpha_y = s2_m2_o$alpha_y,
-    alpha_k = s2_m2_o$alpha_k,
-    stringsAsFactors = FALSE
-  )
+  if (nrow(s2_m2_o) > 0) {
+    rows_m2 <- data.frame(
+      spec = paste0("m2:", s2_m2_o$spec_id),
+      alpha_y = s2_m2_o$alpha_y,
+      alpha_k = s2_m2_o$alpha_k,
+      stringsAsFactors = FALSE
+    )
+  } else {
+    rows_m2 <- data.frame(spec = character(), alpha_y = numeric(), alpha_k = numeric(),
+                           stringsAsFactors = FALSE)
+  }
   alpha_cols <- c("alpha_y", "alpha_k")
   if ("alpha_e" %in% names(s2_m3_o)) {
     rows_m3 <- data.frame(
@@ -770,10 +1029,15 @@ build_fig_S2_alpha_heatmap <- function(s2_m2_o, s2_m3_o) {
     )
   }
 
-  # Pad missing columns
+  # Pad missing columns (only for non-empty frames)
   for (col in alpha_cols) {
-    if (!col %in% names(rows_m2)) rows_m2[[col]] <- NA_real_
-    if (!col %in% names(rows_m3)) rows_m3[[col]] <- NA_real_
+    if (nrow(rows_m2) > 0 && !col %in% names(rows_m2)) rows_m2[[col]] <- NA_real_
+    if (nrow(rows_m3) > 0 && !col %in% names(rows_m3)) rows_m3[[col]] <- NA_real_
+  }
+  # Ensure both have all alpha_cols for rbind
+  for (col in alpha_cols) {
+    if (!col %in% names(rows_m2)) rows_m2[[col]] <- numeric(0)
+    if (!col %in% names(rows_m3)) rows_m3[[col]] <- numeric(0)
   }
 
   df <- rbind(rows_m2[, c("spec", alpha_cols)],
@@ -797,6 +1061,179 @@ build_fig_S2_alpha_heatmap <- function(s2_m2_o, s2_m3_o) {
 }
 
 
+# ---- 7g-bis. S2 bundled cross-dimensional figures ----
+
+# Color palette for (m, r) groups
+MR_COLORS <- c(
+  "m2_r1" = unname(PAL_OI["skyblue"]),
+  "m3_r1" = unname(PAL_OI["green"]),
+  "m3_r2" = unname(PAL_OI["purple"])
+)
+MR_SHAPES <- c("m2_r1" = 16L, "m3_r1" = 17L, "m3_r2" = 18L)
+MR_LABELS <- c("m2_r1" = "m=2, r=1", "m3_r1" = "m=3, r=1", "m3_r2" = "m=3, r=2")
+
+#' S2-bundle-a: Pooled fit-complexity frontier across system dimensions.
+#' Uses normalized neg2logL = neg2logL / (m * T_eff) for cross-m comparison.
+build_fig_S2_pooled_frontier <- function(pooled_adm, pooled_omega) {
+  # Envelope on normalized values — extract_envelope_proto needs logLik column
+  env_df <- data.frame(
+    k_total  = pooled_adm$k_total,
+    logLik   = -pooled_adm$neg2logL_norm / 2,
+    neg2logL = pooled_adm$neg2logL_norm
+  )
+  envelope <- extract_envelope_proto(env_df)
+
+  pooled_omega$spec_label <- vecm_label(pooled_omega, include_r = TRUE)
+
+  p <- ggplot2::ggplot(pooled_adm,
+                        ggplot2::aes(x = k_total, y = neg2logL_norm)) +
+    ggplot2::geom_point(ggplot2::aes(color = mr_group),
+                        alpha = 0.35, size = CLOUD_SIZE + 0.3) +
+    ggplot2::geom_line(data = envelope,
+                       ggplot2::aes(x = k_total, y = neg2logL),
+                       color = ENVL_COLOR, linewidth = ENVL_LW) +
+    ggplot2::geom_point(data = pooled_omega,
+                        ggplot2::aes(x = k_total, y = neg2logL_norm),
+                        color = FRONT_COLOR, size = FRONT_SIZE,
+                        alpha = FRONT_ALPHA) +
+    ggplot2::geom_rug(alpha = RUG_ALPHA, length = RUG_LENGTH,
+                      color = "grey50", sides = "bl") +
+    ggplot2::scale_color_manual(values = MR_COLORS, labels = MR_LABELS,
+                                name = NULL) +
+    ggplot2::annotate("text", x = Inf, y = Inf,
+                      label = paste0("n = ", nrow(pooled_omega), " specs"),
+                      hjust = 1.1, vjust = 1.5, size = 2.8, color = "grey40")
+
+  if (nrow(pooled_omega) <= 20) {
+    p <- p + ggrepel::geom_text_repel(
+      data = pooled_omega,
+      ggplot2::aes(x = k_total, y = neg2logL_norm, label = spec_label),
+      size = REPEL_SIZE, color = "grey30",
+      segment.color = REPEL_SEG_COLOR, segment.size = REPEL_SEG_LW,
+      max.overlaps = 25, box.padding = 0.4, force = 2,
+      min.segment.length = 0.1, seed = REPEL_SEED
+    )
+  }
+
+  p + scale_x_k(pooled_adm$k_total) +
+    ggplot2::labs(
+      x = expression(italic(k)(m)),
+      y = expression(frac(-2 ~ log ~ italic(L), m %.% T[eff]))
+    ) +
+    theme_ch3() +
+    ggplot2::theme(legend.position = "bottom")
+}
+
+#' S2-bundle-b: Rank dominance dot chart — which (m,r) wins under each IC.
+build_fig_S2_rank_dominance <- function(winner_table) {
+  # Expects columns: ic, variant, winner_mr, ic_value, theta_hat
+  winner_table$ic <- factor(winner_table$ic, levels = rev(IC_NAMES))
+  winner_table$variant <- factor(winner_table$variant,
+                                  levels = c("within_m2", "within_m3",
+                                             "normalized", "per_equation"))
+
+  ggplot2::ggplot(winner_table,
+                  ggplot2::aes(x = variant, y = ic,
+                               color = winner_mr, shape = winner_mr)) +
+    ggplot2::geom_point(size = 4) +
+    ggplot2::scale_color_manual(values = MR_COLORS, labels = MR_LABELS,
+                                name = "Winner") +
+    ggplot2::scale_shape_manual(values = MR_SHAPES, labels = MR_LABELS,
+                                name = "Winner") +
+    ggplot2::scale_x_discrete(labels = c(
+      "within_m2"   = "Within m=2",
+      "within_m3"   = "Within m=3",
+      "normalized"  = "Normalized",
+      "per_equation" = "Per-equation"
+    )) +
+    ggplot2::labs(x = NULL, y = NULL) +
+    theme_ch3() +
+    ggplot2::theme(legend.position = "bottom",
+                   panel.grid.major.x = ggplot2::element_line(
+                     color = "grey90", linewidth = 0.3))
+}
+
+#' S2-bundle-c: Theta distribution faceted by (m, r) group.
+build_fig_S2_theta_by_mr <- function(pooled_omega, theta_m0 = 0.6609) {
+  df <- pooled_omega[is.finite(pooled_omega$theta_hat), ]
+  if (nrow(df) == 0) return(NULL)
+
+  df$mr_label <- MR_LABELS[as.character(df$mr_group)]
+  df$mr_label <- factor(df$mr_label,
+                         levels = c("m=2, r=1", "m=3, r=1", "m=3, r=2"))
+
+  # Per-group counts for stat annotations
+  grp_stats <- df %>%
+    dplyr::group_by(mr_label) %>%
+    dplyr::summarise(
+      n   = dplyr::n(),
+      mu  = mean(theta_hat),
+      rng = paste0("[", round(min(theta_hat), 3), ", ",
+                   round(max(theta_hat), 3), "]"),
+      .groups = "drop"
+    )
+  grp_stats$stat_label <- sprintf("n=%d  mean=%.3f  %s",
+                                   grp_stats$n, grp_stats$mu, grp_stats$rng)
+
+  # Split dense (>=2) vs sparse (<2) groups
+  grp_n <- table(df$mr_label)
+  df_dense  <- df[df$mr_label %in% names(grp_n[grp_n >= 2]), , drop = FALSE]
+  df_sparse <- df[df$mr_label %in% names(grp_n[grp_n <  2]), , drop = FALSE]
+
+  p <- ggplot2::ggplot()
+
+  if (nrow(df_dense) > 0) {
+    p <- p + ggplot2::geom_density(
+      data = df_dense,
+      ggplot2::aes(x = theta_hat, fill = mr_label),
+      alpha = 0.40, color = NA
+    ) +
+    ggplot2::geom_rug(
+      data = df_dense,
+      ggplot2::aes(x = theta_hat),
+      alpha = 0.25, length = grid::unit(0.03, "npc"),
+      sides = "b", color = "grey40"
+    )
+  }
+
+  if (nrow(df_sparse) > 0) {
+    p <- p + ggplot2::geom_point(
+      data = df_sparse,
+      ggplot2::aes(x = theta_hat, y = 0, color = mr_label),
+      size = 3, shape = 18
+    ) +
+    ggplot2::scale_color_manual(
+      values = c("m=2, r=1" = unname(PAL_OI["skyblue"]),
+                 "m=3, r=1" = unname(PAL_OI["green"]),
+                 "m=3, r=2" = unname(PAL_OI["purple"])),
+      guide = "none"
+    )
+  }
+
+  p <- p +
+    ggplot2::geom_vline(xintercept = theta_m0, linetype = "dashed",
+                        color = unname(PAL_OI["vermillion"]), linewidth = 0.5) +
+    ggplot2::scale_fill_manual(
+      values = c("m=2, r=1" = unname(PAL_OI["skyblue"]),
+                 "m=3, r=1" = unname(PAL_OI["green"]),
+                 "m=3, r=2" = unname(PAL_OI["purple"])),
+      guide = "none"
+    ) +
+    ggplot2::facet_wrap(~ mr_label, nrow = 1, scales = "free_y",
+                        drop = FALSE) +
+    ggplot2::geom_text(
+      data = grp_stats,
+      ggplot2::aes(x = Inf, y = Inf, label = stat_label),
+      hjust = 1.05, vjust = 1.5, size = 2.2, color = "grey40",
+      inherit.aes = FALSE
+    ) +
+    ggplot2::labs(x = expression(hat(theta)), y = "Density") +
+    theme_ch3()
+
+  p
+}
+
+
 # ---- 7h. Cross-stage synthesis ----
 
 #' Combined fit-complexity plane: S0 seed + S1 ARDL cloud + S2 VECM cloud
@@ -804,12 +1241,10 @@ build_fig_cross_synthesis <- function(s1_adm, s2_m2_a, s2_m3_a, m0_row) {
   s1_plot <- data.frame(k_total = s1_adm$k_total,
                         neg2logL = s1_adm$neg2logL,
                         stage = "S1: ARDL", stringsAsFactors = FALSE)
-  s2_plot <- rbind(
-    data.frame(k_total = s2_m2_a$k_total, neg2logL = s2_m2_a$neg2logL,
-               stage = "S2: VECM m=2", stringsAsFactors = FALSE),
-    data.frame(k_total = s2_m3_a$k_total, neg2logL = s2_m3_a$neg2logL,
-               stage = "S2: VECM m=3", stringsAsFactors = FALSE)
-  )
+  s2_parts <- list()
+  if (nrow(s2_m2_a) > 0) s2_parts[[1]] <- data.frame(k_total = s2_m2_a$k_total, neg2logL = s2_m2_a$neg2logL, stage = "S2: VECM m=2", stringsAsFactors = FALSE)
+  if (nrow(s2_m3_a) > 0) s2_parts[[2]] <- data.frame(k_total = s2_m3_a$k_total, neg2logL = s2_m3_a$neg2logL, stage = "S2: VECM m=3", stringsAsFactors = FALSE)
+  s2_plot <- do.call(rbind, s2_parts)
   all_data <- rbind(s1_plot, s2_plot)
 
   p <- ggplot2::ggplot(all_data, ggplot2::aes(x = k_total, y = neg2logL,

@@ -3,7 +3,7 @@
 # Sole orchestrator + sole manifest writer for Chapter 1
 # Critical Replication pipeline (S0/S1/S2).
 #
-# Script registry: 20_S0 → 21_S1 → 22_S2_m2 → 23_S2_m3 → 80_pack
+# Script registry: 21_S1 → 22_S2_m2 → 23_S2_m3 → 27_S3
 # No stage script writes to the manifest. This file owns it.
 #
 # Date: 2026-03-11
@@ -53,18 +53,17 @@ writeLines(capture.output(sessionInfo()), con = sessioninfo_path)
 # ---- smoke test: all registered scripts must exist -------------------------
 script_plan <- data.frame(
   script = c(
-    "20_S0_shaikh_faithful.R",
+    # S0 runs interactively — not part of the automated pipeline
     "21_S1_ardl_geometry.R",
     "22_S2_vecm_bivariate.R",
     "23_S2_vecm_trivariate.R",
-    "80_pack_ch1_replication.R"
+    "27_S3_regime_break.R"
   ),
   description = c(
-    "S0: faithful ARDL(2,4) replication",
     "S1: ARDL specification geometry (500-spec lattice)",
     "S2 m=2: bivariate VECM system identification",
     "S2 m=3: trivariate VECM + rotation check",
-    "Results packaging: strict consumer of S0/S1/S2 public CSVs"
+    "S3: JMN regime-break test at 1974 Fordist/Post-Fordist threshold"
   ),
   stringsAsFactors = FALSE
 )
@@ -187,11 +186,8 @@ if (!length(artifact_files)) {
 # ---- validate declared public artifacts ------------------------------------
 # After execution, verify each stage's public outputs exist
 public_contracts <- list(
-  "20_S0_shaikh_faithful.R" = c(
-    "output/S0_faithful/csv/S0_spec_report.csv",
-    "output/S0_faithful/csv/S0_utilization_series.csv",
-    "output/S0_faithful/csv/S0_fivecase_summary.csv"
-  ),
+  # S0 override v8 is interactive (console output); no public CSV contract yet
+  # "20_S0_override_v8.R" = c(...),
   "21_S1_ardl_geometry.R" = c(
     "output/S1_geometry/csv/S1_lattice_full.csv",
     "output/S1_geometry/csv/S1_admissible.csv",
