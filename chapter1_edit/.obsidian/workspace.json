@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "93247b458bf7d3db",
+        "id": "b8f3c38b65fe1f82",
         "type": "tabs",
         "children": [
           {
-            "id": "0c632a49b46707f8",
+            "id": "c839d9bb7332f3fa",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Decision_Editing_Ledger/DecisionLedger_D003.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "DecisionLedger_D003"
+              "title": "New tab"
             }
           }
         ]
@@ -183,13 +179,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "0c632a49b46707f8",
+  "active": "c839d9bb7332f3fa",
   "lastOpenFiles": [
+    "Decision_Editing_Ledger/D003_DecisionLedger.md",
+    "Decision_Editing_Ledger/D003_DecisionLedger_Chapter1_Lock_CriticalRepBrief.md",
+    "B03_BRIEF_TransformationElasticity_UnbalancedGrowth.md",
     "Decision_Editing_Ledger/Section 2 Editing Decision Ledger.md",
-    "Decision_Editing_Ledger/DecisionLedger_D003.md",
     "S02_Literature_Review_Historical.md",
     "B04_BRIEF_Results_CriticalRepliction.md",
-    "B03_BRIEF_TransformationElasticity_UnbalancedGrowth.md",
     "S04_Critical Replication Studies on Shaikh’s Approach to Cointegration.md",
     "figures/03_Unbalanced_Growth_CriticalRep.md",
     "figures/fig_S2_pooled_frontier.pdf",
