@@ -1,0 +1,18 @@
+[
+  {
+    "page_number": 20,
+    "section_context": "A.1 The Unbalanced Growth Closure: Derivation of the Bernoulli ODE",
+    "original_text_snippet": "\\hat{k} + \\delta = s B.",
+    "advisor_comment": "where \\beta ..",
+    "revised_math_latex": null,
+    "comment_type": "typo"
+  },
+  {
+    "page_number": 20,
+    "section_context": "References / Margin",
+    "original_text_snippet": "\\frac{d\\hat{k}}{dt}",
+    "advisor_comment": "2nd deriv?",
+    "revised_math_latex": "\\frac{d^2 k}{dt^2}",
+    "comment_type": "math-correction"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "page_number": 5,
+    "section_context": "3.1 The coefficient driving the productive-capacity path",
+    "original_text_snippet": "Evaluating these conceptual boundaries requires an immediate, formal interrogation of the coefficient driving the productive-capacity path.",
+    "advisor_comment": "Where...",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 5,
+    "section_context": "3.1 The coefficient driving the productive-capacity path",
+    "original_text_snippet": "ln Y_t = ln k_t + ln R^p_t + ln \\mu_t",
+    "advisor_comment": "define R_t",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 5,
+    "section_context": "3.1 The coefficient driving the productive-capacity path",
+    "original_text_snippet": "The linear trend component (b_t) is conventionally interpreted as a measure of autonomous technical change.",
+    "advisor_comment": "?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 5,
+    "section_context": "3.1 The coefficient driving the productive-capacity path",
+    "original_text_snippet": "Because y_t and \\hat{y}^p_t share the same constant-dollar monetary units, this log-level subtraction algebraically collapses into the logarithm of a ratio.",
+    "advisor_comment": "Why?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 5,
+    "section_context": "3.2 Laws of Algebra, Laws of Production, and Omitted Variable Bias",
+    "original_text_snippet": "This estimation sequence establishes a direct functional dependency, where the constructed utilization series inherits its level, timing, and variance from the estimated parameter d.",
+    "advisor_comment": "how and why?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 5,
+    "section_context": "3.2 Laws of Algebra, Laws of Production, and Omitted Variable Bias",
+    "original_text_snippet": "appearing stable",
+    "advisor_comment": "appearing stable (circled)",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 5,
+    "section_context": "3.2 Laws of Algebra, Laws of Production, and Omitted Variable Bias",
+    "original_text_snippet": "post-Keynesian models enforce a balanced-growth baseline by assuming a unitary transformation",
+    "advisor_comment": "OVB or misspecification",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  }
+]

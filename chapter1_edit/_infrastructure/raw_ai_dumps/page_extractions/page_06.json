@@ -1,0 +1,58 @@
+[
+  {
+    "page_number": 7,
+    "section_context": "4 Critical Replication Study on Shaikh's Approach to Cointegration",
+    "original_text_snippet": "The results narrow Shaikh's strategy rather than reproduce it mechanically.",
+    "advisor_comment": "added circle",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 7,
+    "section_context": "4 Critical Replication Study on Shaikh's Approach to Cointegration",
+    "original_text_snippet": "(Shaikh, 1974).",
+    "advisor_comment": "Dsgn",
+    "revised_math_latex": null,
+    "comment_type": "typo"
+  },
+  {
+    "page_number": 7,
+    "section_context": "4 Critical Replication Study on Shaikh's Approach to Cointegration",
+    "original_text_snippet": "Section 4 implements an analytical stress test across three distinct stages",
+    "advisor_comment": "R: decide",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 7,
+    "section_context": "4 Critical Replication Study on Shaikh's Approach to Cointegration",
+    "original_text_snippet": "Stage S1 maps the entire admissible specification space",
+    "advisor_comment": "except true",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 7,
+    "section_context": "4 Critical Replication Study on Shaikh's Approach to Cointegration",
+    "original_text_snippet": "Vector Error Correction Model (VECM)",
+    "advisor_comment": "what?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 7,
+    "section_context": "4.1 ARDL Estimation Architecture",
+    "original_text_snippet": "Equation (9) writes the ARDL specification",
+    "advisor_comment": "Good",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 7,
+    "section_context": "4 Critical Replication Study on Shaikh's Approach to Cointegration",
+    "original_text_snippet": "Shaikh's single-equation procedure.",
+    "advisor_comment": "Give explicitly differences from Shaikh",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  }
+]

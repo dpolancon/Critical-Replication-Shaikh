@@ -1,0 +1,18 @@
+[
+  {
+    "page_number": 8,
+    "section_context": "Upon confirmation of a level relationship",
+    "original_text_snippet": "the long-run coefficient recovers from the short-run",
+    "advisor_comment": "has been used",
+    "revised_math_latex": null,
+    "comment_type": "typo"
+  },
+  {
+    "page_number": 8,
+    "section_context": "4.2 Data and Measurement",
+    "original_text_snippet": "Capital stock follows the Generalized Perpetual Inventory Method (GPIM)",
+    "advisor_comment": "Note that this is clearly needed",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  }
+]

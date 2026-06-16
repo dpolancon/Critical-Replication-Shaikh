@@ -1,0 +1,18 @@
+[
+  {
+    "page_number": 16,
+    "section_context": "Figure 7: S2 Focal Utilization and Exploitation Diplyh",
+    "original_text_snippet": "Panel B tracks the historical trajectory of the exploitation rate.",
+    "advisor_comment": "Exploitation 1965 > 1985 ???",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 16,
+    "section_context": "Figure 6: S2 Pooled System Frontier",
+    "original_text_snippet": "Figure 6 charts the fit-complexity properties of the surviving models.",
+    "advisor_comment": "What is this?",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  }
+]

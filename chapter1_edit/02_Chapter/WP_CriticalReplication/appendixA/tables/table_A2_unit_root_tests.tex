@@ -1,0 +1,26 @@
+% ---------------------------------------------------------------
+% Table A.2: Unit Root Test Results
+% ---------------------------------------------------------------
+\begin{longtable}[t]{llllrrrrll}
+\caption{Unit root tests for core series (1947--2011)}\label{tab:app_unit_roots}\\
+\toprule
+Variable & Form & Test & Specification & Statistic & Lag/BW & \multicolumn{3}{c}{Critical values} & Reject \\
+\cmidrule(lr){7-9}
+& & & & & & 1\% & 5\% & 10\% & at 5\% \\
+\midrule
+$y_t$ & level & ADF & none & 3.0027 & 1 & $-2.60$ & $-1.95$ & $-1.61$ & no \\
+$y_t$ & level & PP & intercept & $-1.3280$ & 3 & $-3.53$ & $-2.91$ & $-2.59$ & no \\
+$y_t$ & level & PP & trend & $-2.1341$ & 3 & $-4.11$ & $-3.48$ & $-3.17$ & no \\
+$y_t$ & $\Delta$ & ADF & intercept & $-5.0966$ & 1 & $-3.51$ & $-2.89$ & $-2.58$ & yes \\
+$y_t$ & $\Delta$ & PP & intercept & $-5.9637$ & 3 & $-3.54$ & $-2.91$ & $-2.59$ & yes \\
+$y_t$ & $\Delta$ & PP & trend & $-5.9460$ & 3 & $-4.11$ & $-3.48$ & $-3.17$ & yes \\
+\addlinespace
+$k_t$ & level & ADF & none & 1.1552 & 4 & $-2.60$ & $-1.95$ & $-1.61$ & no \\
+$k_t$ & level & PP & intercept & $-0.3863$ & 3 & $-3.53$ & $-2.91$ & $-2.59$ & no \\
+$k_t$ & level & PP & trend & $-1.2114$ & 3 & $-4.11$ & $-3.48$ & $-3.17$ & no \\
+$k_t$ & $\Delta$ & ADF & intercept & $-2.0670$ & 3 & $-3.51$ & $-2.89$ & $-2.58$ & no \\
+$k_t$ & $\Delta$ & PP & intercept & $-1.9027$ & 3 & $-3.54$ & $-2.91$ & $-2.59$ & no \\
+$k_t$ & $\Delta$ & PP & trend & $-1.8431$ & 3 & $-4.11$ & $-3.48$ & $-3.17$ & no \\
+\bottomrule
+\end{longtable}
+\note{ADF: Augmented Dickey--Fuller test with max lag 6 and AIC selection. PP: Phillips--Perron test with Newey--West bandwidth. "none" = no deterministic terms; "intercept" = constant only; "trend" = constant + linear trend. PP "none" specification not computed. Rejection at 5\% indicates stationarity under that specification.}

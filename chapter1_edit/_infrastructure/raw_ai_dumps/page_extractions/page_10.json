@@ -1,0 +1,10 @@
+[
+  {
+    "page_number": 11,
+    "section_context": "4.3.3 Stage 2 (S2) System Co-Integration Test",
+    "original_text_snippet": "\\Delta X_t = \\Pi X_{t-1} + \\sum_{i=1}^{p-1} \\Gamma_i \\Delta X_{t-i} + \\Phi D_t + \\varepsilon_t",
+    "advisor_comment": "good - hold up against the Shaikh version.",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  }
+]

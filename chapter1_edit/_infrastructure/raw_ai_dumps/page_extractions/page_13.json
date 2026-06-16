@@ -1,0 +1,18 @@
+[
+  {
+    "page_number": 14,
+    "section_context": "Figure 3: S1 Shrinking Specification Space",
+    "original_text_snippet": "Model complexity (k_total)",
+    "advisor_comment": "What is k?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 14,
+    "section_context": "Stage S1 shrinking space: bounds evidence and fit-complexity geometry",
+    "original_text_snippet": "Within the F-admissible set, the corrected global non-dominated fit-complexity envelope (E_S1) isolates 17 optimal specifications.",
+    "advisor_comment": "What is a specification? and what is better?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  }
+]

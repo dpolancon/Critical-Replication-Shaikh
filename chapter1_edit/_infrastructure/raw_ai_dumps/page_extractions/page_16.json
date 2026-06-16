@@ -1,0 +1,34 @@
+[
+  {
+    "page_number": 17,
+    "section_context": "Top Margin / Conclusion",
+    "original_text_snippet": "In what sense is capacity P.E? But capacity utilization the PE never?",
+    "advisor_comment": "In what sense is capacity P.E? But capacity utilization the PE never?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 17,
+    "section_context": "Conclusion Paragraph 1",
+    "original_text_snippet": "error within the output-capital relation induces a cascading distortion throughout the broader theory of crisis.",
+    "advisor_comment": "rejects the equation",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 17,
+    "section_context": "Conclusion Paragraph 2",
+    "original_text_snippet": "When capital accumulation outpaces capacity formation (θ < 1), the macroeconomic system develops a structural drift toward overaccumulation.",
+    "advisor_comment": "What variables?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 17,
+    "section_context": "Bottom Text Block",
+    "original_text_snippet": "The magnitude of the estimated transformation elasticity (θ) dictates both the historical baseline of the capacity utilization path and its dynamic mean-reverting properties.",
+    "advisor_comment": "So the key issue is how labor capacity is estimated",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  }
+]

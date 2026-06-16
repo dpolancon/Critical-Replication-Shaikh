@@ -1,0 +1,74 @@
+[
+  {
+    "page_number": 2,
+    "section_context": "Top margin / Previous section end",
+    "original_text_snippet": "The Federal Reserve incorporated survey-based capacity measures...",
+    "advisor_comment": "Rise unemployment",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Paragraph starting 'The stagflationary crisis...'",
+    "original_text_snippet": "The stagflationary crisis of the 1970s did not dismantle the survey routine",
+    "advisor_comment": "late 1960s guns butter ?? ??? new routine ???",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Paragraph starting 'The stagflationary crisis...'",
+    "original_text_snippet": "meaning narrowed.",
+    "advisor_comment": "Crossed out",
+    "revised_math_latex": null,
+    "comment_type": "typo"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Paragraph starting 'The stagflationary crisis...'",
+    "original_text_snippet": "diagnostics to price-level discipline",
+    "advisor_comment": "?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Section 2.2 From Capacity Utilization to Output-Gap Governance",
+    "original_text_snippet": "tied to discretionary demand management",
+    "advisor_comment": "wasteful",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Section 2.2 From Capacity Utilization to Output-Gap Governance",
+    "original_text_snippet": "discretionary policy became suspect precisely because",
+    "advisor_comment": "defund or cut.",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Section 2.2 From Capacity Utilization to Output-Gap Governance",
+    "original_text_snippet": "Yet credibility was not observed; it was enforced.",
+    "advisor_comment": "Why not just Y. What does CU add?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Bottom margin notes",
+    "original_text_snippet": "Output-gap estimation operational authorities.",
+    "advisor_comment": "** Simply a lot. During the oil + price shocks of the 1970s, capacity utilization became one of the inflation predictors. -> You're saying that the output gap was seen as...",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Bottom right margin",
+    "original_text_snippet": "Output-gap estimation",
+    "advisor_comment": "prefer CU vs. unemp rate?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  }
+]

@@ -1,0 +1,490 @@
+[
+  {
+    "page_number": 1,
+    "section_context": "1 Introduction",
+    "original_text_snippet": "Capacity utilization sits at the center of macroeconomic debates in political economy, yet its structural measurement remains unresolved across both mainstream and heterodox traditions.",
+    "advisor_comment": "This paper, distinct from Shaikh?",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 1,
+    "section_context": "1 Introduction",
+    "original_text_snippet": "capacity utilization index, shifting the analytical focus away from residual variation and toward the structural parameter governing the output-capital relation.",
+    "advisor_comment": "ln Y^P = theta ln K",
+    "revised_math_latex": "\\ln Y^P = \\theta \\ln K",
+    "comment_type": "math-correction"
+  },
+  {
+    "page_number": 1,
+    "section_context": "Abstract",
+    "original_text_snippet": "unobserved productive baseline.",
+    "advisor_comment": "as a directly slack measured capital",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 1,
+    "section_context": "1 Introduction",
+    "original_text_snippet": "Executing this critical replication reveals that, utilizing the companion data tables to Capitalism does not yield exactly reproducible single-equation autoregressive distributed lag (ARDL) estimates.",
+    "advisor_comment": "I come close but do not fully replicate the original Sh. result!",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 1,
+    "section_context": "1 Introduction",
+    "original_text_snippet": "Section 2 reconstructs the measurement problem historically, tracking how survey indicators and output-gap routines leave the productive ceiling theoretically underidentified.",
+    "advisor_comment": "gives the history which",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 1,
+    "section_context": "1 Introduction",
+    "original_text_snippet": "Section 5 concludes by outlining the theoretical consequences for profitability econometric synthesis.",
+    "advisor_comment": "Can the coeffs on the new variables be meaningfully interpreted?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Top margin / Previous section end",
+    "original_text_snippet": "The Federal Reserve incorporated survey-based capacity measures...",
+    "advisor_comment": "Rise unemployment",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Paragraph starting 'The stagflationary crisis...'",
+    "original_text_snippet": "The stagflationary crisis of the 1970s did not dismantle the survey routine",
+    "advisor_comment": "late 1960s guns butter ?? ??? new routine ???",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Paragraph starting 'The stagflationary crisis...'",
+    "original_text_snippet": "meaning narrowed.",
+    "advisor_comment": "Crossed out",
+    "revised_math_latex": null,
+    "comment_type": "typo"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Paragraph starting 'The stagflationary crisis...'",
+    "original_text_snippet": "diagnostics to price-level discipline",
+    "advisor_comment": "?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Section 2.2 From Capacity Utilization to Output-Gap Governance",
+    "original_text_snippet": "tied to discretionary demand management",
+    "advisor_comment": "wasteful",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Section 2.2 From Capacity Utilization to Output-Gap Governance",
+    "original_text_snippet": "discretionary policy became suspect precisely because",
+    "advisor_comment": "defund or cut.",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Section 2.2 From Capacity Utilization to Output-Gap Governance",
+    "original_text_snippet": "Yet credibility was not observed; it was enforced.",
+    "advisor_comment": "Why not just Y. What does CU add?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Bottom margin notes",
+    "original_text_snippet": "Output-gap estimation operational authorities.",
+    "advisor_comment": "** Simply a lot. During the oil + price shocks of the 1970s, capacity utilization became one of the inflation predictors. -> You're saying that the output gap was seen as...",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Bottom right margin",
+    "original_text_snippet": "Output-gap estimation",
+    "advisor_comment": "prefer CU vs. unemp rate?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 4,
+    "section_context": "Introduction / Start of page",
+    "original_text_snippet": "The residual construction establishes an accounting identity but leaves identification open.",
+    "advisor_comment": "explains how?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 4,
+    "section_context": "3 Conceptual Framework",
+    "original_text_snippet": "(Nikiforos, 2021a).",
+    "advisor_comment": "See also Nelson Plosser",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 4,
+    "section_context": "End of Section 3",
+    "original_text_snippet": "Because the constructed capacity utilization series regulates the measurement of the normal rate of profit...",
+    "advisor_comment": "Very longwinded",
+    "revised_math_latex": "\\log(Y/P) = a + bA + \\dots",
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 4,
+    "section_context": "Start of page (continued text)",
+    "original_text_snippet": "a contracting sector while being deployed to characterize economy-wide accumulation dynamics.",
+    "advisor_comment": "supply / this material (1) w/ succession?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 4,
+    "section_context": "Bottom of page",
+    "original_text_snippet": "The empirical debate has therefore shifted to proxy measures...",
+    "advisor_comment": "the business cycle problem",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 5,
+    "section_context": "3.1 The coefficient driving the productive-capacity path",
+    "original_text_snippet": "Evaluating these conceptual boundaries requires an immediate, formal interrogation of the coefficient driving the productive-capacity path.",
+    "advisor_comment": "Where...",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 5,
+    "section_context": "3.1 The coefficient driving the productive-capacity path",
+    "original_text_snippet": "ln Y_t = ln k_t + ln R^p_t + ln \\mu_t",
+    "advisor_comment": "define R_t",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 5,
+    "section_context": "3.1 The coefficient driving the productive-capacity path",
+    "original_text_snippet": "The linear trend component (b_t) is conventionally interpreted as a measure of autonomous technical change.",
+    "advisor_comment": "?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 5,
+    "section_context": "3.1 The coefficient driving the productive-capacity path",
+    "original_text_snippet": "Because y_t and \\hat{y}^p_t share the same constant-dollar monetary units, this log-level subtraction algebraically collapses into the logarithm of a ratio.",
+    "advisor_comment": "Why?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 5,
+    "section_context": "3.2 Laws of Algebra, Laws of Production, and Omitted Variable Bias",
+    "original_text_snippet": "This estimation sequence establishes a direct functional dependency, where the constructed utilization series inherits its level, timing, and variance from the estimated parameter d.",
+    "advisor_comment": "how and why?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 5,
+    "section_context": "3.2 Laws of Algebra, Laws of Production, and Omitted Variable Bias",
+    "original_text_snippet": "appearing stable",
+    "advisor_comment": "appearing stable (circled)",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 5,
+    "section_context": "3.2 Laws of Algebra, Laws of Production, and Omitted Variable Bias",
+    "original_text_snippet": "post-Keynesian models enforce a balanced-growth baseline by assuming a unitary transformation",
+    "advisor_comment": "OVB or misspecification",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 6,
+    "section_context": "Table 1: Accumulation Regimes and the Productive-Capacity Relation",
+    "original_text_snippet": "Regime",
+    "advisor_comment": "Q (circled)",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 6,
+    "section_context": "Equation (6) and surrounding text",
+    "original_text_snippet": "ordinary differential equation:",
+    "advisor_comment": "where (6)",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 6,
+    "section_context": "Paragraph below Equation (6)",
+    "original_text_snippet": "This mathematical instability reflects the",
+    "advisor_comment": "2nd derivative ??",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 6,
+    "section_context": "3.4 Trend stabilization and the fixed-parameter closure (continued on next page/column)",
+    "original_text_snippet": "Under over-accumulation",
+    "advisor_comment": "problematic around \\theta=1",
+    "revised_math_latex": "\\theta = 1",
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 7,
+    "section_context": "4 Critical Replication Study on Shaikh's Approach to Cointegration",
+    "original_text_snippet": "The results narrow Shaikh's strategy rather than reproduce it mechanically.",
+    "advisor_comment": "added circle",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 7,
+    "section_context": "4 Critical Replication Study on Shaikh's Approach to Cointegration",
+    "original_text_snippet": "(Shaikh, 1974).",
+    "advisor_comment": "Dsgn",
+    "revised_math_latex": null,
+    "comment_type": "typo"
+  },
+  {
+    "page_number": 7,
+    "section_context": "4 Critical Replication Study on Shaikh's Approach to Cointegration",
+    "original_text_snippet": "Section 4 implements an analytical stress test across three distinct stages",
+    "advisor_comment": "R: decide",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 7,
+    "section_context": "4 Critical Replication Study on Shaikh's Approach to Cointegration",
+    "original_text_snippet": "Stage S1 maps the entire admissible specification space",
+    "advisor_comment": "except true",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 7,
+    "section_context": "4 Critical Replication Study on Shaikh's Approach to Cointegration",
+    "original_text_snippet": "Vector Error Correction Model (VECM)",
+    "advisor_comment": "what?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 7,
+    "section_context": "4.1 ARDL Estimation Architecture",
+    "original_text_snippet": "Equation (9) writes the ARDL specification",
+    "advisor_comment": "Good",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 7,
+    "section_context": "4 Critical Replication Study on Shaikh's Approach to Cointegration",
+    "original_text_snippet": "Shaikh's single-equation procedure.",
+    "advisor_comment": "Give explicitly differences from Shaikh",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 8,
+    "section_context": "Upon confirmation of a level relationship",
+    "original_text_snippet": "the long-run coefficient recovers from the short-run",
+    "advisor_comment": "has been used",
+    "revised_math_latex": null,
+    "comment_type": "typo"
+  },
+  {
+    "page_number": 8,
+    "section_context": "4.2 Data and Measurement",
+    "original_text_snippet": "Capital stock follows the Generalized Perpetual Inventory Method (GPIM)",
+    "advisor_comment": "Note that this is clearly needed",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 9,
+    "section_context": "4.3 Empirical Design and Admissibility Strategy",
+    "original_text_snippet": "This section outlines the progressive multi-stage macroeconometric strategy used to evaluate the productive-capacity path.",
+    "advisor_comment": "See Appendix B",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 10,
+    "section_context": "4.3.2 Stage 1 (S1): Admissible-Specification Stress Test",
+    "original_text_snippet": "Because t-bounds are mathematically defined only under PSS Cases 1, 3, and 5, specifications under restricted constant or restricted trend branches (Cases 2 and 4) bypass this",
+    "advisor_comment": "Is that too many exceptions?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 11,
+    "section_context": "4.3.3 Stage 2 (S2) System Co-Integration Test",
+    "original_text_snippet": "\\Delta X_t = \\Pi X_{t-1} + \\sum_{i=1}^{p-1} \\Gamma_i \\Delta X_{t-i} + \\Phi D_t + \\varepsilon_t",
+    "advisor_comment": "good - hold up against the Shaikh version.",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 12,
+    "section_context": "Figure 2 description",
+    "original_text_snippet": "Figure 2 provides the primary path-level evidence for S0. The visualization maps a family of reconstructed utilization paths generated by the faithful reconstruction...",
+    "advisor_comment": "I have very little idea of what is going on here. Simplify and explain.",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 13,
+    "section_context": "Figure 2: S0 Diagnostic Utilization Fan",
+    "original_text_snippet": "Stage S0 confirms that a Shaikh-like capacity benchmark is empirically reproducible.",
+    "advisor_comment": "Interpret economically",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 14,
+    "section_context": "Figure 3: S1 Shrinking Specification Space",
+    "original_text_snippet": "Model complexity (k_total)",
+    "advisor_comment": "What is k?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 14,
+    "section_context": "Stage S1 shrinking space: bounds evidence and fit-complexity geometry",
+    "original_text_snippet": "Within the F-admissible set, the corrected global non-dominated fit-complexity envelope (E_S1) isolates 17 optimal specifications.",
+    "advisor_comment": "What is a specification? and what is better?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 15,
+    "section_context": "4.6 Stage 2 (S2) System-Level VECM Replication",
+    "original_text_snippet": "replication tests whether the long-run classical-Marxian production relation survives as the canonical correlations of the macroeconomic data.",
+    "advisor_comment": "Are you saying it's a critique test?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 15,
+    "section_context": "4.6 Stage 2 (S2) System-Level VECM Replication",
+    "original_text_snippet": "governed by a triple confirmation gate requiring numerical convergence",
+    "advisor_comment": "??",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 16,
+    "section_context": "Figure 7: S2 Focal Utilization and Exploitation Diplyh",
+    "original_text_snippet": "Panel B tracks the historical trajectory of the exploitation rate.",
+    "advisor_comment": "Exploitation 1965 > 1985 ???",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 16,
+    "section_context": "Figure 6: S2 Pooled System Frontier",
+    "original_text_snippet": "Figure 6 charts the fit-complexity properties of the surviving models.",
+    "advisor_comment": "What is this?",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 17,
+    "section_context": "Top Margin / Conclusion",
+    "original_text_snippet": "In what sense is capacity P.E? But capacity utilization the PE never?",
+    "advisor_comment": "In what sense is capacity P.E? But capacity utilization the PE never?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 17,
+    "section_context": "Conclusion Paragraph 1",
+    "original_text_snippet": "error within the output-capital relation induces a cascading distortion throughout the broader theory of crisis.",
+    "advisor_comment": "rejects the equation",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 17,
+    "section_context": "Conclusion Paragraph 2",
+    "original_text_snippet": "When capital accumulation outpaces capacity formation (θ < 1), the macroeconomic system develops a structural drift toward overaccumulation.",
+    "advisor_comment": "What variables?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 17,
+    "section_context": "Bottom Text Block",
+    "original_text_snippet": "The magnitude of the estimated transformation elasticity (θ) dictates both the historical baseline of the capacity utilization path and its dynamic mean-reverting properties.",
+    "advisor_comment": "So the key issue is how labor capacity is estimated",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 20,
+    "section_context": "A.1 The Unbalanced Growth Closure: Derivation of the Bernoulli ODE",
+    "original_text_snippet": "\\hat{k} + \\delta = s B.",
+    "advisor_comment": "where \\beta ..",
+    "revised_math_latex": null,
+    "comment_type": "typo"
+  },
+  {
+    "page_number": 20,
+    "section_context": "References / Margin",
+    "original_text_snippet": "\\frac{d\\hat{k}}{dt}",
+    "advisor_comment": "2nd deriv?",
+    "revised_math_latex": "\\frac{d^2 k}{dt^2}",
+    "comment_type": "math-correction"
+  },
+  {
+    "page_number": 21,
+    "section_context": "B.2 Imputed-Interest Correction",
+    "original_text_snippet": "The NIPA corporate value added figure includes imputed financial intermediation services as a cost to non-financial corporations.",
+    "advisor_comment": "ex-post",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 22,
+    "section_context": "Figure 9",
+    "original_text_snippet": "Ratio plot shows convergence by 1977.",
+    "advisor_comment": "why improving?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 23,
+    "section_context": "Figure 10",
+    "original_text_snippet": "IRS corporate book value index versus BEA historical stock (1925–1947). Both indexed to 100 in 1925.",
+    "advisor_comment": "2?",
+    "revised_math_latex": null,
+    "comment_type": "typo"
+  },
+  {
+    "page_number": 23,
+    "section_context": "Figure 10",
+    "original_text_snippet": "IRS corporate book value index versus BEA historical stock",
+    "advisor_comment": "Large circles drawn around the divergence between the IRS/Census-adjusted book value and BEA historical-cost stock series during the 1930s and 1940s, indicating a significant discrepancy or data issue in this period.",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "page_number": 1,
+    "section_context": "1 Introduction",
+    "original_text_snippet": "Capacity utilization sits at the center of macroeconomic debates in political economy, yet its structural measurement remains unresolved across both mainstream and heterodox traditions.",
+    "advisor_comment": "This paper, distinct from Shaikh?",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 1,
+    "section_context": "1 Introduction",
+    "original_text_snippet": "capacity utilization index, shifting the analytical focus away from residual variation and toward the structural parameter governing the output-capital relation.",
+    "advisor_comment": "ln Y^P = theta ln K",
+    "revised_math_latex": "\\ln Y^P = \\theta \\ln K",
+    "comment_type": "math-correction"
+  },
+  {
+    "page_number": 1,
+    "section_context": "Abstract",
+    "original_text_snippet": "unobserved productive baseline.",
+    "advisor_comment": "as a directly slack measured capital",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 1,
+    "section_context": "1 Introduction",
+    "original_text_snippet": "Executing this critical replication reveals that, utilizing the companion data tables to Capitalism does not yield exactly reproducible single-equation autoregressive distributed lag (ARDL) estimates.",
+    "advisor_comment": "I come close but do not fully replicate the original Sh. result!",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 1,
+    "section_context": "1 Introduction",
+    "original_text_snippet": "Section 2 reconstructs the measurement problem historically, tracking how survey indicators and output-gap routines leave the productive ceiling theoretically underidentified.",
+    "advisor_comment": "gives the history which",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 1,
+    "section_context": "1 Introduction",
+    "original_text_snippet": "Section 5 concludes by outlining the theoretical consequences for profitability econometric synthesis.",
+    "advisor_comment": "Can the coeffs on the new variables be meaningfully interpreted?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "page_number": 4,
+    "section_context": "Introduction / Start of page",
+    "original_text_snippet": "The residual construction establishes an accounting identity but leaves identification open.",
+    "advisor_comment": "explains how?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 4,
+    "section_context": "3 Conceptual Framework",
+    "original_text_snippet": "(Nikiforos, 2021a).",
+    "advisor_comment": "See also Nelson Plosser",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 4,
+    "section_context": "End of Section 3",
+    "original_text_snippet": "Because the constructed capacity utilization series regulates the measurement of the normal rate of profit...",
+    "advisor_comment": "Very longwinded",
+    "revised_math_latex": "\\log(Y/P) = a + bA + \\dots",
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 4,
+    "section_context": "Start of page (continued text)",
+    "original_text_snippet": "a contracting sector while being deployed to characterize economy-wide accumulation dynamics.",
+    "advisor_comment": "supply / this material (1) w/ succession?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 4,
+    "section_context": "Bottom of page",
+    "original_text_snippet": "The empirical debate has therefore shifted to proxy measures...",
+    "advisor_comment": "the business cycle problem",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "page_number": 15,
+    "section_context": "4.6 Stage 2 (S2) System-Level VECM Replication",
+    "original_text_snippet": "replication tests whether the long-run classical-Marxian production relation survives as the canonical correlations of the macroeconomic data.",
+    "advisor_comment": "Are you saying it's a critique test?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 15,
+    "section_context": "4.6 Stage 2 (S2) System-Level VECM Replication",
+    "original_text_snippet": "governed by a triple confirmation gate requiring numerical convergence",
+    "advisor_comment": "??",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  }
+]

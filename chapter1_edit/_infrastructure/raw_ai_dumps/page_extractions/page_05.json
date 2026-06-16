@@ -1,0 +1,34 @@
+[
+  {
+    "page_number": 6,
+    "section_context": "Table 1: Accumulation Regimes and the Productive-Capacity Relation",
+    "original_text_snippet": "Regime",
+    "advisor_comment": "Q (circled)",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 6,
+    "section_context": "Equation (6) and surrounding text",
+    "original_text_snippet": "ordinary differential equation:",
+    "advisor_comment": "where (6)",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 6,
+    "section_context": "Paragraph below Equation (6)",
+    "original_text_snippet": "This mathematical instability reflects the",
+    "advisor_comment": "2nd derivative ??",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 6,
+    "section_context": "3.4 Trend stabilization and the fixed-parameter closure (continued on next page/column)",
+    "original_text_snippet": "Under over-accumulation",
+    "advisor_comment": "problematic around \\theta=1",
+    "revised_math_latex": "\\theta = 1",
+    "comment_type": "theoretical-pushback"
+  }
+]
