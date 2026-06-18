@@ -1,18 +1,18 @@
 ---
 page: 2
 context: "Paragraph starting 'The stagflationary crisis...'"
-type: typo
+type: structural
 status: needs-triage
 ---
 
 # Comment P2 - Item 9
 
 ## Advisor Comment
-> Crossed out
+> late 1960s guns butter ?? ??? new routine ???
 
 ## Original Context
 - **Context:** Paragraph starting 'The stagflationary crisis...'
-- **Text Snippet:** `meaning narrowed.`
+- **Text Snippet:** `The stagflationary crisis of the 1970s did not dismantle the survey routine`
 
 ## Action Plan
 - [ ] Review advisor's request.

@@ -8,11 +8,11 @@ status: needs-triage
 # Comment P2 - Item 12
 
 ## Advisor Comment
-> defund or cut.
+> wasteful
 
 ## Original Context
 - **Context:** Section 2.2 From Capacity Utilization to Output-Gap Governance
-- **Text Snippet:** `discretionary policy became suspect precisely because`
+- **Text Snippet:** `tied to discretionary demand management`
 
 ## Action Plan
 - [ ] Review advisor's request.

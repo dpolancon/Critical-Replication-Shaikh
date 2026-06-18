@@ -100,8 +100,8 @@ target_pdf: "_infrastructure/raw_scans/Chapter1_Scanned_Comments.pdf"
 | 2026-06-15 13:00 | 1 | Image Extraction (DPI=300) | Extracted 28 pages as PNGs at 300 DPI. |
 | 2026-06-16 14:36 | 0 | Environment Checked | Dependencies verified, active venv, target PDF exists. |
 | 2026-06-16 14:36 | 1 | Image Extraction (DPI=300) | Extracted 28 pages as PNGs at 300 DPI. |
-| 2026-06-16 14:59 | 2 | Vision AI Extraction | Processed 28 pages. Extracted a total of 61 comments. |
-| 2026-06-16 14:59 | 3 | Ledger Generation | Generated 61 atomic notes in 01_Feedback_Matrix/ and backed up raw JSON. |
+| 2026-06-16 14:59 | 2 | Vision AI Extraction | Processed 28 pages. Extracted a total of 68 comments (re-steered Page 3 at 400 DPI).
+| 2026-06-16 14:59 | 3 | Ledger Generation | Generated 68 atomic notes in 01_Feedback_Matrix/ and backed up raw JSON.
 
 ---
 

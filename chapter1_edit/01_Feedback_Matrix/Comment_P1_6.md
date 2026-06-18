@@ -1,6 +1,6 @@
 ---
 page: 1
-context: "1 Introduction"
+context: "Abstract"
 type: theoretical-pushback
 status: needs-triage
 ---
@@ -8,11 +8,11 @@ status: needs-triage
 # Comment P1 - Item 6
 
 ## Advisor Comment
-> Can the coeffs on the new variables be meaningfully interpreted?
+> as a directly slack measured capital
 
 ## Original Context
-- **Context:** 1 Introduction
-- **Text Snippet:** `Section 5 concludes by outlining the theoretical consequences for profitability econometric synthesis.`
+- **Context:** Abstract
+- **Text Snippet:** `unobserved productive baseline.`
 
 ## Action Plan
 - [ ] Review advisor's request.

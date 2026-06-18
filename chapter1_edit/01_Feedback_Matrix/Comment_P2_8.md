@@ -1,18 +1,18 @@
 ---
 page: 2
-context: "Paragraph starting 'The stagflationary crisis...'"
-type: structural
+context: "Bottom right margin"
+type: theoretical-pushback
 status: needs-triage
 ---
 
 # Comment P2 - Item 8
 
 ## Advisor Comment
-> late 1960s guns butter ?? ??? new routine ???
+> prefer CU vs. unemp rate?
 
 ## Original Context
-- **Context:** Paragraph starting 'The stagflationary crisis...'
-- **Text Snippet:** `The stagflationary crisis of the 1970s did not dismantle the survey routine`
+- **Context:** Bottom right margin
+- **Text Snippet:** `Output-gap estimation`
 
 ## Action Plan
 - [ ] Review advisor's request.

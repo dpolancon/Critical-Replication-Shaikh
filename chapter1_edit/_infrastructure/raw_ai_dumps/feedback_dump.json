@@ -17,14 +17,6 @@
   },
   {
     "page_number": 1,
-    "section_context": "Abstract",
-    "original_text_snippet": "unobserved productive baseline.",
-    "advisor_comment": "as a directly slack measured capital",
-    "revised_math_latex": null,
-    "comment_type": "theoretical-pushback"
-  },
-  {
-    "page_number": 1,
     "section_context": "1 Introduction",
     "original_text_snippet": "Executing this critical replication reveals that, utilizing the companion data tables to Capitalism does not yield exactly reproducible single-equation autoregressive distributed lag (ARDL) estimates.",
     "advisor_comment": "I come close but do not fully replicate the original Sh. result!",
@@ -48,10 +40,26 @@
     "comment_type": "theoretical-pushback"
   },
   {
+    "page_number": 1,
+    "section_context": "Abstract",
+    "original_text_snippet": "unobserved productive baseline.",
+    "advisor_comment": "as a directly slack measured capital",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
     "page_number": 2,
-    "section_context": "Top margin / Previous section end",
-    "original_text_snippet": "The Federal Reserve incorporated survey-based capacity measures...",
-    "advisor_comment": "Rise unemployment",
+    "section_context": "Bottom margin notes",
+    "original_text_snippet": "Output-gap estimation operational authorities.",
+    "advisor_comment": "** Simply a lot. During the oil + price shocks of the 1970s, capacity utilization became one of the inflation predictors. -> You're saying that the output gap was seen as...",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 2,
+    "section_context": "Bottom right margin",
+    "original_text_snippet": "Output-gap estimation",
+    "advisor_comment": "prefer CU vs. unemp rate?",
     "revised_math_latex": null,
     "comment_type": "theoretical-pushback"
   },
@@ -105,33 +113,81 @@
   },
   {
     "page_number": 2,
-    "section_context": "Bottom margin notes",
-    "original_text_snippet": "Output-gap estimation operational authorities.",
-    "advisor_comment": "** Simply a lot. During the oil + price shocks of the 1970s, capacity utilization became one of the inflation predictors. -> You're saying that the output gap was seen as...",
+    "section_context": "Top margin / Previous section end",
+    "original_text_snippet": "The Federal Reserve incorporated survey-based capacity measures...",
+    "advisor_comment": "Rise unemployment",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 3,
+    "section_context": "2.3 Capacity-Utilization Debates in Political Economy",
+    "original_text_snippet": "Firms adjust desired utilization through expectation revision",
+    "advisor_comment": "? (Question mark in margin; 'desired utilization' is underlined)",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 3,
+    "section_context": "2.3 Capacity-Utilization Debates in Political Economy",
+    "original_text_snippet": "sluggish investment adjustment and reserve-capacity maintenance",
+    "advisor_comment": "[Underlined]",
     "revised_math_latex": null,
     "comment_type": "structural"
   },
   {
-    "page_number": 2,
-    "section_context": "Bottom right margin",
-    "original_text_snippet": "Output-gap estimation",
-    "advisor_comment": "prefer CU vs. unemp rate?",
+    "page_number": 3,
+    "section_context": "2.3 Capacity-Utilization Debates in Political Economy (end of section)",
+    "original_text_snippet": "Built to track industrial manufacturing during Fordist expansion, the series now measures mismatch.",
+    "advisor_comment": "distinctive? see Rowlin",
     "revised_math_latex": null,
     "comment_type": "theoretical-pushback"
   },
   {
-    "page_number": 4,
-    "section_context": "Introduction / Start of page",
-    "original_text_snippet": "The residual construction establishes an accounting identity but leaves identification open.",
-    "advisor_comment": "explains how?",
+    "page_number": 3,
+    "section_context": "Global Financial Crisis discussion",
+    "original_text_snippet": "The Global Financial Crisis did not dislodge this settlement",
+    "advisor_comment": "really?",
     "revised_math_latex": null,
     "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 3,
+    "section_context": "New Monetary Policy Consensus discussion (start of page)",
+    "original_text_snippet": "identifies this settlement as the New Monetary Policy Consensus",
+    "advisor_comment": "Rising inequality",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 3,
+    "section_context": "Output gap and measurement problem discussion",
+    "original_text_snippet": "Each inference carries closure assumptions that fix the economy's potential output",
+    "advisor_comment": "X closure; policy variable",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 3,
+    "section_context": "Output gap and measurement problem discussion",
+    "original_text_snippet": "Methodological divergence masks functional convergence.",
+    "advisor_comment": "document or drop.",
+    "revised_math_latex": null,
+    "comment_type": "structural"
   },
   {
     "page_number": 4,
     "section_context": "3 Conceptual Framework",
     "original_text_snippet": "(Nikiforos, 2021a).",
     "advisor_comment": "See also Nelson Plosser",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 4,
+    "section_context": "Bottom of page",
+    "original_text_snippet": "The empirical debate has therefore shifted to proxy measures...",
+    "advisor_comment": "the business cycle problem",
     "revised_math_latex": null,
     "comment_type": "structural"
   },
@@ -145,19 +201,19 @@
   },
   {
     "page_number": 4,
-    "section_context": "Start of page (continued text)",
-    "original_text_snippet": "a contracting sector while being deployed to characterize economy-wide accumulation dynamics.",
-    "advisor_comment": "supply / this material (1) w/ succession?",
+    "section_context": "Introduction / Start of page",
+    "original_text_snippet": "The residual construction establishes an accounting identity but leaves identification open.",
+    "advisor_comment": "explains how?",
     "revised_math_latex": null,
     "comment_type": "theoretical-pushback"
   },
   {
     "page_number": 4,
-    "section_context": "Bottom of page",
-    "original_text_snippet": "The empirical debate has therefore shifted to proxy measures...",
-    "advisor_comment": "the business cycle problem",
+    "section_context": "Start of page (continued text)",
+    "original_text_snippet": "a contracting sector while being deployed to characterize economy-wide accumulation dynamics.",
+    "advisor_comment": "supply / this material (1) w/ succession?",
     "revised_math_latex": null,
-    "comment_type": "structural"
+    "comment_type": "theoretical-pushback"
   },
   {
     "page_number": 5,
@@ -217,11 +273,11 @@
   },
   {
     "page_number": 6,
-    "section_context": "Table 1: Accumulation Regimes and the Productive-Capacity Relation",
-    "original_text_snippet": "Regime",
-    "advisor_comment": "Q (circled)",
-    "revised_math_latex": null,
-    "comment_type": "structural"
+    "section_context": "3.4 Trend stabilization and the fixed-parameter closure (continued on next page/column)",
+    "original_text_snippet": "Under over-accumulation",
+    "advisor_comment": "problematic around \\theta=1",
+    "revised_math_latex": "\\theta = 1",
+    "comment_type": "theoretical-pushback"
   },
   {
     "page_number": 6,
@@ -241,11 +297,11 @@
   },
   {
     "page_number": 6,
-    "section_context": "3.4 Trend stabilization and the fixed-parameter closure (continued on next page/column)",
-    "original_text_snippet": "Under over-accumulation",
-    "advisor_comment": "problematic around \\theta=1",
-    "revised_math_latex": "\\theta = 1",
-    "comment_type": "theoretical-pushback"
+    "section_context": "Table 1: Accumulation Regimes and the Productive-Capacity Relation",
+    "original_text_snippet": "Regime",
+    "advisor_comment": "Q (circled)",
+    "revised_math_latex": null,
+    "comment_type": "structural"
   },
   {
     "page_number": 7,
@@ -289,6 +345,14 @@
   },
   {
     "page_number": 7,
+    "section_context": "4 Critical Replication Study on Shaikh's Approach to Cointegration",
+    "original_text_snippet": "Shaikh's single-equation procedure.",
+    "advisor_comment": "Give explicitly differences from Shaikh",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 7,
     "section_context": "4.1 ARDL Estimation Architecture",
     "original_text_snippet": "Equation (9) writes the ARDL specification",
     "advisor_comment": "Good",
@@ -296,10 +360,10 @@
     "comment_type": "structural"
   },
   {
-    "page_number": 7,
-    "section_context": "4 Critical Replication Study on Shaikh's Approach to Cointegration",
-    "original_text_snippet": "Shaikh's single-equation procedure.",
-    "advisor_comment": "Give explicitly differences from Shaikh",
+    "page_number": 8,
+    "section_context": "4.2 Data and Measurement",
+    "original_text_snippet": "Capital stock follows the Generalized Perpetual Inventory Method (GPIM)",
+    "advisor_comment": "Note that this is clearly needed",
     "revised_math_latex": null,
     "comment_type": "structural"
   },
@@ -310,14 +374,6 @@
     "advisor_comment": "has been used",
     "revised_math_latex": null,
     "comment_type": "typo"
-  },
-  {
-    "page_number": 8,
-    "section_context": "4.2 Data and Measurement",
-    "original_text_snippet": "Capital stock follows the Generalized Perpetual Inventory Method (GPIM)",
-    "advisor_comment": "Note that this is clearly needed",
-    "revised_math_latex": null,
-    "comment_type": "structural"
   },
   {
     "page_number": 9,
@@ -393,14 +449,6 @@
   },
   {
     "page_number": 16,
-    "section_context": "Figure 7: S2 Focal Utilization and Exploitation Diplyh",
-    "original_text_snippet": "Panel B tracks the historical trajectory of the exploitation rate.",
-    "advisor_comment": "Exploitation 1965 > 1985 ???",
-    "revised_math_latex": null,
-    "comment_type": "theoretical-pushback"
-  },
-  {
-    "page_number": 16,
     "section_context": "Figure 6: S2 Pooled System Frontier",
     "original_text_snippet": "Figure 6 charts the fit-complexity properties of the surviving models.",
     "advisor_comment": "What is this?",
@@ -408,10 +456,18 @@
     "comment_type": "structural"
   },
   {
+    "page_number": 16,
+    "section_context": "Figure 7: S2 Focal Utilization and Exploitation Diplyh",
+    "original_text_snippet": "Panel B tracks the historical trajectory of the exploitation rate.",
+    "advisor_comment": "Exploitation 1965 > 1985 ???",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
     "page_number": 17,
-    "section_context": "Top Margin / Conclusion",
-    "original_text_snippet": "In what sense is capacity P.E? But capacity utilization the PE never?",
-    "advisor_comment": "In what sense is capacity P.E? But capacity utilization the PE never?",
+    "section_context": "Bottom Text Block",
+    "original_text_snippet": "The magnitude of the estimated transformation elasticity (θ) dictates both the historical baseline of the capacity utilization path and its dynamic mean-reverting properties.",
+    "advisor_comment": "So the key issue is how labor capacity is estimated",
     "revised_math_latex": null,
     "comment_type": "theoretical-pushback"
   },
@@ -433,9 +489,9 @@
   },
   {
     "page_number": 17,
-    "section_context": "Bottom Text Block",
-    "original_text_snippet": "The magnitude of the estimated transformation elasticity (θ) dictates both the historical baseline of the capacity utilization path and its dynamic mean-reverting properties.",
-    "advisor_comment": "So the key issue is how labor capacity is estimated",
+    "section_context": "Top Margin / Conclusion",
+    "original_text_snippet": "In what sense is capacity P.E? But capacity utilization the PE never?",
+    "advisor_comment": "In what sense is capacity P.E? But capacity utilization the PE never?",
     "revised_math_latex": null,
     "comment_type": "theoretical-pushback"
   },

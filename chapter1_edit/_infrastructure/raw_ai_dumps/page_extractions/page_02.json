@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "page_number": 3,
+    "section_context": "2.3 Capacity-Utilization Debates in Political Economy",
+    "original_text_snippet": "Firms adjust desired utilization through expectation revision",
+    "advisor_comment": "? (Question mark in margin; 'desired utilization' is underlined)",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 3,
+    "section_context": "Output gap and measurement problem discussion",
+    "original_text_snippet": "Each inference carries closure assumptions that fix the economy's potential output",
+    "advisor_comment": "X closure; policy variable",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 3,
+    "section_context": "Output gap and measurement problem discussion",
+    "original_text_snippet": "Methodological divergence masks functional convergence.",
+    "advisor_comment": "document or drop.",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 3,
+    "section_context": "Global Financial Crisis discussion",
+    "original_text_snippet": "The Global Financial Crisis did not dislodge this settlement",
+    "advisor_comment": "really?",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 3,
+    "section_context": "2.3 Capacity-Utilization Debates in Political Economy",
+    "original_text_snippet": "sluggish investment adjustment and reserve-capacity maintenance",
+    "advisor_comment": "[Underlined]",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  },
+  {
+    "page_number": 3,
+    "section_context": "2.3 Capacity-Utilization Debates in Political Economy (end of section)",
+    "original_text_snippet": "Built to track industrial manufacturing during Fordist expansion, the series now measures mismatch.",
+    "advisor_comment": "distinctive? see Rowlin",
+    "revised_math_latex": null,
+    "comment_type": "theoretical-pushback"
+  },
+  {
+    "page_number": 3,
+    "section_context": "New Monetary Policy Consensus discussion (start of page)",
+    "original_text_snippet": "identifies this settlement as the New Monetary Policy Consensus",
+    "advisor_comment": "Rising inequality",
+    "revised_math_latex": null,
+    "comment_type": "structural"
+  }
+]

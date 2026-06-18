@@ -1,6 +1,6 @@
 ---
 page: 2
-context: "Bottom right margin"
+context: "Top margin / Previous section end"
 type: theoretical-pushback
 status: needs-triage
 ---
@@ -8,11 +8,11 @@ status: needs-triage
 # Comment P2 - Item 15
 
 ## Advisor Comment
-> prefer CU vs. unemp rate?
+> Rise unemployment
 
 ## Original Context
-- **Context:** Bottom right margin
-- **Text Snippet:** `Output-gap estimation`
+- **Context:** Top margin / Previous section end
+- **Text Snippet:** `The Federal Reserve incorporated survey-based capacity measures...`
 
 ## Action Plan
 - [ ] Review advisor's request.

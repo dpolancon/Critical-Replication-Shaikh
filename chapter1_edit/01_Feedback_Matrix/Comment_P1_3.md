@@ -1,6 +1,6 @@
 ---
 page: 1
-context: "Abstract"
+context: "1 Introduction"
 type: theoretical-pushback
 status: needs-triage
 ---
@@ -8,11 +8,11 @@ status: needs-triage
 # Comment P1 - Item 3
 
 ## Advisor Comment
-> as a directly slack measured capital
+> I come close but do not fully replicate the original Sh. result!
 
 ## Original Context
-- **Context:** Abstract
-- **Text Snippet:** `unobserved productive baseline.`
+- **Context:** 1 Introduction
+- **Text Snippet:** `Executing this critical replication reveals that, utilizing the companion data tables to Capitalism does not yield exactly reproducible single-equation autoregressive distributed lag (ARDL) estimates.`
 
 ## Action Plan
 - [ ] Review advisor's request.

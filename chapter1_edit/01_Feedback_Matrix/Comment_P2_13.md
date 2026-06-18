@@ -8,11 +8,11 @@ status: needs-triage
 # Comment P2 - Item 13
 
 ## Advisor Comment
-> Why not just Y. What does CU add?
+> defund or cut.
 
 ## Original Context
 - **Context:** Section 2.2 From Capacity Utilization to Output-Gap Governance
-- **Text Snippet:** `Yet credibility was not observed; it was enforced.`
+- **Text Snippet:** `discretionary policy became suspect precisely because`
 
 ## Action Plan
 - [ ] Review advisor's request.

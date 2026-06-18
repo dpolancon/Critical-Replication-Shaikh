@@ -1,18 +1,18 @@
 ---
 page: 1
 context: "1 Introduction"
-type: structural
+type: theoretical-pushback
 status: needs-triage
 ---
 
 # Comment P1 - Item 5
 
 ## Advisor Comment
-> gives the history which
+> Can the coeffs on the new variables be meaningfully interpreted?
 
 ## Original Context
 - **Context:** 1 Introduction
-- **Text Snippet:** `Section 2 reconstructs the measurement problem historically, tracking how survey indicators and output-gap routines leave the productive ceiling theoretically underidentified.`
+- **Text Snippet:** `Section 5 concludes by outlining the theoretical consequences for profitability econometric synthesis.`
 
 ## Action Plan
 - [ ] Review advisor's request.
