@@ -1,0 +1,11 @@
+% TABLE STATUS:
+% Source backup files are stored in tex/tables/backups.
+% Final chapter table should be materialized directly in LaTeX, not read dynamically from CSV.
+\begin{tabular}{lllrrrr}
+\toprule
+Model & Order & Role & $\hat{\theta}$ & SE & $t$ & $p$ \\
+\midrule
+Shaikh baseline / BIC winner & ARDL(2,4) & Faithful reconstruction & 0.720244 & 0.0609 & 11.82 & 4.347e-16 \\
+AIC winner & ARDL(4,3) & Comparator & 0.747816 & 0.0406 & 18.43 & 1.118e-23 \\
+\bottomrule
+\end{tabular}

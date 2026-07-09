@@ -1,0 +1,789 @@
+\documentclass[11pt]{article}
+
+% ---------- Layout ----------
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{setspace}
+\setstretch{1.05}
+
+% ---------- Math & text ----------
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{pdflscape} % Required for Table A.3
+
+% ---------- Figures & tables ----------
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+
+% ---------- Links ----------
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+% ---------- Bibliography (choose one) ----------
+% If you use biblatex:
+% \usepackage[backend=biber,style=authoryear]{biblatex}
+% \addbibresource{references.bib}
+
+% If you use natbib:
+\usepackage[authoryear]{natbib}
+
+
+
+% ---------- Title block ----------
+\title{Critical Replication of Shaikh's Capacity Utilization Measure\thanks{This paper benefited from AI-assisted editing using Qwen3.6 Plus for syntax refinement, structural suggestions, and stylistic consistency checks. All analytical arguments, historical interpretations, and substantive content remain the author's sole responsibility.}\\
+\begin{large}
+\textbf{WORK IN PROGRESS / PLEASE DO NOT CIRCULATE}     
+\end{large}
+}
+\author{Diego Polanco\thanks{Doctoral Candidate in Economics, Department of Economics, University of Massachusetts Amherst.}\\
+Department of Economics, University of Massachusetts Amherst\\
+\texttt{dpolanconeco@umass.edu}}
+\date{\today}
+
+
+
+\begin{document}
+\maketitle
+
+
+\begin{abstract}
+Macroeconomic capacity utilization is conventionally constructed as a latent residual relative to an unobserved productive baseline. \citet{Shaikh2016} reconstructs this baseline from a fitted long-run output--capital level relationship, centering his empirical analysis on cyclical residual dynamics rather than the structural properties of the underlying coefficients. This paper critically replicates that strategy by reinterpreting the estimated coefficient as a candidate transformation elasticity ($\theta$) linking capital accumulation to productive-capacity formation. Operating within a progressive three-stage replication architecture, Stage S0 establishes that a Shaikh-like capacity path is arithmetically reproducible from corporate national accounts, though the baseline parameter remains sensitive to unstated data and lag choices. Stage S1 opens an expansive single-equation autoregressive distributed lag (ARDL) specification grid across 500 estimated models, revealing an admissible parameter space characterized by a disciplined non-uniqueness where the dynamic mean-reversion properties of utilization shift continuously with information-criterion penalty schedules. Finally, Stage S2 evaluates the relation within a multi-equation vector error correction model (VECM) framework, demonstrating that the standalone output--capital system fractures due to severe omitted variable bias. Systemic stability is achieved exclusively within a restricted, rank-one trivariate vector where the logged rate of exploitation explicitly anchors the cointegrating space. The paper proves that the output--capital multiplier cannot be interpreted as an insulated technical production law; instead, valid capacity identification must place distribution and institutional shock vectors directly inside the structural estimation architecture.
+\end{abstract}
+
+
+\vspace{1cm}
+
+\noindent\textbf{Keywords:} Capacity Utilization; Critical Replication; Shaikh; Transformation Elasticity; Cointegration; ARDL; VECM; Distribution.
+
+\noindent\textbf{JEL Codes:} B51; C32; E01; E22; E32; P16.
+
+\pagebreak
+\section{Introduction}
+\label{sec:introduction}
+
+This paper examines the empirical and theoretical foundations of Anwar Shaikh's macroeconomic capacity utilization index. By critically replicating the cointegration strategy developed by \citet{Shaikh2016}, we shift the analytical focus away from cyclical residual variation and toward the structural parameter governing the long-run relation between output and capital. We reinterpret this underlying parameter as the transformation elasticity of productive capacity with respect to the capital stock ($\theta$). Placing the analytical weight on $\theta$ allows us to ground Shaikh's empirical framework within an explicit macroeconomic closure.
+
+This structural reinterpretation introduces an unbalanced growth closure where the long-run transformation elasticity deviates from unity ($\theta \neq 1$). This formulation departs from the Harrodian knife-edge assumption of a unitary capacity transformation that routinely structures post-Keynesian and neoclassical models. Under an unbalanced growth closure, long-run disequilibrium operates as a persistent structural feature of accumulation rather than a temporary disturbance. Testing for stationarity then becomes an evaluation of whether aggregate demand buffers stabilize the expansion or whether capital accumulation follows a regime-dependent trajectory.
+
+Executing this critical replication reveals that utilizing the companion data tables to \textit{Capitalism} does not yield exactly reproducible single-equation autoregressive distributed lag (ARDL) estimates. Approximate baseline results are recovered only after reconciling unstated data construction parameters and historical impulse controls. Furthermore, an open grid search across 500 admissible ARDL specifications demonstrates that the output--capital coefficient lacks unique identification. Preferred parameter estimates shift continuously with the information-criterion penalty schedules chosen by the researcher, exposing the fragility of single-equation cointegration claims.
+
+Multi-equation vector error correction model (VECM) estimation exposes the definitive limits of this single-equation framework. When tested within a joint system framework, bivariate output--capital cointegration breaks down entirely across all estimated specifications due to severe omitted variable bias. Systemic stability is achieved exclusively within a restricted, rank-one trivariate system where the logged rate of exploitation enters the state vector. This system-level outcome demonstrates that the empirical tracking of the output--capital relationship is fundamentally conditioned by distributional variables and specific historical shock vectors.
+
+The broader objective is to evaluate whether the parameter that constructs the productive ceiling can sustain the structural meaning required by an unbalanced growth interpretation. Because productive capacity constitutes the denominator of the utilization index, any drift in the estimated coefficient mechanically shifts the historical level, variance, and mean-reverting properties of the recovered series. The empirical findings reveal that while the baseline benchmark is arithmetically reproducible, it remains parameter-sensitive within the single-equation grid and lacks self-sufficiency at the system level. Consequently, the identification of capitalist capacity paths cannot be resolved as a purely technical or engineering exercise.
+
+The article proceeds as follows. Section~\ref{sec:literature_review} reconstructs the measurement problem historically, tracking how survey indicators and output-gap routines leave the productive ceiling theoretically underidentified. Section~\ref{sec:conceptual_framework} establishes the conceptual framework, developing the properties of the transformation elasticity under balanced and unbalanced accumulation regimes. Section~\ref{sec:replication_strategy} implements the multi-stage empirical replication, detailing the baseline single-equation reconstruction, the multi-model ARDL sensitivity grid, the multi-equation VECM system tests, and the cross-stage econometric synthesis. Section~\ref{sec:conclusion} concludes by outlining the theoretical consequences for profitability crisis models and positioning the endogenization of $\theta$ as a placeholder for future research.
+
+\section{A Historical Trace of Capacity Utilization Measurement}
+\label{sec:literature_review}
+
+This section traces how capacity utilization measurement evolved historically. It began as a practical tool for managing demand during the Fordist era, became a technocratic sentinel for monitoring inflation through output gaps, and was later re-examined by political economists. We follow this history in four steps: first, the emergence of survey-based measures; second, the transition to output-gap indicators; third, the debate within heterodox political economy; and fourth, Anwar Shaikh's accounting-based structural identification.
+
+\subsection{From Survey Measures to an Inflation Sentinel: Capacity Utilization during the Fordist Era}
+\label{subsec:fordist_survey_statecraft}
+
+Before governments could stabilize capacity utilization, they had to define and measure it. The Great Depression made idle resources a pressing political issue. Early researchers at the Brookings Institution tried to quantify this idle capacity, exposing a key tension: engineers defined capacity as maximum physical output, while economists viewed it as the cost-effective level of operation. This distinction had major implications for policy \citep{Burns1954, KleinDavid1958}. From the outset, utilization measurement operated as statecraft through numbers rather than neutral statistical description.
+
+During the post-war era, Alvin Hansen's secular stagnation thesis warned that chronic underutilization could derail long-run growth, forcing stabilization policy to confront the productive ceiling directly \citep{Hansen1936, Hansen1941, Barber1987}. John Hicks and Paul Samuelson codified these concerns, embedding demand management into the IS-LM framework that structured U.S. graduate training \citep{Hicks1937, Samuelson1947, Samuelson1948}. Managing demand, employment, and bottlenecks required a metric that could translate idle capacity into intervention thresholds. Capacity utilization filled that role by rendering effective-demand shortfalls legible to a state apparatus committed to full-employment stabilization.
+
+The McGraw-Hill plant-and-equipment surveys developed that role by standardizing how managers reported their actual and preferred operating rates. These surveys translated heterogeneous capacity definitions into a standardized reporting stream \citep{Butler1958, Phillips1963}. Institutionalizing the survey created a common language of economic slack for business forecasting, marginalizing deeper methodological debates over capacity measurement \citep{BaranSweezy1988, Munroe2007}. Later, the Federal Reserve integrated these survey-based capacity measures into its Industrial Production program, standardizing the benchmark as the default source for macroeconomic decision-making \citep{Board2017}. Alternative physical-intensity measures, such as the workweek of capital, never secured comparable bureaucratic adoption \citep{Foss1963, TaubmanGottschalk1971}.
+
+However, the stagflation crisis of the 1970s shifted the role of capacity utilization. Rather than signaling a need for expansionary policy to support employment, high utilization came to be viewed as a warning sign of upcoming inflation. Under the pressure of rising prices and falling profits, the metric was repurposed from an indicator of demand shortfalls to a sentinel for inflation control. Brookings debates increasingly judged capacity measures by their ability to deliver inflation forecasts, subordinating employment diagnostics to price stability \citep{KleinEtAl1973}. This durability did not resolve the underlying identification problem, but it cleared space for a new governance architecture based on output-gap benchmarks.
+
+\subsection{From Capacity Utilization to Output-Gap Governance}
+\label{subsec:output_gap_governance}
+
+As global trade and financial networks expanded in the late 20th century, national manufacturing surveys became less central to policy. Central banks and international institutions needed portable, rule-based indicators to monitor economic activity across borders \citep{Jessop2002, Jessop2003, Konings2007}. This demand led to the widespread adoption of the "output gap"—the difference between actual output and unobserved potential output. This shift was accompanied by a new emphasis on policy credibility, as formalized by the Lucas critique \citep{Johnson2024}. Discretionary demand management was replaced by technocratic, rule-bound frameworks like the Taylor rule, inflation targeting, and central bank independence \citep{Taylor1993, Johnson2024}. \citet{SaadFilho2018} identifies this settlement as the New Monetary Policy Consensus: a regime that depoliticized monetary policy and compressed wage shares to maintain price stability, driving the persistent rise in intergenerational income inequality observed since the 1980s \citep{HickelEtAl2026, Foster2024}.
+
+However, potential output is unobservable and must be estimated. Economists use various methods to construct it: statistical filters that smooth actual output trends \citep{HodrickPrescott1997, BaxterKing1999, BeveridgeNelson1981, Hamilton2018}, production functions that combine labor and capital inputs \citep{CBO2004PotentialGDP, HavikEtAl2014, Alichi2015}, or structural vector autoregressions (VARs) that separate supply and demand shocks \citep{BlanchardQuah1989}. Crucially, these aggregate models operate as a "black box" that hides the concrete workplace and market mechanisms of production. In reality, capital is converted into potential output (capacity) through concrete workplace processes. Purchasing equipment only establishes a theoretical capacity ceiling. Converting this capital into actual potential output depends on the intensity of labor and the organization of the shop floor. Class struggle directly mediates this conversion: labor resistance, wage bargaining, and supervisor discipline determine how intensively machines are run. Similarly, converting potential capacity into actual output is moderated by capital markets and firm expectations. This process is closely tied to the reserve army of labor and the unemployment rate: when unemployment is low, labor's bargaining power rises, squeezing profitability and prompting capital strikes that leave productive capacity idle, demonstrating that utilization is not a technical constant but a variable shaped by social conflict.
+
+The Global Financial Crisis exposed the limitations of this output-gap framework. Post-crisis revisions routinely flipped the sign of the gap, and downward-biased potential-output estimates compressed public investment in the European periphery \citep{Heimberger2017, Heimberger2020}. While research divisions documented hysteresis and revision volatility \citep{CerraSaxena2017, CerraFatasSaxena2023, BarkemaGudmundssonMrkaic2020}, central banks accelerated the use of high-frequency nowcasting and forward-guidance models \citep{AastveitTrovik2014, Berger2023, Foster2024}. This revision-prone, closure-dependent apparatus remains entrenched in policy surveillance, providing the backdrop against which political economy's capacity-utilization debates must be understood.
+
+\subsection{Capacity-Utilization Debates in Political Economy}
+\label{subsec:pe_utilization_debates}
+
+Within political economy, the debate over capacity utilization divides along a clear line: is the long-run normal rate of utilization endogenous to demand, or is it anchored in cost structures? The Neo-Kaleckian approach argues that the normal rate is endogenous. Firms adjust their desired operating rates in response to demand shocks, micro-level shift choices, or historical hysteresis \citep{Lavoie1995, Nikiforos2013, Setterfield2020}. In contrast, the Sraffian-Keynesian tradition argues that competition and cost minimization anchor the normal rate of utilization in the long run, with investment eventually adjusting capacity to meet demand \citep{Ciccone1986}.
+
+However, both views face conceptual limits. The Sraffian supermultiplier framework requires a component of demand to remain permanently autonomous, which is difficult to reconcile with the debt dynamics of stock-flow consistent models \citep{Nikiforos2018}. Meanwhile, empirical tests remain inconclusive. While capacity utilization responds to growth in the short run, long-run convergence is hard to verify \citep{GahnGonzalez2022}.
+
+Furthermore, standard official indicators like the Federal Reserve capacity utilization series are ill-suited to resolve this debate. The Fed's series is smoothed by construction to reflect "normal" manufacturing operations rather than maximum technical capacity \citep{Shapiro1989}. It is also sectorally restricted to manufacturing, which represents a shrinking share of the modern economy \citep{Haluska2023}. Because the Fed series hardwires mean reversion, testing its stationarity merely reveals the Fed's own statistical smoothing protocols rather than actual economic gravity \citep{Nikiforos2016, Nikiforos2021}. Testing long-run capacity behavior requires a different empirical approach.
+
+\subsection{Shaikh's Structural Identification of Capacity Utilization}
+\label{subsec:shaikh_structural_measurement}
+
+To bypass these survey and smoothing constraints, Anwar Shaikh \citep{Shaikh2016} shifts capacity estimation to profitability accounting. He uses a generalized perpetual inventory method to construct the capital stock and derives the capacity path from the accounting link between actual and maximum profit rates. In this framework, capacity utilization is defined as a residual deviation from the implied maximum output-to-capital ratio.
+
+This accounting approach has the advantage of being portable, as it relies on standard national accounts and applies across different countries. However, treating capacity utilization as a deterministic residual assumes a stable relationship without testing whether the variables share a genuine cointegrating vector. If the underlying statistical relation is weak or misspecified, the resulting capacity utilization series will be highly unstable. This paper critically replicates Shaikh's cointegration approach to stress-test its robustness and establish a firmer econometric foundation for measuring capacity utilization.
+
+% ========== SECTION 3: CONCEPTUAL FRAMEWORK ==========
+% Save as: section03_conceptual_framework.tex
+% Compile with: pdflatex + bibtex + pdflatex x2
+\section{Conceptual Framework}
+\label{sec:conceptual_framework}
+
+The structural critique of aggregate production functions establishes that constant algebraic accounting identities must not be conflated with behavioral or structural laws of production \citep{Shaikh1974}. Although \citet{Patomaki2017} outlines a plausible challenge to the closed-system ontology of \citet{Shaikh2016} due supressing historical contingency, this critique targets philosophical appearance rather than analytical substance. The fragility in Shaikh's account does not stem from mathematical abstraction itself, but from a failure of model closure that simultaneously omits distributive conflict and enforces an artificial algebraic identity. While omitting these institutional distributive dynamics constitutes a profound specification vulnerability, resolving this omission remains outside the immediate scope of this essay. Instead, I focus strictly on this  mismatch to demonstrate how Shaikh's single-equation baseline substitutes a statistical determinacy for a genuine behavioral closure, forcing the aggregate long-run output--capital coefficient to operate as a time-invariant technical law rather than a historically contingent transformation elasticity of productive capacities \citep{Nikiforos2021closure}.
+
+
+This analytical limitation occurs because the framework fails to place the explanatory burden on the output--capital relation as a true transformation elasticity. Grounded in Marx's schemas of reproduction, smooth proportional growth represents a restrictive analytical abstraction rather than a historical description of accumulation. Relaxing this balanced-growth baseline highlights the presence of systematic instability, where a behavioral assumption with deep theoretical underpinnings is required to govern the long-run development of productive capacity. Shaikh's framework avoids this explicit structural parameterization, relying instead on the deterministic organization of an accounting identity. Consequently, the long-run coefficient remains a passive fitted slope that obscures the macroeconomic relation driving the transformation of accumulation into productive capacities.
+
+Because the constructed capacity utilization series regulates the measurement of the normal rate of profit, this single-equation closure failure directly impacts the empirical findings of the classical surplus framework. Due to this direct functional dependency, the reconstructed utilization series inherits its dynamic properties from the foundational parameter, rendering subsequent conclusions regarding accumulation highly sensitive to the initial model choice. Instead of evaluating the statistical properties of the resulting residual, this section shifts the analytical focus toward the structural properties of this underlying coefficient. This section outlines these properties by isolating the functional dependency of the unobserved series, examining how the accounting identity mimics a production law, and contrasting the macro-regimes of balanced versus unbalanced growth closures. Evaluating these conceptual boundaries requires an immediate, formal interrogation of the coefficient driving the productive-capacity path.
+\subsection{The coefficient driving the productive-capacity path}
+\label{subsec:coefficient_capacity_path}The empirical validity of a capacity-utilization series depends strictly on the stability of the parameter that generates the fitted capacity path. While \citet{Shaikh2016} avoids direct physical proxies, his empirical output-capital relation can be grounded in a standard classical Leontief production function:
+\begin{equation}
+Y_t = \min \{ A_t L_t, \mu_t B_t K_t \},
+\end{equation}
+where $Y_t$ is aggregate output, $L_t$ is employment, $K_t$ is the capital stock, $A_t$ is labor productivity, $B_t$ is the maximum potential output-capital ratio at normal capacity utilization (denoted henceforth as the unobserved normal capacity--capital ratio, $R^n_t \equiv B_t$), and $\mu_t$ is capacity utilization. In a capital-constrained regime where labor is not binding due to the reserve army of labor, this production function simplifies to $Y_t = \mu_t B_t K_t$. Taking natural logarithms yields:\footnote{While \citet{Shaikh2016} derives this relation strictly through the accounting identities of maximum profitability, we ground it here within the Leontief specification to provide a standard classical political economy representation of production that is immune to the Cambridge capital controversy. Because the Leontief framework assumes fixed technical proportions in the short run and discrete technique switching in the long run rather than smooth neoclassical marginal substitution, it provides a classical-safe foundation for the empirical output-capital level relation.}
+\begin{equation}
+\ln Y_t = \ln K_t + \ln R^n_t + \ln \mu_t,
+\end{equation}
+Within this specification, $Y_t$ represents observed output, $K_t$ represents the capital stock, $R^n_t$ represents the unobserved normal capacity--capital ratio, and $\mu_t$ is capacity utilization. Both productive capacity $Y^p_t = R^n_t K_t$ and capacity utilization $\mu_t$ remain unobserved latent variables. While \citet{Shaikh2016} utilizes a common price deflator to successfully eliminate inflationary distortions, this adjustment operates strictly within a monetary scale. Consequently, the specification retains a dimensional constraint because transcendental operations cannot carry constant-dollar units through the transformation, leaving the identity with uninterpretable unit structures like log-dollars \citep{Basu2022dimensional}. Because logarithms evaluate underlying proportions rather than absolute levels, forcing unscaled monetary aggregates into the model renders the recovered parameters sensitive to the baseline unit of measurement.
+
+Isolating the long-run capacity path requires modeling the unobserved normal capacity--capital ratio ($\ln R^n_t$) as a linear function of a deterministic time trend and the observed capital stock:
+\begin{equation}
+\ln R^n_t = bt + c \ln K_t.
+\end{equation}
+Substituting this structural definition into the Leontief-derived log relation yields the estimable single-equation level relation:
+\begin{equation}
+\label{eq:shaikh_regression}
+y_t = a + bt + d\,k_t + \varepsilon_t,
+\qquad d \equiv 1+c,
+\end{equation}
+Within this regression, $y_t$ and $k_t$ represent the natural logarithms of unscaled output and capital, while $d$ represents the long-run output--capital elasticity. The constant $a$ absorbs initial conditions and fixed measurement discrepancies in the levels of output and capital. The linear trend component ($bt$) is conventionally interpreted as a measure of autonomous technical change. If the underlying long-run behavior is instead driven by a proportional growth relation ($g_{Y^p} = \theta g_K$), this level trend functions as an algebraic adjustment factor that absorbs the scale differences between the unscaled time series.
+
+The fitted path of productive capacity follows directly from the recovered long-run components:
+\begin{equation}
+\label{eq:fitted_capacity}
+\hat{y}^p_t = \hat{a} + \hat{b}t + \hat{d}\,k_t.
+\end{equation}
+Capacity utilization is then constructed as the bounded deviation of realized output from this long-run capacity path:
+\begin{equation}
+\label{eq:constructed_utilization}
+\ln \hat{\mu}_t = y_t - \hat{y}^p_t,
+\qquad
+\hat{\mu}_t = \frac{Y_t}{\hat{Y}^p_t}.
+\end{equation}
+Because $y_t$ and $\hat{y}^p_t$ share the same constant-dollar monetary units, this log-level subtraction algebraically collapses into the logarithm of a ratio. This operation allows the matching measurement units to cancel out completely, resolving the underlying scale mismatch and rendering the final extracted utilization series ($\hat{\mu}_t$) a dimensionally valid, unitless index \citep{Basu2022dimensional}.
+
+This estimation sequence establishes a direct functional dependency, where the constructed utilization series inherits its level, timing, and variance from the estimated parameter $\hat{d}$. Consequently, different single-equation specifications yield divergent $\hat{d}$ estimates, producing contradictory trajectories for both capacity and utilization. Because the model forces a dynamic accumulation process into a rigid accounting identity, the empirical sensitivity of this parameter raises an immediate identification problem. Structural measurement therefore rests on evaluating whether this long-run multiplier captures a genuine behavioral law of production, or whether it operates merely as an algebraic placeholder that absorbs omitted historical variation.
+
+\subsection{Laws of Algebra, Laws of Production, and Omitted Variable Bias}
+
+The estimated long-run coefficient $d$ operates as the transformation elasticity ($\theta \equiv \partial \ln Y^p / \partial \ln K$) anchoring the profit-rate decomposition of \citet{Shaikh2016}. Because the normal rate of profit relies directly on the constructed capacity--capital ratio, the structural integrity of the entire accumulation theory depends on this specific parameter. While the aggregate accounting identity deterministically organizes these profit magnitudes, it leaves the underlying behavioral mechanism translating capital accumulation into productive capacity undefined. Following the analytical standard of \citet{Shaikh1974}, an accounting identity that leaves its core behavioral mechanism undefined mechanically mimics a structural production law, exposing the empirical framework to severe specification errors.
+
+If the true long-run development of productive capacity operates as a proportional growth relation ($g_{Y^p} = \theta g_K$), the linear deterministic time trend inside the empirical specification functions as a mathematically superfluous level regressor. Simultaneously, the single-equation setup omits the historically shifting institutional vector, including distributive conflict and wage bargaining regimes. Omitting a relevant state vector while including an irrelevant deterministic trend generates a doubly misspecified model \citep{Basu2020}. Because the deterministic trend and the unobserved institutional shifts unfold contemporaneously across historical time, the trend acts as an accidental proxy. This correlation forces the estimated output--capital elasticity to absorb the omitted regime variation through an indirect bias channel.
+
+A constant capital stock yields highly divergent capacity trajectories depending on specific historical regimes, including shifts in labor militancy, wage bargaining, and financialization. Driven by the indirect bias channel, the estimated single-equation elasticity absorbs this institutional variance, appearing stable only because it mathematically averages across these structurally heterogeneous historical mappings. Formally evaluating whether this recovered parameter isolates a genuine structural relation requires explicitly defining the theoretical conditions of balanced and unbalanced accumulation.
+
+Furthermore, we must address a key econometric limitation of estimating this transformation elasticity. The capital stock series $K_t$ is constructed using the perpetual inventory method, which is notoriously subject to measurement errors regarding depreciation, asset pricing, and retirement patterns. Econometrically, measurement error in the right-hand-side variable ($k_t$) introduces a classical errors-in-variables problem. This error biases the estimated elasticity parameter $\theta$ (and the long-run coefficient $d$) downward toward zero. When interpreting the empirical estimates of $\theta$, we must treat them as lower-bound estimates of the true transformation elasticity, acknowledging that capital stock measurement errors make the observed capacity response appear more sluggish than it is in reality.
+
+\subsection{Balanced and unbalanced growth}
+\label{subsec:balanced_unbalanced_growth}
+
+Marx's schemas of reproduction provide the analytical benchmark for proportional macroeconomic growth \citep{Okishio2022}. Smooth capitalist reproduction requires strict material proportions: commodities must sell, surplus value must be realized, and the material composition of output must match the input requirements of continuous accumulation \citep{Basu2022}. Because real capitalist economies routinely violate these proportions, smooth reproduction remains an analytical abstraction rather than a historical description. To isolate the supply-side relation between capital and capacity, the long-run classical closure ($\mu = 1$) holds demand instability constant \citep{Foley1985}. Canonical post-Keynesian models enforce a balanced-growth baseline by assuming a unitary transformation elasticity ($\theta = 1$) in the long run. Combined with demand fluctuations, this unitary assumption generates the characteristic properties of the Harrodian knife-edge.
+
+Introducing an unbalanced growth closure ($\theta \neq 1$) achieves long-run identification by treating proportional accumulation as a restrictive special case. Relaxing the unitary assumption shifts the analytical focus away from the classical closure ($\mu = 1$). Under a non-unitary parameter, systematic instability is an inherent feature of capacity formation, distinct from temporary deviations driven by demand. The transformation elasticity ($\theta$) governs the long-run development of productive capacity independently of short-run demand stabilization. In this setup, $\theta$ acts as a structural placeholder before its relation to distributive conflict is endogenized.
+
+Defining the transformation elasticity as $\theta \equiv \partial \ln Y^p / \partial \ln K$, the analytical properties of the accumulation system depend on whether this parameter deviates from unity. Table~\ref{tab:growth_regimes} defines three macroeconomic regimes bounded by these conditions.
+
+\begin{table}[H]
+\centering
+\caption{Accumulation Regimes and the Productive-Capacity Relation}
+\label{tab:growth_regimes}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.2cm}>{\centering\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{4.0cm}@{}}
+\toprule
+Regime & Parameter Condition & Long-Run Relation $(\hat{Y}^p,\hat{K})$ & System Tendency \\
+\midrule
+\midrule
+Balanced Growth & $\theta = 1.0$ & Capital and capacity expand proportionally & Knife-edge baseline \\
+Overaccumulation & $\theta < 1.0$ & Capital expands faster than productive capacity & Accumulation decelerates toward stagnation \\
+Excess Capacity & $\theta > 1.0$ & Productive capacity expands faster than capital & Accumulation accelerates without supply-side limits \\
+\bottomrule
+\end{tabular}
+\caption*{\small Note: This table defines the theoretical regimes governing the system.}
+\end{table}
+
+We note a key limitation of this classification scheme. This categorization of balanced growth, overaccumulation, and excess capacity is strictly bounded to a single-sector macroeconomic setting. In a multi-sector economy, overaccumulation and capacity dynamics are mediated by inter-sectoral competition, capital mobility, and structural demand shifts across different industries. By abstracting from these multi-sectoral allocations, the single-sector model isolates the aggregate capital-to-capacity relation, but it limits our ability to trace how sectoral imbalances spill over to affect the general rate of profit. This single-sector bounding should therefore be treated as an analytical limitation of the approach, serving as a simplified baseline for our empirical replication.
+
+These regimes represent the analytical limits of the accumulation process. Under an unbalanced growth closure without autonomous technical change, the dynamic path of the net capital growth rate ($\hat{k} \equiv \dot{K}/K - \delta$) is governed by the following ordinary differential equation:
+\begin{equation}
+\label{eq:ode_dynamics}
+\frac{d\hat{k}}{dt} = (\theta - 1)\,\hat{k}\,(\hat{k}+\delta),
+\end{equation}
+where $\delta$ represents the depreciation rate. For any positive net accumulation ($\hat{k} > 0$), the sign of $d\hat{k}/dt$ depends on the magnitude of $(\theta - 1)$. Net accumulation decelerates under $\theta < 1$, accelerates under $\theta > 1$, and remains stationary under $\theta = 1$. This mathematical instability reflects the accounting laws of capital accumulation under a non-unitary transformation elasticity, distinct from Harrodian demand-driven dynamics.
+
+Formally, $d\hat{k}/dt$ is a capital acceleration term, representing the second derivative of the capital stock with respect to time. Because a perpetual acceleration or deceleration of capital growth is economically impossible over long horizons, this term must remain bounded near zero over the long run. In historical capitalist economies, this bounding is enforced by rate-limiting and temporary institutional factors. When accumulation accelerates too rapidly ($\theta > 1$), it hits bottlenecks like labor cost inflation (wage barriers), central bank interest rate hikes (monetary policy shifts), and financial leverage limits (capital market constraints). Conversely, when accumulation slows down ($\theta < 1$), state interventions, bankruptcy reorganizations, and cheapened capital assets eventually bound the stagnation tendency, preventing the acceleration term from diverging infinitely from zero.
+
+To illustrate this dynamic instability, consider a stylized numerical example of an overaccumulation regime. Let the baseline net capital growth rate be $\hat{k}_0 = 3\%$ (0.03) and the depreciation rate be $\delta = 5\%$ (0.05). If we assume a unitary transformation elasticity ($\theta = 1$), the growth rates of capital and capacity match exactly, and the net capital growth rate remains stationary ($d\hat{k}/dt = 0$). However, if the transformation elasticity is non-unitary, say $\theta = 0.8$, the system experiences overaccumulation. Substituting these values into equation~\eqref{eq:ode_dynamics} yields:
+\[\frac{d\hat{k}}{dt} = (0.8 - 1) \times 0.03 \times (0.03 + 0.05) = -0.00048\]
+This means the capital accumulation rate decreases by 0.048 percentage points per period. The economic punchline is clear: under an unbalanced growth parameter of $\theta = 0.8$, a 1\% increase in capital accumulation relative to capacity formation entails a 0.2\% capacity mismatch ($\theta - 1 = -0.2$), inducing a persistent downward drag on capital accumulation that decelerates the economy toward stagnation.
+
+\begin{figure}[H]
+   \centering
+   \caption{Capital accumulation dynamics under unbalanced growth}
+   \includegraphics[width=0.7\linewidth]{figures/fig_S3_phase_diagram_capital_capacity_dynamics.pdf}
+   \caption*{\small{Note: The phase diagram plots $d\hat{k}/dt$ against $\hat{k}$ for $\theta < 1$ (dashed line), $\theta = 1$ (solid line), and $\theta > 1$ (dash-dot line). Vertical dotted lines mark the equilibria at $\hat{k} = 0$ and $\hat{k} = -\delta$.}}
+   \label{fig:ode_phase_diagram}
+\end{figure}
+
+While effective demand and distributive conflict retain their analytical relevance, they are abstracted from in this initial formulation. Institutional and macroeconomic forces dampen, accelerate, or redirect the underlying long-run tendency but do not generate it. The differential dynamics in equation~\eqref{eq:ode_dynamics} imply a regime-dependent trajectory, yet the empirical single-equation model restricts $\theta$ to a time-invariant constant. Evaluating whether this parameter invariance holds historically establishes the exact structural implications of the fixed-parameter closure.
+
+\subsection{Trend stabilization and the fixed-parameter closure}
+\label{subsec:trend_stabilized_closure}
+
+Under the unbalanced growth closure ($g_{Y^p} = \theta g_K$), the dynamic trajectory lacks a feasible long-run equilibrium. As established in the phase dynamics, a system experiencing over-accumulation ($\theta < 1$) forces the net accumulation rate to decay to zero. To prevent this collapse, the empirical specification in \citet{Shaikh2016} introduces a deterministic level trend ($b$), extending the productive-capacity closure ($g_{Y^p} = \theta g_K + b$).
+
+Substituting this extended closure into the acceleration identity transforms the system into a quadratic ordinary differential equation:
+\begin{equation}
+\label{eq:extended_ode}
+\frac{d\hat{k}}{dt} = (\hat{k} + \delta)\left[(\theta - 1)\hat{k} + b\right].
+\end{equation}
+This specification shifts the equilibrium structure of the accumulation process. The stagnation limit ($\hat{k}^* = 0$) is replaced by a new interior root:
+\begin{equation}
+\label{eq:extended_root}
+\hat{k}^* = \frac{b}{1 - \theta}.
+\end{equation}
+Under over-accumulation ($\theta < 1$) with positive autonomous technical progress ($b > 0$), this equilibrium is locally stable. The depreciation rate ($\delta$) anchors the negative root, while the ratio $b / (1 - \theta)$ scales autonomous progress against the structural imbalance.
+
+Stabilizing an unbalanced accumulation path through an exogenous algebraic term imposes a rigid theoretical restriction. The trend-stabilized closure forces a deterministic parameter ($b$) to offset structural imbalances, rather than endogenizing the institutional mechanisms regulating capacity formation. If technological change responds dynamically to class struggle and the wage share, the stabilizing attractor is a regime-dependent outcome of distributive conflict. Treating this algebraic stabilization as a behavioral law leaves the actual stabilization mechanism undefined \citep{Shaikh1974}.
+
+The empirical validity of the constructed utilization series relies strictly on establishing a valid cointegrating vector between output, capital, and this deterministic trend. Omitting distributive conflict while including the exogenous trend introduces a double misspecification \citep{Basu2020}. Because the trend mathematically absorbs unobserved institutional shifts, this indirect bias channel generates plausible misleading inferences regarding the existence and stability of the cointegrating relation itself. If the deterministic trend acts as an accidental proxy for regime changes, the fundamental statistical requirement of the single-equation specification is structurally compromised.
+
+Estimating this relation over a multi-decade sample imposes a rigid temporal constraint. This temporal restriction forces both the elasticity ($\theta$) and the trend ($b$) to act as time-invariant constants across shifting institutional environments. The classical long-run closure ($\mu = 1$) isolates theoretical capital-to-capacity relations \citep{Foley1985} or smooth reproduction paths \citep{Okishio2022, Basu2022}. Because real capitalist economies routinely violate these strict proportionality conditions, imposing time-invariance forces the recovered parameters to mathematically average across structurally heterogeneous historical periods.
+
+Looking at the actual post-war historical trajectory of the US economy (1947–2011), we see that these theoretical regimes correspond to distinct accumulation phases. During the Post-War Golden Age (1947–1973), the US economy experienced rapid capital accumulation alongside strong GDP growth and stable capacity utilization, averaging around 3.5\% to 4\% annual growth. This period represents a relatively balanced accumulation path. However, after the crisis of the mid-1970s and through the neoliberal era (1983–2011), the growth rate of the capital stock slowed down, and output growth decoupled from capital accumulation. The rate of capital accumulation fell to around 2\% annually, while capacity utilization remained volatile, indicating a structural shift in the underlying transformation elasticity $\theta$. Imposing a time-invariant parameter over this entire 64-year span averages across these distinct historical periods, masking the structural shifts in how capital accumulation translates to productive capacity.
+
+The parameter $\theta$ acts as a theoretical placeholder. Section~\ref{sec:replication_strategy} implements an analytical stress test across three distinct stages to map the conditions under which this single-equation estimation fails. Stage S0 evaluates baseline recoverability using the exact historical data. Stage S1 maps the entire admissible specification space across a 500-model ARDL grid to evaluate parameter sensitivity to information-criterion penalty schedules. Stage S2 estimates the relationship using a multi-equation Vector Error Correction Model (VECM) to determine whether joint system stability requires the logged rate of exploitation ($e_t = \ln(\pi_t / (1 - \pi_t))$) to enter the long-run cointegrating space. This sequence isolates the exact boundary conditions of the single-equation approach to preserve its portable features while establishing structural validity.
+
+\section{Critical Replication Study on Shaikh’s Approach to Cointegration}
+\label{sec:replication_strategy}
+
+Section~\ref{sec:conceptual_framework} establishes that Shaikh's long-run output--capital coefficient is not a technical multiplier but the parameter that draws the productive-capacity path. Interpreted as the transformation elasticity $\theta$, that coefficient links capital accumulation to capacity formation under unbalanced growth. The empirical question is whether a fixed full-sample estimate sustains that production/reproduction meaning across postwar distributive regimes, or whether it averages over heterogeneous mappings. This section implements a critical replication that tests the relation itself, not a utilization proxy.
+
+The replication proceeds in three stages. Stage $S0$ reconstructs the closest recoverable version of Shaikh's single-equation procedure. Its purpose is narrow: to determine whether a capacity path reproduces from documented choices over data construction, deterministic closure, lag structure, and historical impulse controls. Stage S1 opens the ARDL specification grid. It separates the bounds-tested admissible set from stricter confirmation criteria and information-complexity penalties, asking whether the recovered relation remains unique once admissibility and model-selection rules function as distinct researcher choices. Stage S2 moves from conditional single-equation estimation to joint system estimation. It tests whether the output--capital relation survives as a bivariate VECM and whether survival requires logged exploitation, \(\ln e_t\), to enter the trivariate state vector.
+
+The results narrow Shaikh's strategy rather than reproduce it mechanically. The single-equation coefficient reproduces, but it does not replicate the original specification exactly. Within the screened ARDL space, the retained region shifts once fit, parsimony, and complexity penalties separate. In joint-system estimation, the bilateral relation fails the admissibility gate; a restricted trivariate system survives only when exploitation enters explicitly. The coefficient interpreted as $\theta$ is therefore recoverable, non-unique within the single-equation grid, and system-admissible only under distributional conditioning.
+
+The section reports these findings sequentially. Subsection~\ref{subsec:shaikh_identification_strategy} clarifies the identification strategy and shows how the long-run coefficient recovers from the national accounts. Subsection~\ref{subsec:data_measurement} details the data construction, measurement conventions, and treatment of structural breaks. Subsection~\ref{subsec:empirical_design} presents the staged replication design, moving from baseline recovery through ARDL specification searches to joint-system estimation. The objective is not to discard Shaikh's portability strategy, but to locate its boundary conditions. The replication demonstrates that the long-run output--capital coefficient identifies the capital--capacity mapping only when the historical organization of accumulation functions as a variable, not as a fixed backdrop.
+
+\subsection{ARDL Estimation Architecture}
+\label{subsec:shaikh_identification_strategy}
+
+Section~\ref{subsec:coefficient_capacity_path} establishes that the long-run output--capital coefficient draws the productive-capacity path. This subsection operationalizes that coefficient within an autoregressive distributed lag framework, translating the accounting identity into a testable level relationship. The ARDL bounds-testing procedure \citep{Pesaran2001} (PSS) evaluates the existence of a cointegrating relationship between output and capital regardless of their individual integration orders, eliminating pre-testing requirements for unit roots or cointegration rank.
+
+The procedure estimates an unrestricted equilibrium correction model derived from a general $\text{ARDL}(p, q)$ specification:
+\begin{equation}
+\Delta y_t
+= c_0 + c_1 t
++ \phi_1 y_{t-1}
++ \phi_2 k_{t-1}
++ \sum_{i=1}^{p-1} \gamma_i \Delta y_{t-i}
++ \sum_{j=0}^{q-1} \delta_j \Delta k_{t-j}
++ \sum_{h=1}^{H} \delta_h D_{h,t}
++ \varepsilon_t .
+\label{eq:ardl_uecm}
+\end{equation}
+
+Equation~\eqref{eq:ardl_uecm} writes the ARDL specification in unrestricted error-correction form. Where $c_0$ represents the intercept, and $c_1t$ the linear trend. The short-run dynamics is represented by $\Delta y_{t-i}$ and $\Delta k_{t-j}$, and are included to capture the short-run memory of the model. The lagged level terms $y_{t-1}$ and $k_{t-1}$ carry the long-run content of the specification. The year dummmies block represent deterministic components that are excluded from the long-run relation $\sum_{h=1}^{H}\delta_h D_{h,t}$. This representation therefore separates short-run adjustment from the level relation between output and capital.
+
+The asymptotic distribution of the $F$-statistic under $H_0$ depends explicitly on how deterministic constraints are imposed. \citet{Pesaran2001} identify five configurations (Cases I--V) for this constraint: Case I excludes both intercept and trend. Case II restricts the intercept to the cointegrating space. Case III includes an unrestricted intercept. Case IV includes an unrestricted intercept and restricts the trend coefficient to the null. Case V includes unrestricted intercept and trend. Each case shifts the critical value bounds because the null hypothesis alters the deterministic trending behavior of the level process. The bounds test rejects the null when the computed $F$-statistic exceeds the upper critical bound ($I(1)$), fails to reject when it falls below the lower bound ($I(0)$), and yields inconclusive inference when it lies within the interior band. The replication treats these deterministic configurations as admissible specification toggles. Systematic variation across Cases I--V, combined with lag-order selection and information-criterion penalties, defines the admissible specification grid.
+
+The Wald $F$-statistic tests the joint exclusion restriction in equation~\eqref{eq:ardl_uecm}. Under $H_{0}^{F}$, the lagged level terms do not enter the conditional model, so the specification contains no evidence of a long-run output--capital relation. Rejection of $H_{0}^{F}$ suggests that $y_{t-1}$ and $k_{t-1}$ jointly contribute to the error-correction representation. The statistic is evaluated against the lower and upper bounds associated with an specific PSS deterministic case.
+
+\begin{equation}
+H_{0}^{F}: \phi_1=\phi_2=0,
+\qquad
+H_{a}^{F}: (\phi_1,\phi_2)\neq(0,0).
+\label{eq:fbounds_hypothesis}
+\end{equation}
+
+where $\phi_1$ and $\phi_2$ are the coefficients on the lagged level terms in the unrestricted error-correction representation. Under the null, the output--capital equation contains no long-run level relation. The distribution of the statistic is non-standard because the PSS procedure brackets the polar cases in which the regressors are purely $I(0)$ or purely $I(1)$. Values below the lower bound fail to reject the absence of a long-run relation; values above the upper bound support cointegration; values between the bounds remain inconclusive.
+
+The $t$-bounds statistic provides a stricter diagnostic where the deterministic case makes it formally applicable. It tests
+\begin{equation}
+H_{0}^{t}: \phi_1=0,
+\qquad
+H_{a}^{t}: \phi_1<0.
+\label{eq:tbounds_hypothesis}
+\end{equation}
+
+Against the one-sided alternative $\phi_1<0$, where $\phi_1$ is the coefficient on the lagged dependent variable in the conditional error-correction equation. Rejection supports an error-correction interpretation: deviations from the estimated long-run relation are followed by adjustment in subsequent periods. Because the sample is short, I evaluate the bounds evidence using the finite-sample critical values following \citet{NatsiopoulosTzeremes2022}, rather than relying only asymptotic PSS tables. 
+
+%The $F$-statistic targets the joint null hypothesis $H_0: \phi_1 = \phi_2 = 0$, which asserts the absence of a long-run level relationship between output and capital. Under $H_0$, the distribution is non-standard and spans the $I(0)$ and $I(1)$ polar cases. Once the $F$-gate confirms a level relationship, the $t$-bound test operates as a secondary confirmation mechanism by evaluating the exclusion of the lagged dependent variable ($H_0: \phi_1 = 0$). PSS asymptotic tables assume $T \to \infty$, which introduces conservative bias in finite samples. The \texttt{ARDL} toolkit implements Natsiopoulos and Tzeremes (2022) stochastic simulation routines, generating exact sample critical bounds calibrated to the observation window ($T \approx 72$). This finite-sample adjustment replaces asymptotic thresholds, preserving nominal size and tightening the admissibility criteria before baseline recovery proceeds.
+
+\citet{Shaikh2016} operationalizes the ARDL framework to recover a single long-run output--capital multiplier, treating the coefficient as an accounting artifact rather than a production-theoretic parameter \citep[Appendix~6.7]{Shaikh2016}. The baseline specification imposes four diagnostic constraints: (1) lag orders $p$ and $q$ follow the Akaike Information Criterion to mitigate residual serial correlation while avoiding over-parameterization; (2) deterministic treatment adopts PSS Case IV, retaining an unrestricted intercept while restricting the trend coefficient under the null; (3) year dummies ($d_{56}$, $d_{74}$, $d_{80}$) absorb outlier-driven residual spikes identified through squared-error diagnostics; (4) the Breusch--Godfrey LM test screens the ECM for autocorrelation before bounds inference proceeds. Where the $F$-statistic falls within the inconclusive interior band, the procedure defaults to Engle--Granger two-step estimation to establish integration order. This baseline architecture stabilizes the fitted capacity path but leaves the fixed-parameter closure assumption untested. Shaikh estimates $d$ without theorizing its structural role or evaluating coefficient stability across distributive regimes. The replication treats this recovered multiplier as the empirical candidate for $\hat{\theta}$, routing the fixed-parameter closure assumption directly into three-stage admissibility gates.
+
+Upon confirmation of a level relationship, the long-run coefficient recovers from the short-run ECM parameters:
+\begin{equation}
+\hat{d} = \frac{\sum_{j=0}^{q-1} \hat{\delta}_j}{1 - \sum_{i=1}^{p-1} \hat{\gamma}_i}.
+\end{equation}
+
+In Shaikh's procedure, this long-run multiplier anchors the fitted capacity path. Thus, capacity utilization is constructed as the residual deviation from the long-run co-integration vector: $\log \hat{\mu}_t = y_t - \hat{y}^p_t$. This sequence establishes a strict dependency: utilization derives entirely from the estimated coefficient. Shaikh treats $\hat{d}$ as a fitted accounting multiplier; but as mentioned previously, he does not theorize its structural role. This replication re-interprets the coefficient as a transformation elasticity $\hat{\theta}$ of productive capacities, with respect to capital accumulation. Given the multiplicity of possible identification with the five cases of an ARDL model, and the year dummies used by Shaikh to control for outliers in historical episodes, the replication leverages on this researcher-decision making as sources of variation in the replication: conditionally on the specification grid, deterministic treatment, and admissibility gates. The replication stress-tests this assigned interpretation across three stages: reproducibility ($S0$), admissible-specification ($S1$), and system co-integration ($S2$). Subsection~\ref{subsec:data_measurement} details the data construction and measurement conventions required to execute these stages.
+
+\subsection{Data and Measurement}
+\label{subsec:data_measurement}
+
+The replication uses annual US corporate sector data, 1947--2011 ($T \approx 65$), sourced from \citet{Shaikh2016} data companions via Real Economic Analysis.\footnote{Replication data and construction scripts are available at Real Economic Analysis: \url{https://www.realecon.org/data}. Shaikh (2016) specifies the common-deflator condition but does not name the price index; the replication implements this using a GPIM-consistent implicit price deflator to ensure reproducibility.} Capacity utilization is extracted as the bounded residual deviation from the cointegrated output--capital path; the fitted capacity path inherits its level, timing, and persistence from the measurement choices detailed below. Table~\ref{tab:variables_replication} summarizes the core variables, their construction protocols, and the measurement constraints that structure the replication.
+
+\begin{table}[h!]
+\centering
+\caption{Core replication variables: symbols, sources, and transformations}
+\label{tab:variables_replication}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{4.5cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{3.2cm}@{}}
+\toprule
+Symbol & Construction & Role & Measurement constraint \\
+\midrule
+$\text{GVAcorp}_t$ & NIPA Table 1.14 (L1) + imputed-interest adj. (Table 7.11) & Output flow & Classical surplus correction \\
+$\text{KGCcorp}_t$ & BEA Fixed Asset 6.1 (L9) + IRS SOI + GPIM recursion & Capital anchor & GPIM stock--flow reconstruction \\
+$p_t$ & $pKN$ implicit price deflator, 2005=100 & Common price basis & GPIM-consistent deflation \\
+$y_t$ & $\ln(\text{VAcorp}_t/p_t)$ & Dependent variable & Inherits output and deflator choices \\
+$k_t$ & $\ln(\text{KGCcorp}_t/p_t)$ & Regressor & Inherits GPIM depletion rates \\
+$D_{56},D_{74},D_{80}$ & Squared-residual diagnostics  & Disturbance controls & Baseline outlier absorption \\
+\bottomrule
+\end{tabular}
+\caption*{Note: Stage $S2$ introduces $\ln e_t$ (logged exploitation) to the trivariate state vector. Distributional variables enter only at the system-admissibility gate. Full series definitions, sources, and transformations are provided in Appendix~\ref{tab:app_glossary}.}
+\end{table}
+
+Capital stock follows the Generalized Perpetual Inventory Method (GPIM), an accounting framework that reconstructs \textit{gross} capital stock from nominal gross investment flows, period depreciation rates, and implicit deflator built from nominal gross capital formation national accounts  \citep{Shaikh2016}. The recursion accumulates current-cost capital as:
+\begin{equation}
+K_t = IG_t + z_t^* \cdot K_{t-1},
+\qquad
+z_t^* \equiv (1 - z_t) \frac{p^K_t}{p^K_{t-1}},
+\end{equation}
+where $IG_t$ is nominal gross investment, $z_t$ is the period depreciation rate, and $z_t^*$ reflates surviving capital to current replacement cost, or depletion rate of gross capital stock. Three adjustments anchor Shaikh's series: (1) BEA 1993 finite service lives replace the BEA 2011 infinite-lives assumption; (2) initial values are anchored to 1925 via BEA 1993 benchmarks; (3) the IRS corporate book-value index rescales the historical stock over 1925--1947 to account for Great Depression-era scrapping \citep[Appendix~6.7, Sec.~V]{Shaikh2016}. The resulting series tracks the BEA official net stock with a 99.60\,\% average ratio over 1947--2005, confirming that level shifts reflect methodological choices rather than estimation error. Full recursion inputs and depletion-rate construction are provided in Appendix~\ref{subsec:app_gpim}.
+
+Output and capital are deflated by the $pKN$ implicit price index (2005=100), a GPIM-consistent implicit price deflator estimated under the same accumulation rules. Current BEA releases employ quality-adjusted chain weights that adjust for quality vintage, breaking stock-flow consistency for accumulation accounting. The $pKN$ index preserves stock-flow consistency, ensuring the output--capital relation reflects real productive dynamics rather than quality-adjustment artifacts \citep[Appendix~6.6, Sec.~II]{Shaikh2016}. This satisfies the common-deflator condition specified in Shaikh (2016, Appendix~6.6, Eq.~6.6.7); the estimation rationale and comparison to quality-adjusted deflators are detailed in Appendix~\ref{subsec:app_deflator}.
+
+Corporate gross value added is corrected for imputed financial intermediation services by subtracting net monetary interest paid and adding back imputed net interest adjustments (NIPA Table 7.11). The algebraic derivation and NIPA accounts usage considering their releases used by Shaikh, are detailed in more extension at Appendix~\ref{subsec:app_impint}. Year dummies identified by Shaikh as residual-spike are used to as deterministic controls  to absorb spikes given squared-error diagnostics \citep{Patterson2000} in his ARDL baseline $D_{56}, D_{74}, D_{80}$; the author argues that they stabilize the initial specification by isolating outlier-driven deviations in 1956, 1974, and 1980. Historically, these set of dummies are coherent with relevant recessive events: the Eisenhower Recession, the Oil Shock crisis and the dismantle of the Keynesian State, and the Volcker shock of monetary policy. The sample size ($T \approx 65$) is small for time series inference, and is a source of potential inference bias on co-integration when relying on asymptotic critical value bounds which Shaikh does not consider in his original account; the replication addresses this by computing exact-sample bounds calibrated to $T=65$ via stochastic simulation \citep{NatsiopoulosTzeremes2022}.
+
+These measurement conventions constitute the identification strategy. The GPIM accounting approach to reconstruct gross capital stock, built the varaible of capital stock that is included in the analysis, the justification lies on the fact that net capital stock are representative of book-value and might be more appropriate to measure profitability, while gross capital stock by identifying a depletion rate of capital in operation $z_t^*$ that determines the path of accumualted gross capital stock. The assesment here is that Shaikh follows the adequate procedure to measure productive capacities with GPIM adjusted capital stock: they are more representative to measure capital stock in operation what is the interest when aiming to identify a measure related to productive capacities\footnote{\citet{Shaikh2016} also makes the argument that gross capital stocks are also a preferable measure of capital stock to estimate profitability indices, this claim might be arguable from a material stand point, but capitalists decision making are not grounded on material reality, rather, on market valuation.}; Shaikh also argue on the need to use a common-deflator that isolates real capital--capacity dynamics from price distortion effects. 
+
+\subsection{Empirical Design and Admissibility Strategy}
+\label{subsec:empirical_design}
+
+This section outlines the progressive multi-stage macroeconometric strategy used to evaluate the productive-capacity path. Cointegration is the core economic concept anchoring this strategy. It asserts that even if individual time series (like output and capital) are nonstationary and drift over time, a stable linear combination of them can remain stationary. Economically, this means the variables share a long-run equilibrium relation and do not drift apart indefinitely. If cointegration holds, the residual after applying the cointegrating vector must be stationary. If it is nonstationary, the relationship is spurious, meaning the estimated equation lacks economic meaning.
+
+We define "admissibility" as the set of econometric gates that filter out specifications failing this long-run equilibrium condition. Rather than a technical check, admissibility is best understood through counterfactual failures. A specification is non-admissible if it fails to produce stationary residuals (meaning output and capital fail to cointegrate) or if it yields economically absurd parameter values (such as capacity utilization paths that drift to zero or exceed 100% permanently). 
+
+The replication evaluates these admissibility gates across three progressive stages:
+- Stage S0 reconstructs the baseline single-equation procedure reported by \citet{Shaikh2016} to test its reproducibility.
+- Stage S1 maps a combinatoric grid of 500 single-equation ARDL specifications. It tests how researcher choices over lag length, historical outlier dummies, and trend structures affect the estimated elasticity $\theta$ and its cointegration bounds.
+- Stage S2 shifts to a joint system framework using the \citet{Johansen1991} reduced-rank VECM approach, testing whether bivariate output--capital cointegration is robust or requires the logged rate of exploitation to enter the state vector to achieve stability.
+
+\subsubsection{Stage 0 \texorpdfstring{$(S0)$}{}: Reproducibility Test}
+\label{subsec:S0_reproducibility}
+
+Stage S0 tests the empirical reproducibility of Shaikh's results to establish a canonical point of departure for the replication and a benchmark for reconstruction. It selects Shaikh's published single-equation output--capital benchmark as the target, fixes the dynamic lag structure at the reported ARDL(2,4) configuration, and estimates the model using the closest recoverable corporate-sector series. This procedure systematically identifies the exact variables within the published data tables, safely bypassing undocumented documentation omissions noted in the original baseline text. Historical impulse variables and alternative Pesaran, Shin, and Smith (PSS) deterministic configurations are estimated to reconstruct the reported point estimates and establish a baseline, rather than to execute an open specification search.
+
+The empirical procedure estimates the long-run output--capital relation, constructs productive capacity from that fitted path, and derives capacity utilization from the deviation of actual output from the estimated capacity denominator. Cointegration bounds testing serves as the primary admissibility diagnostic to isolate valid level relationships from simple autoregressive dynamic filtering. This step highlights an essential technical property of the ARDL framework developed by \citet{Pesaran2001}: while the $F$-bounds test remains universally applicable, the $t$-bounds statistic can only be formally defined under deterministic Cases 1, 3, and 5. Models tracking Case 2 or Case 4 configurations—which impose restricted constants or restricted trends within the cointegrating vector—cannot be subjected to a $t$-bounds confirmation gate.
+
+\subsubsection{Stage 1 \texorpdfstring{$(S1)$}{}: Admissible-Specification Stress Test}
+\label{subsec:S1_admissible_spec}
+
+The stage $S1$ protocol expands the conditional single-equation setup into an expansive multi-model space, generating a systematic grid of 500 estimated Autoregressive Distributed Lag (ARDL) specifications. By treating core modeling configurations as endogenous sources of structural variation, this framework evaluates how researcher choices over lag length, information criteria, and deterministic profiles affect cointegration bounds thresholds and long-run parameter identification. The resulting grid shifts the empirical focus from a singular baseline model to an entire admissible specification space, highlighting identification fragility under standard macroeconomic single-equation settings. This multidimensional grid strategy evaluates parameter sensitivity across changing information complexity indices, short-run structures, and historical outlier treatments.
+
+To remove arbitrary lag choices, the grid lifts standard single-equation priors and permits full combinatoric variation across lag profiles such that $p,q \in \{1,2,3,4,5\}$. Every dynamic lag combination is estimated across all five deterministic cases outlined by \citet{Pesaran2001}, paired with a nested block of four historical outlier controls: $s_0=\varnothing$, $s_1=\{D_{1974}\}$, $s_2=\{D_{1974},D_{1980}\}$, and $s_3=\{D_{1956},D_{1974},D_{1980}\}$. These dummy frameworks absorb residual shocks linked to the Eisenhower recession, the 1974 oil shock, and the 1980 Volcker monetary contraction. This exhaustive permutation produces 500 raw single-equation models subject to structural admissibility gates. Formally, the complete specification space is defined as:
+\begin{equation}
+\mathcal{G}_{S1} = \{(p,q,c,s)\},
+\label{eq:G_S1}
+\end{equation}
+where $p$ and $q$ represent the ARDL lag orders, $c \in \{1,\dots,5\}$ indexes the deterministic configurations, and $s$ indexes the nested baseline outlier structures.
+
+The primary screen implements the F-bounds test to isolate valid level relationships from simple autoregressive dynamic filtering. Models qualify as admissible if their computed F-statistic rejects the null hypothesis of no long-run level relationship at a 90\% confidence level using an asymptotic significance threshold, formally:
+\begin{equation}
+\mathcal{A}^{F}_{S1} = \{ m \in \mathcal{G}_{S1} : p_F(m) \leq 0.10 \},
+\label{eq:A_F_S1}
+\end{equation}
+where $p_F(m)$ represents the asymptotic p-value from the joint F-bounds test for specification $m$. Specifications that generate F-statistics below the lower $I(0)$ bound or within the inconclusive interior band are systematically excluded from the F-admissible space $\mathcal{A}^{F}_{S1}$.
+
+The secondary diagnostic screen introduces the t-bounds statistic to verify dynamic error-correction stability. Because t-bounds are mathematically defined only under PSS Cases 1, 3, and 5, specifications under restricted constant or restricted trend branches (Cases 2 and 4) bypass this layer without penalization:
+\begin{equation}
+\mathcal{T}_{S1} = \{ m \in \mathcal{A}^{F}_{S1} : p_t(m) \leq 0.10 \text{ if defined} \},
+\label{eq:T_S1}
+\end{equation}
+where $p_t(m)$ is the asymptotic p-value from the t-bounds diagnostic. The resulting $\mathcal{T}$-admissible space $\mathcal{T}_{S1}$ isolates specifications with robust evidence of a long-run relationship by overlapping the level-relation screen with an explicit test on the error-correction coefficient, rather than evaluating a joint test of the included variables. To identify high-confidence parameters, the Strong Cointegration Space ($\mathcal{C}_{S1}$) tightens the screening criteria to the 5\% and 1\% alpha thresholds:
+\begin{equation}
+\mathcal{C}_{S1} = \{ m \in \mathcal{T}_{S1} : p_F(m) \leq 0.05 \text{ and } p_t(m) \leq 0.05 \},
+\label{eq:C_S1}
+\end{equation}
+which enforces robust empirical convergence properties across the remaining single-equation models.
+
+Admissibility screens filter out invalid specifications but do not identify a unique parameter. Instead, the recovered parameters reflect a disciplined non-uniqueness that rejects the assumption of an invariant technical production law. Within the F-admissible pool, the first structural sorting layer constructs a Fit-Complexity Envelope ($E_{S1}$) to isolate optimal modeling trade-offs:
+\begin{equation}
+E_{S1} = \{ m \in \mathcal{A}^{F}_{S1} : \nexists m' \in \mathcal{A}^{F}_{S1} \text{ with } L(m') \leq L(m) \text{ and } K(m') \leq K(m) \},
+\label{eq:E_S1}
+\end{equation}
+where $L(m)$ is the lack of fit measured by $-2\log L$, and $K(m)$ represents model complexity as measured by the total parameter count. This envelope isolates Pareto non-dominated specifications, mapping the geometric frontier where log-likelihood gains require expanding the parameter space.
+
+The second sorting layer establishes information-criterion neighborhoods ($\mathcal{F}^{(0.20)}_j$) that act as ''fattened'' spaces around the geometric envelope. These neighborhoods relax strict optimizations to capture competitive models that sit slightly off the geometric Pareto frontier:
+\begin{equation}
+\mathcal{F}^{(0.20)}_j = \{ m \in \mathcal{A}^{F}_{S1} : IC_j(m) \leq Q_{0.20}(IC_j \mid \mathcal{A}^{F}_{S1}) \},
+\label{eq:F_j}
+\end{equation}
+where $j \in \{\text{AIC}, \text{BIC}, \text{HQ}, \text{ICOMP}, \text{RICOMP}\}$, and $Q_{0.20}$ denotes the 20th percentile cutoff with ties retained. Traditional scalar penalty schedules (AIC, BIC, HQ) are augmented by Bozdogan's information complexity indices, evaluating parameter covariance structures and inverse-Fisher geometric information properties. The RICOMP criterion actively screens the parsimonious edge of the envelope by penalizing parameter interdependence. Long-run parameter estimates are highly dependent on deterministic treatments and information-criterion penalty schedules, meaning different criteria locate divergent regions of the fit-complexity space.
+
+Every specification $m$ yields a distinct parameter estimate $\hat{\theta}(m)$, which directly shapes the fitted capacity path. The constructed utilization series then emerges as the stationary component of a flow-stock system, downstream from a distributionally sensitive parameter space:
+\begin{equation}
+\hat{\mu}_t(m) = y_t - [\hat{a}(m) + \hat{b}(m)t + \hat{\theta}(m)k_t].
+\label{eq:mu_hat_m}
+\end{equation}
+Tracking $\hat{\mu}_t(m)$ across $\mathcal{A}^{F}_{S1}$, $E_{S1}$, and $\mathcal{F}^{(0.20)}_j$ highlights the direct economic consequences of statistical parameter drift.
+
+Table~\ref{tab:s1_stress_synthesis} details the operational layout of the $S1$ specification search. Rather than optimizing for a single candidate model, this framework establishes the empirical variance of the transformation parameter across defensible single-equation structures. This single-equation core mapping is evaluated empirically in Section~\ref{subsec:S1_ardl_grid}.
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Synthesis of Admissibility Specification Stress Tests}
+\label{tab:s1_stress_synthesis}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{3.8cm}>{\raggedright\arraybackslash}p{4.0cm}@{}}
+\toprule
+Stress-Test Component & Operational Layer & Screening/Organization Rule & Diagnostic Target \\
+\midrule
+\midrule
+Cointegration admissibility & F/T-bounds sequence & $p_F(m) \leq \alpha$, $p_t(m) \leq \alpha$ (if defined) for $\alpha \in \{0.10, 0.05, 0.01\}$ & Existence and significance of long-run level relationships \\
+Specification invariance & Lag-order variation & Monitor parameter drift $\hat{\theta}(m)$ across combinatoric $p,q \in \{1,\dots,5\}$ & Stability and unique mapping of the long-run structural multiplier \\
+Identification fragility & Deterministic cases \& dummy structures & Track admissibility shifts across $c \in \{1,\dots,5\}$ and $s \in \{s_0,\dots,s_3\}$ & Sensitivity to deterministic components and structural trend assumptions \\
+Information complexity \& Pareto optimization & Fit-complexity envelope \& IC neighborhoods & Pareto non-dominance in $E_{S1}$; 20th percentile cutoff for $j \in \{\text{AIC}, \text{BIC}, \text{HQ}, \text{ICOMP}, \text{RICOMP}\}$ & Organization of disciplined non-uniqueness under distinct information penalty schedules \\
+Capacity benchmark sensitivity & Utilization path fan $\hat{\mu}_t(m)$ & Map structural parameter variance to latent residual series & Macroeconomic consequence of single-equation coefficient drift on normal profit estimation \\
+\bottomrule
+\end{tabular}
+\caption*{Note: This synthesis matrix outlines the nested single-equation admissibility screens, information-theoretic optimization layers, and diagnostic targets within the stage $S1$ multi-model grid. Source: Author's elaboration.}
+\end{table}
+
+Section~\ref{subsec:S2_system} extends the critique to a joint multi-equation system. Moving beyond single-equation constraints, the system-level analysis tests whether bivariate cointegration fractures due to severe omitted variable bias (OVB). This structural breakdown dictates whether joint system survival requires the logged rate of exploitation ($e_t$) to enter the long-run cointegrating space.
+
+\subsubsection{Stage 2 \texorpdfstring{$(S2)$}: System Co-Integration Test}
+\label{subsec:S2_system}
+
+Stage S2 evaluates whether the bilateral output--capital relation remains self-sufficient when shifted from a conditional single-equation setup to a joint multi-equation system. The baseline bivariate vector, $X_t = (\ln Y_t, \ln K_t)'$, immediately fractures due to severe omitted variable bias (OVB), failing the fundamental Johansen rank conditions and companion-matrix stability gates. To resolve this critical underidentification, the expanded framework introduces explicit distributional conditioning by integrating the logged rate of exploitation, $e_t = \ln(\pi_t / (1 - \pi_t))$, yielding the trivariate state vector $X_t = (\ln Y_t, \ln K_t, \ln e_t)'$. This trivariate system is estimated using the full \citet{Johansen1991} Vector Error Correction Model (VECM) representation:
+\begin{equation}
+\label{eq:vecm_johansen}
+\Delta X_t = \Pi X_{t-1} + \sum_{i=1}^{p-1} \Gamma_i \Delta X_{t-i} + \Phi D_t + \varepsilon_t,
+\end{equation}
+where $\Gamma_i$ captures short-run dynamics, $\Phi D_t$ contains deterministic controls, and the long-run impact matrix is factored as $\Pi = \alpha \beta'$ to evaluate reduced-rank stability. Joint system survival is achieved exclusively under this formulation, where the rank condition $r=1$ holds and the exploitation variable successfully anchors the long-run cointegrating space ($\beta$).
+
+To systematically test this stability, S2 implements a VECM combinatoric grid mirroring the single-equation sensitivity approach. Formally, the complete attempted specification space for each target rank ($r$) is defined as:
+\begin{equation}
+\mathcal{G}_{S2}^{(r)} = \{(p, c, s)\},
+\label{eq:G_S2}
+\end{equation}
+where $p \in \{1, 2, 3, 4\}$ represents the VAR lag orders, $c \in \{d_0, d_1, d_2, d_3\}$ indexes the Johansen deterministic closure configurations, and $s \in \{h_0, h_1, h_2\}$ isolates a subset of the baseline historical outlier controls. Permuting across these state-vectors yields an attempted grid of 48 specifications per rank. However, because specifications under the restricted constant branch ($d_1$) systematically fail numerical convergence across all permutations, the successfully estimated baseline is analytically restricted to exactly 36 models per system family.
+
+The Stage S2 admissibility protocol evaluates these surviving 36 specifications through a rigorous triple gate requiring numerical convergence, Johansen rank confirmation, and companion-matrix dynamic stability. Within the trivariate framework, the reduced-rank restriction $r=1$ tests whether a single cointegrating relation survives distributional integration, while $r=2$ evaluates the potential for a dual-relation system. To organize the surviving specifications, the subset $\Omega_{20}$ ranks the admissible models based strictly on minimized log-likelihood loss. This likelihood-based organization layer establishes an interpretive hierarchy for the retained systems but does not independently define the primary boundaries of system admissibility.
+
+\subsubsection{Cross-Stage Synthesis}
+\label{subsec:cross_stage_synthesis}
+
+The multi-stage critical replication executes an intentionally nested screening architecture to map the boundary conditions of the productive-capacity path. Stage S0 establishes the approximate empirical recoverability of the baseline single-equation framework. Stage S1 expands the estimation framework into a comprehensive specification grid, utilizing structural bounds diagnostics and information-criterion envelopes to map parameter non-uniqueness. Finally, Stage S2 imposes multi-equation Vector Error Correction Model (VECM) stability gates to verify whether the underlying structural relation survives when estimated jointly. Table~\ref{tab:cross_stage_synthesis} formalizes this progressive methodological sequence.
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Stage Design and Admissibility Strategy}
+\label{tab:cross_stage_synthesis}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{3.2cm}@{}}
+\toprule
+Stage & Design Object & Specification Space & Admissibility and Organization & Interpretive Implication \\
+\midrule
+\midrule
+S0 & Single-point reconstruction of baseline specification & ARDL(2,4), historical impulse dummies, alternative deterministic closures & F-bounds primary screen; t-bounds diagnostic where defined; utilization path proximity & Tests whether a deterministic capacity path can be closely reconstructed \\
+S1 & ARDL specification grid $\mathcal{G}_{S1}$ & Lag orders $(p,q)$, five PSS cases, four nested dummy structures & F-admissible set $\mathcal{A}^{F}_{S1}$; F+t confirmed candidates $\mathcal{C}_{S1}$; corrected envelope $E_{S1}$; IC-specific neighborhoods $\mathcal{F}^{(0.20)}_j$ & Tests whether the output--capital coefficient is structurally unique or varies with IC penalty logic \\
+S2 Bivariate & Joint $(\ln Y_t, \ln K_t)'$ VECM & Lag order, deterministic branch, dummy structure, $r=1$ & Triple gate $\mathcal{A}_{S2}$: convergence, Johansen rank, companion stability & Tests whether the bilateral output--capital relation is self-sufficient at the system level \\
+S2 Trivariate & Joint $(\ln Y_t, \ln K_t, \ln e_t)'$ VECM & Same as bivariate, with logged rate of exploitation included; $r=1$ or $r=2$ & Same triple gate; $\Omega_{20}$ organizes admissible survivors by log-likelihood loss & Tests whether the structural relation survives exclusively when distribution enters explicitly \\
+\bottomrule
+\end{tabular}
+\caption*{Note: This table outlines the progressive multi-stage replication architecture. The sequence advances from baseline single-equation reconstruction (S0) through parameter sensitivity grids (S1) to joint system-level survival testing (S2). Source: Author's elaboration.}
+\end{table}
+
+\subsection{Stage 0 \texorpdfstring{$(S0)$}{}: Single-Equation Reconstruction}
+\label{subsec:S0_reconstruction}
+
+Stage S0 tests the empirical recoverability of the published fitted capacity path from the nearest reproducible single-equation output--capital specification. This initial stage establishes a canonical point of departure for the replication, testing point-estimate recoverability rather than parameter uniqueness or system-level survival. \citet{Shaikh2016} estimates $d$, the long-run output--capital coefficient. This article interprets the empirical estimate $\hat{d}$ as $\hat{\theta}$ strictly because Section~\ref{sec:conceptual_framework} assigns $\theta$ a theoretical role as the candidate transformation elasticity linking capital accumulation to productive-capacity formation.
+
+The exercise represents a controlled reconstruction test rather than a mechanical reproduction. Because \citet{Shaikh2016} omits a complete reporting trail of result-level estimates and variable provenance, S0 explicitly defines the baseline choices governing data construction, deterministic treatment, and long-run closure. The result establishes the closest recoverable benchmark under these documented historical impulse controls and lag structures. 
+
+The published reference value is $\hat{\theta}=0.66$. The faithful reconstruction, which also emerges as the BIC winner in the S0 rerun, is an ARDL(2,4) specification yielding $\hat{\theta}=0.72$. The AIC comparator selects an ARDL(4,3) specification and yields $\hat{\theta}=0.75$. Table~\ref{tab:s0_model_lr_summary} reports the precise parameters for these two estimated S0 long-run multipliers. The wedge between 0.66 and 0.72 constitutes the primary S0 result. Rather than a minor data deflator adjustment, this wedge represents a lack of reproducibility in Shaikh's own procedure on capacity utilization. Because the original study lacks documentation and a clear variable provenance trail, recovering the benchmark required an active research effort to search through competing price deflator indices (such as the BEA historical-cost series vs. Census book values) in Shaikh's spreadsheets to identify the undocumented deflator choice.
+
+\begin{table}[H]
+\centering
+\caption{Stage S0 Long-Run Output--Capital Multipliers}
+\label{tab:s0_model_lr_summary}
+\footnotesize
+\begin{tabular}{lllrrrr}
+\toprule
+Reference/Model & Order & Role & $\hat{\theta}$ & SE & $t$ & $p$ \\
+\midrule
+\midrule
+\citet{Shaikh2016} Benchmark & ARDL(2,4) & Published reference & 0.66 & -- & -- & -- \\
+Faithful Reconstruction & ARDL(2,4) & Reconstructed benchmark & 0.72 & 0.06 & 11.82 & $<0.001$ \\
+AIC Comparator & ARDL(4,3) & Lag-length comparator & 0.75 & 0.04 & 18.43 & $<0.001$ \\
+\bottomrule
+\end{tabular}
+\caption*{Note: This table reports Stage S0 long-run output--capital multipliers. Shaikh's published estimate operates as the baseline reference value; standard errors, $t$-statistics, and $p$-values are reported exclusively for the generated replication estimates. Source: Author's elaboration.}
+\end{table}
+
+Coefficient proximity is not structurally equivalent to cointegration admissibility. Consequently, S0 evaluates the reconstructed coefficient alongside formal ARDL bounds evidence. The $F$-bounds statistic supplies the primary admissibility gate for a level relation, utilizing small-sample ARDL bounds inference and case-specific critical values. The $t$-bounds statistic operates as a stricter diagnostic where the deterministic case formally defines it; this secondary statistic tightens the pool but does not replace the primary $F$-bounds gate. Crucially, the $F$-bounds test for the faithful reconstruction barely rejects the null of no cointegration at the 10\% significance level ($p=0.099$). This borderline significance highlights the econometric fragility of the bivariate level relation, demonstrating that the cointegrating space is highly sensitive to model configurations.
+\begin{table}[H]
+\centering
+\caption{Stage S0 ARDL Bounds Evidence at $\alpha=0.10$ (90\% Confidence Intervals)}
+\label{tab:s0_bounds_alpha10}
+\footnotesize
+\begin{tabular}{lllrrrrl}
+\toprule
+Model & Test & PSS Case & Statistic & I(0) Bound & I(1) Bound & Exact-Sample $p$ & Verdict \\
+\midrule
+\midrule
+ARDL(2,4) & $F$-bounds & Case 1 & 3.349 & 2.466 & 3.333 & 0.099 & Reject $H_0$ \\
+ARDL(2,4) & $t$-bounds & Case 1 & -2.507 & -1.602 & -2.259 & 0.062 & Reject $H_0$ \\
+ARDL(4,3) & $F$-bounds & Case 1 & 5.250 & 2.486 & 3.338 & 0.023 & Reject $H_0$ \\
+ARDL(4,3) & $t$-bounds & Case 1 & -3.125 & -1.621 & -2.270 & 0.015 & Reject $H_0$ \\
+\bottomrule
+\end{tabular}
+\caption*{Note: The null hypothesis assumes no long-run level relation. The $F$-bounds statistic supplies the primary admissibility diagnostic. The $t$-bounds statistic is reported as a stricter secondary diagnostic where the deterministic structure permits. Case 1 denotes the no-constant/no-trend PSS deterministic configuration. Rejection is assessed at $\alpha=0.10$. Source: Author's elaboration.}
+\end{table}
+
+Figure~\ref{fig:s0-cu-fan-diagnostic} provides the primary path-level evidence for S0. The visualization maps a family of reconstructed utilization paths generated by the faithful reconstruction, alternating deterministic closures, and comparator specifications. These paths diverge because the constructed utilization series acts as the stationary component of a flow-stock system, downstream from a distributionally sensitive capacity parameter. Consequently, any drift in the long-run output--capital coefficient mathematically alters the implied utilization trajectory. Economically, this divergence demonstrates that the extracted level of capacity utilization is highly sensitive to the lag structure chosen for the estimation. A minor shift in the estimated transformation elasticity $\theta$ from 0.72 to 0.75 changes the extracted utilization series by up to 5 percentage points, showing that capacity utilization cannot be treated as an objective, neutral technical indicator. Raw Shaikh and Federal Reserve utilization series are overlaid strictly as historical reference paths rather than empirical targets.
+
+\begin{figure}[H]
+\centering
+\caption{S0 Diagnostic Utilization Fan}
+\label{fig:s0-cu-fan-diagnostic}
+\includegraphics[width=0.92\linewidth]{figures/fig_S0_cu_fan_diagnostic.png}
+\caption*{Note: The fan maps the variance of constructed utilization paths given competing ARDL specifications. Source: Author's elaboration.}
+\end{figure}
+
+Stage S0 confirms that a Shaikh-like capacity benchmark is empirically reproducible. However, recovering a single point estimate does not guarantee that the underlying structural parameter is unique or robust. To expose potential identification fragility, Stage S1 expands the estimation framework. This next stage tests whether the recovered benchmark remains stable across a wide grid of admissible single-equation alternatives.
+
+\subsection{Stage 1 \texorpdfstring{$(S1)$}: Admissible-Specification Stress Test Results}
+\label{subsec:S1_ardl_grid}
+
+Stage S1 fixes the underlying data layer and opens the single-equation ARDL specification grid. This stage tests whether the recoverable baseline benchmark remains structurally unique once lag order, deterministic case, dummy structure, and information criteria systematically vary. In the formal notation of Section~\ref{subsec:empirical_design}, this framework pivots from a singular ARDL point estimate to the fully screened grid space \(\mathcal{G}_{S1}\).
+
+The resulting specification grid is populated but does not collapse around a single parameter. The full multidimensional grid contains 500 combinatorial specifications, all of which estimate successfully without numerical failure. Applying the initial 10 percent bounds threshold, 102 specifications successfully pass the primary \(F\)-bounds gate and enter the \(F\)-admissible set \(\mathcal{A}^{F}_{S1}\). Tightening the asymptotic significance size predictably reduces this retained set: at the 5 percent threshold, 62 specifications remain \(F\)-admissible, shrinking to just 13 valid specifications at the strict 1 percent limit. Unpacking this admissible set reveals that cointegration is heavily concentrated in specific deterministic cases and dummy configurations. Specifically, no-trend specifications account for 90.2\% of the admissible space (37 models in Case 1, 33 in Case 2, and 22 in Case 3), while trend-containing models represent only 9.8\% (8 in Case 4 and 2 in Case 5). Furthermore, level stability is highly conditional on dummy variables: 92.2\% of the admissible models (94 out of 102) require at least one structural break dummy variable ($s_1, s_2, s_3$) to pass the bounds test, while only 8 specifications pass when dummies are omitted ($s_0$).
+
+Within this F-admissible pool, the secondary \(t\)-bounds diagnostic enforces a stricter requirement for dynamic error-correction stability. At the 10 percent level, 49 specifications pass this confirmed-candidate layer \(\mathcal{C}^{F,t}_{S1}\), representing cases where the \(t\)-bounds statistic is both mathematically defined and statistically significant. At the 5 percent level, 28 specifications achieve this dual confirmation, dropping to only 3 confirmed specifications at the 1 percent boundary. The t-bounds diagnostic records stricter confirmation where available, but it does not technically override or replace the primary F-bounds cointegration gate.
+
+\begin{table}[H]
+\centering
+\caption{S1 Shrinking Specification Space Counts}
+\label{tab:s1_shrinking_space_counts}
+\small
+\begin{tabular}{lr}
+\toprule
+Layer & Count \\
+\midrule
+\midrule
+Full grid & 500 \\
+Estimated successfully & 500 \\
+F-admissible at 10\% & 102 \\
+F+t confirmed at 10\% & 49 \\
+F-admissible at 5\% & 62 \\
+F+t confirmed at 5\% & 28 \\
+F-admissible at 1\% & 13 \\
+F+t confirmed at 1\% & 3 \\
+$E_{S1}$ & 17 \\
+IC-neighborhood union & 36 \\
+\bottomrule
+\end{tabular}
+\caption*{Note: This table tracks the survival rate of the 500 estimated single-equation ARDL models through the nested cointegration admissibility gates. Source: Author's elaboration.}
+\end{table}
+
+Figure~\ref{fig:s1-shrinking-space-bounds-layers} reports this screening hierarchy visually. Panel A maps the 500 estimated specifications across the fit--complexity space, color-coded strictly by bounds-admissibility status. Panel B translates this geometry into exact specification counts surviving each sequential screening layer. This sequential ordering reinforces the fundamental methodological rule that model comparison begins strictly after the bounds screen, not before it.
+
+\begin{figure}[H]
+\centering
+\caption{S1 Shrinking Specification Space}
+\label{fig:s1-shrinking-space-bounds-layers}
+\includegraphics[width=0.92\linewidth]{figures/fig_S1_shrinking_space_bounds_layers.png}
+\caption*{Source: Author's elaboration.}
+\end{figure}
+
+Within the \(F\)-admissible set, the corrected global non-dominated fit--complexity envelope (\(E_{S1}\)) isolates 17 optimal specifications. The horizontal dimension of this geometric space measures model complexity via the total number of estimated parameters, while the vertical dimension measures the lack of fit, reported formally as \(-2\log L\). Moving along the \(E_{S1}\) frontier therefore trades statistical fit against structural parsimony. The resulting envelope serves strictly as a geometric summary of Pareto-optimal ARDL alternatives, not as a singular new estimator.
+
+This strong statistical dependence on dummy variables aligns with the historical trajectory of the postwar US economy. The shock years correspond to major systemic disruptions: the 1956 Eisenhower recession (marking a sharp contraction in industrial output post-Korean War), the 1974 first OPEC oil crisis (OPEC oil embargo and subsequent stagflation), and the 1980 Volcker shock (extreme federal funds rate hikes that induced a severe double-dip credit crunch). In a pure bivariate level relation without outlier controls ($s_0$), these historical events appear as persistent, non-mean-reverting shocks in the residuals. Consequently, the error term behaves as a random walk, violating stationarity and causing the bounds test to fail. Restoring cointegration requires step-shift dummy variables ($s_1, s_2, s_3$) to control for these historical shocks, removing their structural level shifts from the residuals and allowing the error term to return to a zero-mean stationary path. The negative coefficients on these dummies capture the permanent structural dampening of capital productivity ($Y/K$) caused by these crises.
+
+The IC-specific neighborhoods operate as post-admissibility, criterion-conditioned organization layers. For each criterion \(j \in \{\mathrm{AIC},\mathrm{BIC},\mathrm{HQ},\mathrm{ICOMP},\mathrm{RICOMP}\}\), the neighborhood \(\mathcal{F}^{(0.20)}_j\) isolates the bottom 20 percent of \(F\)-admissible specifications, capturing 36 unique models across the union. Table~\ref{tab:s1_ic_neighborhood_summary} reports the precise parameter ranges across these respective criterion borders, demonstrating that these neighborhoods organize the retained specifications rather than establish cointegration natively. 
+
+\begin{table}[H]
+\centering
+\caption{S1 IC-Specific Neighborhood Summaries}
+\label{tab:s1_ic_neighborhood_summary}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Criterion & Specs & Min $\hat{\theta}$ & Mean $\hat{\theta}$ & Median $\hat{\theta}$ & Max $\hat{\theta}$ \\
+\midrule
+\midrule
+AIC & 22 & 0.84 & 0.88 & 0.86 & 0.93 \\
+BIC & 21 & 0.65 & 0.91 & 0.86 & 2.20 \\
+HQ & 21 & 0.75 & 0.94 & 0.86 & 2.20 \\
+ICOMP & 22 & 0.65 & 0.84 & 0.86 & 0.95 \\
+RICOMP & 22 & 0.65 & 0.83 & 0.85 & 0.95 \\
+\bottomrule
+\end{tabular}
+\caption*{Note: The table reports the summary statistics for the long-run parameter $\hat{\theta}$ within the bottom 20th percentile of each information criterion. Estimates are rounded to two decimal places for consistency. Source: Author's elaboration.}
+\end{table}
+
+Figure~\ref{fig:s1-crossed-frontier-ic-neighborhoods} supplies the primary fit--complexity and IC-neighborhood evidence. The solid black line denotes the Pareto non-dominated fit--complexity envelope (\(E_{S1}\)). Surrounding this frontier, the shaded polygons define the 20th percentile neighborhoods for each respective information criterion. This visualization maps the spatial divergence between the highly parsimonious RICOMP winner and the shared scalar-penalty winner.
+
+\begin{figure}[H]
+\centering
+\caption{S1 Fit--Complexity Envelope and IC-Specific Neighborhoods}
+\label{fig:s1-crossed-frontier-ic-neighborhoods}
+\includegraphics[width=0.92\linewidth]{figures/fig_S1_global_frontier_IC_neighborhoods.png}
+\caption*{Source: Author's elaboration.}
+\end{figure}
+
+The shared AIC/BIC/HQ/ICOMP winner is an ARDL(3,3), Case 1 specification with the 1974 historical dummy (\(s_1\)), yielding \(\hat{\theta}=0.92\). Conversely, RICOMP selects a highly parsimonious ARDL(1,2), Case 2 specification with no impulse dummies (\(s_0\)), yielding \(\hat{\theta}=0.65\). This criteria divergence does not establish a structural ranking of the underlying estimators. Unlike standard scalar penalties, the ICOMP and RICOMP criteria evaluate complexity through the covariance structure of estimated parameters and residual dependence \citep{Bozdogan1990,Bozdogan2000}. Consequently, the RICOMP neighborhood marks a covariance-complexity-sensitive region of the admissible space rather than providing a definitive model-selection verdict \citep{GuneyBozdoganArslan2021}. Furthermore, this parameter variation carries significant theoretical implications. While no-trend specifications (Cases 1, 2, 3) yield stable long-run elasticities bounded below unity ($\hat{\theta} \in [0.65, 0.95]$) that support the overaccumulation hypothesis, the trend-containing configurations (Cases 4, 5) yield economically invalid parameter magnitudes ($\hat{\theta}$ averaging 1.36 and reaching up to 2.20). An elasticity $\theta > 1.0$ implies that productive capacity expands exponentially relative to capital accumulation in the long run, violating the classical overaccumulation baseline and indicating that statistical bounds-passing does not guarantee economic admissibility.
+
+Figure~\ref{fig:s1-cu-fan-ic-neighborhoods} serves a narrower evidentiary role by reporting the diagnostic constructed-utilization paths generated strictly from the retained IC-neighborhood specifications. The shaded region maps the variance of constructed capacity utilization, while the divergent paths of the distinct criteria winners highlight the macroeconomic sensitivity to single-equation penalty schedules. These paths provide supporting evidence for parameter non-uniqueness, demonstrating how the implied utilization series mechanically shifts when the capacity denominator relies on different retained ARDL alternatives.
+
+To evaluate this single-equation parameter sensitivity, consider a key pedagogical counterfactual: the restricted balanced-growth model where the transformation elasticity is constrained to unity ($\theta = 1.0$). If a researcher forces this standard Harrodian assumption onto the US dataset, the capacity path is forced to expand exactly in step with the capital stock (imposing a constant capital productivity baseline). When we construct capacity utilization under this constraint, the resulting series drifts to economically absurd levels, either falling continuously toward zero in the long run or exceeding 120\% during periods of rapid expansion. This occurs because the true historical US output--capital relation is unbalanced ($\theta < 1.0$), meaning capacity grows more slowly than the capital stock. Imposing the $\theta=1$ counterfactual violates the cointegration admissibility gates, showing why estimating the unrestricted parameter is not just a technical choice, but a requirement for economic viability.
+
+\begin{figure}[H]
+\centering
+\caption{S1 Diagnostic Utilization Fan from IC-Specific Neighborhoods}
+\label{fig:s1-cu-fan-ic-neighborhoods}
+\includegraphics[width=0.92\linewidth]{figures/fig_S1_cu_fan_IC_neighborhoods.png}
+\caption*{Source: Author's elaboration.}
+\end{figure}
+
+Stage S1 demonstrates that the admissible single-equation space is populated, yet it systematically rejects the assumption of a unique structural benchmark. Because the retained alternatives fail to collapse into a single transformation elasticity ($\hat{\theta}$), the resulting single-equation utilization path remains structurally fragile. Section~\ref{subsec:S2_system} addresses this fragility by testing whether the output--capital relation survives multi-equation system estimation, and whether that survival strictly requires distributional variables to enter the state vector.
+
+\subsection{Stage 2 \texorpdfstring{$(S2)$}: System-Level VECM Replication}
+\label{subsec:S2_vecm}
+
+Stage S2 shifts the empirical analysis from conditional single-equation specifications to a joint system framework. This multi-equation estimation evaluates whether the output--capital relationship maintains structural integrity once the fields of accumulation, capacity utilization, and distribution are treated as mutually endogenous. By transitioning to a vector error correction framework, the replication tests whether the long-run classical-Marxian production relation survives at the canonical correlations of the macroeconomic data.
+
+The baseline bivariate state vector is restricted to output and capital, defined as $X_t=(\ln Y_t,\ln K_t)'$. To address potential omitted variable bias stemming from class conflict and structural profitability shifts, the expanded trivariate vector incorporates a classical measure of distribution. Raw exploitation is constructed as the aggregate corporate profit-share-to-wage-share ratio, $e_t=\pi_t/(1-\pi_t)$. The system-level estimation integrates this relationship using the logged rate of exploitation, $X_t=(\ln Y_t,\ln K_t,\ln e_t)'$, ensuring that distributional variables operate inside the cointegrating space rather than as downstream exogenous filters.
+
+Systemic admissibility is governed by a triple confirmation gate requiring numerical convergence, Johansen reduced-rank verification, and companion-matrix dynamic stability. This protocol isolates robust long-run systems from unstable vector autoregressive processes. Treating the rank and deterministic choices as endogenous attributes prevents the estimation from mistaking simple mathematical convergence for an underlying macroeconomic equilibrium.
+
+Table~\ref{tab:s2_admissibility_outcomes} details the structural outcomes across the complete VECM specification space ($\mathcal{G}_{S2}$) through the sequential gates of convergence, rank, and companion-matrix stability. The bivariate $r=1$ configuration yields zero admissible models across all 36 estimated permutations. We report this failure explicitly: in every bivariate model, the VECM residuals fail unit-root tests and remain nonstationary, indicating that the long-run relation between output and capital is cointegration-spurious when estimated in isolation. This system-level outcome demonstrates a severe breakdown in the self-sufficiency of the bivariate output--capital relation. Conversely, the trivariate $r=1$ framework yields six admissible specifications when conditioned on the logged rate of exploitation. The trivariate rank-two permutations confirm this restriction by producing zero stable dual-vector systems.
+
+\begin{table}[H]
+\centering
+\caption{S2 System Admissibility Outcomes}
+\label{tab:s2_admissibility_outcomes}
+\small
+\begin{tabular}{llrrp{5.0cm}}
+\toprule
+System & Rank & Estimated & Admissible & Interpretation \\
+\midrule
+\midrule
+Bivariate $(\ln Y,\ln K)$ & $r=1$ & 36 & 0 & Output--capital relation is not self-sufficient \\
+Trivariate $(\ln Y,\ln K,\ln e)$ & $r=1$ & 36 & 6 & Restricted survival with logged exploitation \\
+Trivariate $(\ln Y,\ln K,\ln e)$ & $r=2$ & 36 & 0 & No admissible two-vector system \\
+\bottomrule
+\end{tabular}
+\caption*{Source: Author's elaboration.}
+\end{table}
+
+Table~\ref{tab:s2_retained_trivariate_specs} uncovers the parameter architecture of the six surviving trivariate models. Admissibility is strictly conditional on the $h_2$ historical dummy vector, which accounts for the step shifts of 1956, 1974, and 1980. This uniform survival pattern implies that Shaikh’s single-equation outlier controls capture essential structural breaks required for system-level stability. While all six specifications validate the single-rank restriction ($r=1$), the long-run cointegrating coefficients ($\hat{\theta}$) exhibit significant variation across different dynamic lag structures and deterministic treatments. Admissible specifications under the $d_3$ trend branch (which includes a linear time trend in the VECM cointegrating space) yield explosive ($\hat{\theta} = 11.31$) or negative ($\hat{\theta} = -0.81$) elasticities. Because the time trend absorbs the level drift of output, it forces the capital-output coefficient to capture short-run noise and structural breaks, leading to these invalid parameter estimates. Consequently, these $d_3$ configurations must be economically rejected, restricting the empirically viable long-run parameters strictly to the $d_0$ and $d_2$ deterministic closures (which yield stable positive estimates of $\hat{\theta} = 0.73, 0.91, 0.97$).
+
+To evaluate the role of these institutional dummy variables, consider the 'no-dummy counterfactual' specification. If we estimate the VECM without the $h_2$ dummy vector (omitting the controls for the 1956, 1974, and 1980 shocks), the Johansen trace and maximum eigenvalue tests fail to reject the null hypothesis of no cointegration. Crucially, the resulting VECM residuals fail standard unit-root tests, remaining highly nonstationary. When residuals are nonstationary, the estimated relationship is spurious, meaning output, capital, and exploitation drift apart permanently without any error-correction mechanism to pull them back. This counterfactual demonstrates that without accounting for specific historical and institutional shock vectors, the system-level output--capital relationship collapses econometrically. We must write this up explicitly: the underlying cointegrating space is not a permanent, institutional-free law, but a relationship whose econometric stationarity is conditional on these historical dummy variables.
+
+\begin{table}[H]
+\centering
+\caption{S2 Retained Trivariate Specifications}
+\label{tab:s2_retained_trivariate_specs}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Lag Order ($p$) & Deterministic Branch ($d$) & Historical Dummy & Rank ($r$) & Cointegrating Coefficient ($\hat{\theta}$) \\
+\midrule
+\midrule
+1 & $d_0$ & $h_2$ & 1 & 0.91 \\
+1 & $d_2$ & $h_2$ & 1 & 0.97 \\
+1 & $d_3$ & $h_2$ & 1 & -0.81 \\
+2 & $d_0$ & $h_2$ & 1 & 1.19 \\
+2 & $d_2$ & $h_2$ & 1 & 0.73 \\
+2 & $d_3$ & $h_2$ & 1 & 11.31 \\
+\bottomrule
+\end{tabular}
+\caption*{Source: Author's elaboration.}
+\end{table}
+
+Figure~\ref{fig:s2-pooled-frontier} charts the fit--complexity properties of the surviving models. The empirical frontier confirms that system survival is restricted to a narrow parameter channel along the trivariate rank-one branch. Bivariate configurations cannot clear the multi-equation stability gate, and expanding the state vector to a rank-two setup fails to support a broader multi-vector interpretation of the productive relation.
+
+\begin{figure}[H]
+\centering
+\caption{S2 Pooled System Frontier}
+\label{fig:s2-pooled-frontier}
+\includegraphics[width=0.86\linewidth]{figures/fig_S2_pooled_frontier.png}
+\caption*{Source: Author's elaboration.}
+\end{figure}
+
+Figure~\ref{fig:s2-focal-cu-exploitation-diptych} records the dynamics of the final system vector. Panel A outlines the VECM-implied capacity utilization path, and Panel B tracks the historical trajectory of the exploitation rate. Historically, the corporate rate of exploitation in the US peaked in the mid-1960s during the height of the post-war expansion, fell during the stagflation crisis of the 1970s, and then recovered steadily during the neoliberal era (1983–2011) as wage growth was compressed relative to productivity. This long-run alignment illustrates that the surviving multi-equation system embeds a persistent connection between capacity utilization and explicit distributional conditioning.
+
+\begin{figure}[H]
+\centering
+\caption{S2 Focal Utilization and Exploitation Diptych}
+\label{fig:s2-focal-cu-exploitation-diptych}
+\includegraphics[width=0.92\linewidth]{figures/fig_S2_focal_cu_exploitation_diptych.png}
+\caption*{Source: Author's elaboration.}
+\end{figure}
+
+Stage S2 establishes the most demanding empirical restriction of the replication architecture. The traditional output--capital relation fails as an independent bivariate system; its long-run stability depends entirely on the explicit integration of the logged rate of exploitation. Econometrically, this failure manifests as nonstationary, unit-root residuals, demonstrating severe omitted variable bias. Theoretically, however, this system-level rescue is explained by the classical theory of distribution and choice of technique \citep{Kurz1986}. As income distribution (the rate of exploitation $e_t$) changes, the relative cost-effectiveness of different production techniques shifts. Cost-minimizing producers respond by switching their technical methods and adjusting their capital utilization (shifts, line speed, operating intensity). Consequently, the observed output-capital relation ($Y/K$) is not a fixed technical law, but is endogenous to distribution. Omitting distribution from the state vector ignores this choice-of-technique transmission, causing the cointegrating vector to collapse. The final synthesis indicates that while the technical production relation remains historically trackable, its parametric expression is non-unique, highly sensitive to specific historical controls, and fundamentally dependent on technique switching and distributional conflict. In this sense, productive capacity represents the technical and social limits of capital expansion, while capacity utilization represents the degree to which these limits are realized under the pressure of aggregate demand and class struggle. Treating utilization as a passive residual ignores the classical and workplace social relations that regulate capacity formation.
+
+\subsection{Cross-Stage Econometric Synthesis}
+\label{subsec:cross_stage_synthesis}
+
+The empirical findings across the three estimation layers construct a nested narrative of classical-Marxian capacity dynamics. Stage S0 demonstrates the approximate reproducibility of the baseline capacity path, confirming that the initial replication challenge resides in unstated specification choices rather than data degradation. Stage S1 scales this reconstruction into an admissible space of disciplined non-uniqueness, where the long-run parameter varies continuously along a Pareto fit--complexity frontier. Stage S2 imposes joint multi-equation validation, revealing that the output--capital relation fractures as a standalone entity and achieves empirical stability exclusively when conditioned on the logged rate of exploitation and explicit historical shock vectors.
+
+\begin{table}[H]
+\centering
+\caption{Cross-Stage Synthesis of the Cointegration Architecture}
+\label{tab:cross_stage_synthesis}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}p{5.6cm}@{}}
+\toprule
+Stage & Outcome & Interpretive Bound \\
+\midrule
+\midrule
+S0 & Approximate single-equation reproducibility & Shaikh's method is reproducible, but not exactly \\
+S1 & Non-empty admissible ARDL grid; non-unique retained benchmark & Model selection is driven by information-criterion choice \\
+S2 Bivariate & 36 estimated, 0 admissible & Output--capital system is not self-sufficient \\
+S2 Trivariate Rank One & 36 estimated, 6 admissible & Restricted survival with logged exploitation and $h_2$ controls \\
+S2 Trivariate Rank Two & 36 estimated, 0 admissible & No retained dual-vector system \\
+\bottomrule
+\end{tabular}
+\caption*{Source: Author's elaboration.}
+\end{table}
+
+The magnitude of the estimated transformation elasticity ($\hat{\theta}$) dictates both the historical baseline of the capacity utilization path and its dynamic mean-reverting properties. Under Shaikh's methodology, utilization is constructed strictly as the residual distance between realized output and fitted capacity ($\ln \hat{\mu}_t = y_t - \hat{y}^p_t$). Consequently, $\hat{\theta}$ determines exactly how much of the smooth, long-run capital trend is subtracted from volatile current output. Lower parameter estimates force the residual to absorb structural drift, generating a utilization path characterized by long historical waves and dampened mean reversion. Conversely, higher parameter estimates aggressively strip the capital trend from the residual, resulting in a highly stationary trajectory that mirrors short-run business cycle volatility. 
+
+Multi-equation vector estimation resolves this single-equation ambiguity by exposing the historical and institutional conditions necessary for structural stability. The six surviving trivariate VECM specifications strictly require the inclusion of the $h_2$ historical dummy vector, which accounts for the structural breaks of 1956, 1974, and 1980. This uniform survival pattern demonstrates that the outlier controls implemented in Shaikh's baseline operate as systemic prerequisites for capturing a cointegrated space, rather than arbitrary statistical adjustments. Cointegration is rescued only when these institutional shock vectors stabilize the long-run correlations between accumulation and production.
+
+The structural failure of the standalone output--capital relation stems from the dual macroeconomic role of capital accumulation. Because investment demand expands current output while the capital stock simultaneously builds productive capacity, the scalar parameter $\hat{\theta}$ is forced to mediate conflicting short-run and long-run forces. In a single-equation framework, this accounting entanglement creates severe omitted variable bias and parameter instability. The Stage S2 trivariate system demonstrates that the empirical measurement of capacity utilization cannot be resolved as a purely technical engineering problem. Productive capacity is fundamentally a political economy object, trackable only when the estimation framework explicitly integrates the distributional conflict captured by the logged rate of exploitation.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+Shaikh shifted the measurement of capacity utilization away from institutional survey conventions and grounded it within the accounting architecture of profitability. This approach correctly recognizes that productive slack cannot be evaluated independently of capital accumulation. However, because the normal rate of profit relies entirely on the constructed capacity denominator, any specification error within the output--capital relation induces a cascading distortion throughout the broader theory of crisis. Our analysis shows the single-equation capacity path, though arithmetically reproducible, relies on a parameter that cannot support its assigned structural role. The fixed-parameter closure forces a time-invariant multiplier to absorb shifting distributive regimes, generating a highly fragile empirical benchmark.
+
+The instability of this single-equation benchmark exposes a deep theoretical conflict between the accounting mechanics of accumulation and the assumption of proportional reproduction. The output--capital coefficient, as a transformation elasticity ($\theta$), shows that when growth is unbalanced ($\theta \neq 1$), capital accumulation has a contradictory macroeconomic role. Investment demand expands realized output through the short-run multiplier process, while the expanding capital stock simultaneously shifts the long-run capacity ceiling.
+
+When capital accumulation outpaces capacity formation ($\theta < 1$), the macroeconomic system develops a structural drift toward overaccumulation. It is important to note that this overaccumulation regime is bounded here by a single-sector macroeconomic setting. In a more general multi-sector framework, capital productivity and capacity expansion are also regulated by changes in the organic composition of capital and classical department-level composition effects. Acknowledging this single-sector bounding represents a key analytical limitation of the baseline model, leaving open the classical critique regarding multi-sector capital composition shifts. Empirically, the system avoids immediate explosive divergence along this differential path only because external components of aggregate demand operate as historical stabilizing buffers. In the post-war US economy, these buffers manifested as military-Keynesian state expenditures, the expansion of consumer credit, and imperialist trade imbalances. These exogenous demand injections absorb the excess productive capacity generated by overaccumulation, preventing the utilization rate from collapsing under the weight of structural deceleration and delaying the realization of the stagnation tendency. The traditional single-equation specification misreads this bounded historical trajectory as a purely technical, mean-reverting engineering law.
+
+We find that constant algebraic accounting identities are insufficient for understanding production behaviors. Estimating a cointegrating vector between a macroeconomic flow and a stock without parameterizing the institutional environment treats the historical organization of capital as a passive backdrop. The multi-equation validation in Stage S2 proves that systemic cointegration is achieved exclusively when the logged rate of exploitation anchors the state vector alongside explicit outlier controls for historical structural breaks. Distribution therefore operates as a mathematical prerequisite for the existence of the long-run equilibrium, rather than a secondary interpretive layer.
+
+Our goal is to define the boundary conditions for measuring structural capacity. Identifying the long-run path of productive capacity remains essential for diagnosing the trajectory of capitalist accumulation. Within this initial empirical evaluation, the fixed transformation elasticity ($\theta$) has functioned strictly as a theoretical placeholder to expose the limits of single-equation identification. To construct a valid macroeconomic architecture moving forward, this parameter can no longer be treated as an exogenous scalar. It must be formally endogenized as a dynamic function of distributional conflict and historical regime shifts.
+
+% ---------- Bibliography ----------%
+\pagebreak
+\bibliographystyle{apalike} % or your preferred style
+\bibliography{references}
+
+% ---------- Appendix ----------%
+\pagebreak
+\appendix
+\input{AppendixODE/AppendixODE}
+\pagebreak
+\input{appendixA/appendixA}
+
+\end{document}

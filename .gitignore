@@ -1,11 +1,29 @@
-# ── R artifacts ──────────────────────────────────────
+# ── R/RStudio specific ────────────────────────────────
 .Rhistory
 .RData
 .Rproj.user/
 .Ruserdata
 Rplots.pdf
+.Raccessor
 
-# ── LaTeX build artifacts ────────────────────────────
+# ── Python and Virtual Environments ──────────────────
+venv/
+.venv/
+env/
+.env/
+__pycache__/
+*.pyc
+
+# ── Environment Secrets and Local Configurations ─────
+.env
+.agents/
+.claude/
+.gstack/
+.context/
+.codex-rounds/
+checkpoints/
+
+# ── LaTeX Build Artifacts (Recursive) ────────────────
 *.aux
 *.bbl
 *.blg
@@ -15,26 +33,26 @@ Rplots.pdf
 *.toc
 *.fdb_latexmk
 *.fls
+*.run.xml
+*.bcf
+*-blx.bib
+pdflatex*.fls
 
-# ── Output data (large/reproducible) ────────────────
-output/**/*.rds
-output/**/*.RData
-output/Manifest/
+# Ignore temporary PDFs but keep final manuscript if tracked
+tex/*.pdf
+!tex/figures/
+!tex/tables/
 
-# ── Docs bundles ─────────────────────────────────────
-docs/**/*.zip
-docs/**/*.docx
-docs/essay_tex/*.tex
-docs/essay_tex/*.pdf
-
-
-# ── IDE ──────────────────────────────────────────────
-.vscode/
-
-# ── OS ───────────────────────────────────────────────
-.DS_Store
-
+# ── Data, Legacy Archives, and Temporary Files ───────
+legacy/
 data/interim/
-data/interim/**
-
 output/
+tmp/
+*.zip
+*.tar.gz
+
+# ── IDE and OS ───────────────────────────────────────
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini

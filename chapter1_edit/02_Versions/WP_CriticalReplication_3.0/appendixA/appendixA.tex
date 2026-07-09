@@ -1,0 +1,275 @@
+% ================================================================
+% APPENDIX A: DATA CONSTRUCTION AND DIAGNOSTIC SUPPORT
+% Supporting material for §4.2 (Data and Measurement)
+% ================================================================
+\section{Data Construction and Diagnostic Support}
+\label{app:data_construction}
+
+% ---------------------------------------------------------------
+% A.1 — Series Glossary
+% ---------------------------------------------------------------
+\subsection{Series Glossary}
+\label{subsec:app_glossary}
+
+Table~\ref{tab:app_glossary} lists the core replication variables, their sources, and transformation rules. All series derive from Shaikh's (2016) data companions via Real Economic Analysis.\footnote{Replication data and construction scripts are available at Real Economic Analysis: \url{https://www.realecon.org/data}.}
+
+\begin{table}[!ht]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.15}
+\caption{Replication series: symbols, sources, and transformations}
+\label{tab:app_glossary}
+\begin{tabular}{@{} >{\raggedright\arraybackslash}p{0.20\textwidth}
+ >{\raggedright\arraybackslash}p{0.26\textwidth}
+ >{\raggedright\arraybackslash}p{0.28\textwidth}
+ >{\raggedright\arraybackslash}p{0.18\textwidth}@{}}
+\hline
+Symbol / Code  & Variable  & Source (table, line)  & Transformation \\
+\hline
+$\text{GVAcorp}_t$
+ & Corporate gross value added (corrected)
+ & NIPA 1.14 (L1) + imputed-interest adj.\ (Table~7.11)
+ & nominal \\[3pt]
+$\text{KGCcorp}_t$
+ & Corporate gross capital stock (GPIM-adjusted)
+ & Fixed Asset 6.1 (L9); IRS Statistics of Income; GPIM recursion
+ & nominal \\[3pt]
+$\text{KNCcorp}_t$
+ & Corporate net capital stock (GPIM-adjusted)
+ & same as above
+ & nominal \\[3pt]
+$\text{KNCcorpbea}_t$
+ & Corporate net capital stock (BEA 2011 official)
+ & Fixed Asset 6.1 (L9)
+ & nominal \\[3pt]
+$p_t$
+ & Common deflator
+ & $pKN$ index, 2005=100
+ & (KNCcorp/KNRcorp)*100 \\[3pt]
+$y_t$
+ & Real log output
+ & constructed
+ & $\ln(\text{VAcorp}_t/p_t)$ \\[3pt]
+$k_t$
+ & Real log capital
+ & constructed
+ & $\ln(\text{KGCcorp}_t/p_t)$ \\[3pt]
+$\text{Profshcorp}_t$
+ & Corporate profit share (corrected)
+ & NIPA 1.14 (L8, L1$-$L2) + imputed-interest adj.
+ & ratio \\
+\hline
+\end{tabular}
+\par\vspace{0.4em}
+\footnotesize\textit{Note:} All BEA and NIPA data downloaded in the replication vintage. Shaikh's original series used data downloaded in 2011 \citep[Appendix~6.7, fn.~1]{Shaikh2016}; discrepancies attributable to subsequent BEA revisions are possible and noted where material.
+\par\vspace{0.2em}
+\footnotesize \textit{Source:} \href{https://www.realecon.org/data}{Real Economic Analysis Data Tables}
+\end{table}
+
+% ---------------------------------------------------------------
+% A.2 — Imputed-Interest Correction
+% ---------------------------------------------------------------
+\subsection{Imputed-Interest Correction}
+\label{subsec:app_impint}
+
+The NIPA corporate value added figure includes imputed financial intermediation services as a cost to non-financial corporations. The corporate imputed-interest adjustment removes this component:
+%
+\begin{equation}
+\label{eq:app_impint}
+\text{CorpImpIntAdj}_t \equiv -\text{BankMonIntPaid}_t - \text{CorpNFNetImpIntPaid}_t,
+\end{equation}
+%
+where $\text{BankMonIntPaid}_t$ is NIPA Table~7.11 (lines 4+44+73 minus lines 28+52+91) and $\text{CorpNFNetImpIntPaid}_t$ is NIPA Table~7.11 (line~74 minus line~53). In 2009 the adjustment raises corporate net operating surplus by approximately 10\,\%. Figure~\ref{fig:app_impint_impact} displays the corrected versus uncorrected series and their ratio.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.85\textwidth]{appendixA/figures/fig_A9_imputed_interest_adjustment.pdf}
+\caption{Imputed interest adjustment impact: corrected corporate NOS versus NIPA corporate NOS (1947--2011). Ratio shows magnitude of adjustment.}
+\label{fig:app_impint_impact}
+\end{figure}
+
+% ---------------------------------------------------------------
+% A.3 — Corporate Output: GVAcorp
+% ---------------------------------------------------------------
+\subsection{Corrected Corporate Output: \texorpdfstring{$\text{GVAcorp}_t$}{GVAcorp}}
+\label{subsec:app_gva}
+
+\begin{equation}
+\label{eq:app_gva}
+\text{GVAcorp}_t \equiv \text{GVAcorpnipa}_t + \text{CorpImpIntAdj}_t,
+\end{equation}
+%
+where $\text{GVAcorpnipa}_t$ is NIPA Table~1.14 (line~1) and $\text{CorpImpIntAdj}_t$ is defined in equation~\eqref{eq:app_impint}.
+
+% ---------------------------------------------------------------
+% A.4 — Corporate Capital Stock: KGCcorp (GPIM)
+% ---------------------------------------------------------------
+\subsection{Reconstructed Corporate Capital Stock: \texorpdfstring{$\text{KGCcorp}_t$}{KGCcorp}}
+\label{subsec:app_gpim}
+
+\paragraph{GPIM accumulation rule.}
+The current-cost capital stock is accumulated as:
+%
+\begin{equation}
+\label{eq:app_gpim}
+K_t = IG_t + z_t^* \cdot K_{t-1},
+\qquad
+z_t^* \equiv (1 - z_t)\frac{p^K_t}{p^K_{t-1}},
+\end{equation}
+%
+where $IG_t$ is nominal gross investment, $z_t$ is the period depreciation rate, and $z_t^*$ is the survival-and-revaluation factor that reflates the surviving stock to current replacement cost.
+
+\paragraph{Three adjustments (applied before the recursion).}
+\begin{enumerate}
+\item \textbf{Depletion rates.} BEA 1993 finite service lives replace the BEA 2011 infinite-lives assumption, implying higher depreciation and lower retirement rates consistent with physical exhaustion.
+\item \textbf{Initial values.} BEA 1993 initial values anchored to 1925 replace the BEA 2011 starting values. The 1993 values are lower, producing faster accumulation growth and convergence to the official path by approximately 1977.
+\item \textbf{Great Depression correction.} The IRS corporate book value index \citep[Series~V~115, pp.~924--926]{UScensus1975} is applied over 1925--1947, rescaling the BEA historical stock by the IRS/BEA ratio each year. The GPIM recursion resumes from 1947. Net effect: $\text{KNCcorp}_t$ is approximately 28\,\% lower in 1947 than the BEA 2011 official measure.
+\end{enumerate}
+
+\paragraph{Inventories.}
+IRS corporate balance sheet inventory ratios are extrapolated over 1947--1989 via a linear fit to the 1990--2011 IRS/BEA ratio, rescaled to the adjusted GPIM stocks, and added to $\text{KGCcorp}_t$. Source: IRS Statistics of Income 1926--2011; FRB Flow of Funds FL105015205.A for non-financial corporate inventories in current cost.
+
+\paragraph{Accuracy.}
+The average ratio of the GPIM approximation to the BEA current-cost stock over 1947--2005 is 99.60\,\%.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.85\textwidth]{appendixA/figures/fig_A6_gpim_vs_bea_capital.pdf}
+\caption{GPIM-adjusted net capital stock versus BEA 2011 official series (1947--2011). Ratio plot shows convergence by ~1977.}
+\label{fig:app_gpim_vs_bea}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.85\textwidth]{appendixA/figures/fig_A7_irs_vs_bea_historical_stock.pdf}
+\caption{IRS corporate book value index versus BEA historical stock (1925--1947). Both indexed to 100 in 1925.}
+\label{fig:app_irs_bea_historical}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.85\textwidth]{appendixA/figures/fig_A8_depreciation_retirement_rates.pdf}
+\caption{Depreciation and retirement rates under BEA 1993 finite service lives. Horizontal line marks critical value (3.29\%).}
+\label{fig:app_depr_ret_rates}
+\end{figure}
+
+% ---------------------------------------------------------------
+% A.5 — Common Deflator
+% ---------------------------------------------------------------
+\subsection{Common Deflator: \texorpdfstring{$p_t$}{p_t}}
+\label{subsec:app_deflator}
+
+The replication uses the $pKN$ implicit price deflator based at $100 = 2005$, estimated under GPIM rules. Current BEA releases employ quality-adjusted chain weights that adjust for quality vintage, breaking stock-flow consistency for accumulation accounting. The $pKN$ index preserves stock-flow consistency, ensuring the output--capital relation reflects real productive dynamics rather than quality-adjustment artifacts \citep[Appendix~6.6, Sec.~II]{Shaikh2016}.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.85\textwidth]{appendixA/figures/fig_A4_common_deflator.pdf}
+\caption{Common deflator index: GPIM-consistent $pKN$ versus BEA quality-adjusted proxy (2005=100).}
+\label{fig:app_deflator_comparison}
+\end{figure}
+
+% ---------------------------------------------------------------
+% A.6 — Corrected Corporate Profit Share: Profshcorp
+% ---------------------------------------------------------------
+\subsection{Corrected Corporate Profit Share: \texorpdfstring{$\text{Profshcorp}_t$}{Profshcorp}}
+\label{subsec:app_profsh}
+
+The same imputed-interest adjustment applied to $\text{GVAcorp}_t$ is applied to both the numerator and denominator of the profit share:
+%
+\begin{align}
+\text{NOScorp}_t &\equiv \text{NOScorpnipa}_t + \text{CorpImpIntAdj}_t, \label{eq:app_nos} \\
+\text{VAcorp}_t &\equiv \text{VAcorpnipa}_t + \text{CorpImpIntAdj}_t, \label{eq:app_va} \\
+\text{Profshcorp}_t &\equiv \frac{\text{NOScorp}_t}{\text{VAcorp}_t}, \label{eq:app_profshcorp}
+\end{align}
+%
+where $\text{NOScorpnipa}_t$ is NIPA Table~1.14 (line~8) and $\text{VAcorpnipa}_t$ is NIPA Table~1.14 (line~1 minus line~2).
+
+% ---------------------------------------------------------------
+% A.7 — Descriptive Statistics and Unit Root Tests
+% ---------------------------------------------------------------
+\subsection{Descriptive Statistics and Unit Root Tests}
+\label{subsec:app_desc_stats}
+
+Table~\ref{tab:app_summary_stats} reports summary statistics for the core series. Table~\ref{tab:app_unit_roots} presents unit root test results (ADF, Phillips--Perron) for $y_t$ and $k_t$ in levels and first differences.
+
+\input{appendixA/tables/table_A1_summary_statistics.tex}
+
+\input{appendixA/tables/table_A2_unit_root_tests.tex}
+
+Figures showing the log levels of output and capital, the output--capital ratio, and their annual growth rates are presented in the main text (see Section~\ref{subsec:data_measurement}, Figures~\ref{fig:main_log_levels}, \ref{fig:main_output_capital_ratio}, and \ref{fig:main_growth_rates}).
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.85\textwidth]{appendixA/figures/fig_A10_shaikh_frb_utilization.pdf}
+\caption{Capacity utilization comparison: Shaikh (cointegration-based) versus FRB survey measure, 1947--2011. Descriptive comparison only.}
+\label{fig:app_utilization_comparison}
+\end{figure}
+
+% ---------------------------------------------------------------
+% A.8 — ARDL Specification Search and Bounds Testing
+% ---------------------------------------------------------------
+\subsection{ARDL Specification Search and Bounds Testing}
+\label{subsec:app_ardl_bounds}
+
+Table~\ref{tab:app_ardl_search} displays the full specification grid ($p,q = 1\text{--}6$; Cases I--V) with information criteria, diagnostic tests, and recovered long-run coefficients. Asterisks mark case-specific AIC/BIC minima.
+
+\input{appendixA/tables/table_A3_ardl_specification_search.tex}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.85\textwidth]{appendixA/figures/fig_A11_f_bounds_cases.pdf}
+\caption{$F$-statistic across deterministic Cases I--V. Horizontal lines mark lower ($I(0)$) and upper ($I(1)$) critical bounds at 5\% significance.}
+\label{fig:app_f_bounds_cases}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.85\textwidth]{appendixA/figures/fig_A12_exact_vs_asymptotic_bounds.pdf}
+\caption{Exact-sample versus asymptotic critical bounds for Cases IV and V ($T=65$). Exact bounds computed via stochastic simulation \citep{NatsiopoulosTzeremes2022}.}
+\label{fig:app_exact_asymptotic_bounds}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.85\textwidth]{appendixA/figures/fig_A13_baseline_residual_diagnostics.pdf}
+\caption{Residual diagnostics from baseline ARDL(2,4): (a) residuals over time, (b) density with normal curve, (c) ACF/PACF, (d) CUSUM test.}
+\label{fig:app_residual_diagnostics}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.85\textwidth]{appendixA/figures/fig_A14_theta_stability_grid.pdf}
+\caption{Long-run coefficient $\hat{\theta}$ estimates ranked by AIC across specification grid. Horizontal band marks Shaikh's 0.6609 $\pm$ 5\%.}
+\label{fig:app_theta_stability}
+\end{figure}
+
+% ---------------------------------------------------------------
+% A.9 — Dummy Variable Diagnostics
+% ---------------------------------------------------------------
+\subsection{Dummy Variable Diagnostics}
+\label{subsec:app_dummies}
+
+Figure~\ref{fig:app_dummies_residuals} displays squared residuals from the baseline ARDL specification with impulse dummies $D_{56}$, $D_{74}$, $D_{80}$ overlaid. The dummies absorb outlier-driven residual spikes identified via squared-error diagnostics \citep{Patterson2000}.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.85\textwidth]{appendixA/figures/fig_A5_dummies_residuals.pdf}
+\caption{Squared residuals from baseline ARDL with impulse dummies $D_{56}$, $D_{74}$, $D_{80}$ (1947--2011). Dummies absorb outlier-driven spikes.}
+\label{fig:app_dummies_residuals}
+\end{figure}
+
+% ---------------------------------------------------------------
+% A.10 — Series Construction Protocol
+% ---------------------------------------------------------------
+\subsection{Series Construction Protocol}
+\label{subsec:app_construction_flow}
+
+Figure~\ref{fig:app_construction_flow} visualizes the pipeline from raw data to fitted capacity utilization ($\hat{\mu}_t$). The flowchart traces corrections, deflation, GPIM recursion, ARDL estimation, and residualization.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.85\textwidth]{appendixA/figures/fig_A15_series_construction_protocol.pdf}
+\caption{Series construction protocol: raw data $\to$ corrected output/GPIM capital $\to$ common deflator $\to$ ARDL estimation $\to$ $\hat{\mu}_t$.}
+\label{fig:app_construction_flow}
+\end{figure}

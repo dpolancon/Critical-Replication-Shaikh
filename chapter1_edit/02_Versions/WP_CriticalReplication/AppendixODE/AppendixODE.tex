@@ -1,0 +1,75 @@
+\section{Derivation of Accumulation Dynamics under Unbalanced Growth}
+\label{app:acc_dynamics}
+
+This appendix provides the derivation of the dynamical equations summarized in \S\ref{subsec:balanced_unbalanced_growth} and \S\ref{subsec:trend_stabilized_closure}. All results follow from three components: the accounting identity $\hat{k} + \delta = \phi^p B$, the unbalanced growth closure $g_{Y^p} = \theta g_K$, and the investment-savings closure $\phi^p = s$.
+
+\subsection{The Unbalanced Growth Closure: Derivation of the Bernoulli ODE}
+\label{app:bernoulli}
+
+The accounting identity under the investment-savings closure is:
+\begin{equation}\label{eq:app_identity}
+    \hat{k} + \delta = s \, B.
+\end{equation}
+Differentiating with respect to time yields:
+\begin{equation}\label{eq:app_diff}
+    \frac{d\hat{k}}{dt} = s \, \dot{B}.
+\end{equation}
+Expressing $\dot{B}$ in terms of the growth rate of capital productivity ($\hat{b}$):
+\begin{equation}\label{eq:app_Bdot}
+    \dot{B} = B \, \hat{b}.
+\end{equation}
+Substituting this into equation~\eqref{eq:app_diff} and utilizing the accounting identity $sB = \hat{k} + \delta$ results in the acceleration identity:
+\begin{equation}\label{eq:app_chain}
+    \frac{d\hat{k}}{dt} = (\hat{k} + \delta) \, \hat{b}.
+\end{equation}
+Recall that capital productivity is $B \equiv Y^p / K$, which in growth rates implies $\hat{b} = \hat{y}^p - \hat{k}$. Under the unbalanced growth closure $g_{Y^p} = \theta g_K$ (or $\hat{y}^p = \theta \hat{k}$ in growth rate notation), this gives the growth rate of capital productivity as $\hat{b} = (\theta - 1) \, \hat{k}$. Substituting this into equation~\eqref{eq:app_chain} provides the acceleration dynamic:
+\begin{equation}\label{eq:app_bernoulli}
+    \boxed{\frac{d\hat{k}}{dt} = (\theta - 1) \, \hat{k} \, (\hat{k} + \delta)}.
+\end{equation}
+This is a Bernoulli equation of order 2 in $\hat{k}$, where the nonlinearity arises from the product $\hat{k}(\hat{k} + \delta)$.
+
+\subsection{Analytical Solution}
+\label{app:solution}
+
+Expanding equation~\eqref{eq:app_bernoulli} gives:
+\begin{equation}\label{eq:app_expanded}
+    \frac{d\hat{k}}{dt} = (\theta - 1)\,\hat{k}^2 + (\theta - 1)\,\delta\,\hat{k}.
+\end{equation}
+Applying the Bernoulli substitution $v \equiv \hat{k}^{-1}$ with $\dot{v} = -\hat{k}^{-2}\dot{\hat{k}}$ transforms the equation into a first-order linear ODE:
+\begin{equation}\label{eq:app_linear_standard}
+    \dot{v} + (\theta - 1)\delta\,v = -(\theta - 1).
+\end{equation}
+The solution for $v(t)$, given initial conditions $v_0 = \hat{k}_0^{-1}$, is:
+\begin{equation}\label{eq:app_v_simplified}
+    v(t) = \left(v_0 + \frac{1}{\delta}\right) e^{-(\theta-1)\delta\,t} - \frac{1}{\delta}.
+\end{equation}
+Inverting $v(t)$ yields the explicit path for the net accumulation rate:
+\begin{equation}\label{eq:app_khat_solution}
+    \boxed{\hat{k}(t) = \frac{1}{\left(\frac{1}{\hat{k}_0} + \frac{1}{\delta}\right) e^{-(\theta-1)\delta\,t} - \frac{1}{\delta}}}.
+\end{equation}
+
+\subsection{Equilibria and Stability Analysis}
+\label{app:stability}
+
+The equilibria $\hat{k}^*$ are defined by $(\theta - 1)\,\hat{k}\,(\hat{k} + \delta) = 0$. For $\theta \neq 1$, the roots are $\hat{k}_1^* = 0$ (stationary net capital) and $\hat{k}_2^* = -\delta$ (zero gross investment). Linearizing around $\hat{k}^* = 0$ via the Jacobian $f'(\hat{k}) = (\theta - 1)(2\hat{k} + \delta)$ yields:
+\begin{itemize}
+    \item Over-accumulation ($\theta < 1$): $f'(0) < 0$ — the stagnation equilibrium is locally stable.
+    \item Under-accumulation ($\theta > 1$): $f'(0) > 0$ — the stagnation equilibrium is unstable.
+\end{itemize}
+
+\subsection{The Trend-Stabilized Closure: Derivation of the Quadratic ODE}
+\label{app:extended_derivation}
+
+Under the trend-stabilized closure $\hat{y}^p = \theta\hat{k} + b$, the growth rate of capital productivity is:
+\begin{equation}\label{eq:app_bhat_extended}
+    \hat{b} = (\theta - 1)\hat{k} + b.
+\end{equation}
+Substituting this into the acceleration identity (equation~\ref{eq:app_chain}) generates a quadratic ODE:
+\begin{equation}\label{eq:app_extended_ode}
+    \frac{d\hat{k}}{dt} = (\hat{k} + \delta)\left[(\theta - 1)\hat{k} + b\right].
+\end{equation}
+The equilibria are the roots of $(\hat{k} + \delta)[(\theta - 1)\hat{k} + b] = 0$:
+\begin{equation}\label{eq:app_extended_roots}
+    \hat{k}_1^* = -\delta, \qquad \hat{k}_2^* = \frac{b}{1 - \theta}.
+\end{equation}
+The Jacobian $g'(\hat{k}) = 2(\theta - 1)\hat{k} + (\theta-1)\delta + b$ evaluated at $\hat{k}_2^*$ confirms local stability for the empirically relevant case ($\theta < 1$ and $b > 0$): the interior root $b/(1-\theta)$ acts as a strictly positive attractor, preventing stagnation. As $b \to 0$, the trend-stabilized closure collapses to the unbalanced growth attractor at $\hat{k}^* = 0$.
