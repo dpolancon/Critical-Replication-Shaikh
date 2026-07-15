@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "31d32f5db40e47c3",
+        "id": "e9bd87ecab28263d",
         "type": "tabs",
         "children": [
           {
-            "id": "72e79610bd3bed1d",
+            "id": "6af9de0201be66ba",
             "type": "leaf",
             "state": {
               "type": "empty",
               "state": {},
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Nueva pestaña"
             }
           }
         ]
@@ -40,7 +40,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "Explorador de archivos"
             }
           },
           {
@@ -170,35 +170,44 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false
     }
   },
-  "active": "72e79610bd3bed1d",
+  "active": "6af9de0201be66ba",
   "lastOpenFiles": [
+    "02_Versions/WP_CriticalReplication_3.0/Section3_Editing.md",
+    "11_AdvisorReviewLoop/proposed_revisions.md",
+    "07_Experiments/EXP_03_walkthrough.md",
     "02_Versions/WP_CriticalReplication_3.0/main.pdf",
     "02_Versions/WP_CriticalReplication_3.0/Comments.md",
+    "02_Versions/WP_CriticalReplication_3.0/z_legacy_md/log_comments_version.md",
+    "02_Versions/WP_CriticalReplication_3.0/z_legacy_md/Section3_Opening.md",
+    "02_Versions/WP_CriticalReplication_3.0/z_legacy_md",
+    "09_papers_PDF/Basu_OthersPE_Empirical/Basu2017_CrisisTheory.pdf",
+    "02_Versions/WP_CriticalReplication_3.0/main.bbl",
+    "02_Versions/WP_CriticalReplication_3.0/main.blg",
+    "02_Versions/WP_CriticalReplication_3.0/main.out",
+    "02_Versions/WP_CriticalReplication_3.0/main.aux",
+    "02_Versions/WP_CriticalReplication_3.0/main.log",
+    "09_papers_PDF/aggregate_production_function/convert_pdfs_high_fidelity.py",
+    "09_papers_PDF/aggregate_production_function/TavaniZamparelli_APEoverview2018.md",
+    "09_papers_PDF/aggregate_production_function/Solow-TechnicalChangeAggregate-1957.md",
+    "09_papers_PDF/aggregate_production_function/Shaikh-NonlinearDynamicsPseudoProduction-2005.md",
+    "09_papers_PDF/aggregate_production_function/Shaikh-LawsProductionLaws-1974.md",
+    "09_papers_PDF/aggregate_production_function/Felipe-SoundFoundationsAggregate-2005.md",
+    "09_papers_PDF/aggregate_production_function/TavaniZamparelli_APEoverview2018.pdf",
     "09_papers_PDF/capacity_utilization/Assymetry_Cycle_note.md",
-    "02_Versions/WP_CriticalReplication_3.0/apply_comments_ledger.py",
     "02_Versions/WP_CriticalReplication_3.0/Assymetry_Cycle_note.md",
     "02_Versions/WP_CriticalReplication_3.0/tables/Untitled.md",
-    "02_Versions/WP_CriticalReplication_3.0/notes",
-    "09_papers_PDF/Basu_OthersPE_Empirical/RottaKumar2024.pdf",
-    "09_papers_PDF/Basu_OthersPE_Empirical/Basu_profitRateTendFall.pdf",
-    "09_papers_PDF/Basu_OthersPE_Empirical/BasuKotz_InstitutionsStructures.pdf",
-    "09_papers_PDF/Basu_OthersPE_Empirical/BasuDas2014.pdf",
-    "09_papers_PDF/Basu_OthersPE_Empirical/BasuChenOhVARclassStruggle.pdf",
-    "09_papers_PDF/Basu_OthersPE_Empirical",
-    "09_papers_PDF/capacity_utilization/Kurz1986.pdf",
     "Untitled.canvas",
     "_CH1_EDITING_INTERFACE.md",
     "01_Artifacts/Meeting_2026-06-17.md",
-    "11_AdvisorReviewLoop/proposed_revisions.md",
     "01_Artifacts/ai_authorship_stress_test_ash_calibration.md",
     "05_AgentSkills/README_AGENT_ORCHESTRATION.md",
     "04_EditorialContracts/PROSE_REGISTER_CONTRACT.md",
@@ -216,14 +225,6 @@
     "07_Experiments/EXPERIMENT_LABELS.md",
     "07_Experiments/EXP_05_walkthrough.md",
     "07_Experiments/EXP_04_walkthrough.md",
-    "07_Experiments/EXP_03_walkthrough.md",
-    "07_Experiments/_INDEX_EXPERIMENTS.md",
-    "07_Experiments/EXP_01_intro_genre_rebuild/README.md",
-    "07_Experiments/EXP_02_section3_conceptual_rebuild/README.md",
-    "03_FailureDiagnostics/DELTA_2.0_vs_2.7_INITIAL_ASSESSMENT.md",
-    "Meeting_2026-06-17.md",
-    "01_Feedback_Matrix/Feedback_Matrix.md",
-    "01_Feedback_Matrix/Comment_P3_16.md",
     "02_Chapter/QwenStudio_Edits/NHSyE-19-de-junio.png",
     "_infrastructure/raw_ai_dumps/page_images/page_00.png",
     "_infrastructure/raw_ai_dumps/page_images/page_27.png"
