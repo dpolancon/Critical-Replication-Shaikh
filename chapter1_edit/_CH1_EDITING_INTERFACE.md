@@ -18,9 +18,9 @@ This note is the Obsidian entry point for the Chapter 1 controlled-change editin
 ## Start here tomorrow
 
 1. [[00_CurrentState/LOOP_SELF_AUDIT_DASHBOARD|Loop Self-Audit Dashboard]]
-2. [[07_Experiments/EXP_01_intro_genre_rebuild/EXP_01_SELF_AUDIT_INTAKE|EXP 01 Self-Audit Intake]]
-3. [[04_EditorialContracts/PROSE_REGISTER_CONTRACT|Prose Register Contract]]
-4. [[04_EditorialContracts/GENRE_CONTRACT_APPLIED_ECON_POLITICAL_ECONOMY_CRITICAL_REPLICATION|Genre Contract]]
+2. [[02_Versions/WP_CriticalReplication_3.0/comments_final_pass|comments_final_pass (Master Ledger)]]
+3. [[06_Workflows/workflow_final_pass_ledger|Workflow — Final Pass Ledger]]
+4. [[04_EditorialContracts/PROSE_REGISTER_CONTRACT|Prose Register Contract]]
 5. [[10_Handoffs/SESSION_HANDOFF_CH1_EDITING_SYSTEM_2026_07_03|Session Handoff]]
 
 ## Folder map

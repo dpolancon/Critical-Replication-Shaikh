@@ -11,10 +11,11 @@ aliases:
 
 # 06 · Workflows
 
-This folder holds bounded workflows for no-edit audits, section rebuild loops, delta checks, candidate evaluation, and deferred commit review.
+This folder holds bounded workflows for no-edit audits, section rebuild loops, final pass master ledgers, delta checks, candidate evaluation, and deferred commit review.
 
 ## Key files
 
+- [[workflow_final_pass_ledger]]
 - [[workflow_section_rebuild_loop]]
 - [[workflow_no_edit_audit]]
 - [[workflow_delta_audit_2.0_vs_2.7]]
@@ -23,7 +24,7 @@ This folder holds bounded workflows for no-edit audits, section rebuild loops, d
 
 ## Use tomorrow
 
-Use [[workflow_section_rebuild_loop]] to structure EXP 01 after the no-edit intake has confirmed eligibility and stop conditions.
+Use [[workflow_final_pass_ledger]] to structure and apply final edits from the master comments_final_pass.md ledger.
 
 ## Do not do here
 
