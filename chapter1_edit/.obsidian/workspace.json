@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "bdd3ea237b67d6e2",
+        "id": "20af91594348e690",
         "type": "tabs",
         "children": [
           {
-            "id": "c8058a7bcd6178dd",
+            "id": "d6805e6db64bc556",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -37,7 +37,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -181,6 +183,17 @@
   },
   "active": "f45560cab21ea456",
   "lastOpenFiles": [
+    "12_FinalEdits/FE08_Controlled_Pass_Steering_Loop.md",
+    "12_FinalEdits/AI_TRACE_LEXICAL_DISCIPLINE_PROTOCOL.md",
+    "12_FinalEdits/FE07_Pass5_Prose_Hygiene_Basu_Readiness.md",
+    "12_FinalEdits/FE06_Pass4_Admissibility_Sample_Fragility.md",
+    "12_FinalEdits/FE05_Pass3_Exploitation_Sraffa_Bridge.md",
+    "12_FinalEdits/FE04_Pass2_Figure5_Data_Discrepancies.md",
+    "12_FinalEdits/FE03_Pass1_Overaccumulation_Theory.md",
+    "12_FinalEdits/FE02_Master_Implementation_Plan.md",
+    "11_AdvisorReviewLoop/proposed_revisions.md",
+    "12_FinalEdits/FE01_Meeting_Summary.md",
+    "12_FinalEdits",
     "02_Versions/WP_CriticalReplication_3.0/z_legacy_md/comments_final_pass 1.md",
     "02_Versions/WP_CriticalReplication_3.0/comments_final_pass.md",
     "02_Versions/WP_CriticalReplication_3.0/Chapter1_v3.0.pdf",
@@ -194,7 +207,6 @@
     "02_Versions/WP_CriticalReplication_3.0/pdflatex26940.fls",
     "02_Versions/WP_CriticalReplication_3.0/main.blg",
     "02_Versions/WP_CriticalReplication_3.0/main.out",
-    "02_Versions/WP_CriticalReplication_3.0/main.log",
     "02_Versions/WP_CriticalReplication_4.0/appendixA/figures/fig_A3_growth_rates.png",
     "02_Versions/WP_CriticalReplication_4.0/z_legacy_md/section5_comments.md",
     "02_Versions/WP_CriticalReplication_4.0/z_legacy_md/section4_comments.md",
@@ -215,16 +227,6 @@
     "02_Versions/WP_CriticalReplication_4.0/figures/fig_S1_shrinking_space_bounds_layers.png",
     "02_Versions/WP_CriticalReplication_4.0/figures/fig_S0_cu_fan_diagnostic.png",
     "02_Versions/WP_CriticalReplication_4.0/comments_final_pass.md",
-    "02_Versions/WP_CriticalReplication_3.0 - copia/z_legacy_md/section5_comments.md",
-    "02_Versions/WP_CriticalReplication_3.0 - copia/z_legacy_md/section4_comments.md",
-    "02_Versions/WP_CriticalReplication_3.0 - copia/z_legacy_md/section4_comments 1.md",
-    "02_Versions/WP_CriticalReplication_3.0 - copia/z_legacy_md/section4_comments 1 1.md",
-    "02_Versions/WP_CriticalReplication_3.0 - copia/z_legacy_md/Section3_Opening.md",
-    "02_Versions/WP_CriticalReplication_3.0 - copia/z_legacy_md/Section3_Editing_archive.md",
-    "02_Versions/WP_CriticalReplication_3.0 - copia/z_legacy_md/section3_comments.md",
-    "02_Versions/WP_CriticalReplication_3.0 - copia/z_legacy_md/section2_comments.md",
-    "02_Versions/WP_CriticalReplication_3.0 - copia/z_legacy_md/section1_comments.md",
-    "02_Versions/WP_CriticalReplication_3.0 - copia/z_legacy_md/log_comments_version.md",
     "02_Versions/WP_CriticalReplication_3.0 - copia/figures/fig_S3_phase_diagram_capital_capacity_dynamics.png",
     "02_Versions/WP_CriticalReplication_3.0 - copia/figures/fig_S2_pooled_frontier.png",
     "Untitled.canvas"

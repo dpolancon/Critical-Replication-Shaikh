@@ -164,11 +164,14 @@ fan_all <- bind_rows(fan_L, fan_R) |>
     "IC-preferred specifications\u2009\u2014\u2009Admissible fan (Case\u00a01)"
   )))
 
+# Mean-normalize FRB to match index baseline of 1.0
+df_plot$uFRB_norm <- df_plot$uFRB / mean(df_plot$uFRB, na.rm = TRUE)
+
 # Benchmarks — wide → long, repeated in both panels
 bm_wide <- tibble(
   year      = df_plot$year,
   Shaikh_uK = df_plot$uK,
-  FRB       = df_plot$uFRB
+  FRB       = df_plot$uFRB_norm
 )
 
 benchmarks <- bind_rows(
@@ -282,7 +285,7 @@ p <- ggplot() +
       D_BIC_Case1 = "D: BIC winner ARDL(2,3), Case\u00a01",
       E_AIC_Case1 = "E: AIC winner ARDL(3,3), Case\u00a01",
       Shaikh_uK   = "Shaikh u\u1D4F (raw, Appendix\u00a06.6.1)",
-      FRB         = "FRB CU (raw, not rescaled)"
+      FRB         = "Federal Reserve Board (Normalized, mean = 1.0)"
     ),
     name = NULL
   ) +
@@ -295,7 +298,7 @@ p <- ggplot() +
       D_BIC_Case1 = "D: BIC winner ARDL(2,3), Case\u00a01",
       E_AIC_Case1 = "E: AIC winner ARDL(3,3), Case\u00a01",
       Shaikh_uK   = "Shaikh u\u1D4F (raw, Appendix\u00a06.6.1)",
-      FRB         = "FRB CU (raw, not rescaled)"
+      FRB         = "Federal Reserve Board (Normalized, mean = 1.0)"
     ),
     name = NULL
   ) +
@@ -319,8 +322,8 @@ p <- ggplot() +
       "Blue family: IC-preferred specifications (BIC/AIC winners).\n",
       "Dashed = no const., no dummies in LR (B, E); Dotted = intercept only (C); ",
       "Solid = SR coefs as permanent step shifts (F) or IC-preferred (D).\n",
-      "Shaikh u\u1D4F and FRB at raw values \u2014 scale gap reflects undocumented ",
-      "rescaling convention in Shaikh\u00a0(2016). Grey bands: dummy activation years.\n",
+      "Shaikh u\u1D4F and FRB series both mean-normalized to 1.0 over 1947\u20132011. ",
+      "Grey bands: dummy activation years.\n",
       "Series\u00a0A (Shaikh\u2019s impulse-dummy implementation) omitted \u2014 ",
       "produces artefact spikes of 1.71 (1956), 2.09 (1974), 1.35 (1980); see CSV."
     )
